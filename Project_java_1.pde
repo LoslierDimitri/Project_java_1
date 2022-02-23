@@ -40,7 +40,7 @@ void draw() {
     main.tab_player[1].add_unit(unit_1);
   }
 
-  if (frame == 700) {
+  if (frame == 500) {
     main.tab_player[0].remove_unit();
   }
 
@@ -51,7 +51,7 @@ void draw() {
 }
 
 void initialisation() {
-  unit_1 = new Unit(new Collider(20, 50), 100, 1, 1);
+  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5);
 
   player_1 = new Player(1);
   player_2 = new Player(2);

@@ -44,13 +44,13 @@ class Unit {
     }
     return false;
   }
-  boolean collide(Collider x_collider) {
+  boolean collide(Collider x_collider, int x_number) {
     boolean result = false;
 
-    if (this.collider.collide(x_collider) == true) {
+    if (this.collider.collide(x_collider, x_number) == true) {
       result = true;
     }
-    
+
     return result;
   }
 
@@ -58,7 +58,12 @@ class Unit {
     println("Player_" + x_number + ": Unit: update: ...");
     this.collider.position_x = this.position_x;
     this.collider.position_y = this.position_y;
+    if (x_number == 1) {
+    }
+    if (x_number == 2) {
+    }
     this.move(x_number);
+    this.can_move = true;
     println("Player_" + x_number + ": Unit: update: done");
   }
   void display() {
