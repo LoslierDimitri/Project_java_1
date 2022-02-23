@@ -14,7 +14,7 @@ class Player {
 
   void add_unit(Unit x_unit) {
     println("Player_" + this.number + ": add_unit: ...");
-    Unit unit_to_add = new Unit(new Collider(20, 50), x_unit.health_point, x_unit.damage, x_unit.speed);
+    Unit unit_to_add = new Unit(new Collider(20, 50), x_unit.health_point, x_unit.damage, x_unit.speed, x_unit.range);
     if (this.number == 1) {
       unit_to_add.position_x = 0;
     }

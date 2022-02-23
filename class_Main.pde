@@ -49,10 +49,14 @@ class Main {
         if (this.tab_player[0].tab_unit[i].collide(this.tab_player[1].tab_unit[j].collider, 1) == true) {
           this.tab_player[0].tab_unit[i].can_move = false;
           this.tab_player[1].tab_unit[j].can_move = false;
+
+          this.tab_player[0].tab_unit[i].damage(this.tab_player[1].tab_unit[j], this.tab_player[0].tab_unit[i].damage);
         }
-        if (this.tab_player[0].tab_unit[i].collide(this.tab_player[1].tab_unit[j].collider, 2) == true) {
+        if (this.tab_player[1].tab_unit[j].collide(this.tab_player[0].tab_unit[i].collider, 2) == true) {
           this.tab_player[0].tab_unit[i].can_move = false;
           this.tab_player[1].tab_unit[j].can_move = false;
+
+          this.tab_player[1].tab_unit[j].damage(this.tab_player[0].tab_unit[i], this.tab_player[1].tab_unit[j].damage);
         }
       }
     }

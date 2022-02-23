@@ -8,15 +8,19 @@ class Unit {
   int damage;
   int speed;
 
+  int range;
+
   boolean can_move;
 
-  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed) {
+  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range) {
     this.collider = x_collider;
     this.health_point = x_health_point;
     this.damage = x_damage;
     this.speed = x_speed;
 
     this.can_move = true;
+
+    this.position_y = 100;
   }
 
   void damage(Unit x_unit, int x_damage) {
@@ -68,7 +72,10 @@ class Unit {
   }
   void display() {
     println("Unit: display: ...");
+    fill(255);
     rect(this.collider.position_x, this.collider.position_y, this.collider.size_x, this.collider.size_y);
+    fill(0);
+    text(this.health_point, this.position_x, this.position_y+10);
     println("Unit: display: done");
   }
 }

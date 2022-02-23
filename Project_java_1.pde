@@ -51,7 +51,7 @@ void draw() {
 }
 
 void initialisation() {
-  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5);
+  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 50);
 
   player_1 = new Player(1);
   player_2 = new Player(2);
