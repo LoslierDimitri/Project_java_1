@@ -8,11 +8,15 @@ class Unit {
   int damage;
   int speed;
 
+  boolean can_move;
+
   Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed) {
     this.collider = x_collider;
     this.health_point = x_health_point;
     this.damage = x_damage;
     this.speed = x_speed;
+
+    this.can_move = true;
   }
 
   void damage(Unit x_unit, int x_damage) {
@@ -24,11 +28,13 @@ class Unit {
 
   void move(int x_number) {
     println("Player_" + x_number + ": Unit: move: ...");
-    if (x_number == 1) {
-      this.position_x = this.position_x + this.speed;
-    }
-    if (x_number == 2) {
-      this.position_x = this.position_x - this.speed;
+    if (can_move == true) {
+      if (x_number == 1) {
+        this.position_x = this.position_x + this.speed;
+      }
+      if (x_number == 2) {
+        this.position_x = this.position_x - this.speed;
+      }
     }
     println("Player_" + x_number + ": Unit: move: done");
   }
@@ -38,14 +44,26 @@ class Unit {
     }
     return false;
   }
+  boolean collide(Collider x_collider) {
+    boolean result = false;
+
+    if (this.collider.collide(x_collider) == true) {
+      result = true;
+    }
+    
+    return result;
+  }
+
   void update(int x_number) {
     println("Player_" + x_number + ": Unit: update: ...");
+    this.collider.position_x = this.position_x;
+    this.collider.position_y = this.position_y;
     this.move(x_number);
     println("Player_" + x_number + ": Unit: update: done");
   }
   void display() {
     println("Unit: display: ...");
-    rect(this.position_x, this.position_y, this.collider.size_x, this.collider.size_y);
+    rect(this.collider.position_x, this.collider.position_y, this.collider.size_x, this.collider.size_y);
     println("Unit: display: done");
   }
 }

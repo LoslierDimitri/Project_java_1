@@ -8,8 +8,6 @@ int frame = 0;
 
 boolean initialisation_done = false;
 
-Collider collider_1;
-
 Unit unit_1;
 
 Player player_1;
@@ -42,6 +40,10 @@ void draw() {
     main.tab_player[1].add_unit(unit_1);
   }
 
+  if (frame == 700) {
+    main.tab_player[0].remove_unit();
+  }
+
   main.update();
   main.display();
 
@@ -49,9 +51,7 @@ void draw() {
 }
 
 void initialisation() {
-  collider_1 = new Collider(20, 50);
-
-  unit_1 = new Unit(collider_1, 100, 1, 1);
+  unit_1 = new Unit(new Collider(20, 50), 100, 1, 1);
 
   player_1 = new Player(1);
   player_2 = new Player(2);

@@ -16,7 +16,34 @@ class Main {
     }
 
     for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
+      for (int j = 0; j < this.tab_player[0].nb_unit; j++) {
+        if (i != j) {
+          if (this.tab_player[0].tab_unit[i].collide(this.tab_player[0].tab_unit[j].collider) == true) {
+            this.tab_player[0].tab_unit[i].can_move = false;
+            this.tab_player[0].tab_unit[j].can_move = false;
+            this.tab_player[0].tab_unit[0].can_move = true;
+          }
+        }
+      }
+    }
+
+    for (int i = 0; i < this.tab_player[1].nb_unit; i++) {
       for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
+        if (i != j) {
+          if (this.tab_player[1].tab_unit[i].collide(this.tab_player[1].tab_unit[j].collider) == true) {
+            this.tab_player[1].tab_unit[i].can_move = false;
+            this.tab_player[1].tab_unit[j].can_move = false;
+          }
+        }
+      }
+    }
+
+    for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
+      for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
+        if (this.tab_player[0].tab_unit[i].collide(this.tab_player[1].tab_unit[j].collider) == true) {
+          this.tab_player[0].tab_unit[i].can_move = false;
+          this.tab_player[1].tab_unit[j].can_move = false;
+        }
       }
     }
     println("Main: update: done");
