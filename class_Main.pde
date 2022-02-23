@@ -15,13 +15,7 @@ class Main {
       tab_player[i].update();
     }
 
-    for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
-      this.tab_player[0].tab_unit[i].can_move = true;
-    }
-    for (int i = 0; i < this.tab_player[1].nb_unit; i++) {
-      this.tab_player[1].tab_unit[i].can_move = true;
-    }
-
+    //player 1 unit collide with player 1 unit
     for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
       for (int j = 0; j < this.tab_player[0].nb_unit; j++) {
         if (i != j) {
@@ -33,6 +27,7 @@ class Main {
       }
     }
 
+    //player 2 unit collide with player 2 unit
     for (int i = 0; i < this.tab_player[1].nb_unit; i++) {
       for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
         if (i != j) {
@@ -44,6 +39,8 @@ class Main {
       }
     }
 
+    //player 1 unit collide with player 2 unit
+    //player unit damage player unit
     for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
       for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
         if (this.tab_player[0].tab_unit[i].collide(this.tab_player[1].tab_unit[j].collider, 1) == true) {

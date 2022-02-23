@@ -16,17 +16,6 @@ class Collider {
 
   boolean collide(Collider x_collider, int x_number) {
     boolean result = false;
-    /*
-    if (x_number == 1) {
-     if (this.position_x + this.size_x >= x_collider.position_x && this.position_x + this.size_x <= x_collider.position_x + x_collider.size_x) {
-     result = true;
-     }
-     }
-     if (x_number == 2) {
-     if (this.position_x >= x_collider.position_x && this.position_x <= x_collider.position_x + x_collider.size_x) {
-     result = true;
-     }
-     }*/
 
     if (x_number == 1) {
       this.position_x_collision = this.position_x + this.size_x + 10;
@@ -40,16 +29,6 @@ class Collider {
         result = true;
       }
     }
-
-    /*
-    if (
-     (this.position_x >= x_collider.position_x && this.position_x <= x_collider.position_x + x_collider.size_x)
-     ||
-     (this.position_x + this.size_x >= x_collider.position_x && this.position_x + this.size_x <= x_collider.position_x + x_collider.size_x)
-     )
-     {
-     result = true;
-     }*/
 
     return result;
   }
