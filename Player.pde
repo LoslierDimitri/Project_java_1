@@ -11,6 +11,11 @@ class Player {
   int exp;
   int period;
 
+  Turret tab_turret[];
+  int nb_turret;
+  int nb_turret_max;
+  int nb_turret_limit;
+
   Player(int x_number, int x_health_point, Collider x_collider, int x_position_x, int x_position_y, int x_money) {
     this.health_point = x_health_point;
     this.collider = x_collider;
@@ -25,6 +30,11 @@ class Player {
     this.money = x_money;
     this.exp = 0;
     this.period = 1;
+
+    this.nb_turret = 0;
+    this.nb_turret_max = 1;
+    this.nb_turret_limit = 4;
+    this.tab_turret = new Turret[this.nb_turret_limit];
   }
 
   void add_unit(Unit x_unit) {
@@ -89,6 +99,7 @@ class Player {
     text(this.health_point, this.position_x, this.position_y+10);
     text(this.money, this.position_x, this.position_y+20);
     text(this.exp, this.position_x, this.position_y+30);
+    text(this.period, this.position_x, this.position_y+40);
     println("Player_" + this.number + ": display: done");
   }
 }

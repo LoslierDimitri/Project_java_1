@@ -17,7 +17,7 @@ class Unit {
     this.speed = x_speed;
     this.range = x_range;
     this.can_move = true;
-    this.position_y = 200;  
+    this.position_y = 200;
     this.cost = x_cost;
   }
 

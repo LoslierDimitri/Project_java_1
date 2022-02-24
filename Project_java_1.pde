@@ -79,7 +79,7 @@ void draw() {
   }
 
   //add unit to ennemy each 50 frame
-  if (frame % 100 == 0) {
+  if (frame % 50 == 0) {
     println("add unit to ennemy");
     main.tab_player[1].add_unit(unit_1);
   }
