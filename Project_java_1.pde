@@ -21,6 +21,9 @@ Main main;
 Button button_unit_1;
 Button button_unit_2;
 
+Collider collider_player_1;
+Collider collider_player_2;
+
 ///////////////////////////////////////////////////////////////
 
 void draw() {
@@ -43,14 +46,10 @@ void draw() {
     }
   }
 
-  //add unit to ennemy each 500 frame
-  if (frame % 50 == 0) {
+  //add unit to ennemy each 50 frame
+  if (frame % 200 == 0) {
     println("add unit to ennemy");
     main.tab_player[1].add_unit(unit_1);
-  }
-
-  if (frame == 500) {
-    main.tab_player[0].remove_unit();
   }
 
   main.update();
@@ -65,8 +64,11 @@ void initialisation() {
   unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 50);
   unit_2 = new Unit(new Collider(30, 40), 150, 2, 3, 10);
 
-  player_1 = new Player(1);
-  player_2 = new Player(2);
+  collider_player_1 = new Collider(100, 100);
+  collider_player_2 = new Collider(100, 100);
+
+  player_1 = new Player(1, 1000, collider_player_1, 0, 200);
+  player_2 = new Player(2, 1000, collider_player_2, 900, 200);
 
   tab_player[0] = player_1;
   tab_player[1] = player_2;

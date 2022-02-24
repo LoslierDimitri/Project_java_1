@@ -21,11 +21,14 @@ class Unit {
 
     this.can_move = true;
 
-    this.position_y = 100;
+    this.position_y = 200;
   }
 
   void damage(Unit x_unit, int x_damage) {
     x_unit.take_damage(x_damage);
+  }
+  void damage_player(Player x_player, int x_damage) {
+    x_player.take_damage(x_damage);
   }
   void take_damage(int x_damage) {
     this.health_point = this.health_point - x_damage;
@@ -72,6 +75,7 @@ class Unit {
     fill(255);
     rect(this.collider.position_x, this.collider.position_y, this.collider.size_x, this.collider.size_y);
     fill(0);
+    textSize(10);
     text(this.health_point, this.position_x, this.position_y+10);
     println("Unit: display: done");
   }

@@ -11,62 +11,87 @@ class Main {
 
   void update() {
     println("Main: update: ...");
-    for (int i = 0; i < this.nb_player; i++) {
-      tab_player[i].update();
-    }
 
-    //player 1 unit collide with player 1 unit
-    for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
-      for (int j = 0; j < this.tab_player[0].nb_unit; j++) {
-        if (i != j) {
-          if (this.tab_player[0].tab_unit[i].collide(this.tab_player[0].tab_unit[j].collider, 1) == true) {
+    if (this.tab_player[0].health_point > 0 && this.tab_player[1].health_point > 0) {
+
+      //player 1 unit collide with player 1 unit
+      for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
+        for (int j = 0; j < this.tab_player[0].nb_unit; j++) {
+          if (i != j) {
+            if (this.tab_player[0].tab_unit[i].collide(this.tab_player[0].tab_unit[j].collider, 1) == true) {
+              this.tab_player[0].tab_unit[i].can_move = false;
+              //this.tab_player[0].tab_unit[j].can_move = false;
+            }
+          }
+        }
+      }
+
+      //player 2 unit collide with player 2 unit
+      for (int i = 0; i < this.tab_player[1].nb_unit; i++) {
+        for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
+          if (i != j) {
+            if (this.tab_player[1].tab_unit[i].collide(this.tab_player[1].tab_unit[j].collider, 2) == true) {
+              this.tab_player[1].tab_unit[i].can_move = false;
+              //this.tab_player[1].tab_unit[j].can_move = false;
+            }
+          }
+        }
+      }
+
+      //player 1 unit collide with player 2 unit
+      //player unit damage player unit
+      for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
+        for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
+          if (this.tab_player[0].tab_unit[i].collide(this.tab_player[1].tab_unit[j].collider, 1) == true) {
             this.tab_player[0].tab_unit[i].can_move = false;
-            //this.tab_player[0].tab_unit[j].can_move = false;
+            this.tab_player[1].tab_unit[j].can_move = false;
+
+            this.tab_player[0].tab_unit[i].damage(this.tab_player[1].tab_unit[j], this.tab_player[0].tab_unit[i].damage);
+          }
+          if (this.tab_player[1].tab_unit[j].collide(this.tab_player[0].tab_unit[i].collider, 2) == true) {
+            this.tab_player[0].tab_unit[i].can_move = false;
+            this.tab_player[1].tab_unit[j].can_move = false;
+
+            this.tab_player[1].tab_unit[j].damage(this.tab_player[0].tab_unit[i], this.tab_player[1].tab_unit[j].damage);
           }
         }
       }
-    }
 
-    //player 2 unit collide with player 2 unit
-    for (int i = 0; i < this.tab_player[1].nb_unit; i++) {
-      for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
-        if (i != j) {
-          if (this.tab_player[1].tab_unit[i].collide(this.tab_player[1].tab_unit[j].collider, 2) == true) {
-            this.tab_player[1].tab_unit[i].can_move = false;
-            //this.tab_player[1].tab_unit[j].can_move = false;
+      for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
+        for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
+          if (distance(this.tab_player[0].tab_unit[i].position_x, this.tab_player[1].tab_unit[j].position_x) <= this.tab_player[0].tab_unit[i].range) {
+            this.tab_player[0].tab_unit[i].damage(this.tab_player[1].tab_unit[0], this.tab_player[0].tab_unit[i].damage);
+          }
+          if (distance(this.tab_player[1].tab_unit[j].position_x, this.tab_player[0].tab_unit[i].position_x) <= this.tab_player[1].tab_unit[j].range) {
+            this.tab_player[1].tab_unit[j].damage(this.tab_player[0].tab_unit[0], this.tab_player[1].tab_unit[j].damage);
           }
         }
       }
-    }
 
-    //player 1 unit collide with player 2 unit
-    //player unit damage player unit
-    for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
-      for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
-        if (this.tab_player[0].tab_unit[i].collide(this.tab_player[1].tab_unit[j].collider, 1) == true) {
-          this.tab_player[0].tab_unit[i].can_move = false;
-          this.tab_player[1].tab_unit[j].can_move = false;
-
-          this.tab_player[0].tab_unit[i].damage(this.tab_player[1].tab_unit[j], this.tab_player[0].tab_unit[i].damage);
-        }
-        if (this.tab_player[1].tab_unit[j].collide(this.tab_player[0].tab_unit[i].collider, 2) == true) {
-          this.tab_player[0].tab_unit[i].can_move = false;
-          this.tab_player[1].tab_unit[j].can_move = false;
-
-          this.tab_player[1].tab_unit[j].damage(this.tab_player[0].tab_unit[i], this.tab_player[1].tab_unit[j].damage);
+      for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
+        if (this.tab_player[0].tab_unit[i].collider.collide(this.tab_player[1].collider, 1) == true) {
+          this.tab_player[0].tab_unit[i].damage_player(this.tab_player[1], this.tab_player[0].tab_unit[i].damage);
+          this.tab_player[0].tab_unit[0].can_move = false;
         }
       }
-    }
-
-    for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
       for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
-        if (distance(this.tab_player[0].tab_unit[i].position_x, this.tab_player[1].tab_unit[j].position_x) <= this.tab_player[0].tab_unit[i].range) {
-          this.tab_player[0].tab_unit[i].damage(this.tab_player[1].tab_unit[0], this.tab_player[0].tab_unit[i].damage);
-        }
-        if (distance(this.tab_player[1].tab_unit[j].position_x, this.tab_player[0].tab_unit[i].position_x) <= this.tab_player[1].tab_unit[j].range) {
-          this.tab_player[1].tab_unit[j].damage(this.tab_player[0].tab_unit[0], this.tab_player[1].tab_unit[j].damage);
+        if (this.tab_player[1].tab_unit[j].collider.collide(this.tab_player[0].collider, 2) == true) {
+          this.tab_player[1].tab_unit[j].damage_player(this.tab_player[0], this.tab_player[1].tab_unit[j].damage);
+          this.tab_player[1].tab_unit[0].can_move = false;
         }
       }
+
+      for (int i = 0; i < this.nb_player; i++) {
+        tab_player[i].update();
+      }
+    }
+    if (this.tab_player[0].health_point <= 0) {
+      textSize(50);
+      text("player 2 win", 0, 600);
+    }
+    if (this.tab_player[1].health_point <= 0) {
+      textSize(50);
+      text("player 1 win", 0, 600);
     }
 
     println("Main: update: done");
