@@ -17,6 +17,7 @@ class Unit {
     this.health_point = x_health_point;
     this.damage = x_damage;
     this.speed = x_speed;
+    this.range = x_range;
 
     this.can_move = true;
 
@@ -62,10 +63,6 @@ class Unit {
     println("Player_" + x_number + ": Unit: update: ...");
     this.collider.position_x = this.position_x;
     this.collider.position_y = this.position_y;
-    if (x_number == 1) {
-    }
-    if (x_number == 2) {
-    }
     this.move(x_number);
     this.can_move = true;
     println("Player_" + x_number + ": Unit: update: done");

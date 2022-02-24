@@ -58,6 +58,17 @@ class Main {
       }
     }
 
+    for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
+      for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
+        if (distance(this.tab_player[0].tab_unit[i].position_x, this.tab_player[1].tab_unit[j].position_x) <= this.tab_player[0].tab_unit[i].range) {
+          this.tab_player[0].tab_unit[i].damage(this.tab_player[1].tab_unit[0], this.tab_player[0].tab_unit[i].damage);
+        }
+        if (distance(this.tab_player[1].tab_unit[j].position_x, this.tab_player[0].tab_unit[i].position_x) <= this.tab_player[1].tab_unit[j].range) {
+          this.tab_player[1].tab_unit[j].damage(this.tab_player[0].tab_unit[0], this.tab_player[1].tab_unit[j].damage);
+        }
+      }
+    }
+
     println("Main: update: done");
   }
   void display() {
