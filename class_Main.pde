@@ -2,7 +2,7 @@ class Main {
   Player tab_player[];
   int nb_player;
   int nb_player_max;
-
+  
   boolean is_finished;
 
   Main(Player x_tab_player[], int x_nb_player, int x_nb_player_max) {

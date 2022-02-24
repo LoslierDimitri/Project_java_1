@@ -8,6 +8,8 @@ class Player {
   int position_x;
   int position_y;
   int money;
+  int exp;
+  int period;
 
   Player(int x_number, int x_health_point, Collider x_collider, int x_position_x, int x_position_y, int x_money) {
     this.health_point = x_health_point;
@@ -21,6 +23,8 @@ class Player {
     this.collider.position_x = this.position_x;
     this.collider.position_y = this.position_y;
     this.money = x_money;
+    this.exp = 0;
+    this.period = 1;
   }
 
   void add_unit(Unit x_unit) {
@@ -51,6 +55,11 @@ class Player {
   void take_damage(int x_damage) {
     this.health_point = this.health_point - x_damage;
   }
+  void add_period() {
+    if (this.period == 1 && this.exp >= 4000) {
+      this.period = this.period + 1;
+    }
+  }
 
   void update(Main x_main) {
     println("Player_" + this.number + ": update: ...");
@@ -58,10 +67,14 @@ class Player {
       tab_unit[i].update(this.number);
       if (tab_unit[i].is_dead() == true) {
         if (this.number == 2) {
-          x_main.tab_player[0].money = x_main.tab_player[0].money + ((tab_unit[i].cost / 4) * 3);
+          x_main.tab_player[0].money = x_main.tab_player[0].money + tab_unit[i].cost;
+          x_main.tab_player[0].exp = x_main.tab_player[0].exp + tab_unit[i].cost;
         }
         this.remove_unit();
       }
+    }
+    if (this.number == 2) {
+      this.money = 999999;
     }
     println("Player_" + this.number + ": update: done");
   }
@@ -75,6 +88,7 @@ class Player {
     fill(0);
     text(this.health_point, this.position_x, this.position_y+10);
     text(this.money, this.position_x, this.position_y+20);
+    text(this.exp, this.position_x, this.position_y+30);
     println("Player_" + this.number + ": display: done");
   }
 }

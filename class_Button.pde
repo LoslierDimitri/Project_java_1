@@ -27,6 +27,10 @@ class Button {
   void add_unit(Main x_main, Unit x_unit) {
     x_main.tab_player[0].add_unit(x_unit);
   }
+  void add_period(Main x_main) {
+    x_main.tab_player[0].add_period();
+  }
+
   void display() {
     fill(100, 0, 0);
     rect(this.position_x, this.position_y, this.size_x, this.size_y);
