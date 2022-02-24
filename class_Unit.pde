@@ -3,25 +3,22 @@ class Unit {
   int position_y;
   int position_x_center;
   Collider collider;
-
   int health_point;
   int damage;
   int speed;
-
   int range;
-
   boolean can_move;
+  int cost;
 
-  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range) {
+  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range, int x_cost) {
     this.collider = x_collider;
     this.health_point = x_health_point;
     this.damage = x_damage;
     this.speed = x_speed;
     this.range = x_range;
-
     this.can_move = true;
-
-    this.position_y = 200;
+    this.position_y = 200;  
+    this.cost = x_cost;
   }
 
   void damage(Unit x_unit, int x_damage) {

@@ -31,7 +31,6 @@ void draw() {
     initialisation();
     initialisation_done = true;
   }
-
   frame = frame + 1;
   println("frame: " + frame);
 
@@ -52,8 +51,10 @@ void draw() {
     main.tab_player[1].add_unit(unit_1);
   }
 
+
   main.update();
   main.display();
+
   button_unit_1.display();
   button_unit_2.display();
 
@@ -61,14 +62,14 @@ void draw() {
 }
 
 void initialisation() {
-  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 50);
-  unit_2 = new Unit(new Collider(30, 40), 150, 2, 3, 10);
+  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 50, 100);
+  unit_2 = new Unit(new Collider(30, 40), 150, 2, 3, 10, 150);
 
   collider_player_1 = new Collider(100, 100);
   collider_player_2 = new Collider(100, 100);
 
-  player_1 = new Player(1, 1000, collider_player_1, 0, 200);
-  player_2 = new Player(2, 1000, collider_player_2, 900, 200);
+  player_1 = new Player(1, 1000, collider_player_1, 0, 200, 1000);
+  player_2 = new Player(2, 1000, collider_player_2, 900, 200, 1000);
 
   tab_player[0] = player_1;
   tab_player[1] = player_2;

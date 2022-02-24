@@ -1,10 +1,8 @@
 class Collider {
   int position_x;
   int position_y;
-
   int position_x_collision = 0;
   int position_y_collision = 0;
-
   int size_x;
   int size_y;
   int position_x_center;

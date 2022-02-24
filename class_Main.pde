@@ -3,10 +3,14 @@ class Main {
   int nb_player;
   int nb_player_max;
 
+  boolean is_finished;
+
   Main(Player x_tab_player[], int x_nb_player, int x_nb_player_max) {
     this.tab_player = x_tab_player;
     this.nb_player = x_nb_player;
     this.nb_player_max = x_nb_player_max;
+
+    this.is_finished = false;
   }
 
   void update() {
@@ -82,16 +86,18 @@ class Main {
       }
 
       for (int i = 0; i < this.nb_player; i++) {
-        tab_player[i].update();
+        tab_player[i].update(this);
       }
     }
     if (this.tab_player[0].health_point <= 0) {
       textSize(50);
       text("player 2 win", 0, 600);
+      this.is_finished = true;
     }
     if (this.tab_player[1].health_point <= 0) {
       textSize(50);
       text("player 1 win", 0, 600);
+      this.is_finished = true;
     }
 
     println("Main: update: done");
