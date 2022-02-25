@@ -196,20 +196,20 @@ void initialisation() {
 
   main = new Main(tab_player, 2, 2);
 
-  button_unit_1 = new Button(0, 0, 100, 100);
-  button_unit_2 = new Button(100, 0, 100, 100);
-  button_unit_3 = new Button(200, 0, 100, 100);
+  button_unit_1 = new Button("unit_1", 0, 0, 100, 100);
+  button_unit_2 = new Button("unit_2", 100, 0, 100, 100);
+  button_unit_3 = new Button("unit_3", 200, 0, 100, 100);
 
-  button_turret_1 = new Button(700, 0, 100, 100);
-  button_turret_2 = new Button(800, 0, 100, 100);
-  button_turret_3 = new Button(900, 0, 100, 100);
+  button_turret_1 = new Button("turret_1", 700, 0, 100, 100);
+  button_turret_2 = new Button("turret_2", 800, 0, 100, 100);
+  button_turret_3 = new Button("turret_3", 900, 0, 100, 100);
 
-  button_remove_turret_1 = new Button(0, 200, 20, 20);
-  button_remove_turret_2 = new Button(0, 230, 20, 20);
-  button_remove_turret_3 = new Button(0, 260, 20, 20);
-  button_remove_turret_4 = new Button(0, 290, 20, 20);
+  button_remove_turret_1 = new Button("", 0, 200, 20, 20);
+  button_remove_turret_2 = new Button("", 0, 230, 20, 20);
+  button_remove_turret_3 = new Button("", 0, 260, 20, 20);
+  button_remove_turret_4 = new Button("", 0, 290, 20, 20);
 
-  button_remove_turret = new Button(900, 100, 100, 100);
+  button_remove_turret = new Button("remove_turret", 900, 100, 100, 100);
 
-  button_add_period = new Button(0, 500, 100, 100);
+  button_add_period = new Button("add_period", 0, 500, 100, 100);
 }

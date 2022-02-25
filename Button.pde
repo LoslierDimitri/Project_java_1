@@ -4,11 +4,15 @@ class Button {
   int size_x;
   int size_y;
 
-  Button (int x_position_x, int x_position_y, int x_size_x, int x_size_y) {
+  String name;
+
+  Button (String x_name, int x_position_x, int x_position_y, int x_size_x, int x_size_y) {
     this.position_x = x_position_x;
     this.position_y = x_position_y;
     this.size_x = x_size_x;
     this.size_y = x_size_y;
+
+    this.name = x_name;
   }
 
   boolean collide(int x_mouse_x, int x_mouse_y) {
@@ -40,5 +44,7 @@ class Button {
   void display() {
     fill(100, 0, 0);
     rect(this.position_x, this.position_y, this.size_x, this.size_y);
+    fill(0);
+    text(this.name, this.position_x, this.position_y + 10);
   }
 }
