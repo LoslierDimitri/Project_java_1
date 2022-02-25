@@ -30,6 +30,8 @@ class Turret {
     println("Turret: display: ...");
     fill(0, 100, 0);
     rect(this.position_x, this.position_y, this.size_x, this.size_y);
+    fill(0);
+    text(this.range, this.position_x, this.position_y + 10);
     println("Turret: display: done");
   }
 }

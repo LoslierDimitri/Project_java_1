@@ -7,6 +7,7 @@ void setup() {
 int frame = 0;
 
 boolean initialisation_done = false;
+boolean remove_turret_mode = false;
 
 Unit unit_1;
 Unit unit_2;
@@ -113,6 +114,29 @@ void draw() {
       }
     }
 
+    if (remove_turret_mode == true ) {
+      if (button_remove_turret_1.collide(mouse_x, mouse_y) == true) {
+        button_remove_turret_1.remove_turret(main, 1);
+      }
+      if (button_remove_turret_2.collide(mouse_x, mouse_y) == true) {
+        button_remove_turret_2.remove_turret(main, 2);
+      }
+      if (button_remove_turret_3.collide(mouse_x, mouse_y) == true) {
+        button_remove_turret_3.remove_turret(main, 3);
+      }
+      if (button_remove_turret_4.collide(mouse_x, mouse_y) == true) {
+        button_remove_turret_4.remove_turret(main, 4);
+      }
+    }
+
+    if (button_remove_turret.collide(mouse_x, mouse_y) == true) {
+      if (remove_turret_mode == false) {
+        remove_turret_mode = true;
+      } else {
+        remove_turret_mode = false;
+      }
+    }
+
     if (button_add_period.collide(mouse_x, mouse_y) == true) {
       button_add_period.add_period(main);
     }
@@ -120,6 +144,7 @@ void draw() {
   if (input_space == true) {
     initialisation_done = false;
   }
+  text("" + remove_turret_mode, 500, 500);
 
   //add unit to ennemy each 50 frame
   if (frame % 50 == 0) {
@@ -136,6 +161,7 @@ void draw() {
   button_turret_1.display();
   button_turret_2.display();
   button_turret_3.display();
+  button_remove_turret.display();
   button_add_period.display();
 
   reset();
@@ -151,13 +177,13 @@ void initialisation() {
   unit_12 = new Unit(new Collider(20, 50), 250, 5, 5, 10, 200);
   unit_13 = new Unit(new Collider(50, 40), 800, 10, 2, 10, 800);
 
-  turret_1 = new Turret(0, 0, 0, 0, 1, 100, 200);
-  turret_2 = new Turret(0, 0, 0, 0, 2, 150, 400);
-  turret_3 = new Turret(0, 0, 0, 0, 3, 200, 500);
+  turret_1 = new Turret(0, 0, 0, 0, 1, 200, 200);
+  turret_2 = new Turret(0, 0, 0, 0, 2, 250, 400);
+  turret_3 = new Turret(0, 0, 0, 0, 3, 300, 500);
 
-  turret_11 = new Turret(0, 0, 0, 0, 2, 100, 400);
-  turret_12 = new Turret(0, 0, 0, 0, 4, 200, 500);
-  turret_13 = new Turret(0, 0, 0, 0, 5, 150, 800);
+  turret_11 = new Turret(0, 0, 0, 0, 2, 200, 400);
+  turret_12 = new Turret(0, 0, 0, 0, 4, 300, 500);
+  turret_13 = new Turret(0, 0, 0, 0, 5, 250, 800);
 
   collider_player_1 = new Collider(100, 100);
   collider_player_2 = new Collider(100, 100);
@@ -177,6 +203,13 @@ void initialisation() {
   button_turret_1 = new Button(700, 0, 100, 100);
   button_turret_2 = new Button(800, 0, 100, 100);
   button_turret_3 = new Button(900, 0, 100, 100);
+
+  button_remove_turret_1 = new Button(0, 200, 20, 20);
+  button_remove_turret_2 = new Button(0, 230, 20, 20);
+  button_remove_turret_3 = new Button(0, 260, 20, 20);
+  button_remove_turret_4 = new Button(0, 290, 20, 20);
+
+  button_remove_turret = new Button(900, 100, 100, 100);
 
   button_add_period = new Button(0, 500, 100, 100);
 }

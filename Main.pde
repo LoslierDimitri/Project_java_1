@@ -2,7 +2,7 @@ class Main {
   Player tab_player[];
   int nb_player;
   int nb_player_max;
-  
+
   boolean is_finished;
 
   Main(Player x_tab_player[], int x_nb_player, int x_nb_player_max) {
@@ -82,6 +82,21 @@ class Main {
         if (this.tab_player[1].tab_unit[j].collider.collide(this.tab_player[0].collider, 2) == true) {
           this.tab_player[1].tab_unit[j].damage_player(this.tab_player[0], this.tab_player[1].tab_unit[j].damage);
           this.tab_player[1].tab_unit[0].can_move = false;
+        }
+      }
+
+      for (int i = 0; i < this.tab_player[0].nb_turret; i++) {
+        for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
+          if (distance(this.tab_player[0].tab_turret[i].position_x, this.tab_player[1].tab_unit[j].position_x) <= this.tab_player[0].tab_turret[i].range) {
+            this.tab_player[0].tab_turret[i].damage(this.tab_player[1].tab_unit[0], this.tab_player[0].tab_turret[i].damage);
+          }
+        }
+      }
+      for (int i = 0; i < this.tab_player[1].nb_turret; i++) {
+        for (int j = 0; j < this.tab_player[0].nb_unit; j++) {
+          if (distance(this.tab_player[1].tab_turret[i].position_x, this.tab_player[0].tab_unit[j].position_x) <= this.tab_player[1].tab_turret[i].range) {
+            this.tab_player[1].tab_turret[i].damage(this.tab_player[0].tab_unit[0], this.tab_player[1].tab_turret[i].damage);
+          }
         }
       }
 

@@ -30,6 +30,9 @@ class Button {
   void add_turret(Main x_main, Turret x_turret) {
     x_main.tab_player[0].add_turret(x_turret);
   }
+  void remove_turret(Main x_main, int x_turret) {
+    x_main.tab_player[0].remove_turret(x_turret);
+  }
   void add_period(Main x_main) {
     x_main.tab_player[0].add_period();
   }

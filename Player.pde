@@ -135,10 +135,10 @@ class Player {
       this.tab_turret[i].display();
     }
     fill(0);
-    text(this.health_point, this.position_x, this.position_y+10);
-    text(this.money, this.position_x, this.position_y+20);
-    text(this.exp, this.position_x, this.position_y+30);
-    text(this.period, this.position_x, this.position_y+40);
+    text(this.health_point, this.position_x + 50, this.position_y+10);
+    text(this.money, this.position_x + 50, this.position_y+20);
+    text(this.exp, this.position_x + 50, this.position_y+30);
+    text(this.period, this.position_x + 50, this.position_y+40);
     println("Player_" + this.number + ": display: done");
   }
 }
