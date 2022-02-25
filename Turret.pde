@@ -7,7 +7,12 @@ class Turret {
   int range;
   int cost;
 
-  Turret(int x_damage, int x_range, int x_cost) {
+  Turret(int x_position_x, int x_position_y, int x_size_x, int x_size_y, int x_damage, int x_range, int x_cost) {
+    this.position_x = x_position_x;
+    this.position_y = x_position_y;
+    this.size_x = x_size_x;
+    this.size_y = x_size_y;
+
     this.damage = x_damage;
     this.range = x_range;
     this.cost = x_cost;
@@ -23,6 +28,8 @@ class Turret {
   }
   void display() {
     println("Turret: display: ...");
+    fill(0, 100, 0);
+    rect(this.position_x, this.position_y, this.size_x, this.size_y);
     println("Turret: display: done");
   }
 }

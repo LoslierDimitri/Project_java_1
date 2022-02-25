@@ -27,6 +27,9 @@ class Button {
   void add_unit(Main x_main, Unit x_unit) {
     x_main.tab_player[0].add_unit(x_unit);
   }
+  void add_turret(Main x_main, Turret x_turret) {
+    x_main.tab_player[0].add_turret(x_turret);
+  }
   void add_period(Main x_main) {
     x_main.tab_player[0].add_period();
   }

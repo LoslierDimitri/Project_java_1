@@ -43,10 +43,10 @@ class Player {
       this.money = this.money - x_unit.cost;
       Unit unit_to_add = new Unit(new Collider(x_unit.collider.size_x, x_unit.collider.size_y), x_unit.health_point, x_unit.damage, x_unit.speed, x_unit.range, x_unit.cost);
       if (this.number == 1) {
-        unit_to_add.position_x = 200;
+        unit_to_add.position_x = 1;
       }
       if (this.number == 2) {
-        unit_to_add.position_x = 800;
+        unit_to_add.position_x = 900;
       }
       this.tab_unit[this.nb_unit] = unit_to_add;
       this.nb_unit = this.nb_unit + 1;
@@ -71,6 +71,42 @@ class Player {
     }
   }
 
+  void add_turret(Turret x_turret) {
+    println("Player_" + this.number + ": add_turret: ...");
+    if (this.money >= x_turret.cost && this.nb_turret <= this.nb_turret_limit) {
+      if (this.nb_turret == 0) {
+        Turret turret_to_add = new Turret(0, 200, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+        this.tab_turret[this.nb_turret] = turret_to_add;
+        this.nb_turret = this.nb_turret + 1;
+        this.money = this.money - turret_to_add.cost;
+      } else if (this.nb_turret == 1) {
+        Turret turret_to_add = new Turret(0, 230, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+        this.tab_turret[this.nb_turret] = turret_to_add;
+        this.nb_turret = this.nb_turret + 1;
+        this.money = this.money - turret_to_add.cost;
+      } else if (this.nb_turret == 2) {
+        Turret turret_to_add = new Turret(0, 260, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+        this.tab_turret[this.nb_turret] = turret_to_add;
+        this.nb_turret = this.nb_turret + 1;
+        this.money = this.money - turret_to_add.cost;
+      } else if (this.nb_turret == 3) {
+        Turret turret_to_add = new Turret(0, 290, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+        this.tab_turret[this.nb_turret] = turret_to_add;
+        this.nb_turret = this.nb_turret + 1;
+        this.money = this.money - turret_to_add.cost;
+      }
+    }
+    println("Player_" + this.number + ": add_turret: done");
+  }
+  void remove_turret(int x_nb_turret) {
+    println("Player_" + this.number + ": remove_turret: ...");
+    for (int i = x_nb_turret; i < this.nb_turret - 1; i++) {
+      this.tab_turret[i] = this.tab_turret[i + 1];
+    }
+    this.nb_turret = this.nb_turret - 1;
+    println("Player_" + this.number + ": remove_turret: done");
+  }
+
   void update(Main x_main) {
     println("Player_" + this.number + ": update: ...");
     for (int i = 0; i < this.nb_unit; i++) {
@@ -90,11 +126,14 @@ class Player {
   }
   void display() {
     println("Player_" + this.number + ": display: ...");
-    for (int i = 0; i < this.nb_unit; i++) {
-      tab_unit[i].display();
-    }
     fill(0, 0, 200);
     rect(this.position_x, this.position_y, this.collider.size_x, this.collider.size_y);
+    for (int i = 0; i < this.nb_unit; i++) {
+      this.tab_unit[i].display();
+    }
+    for (int i = 0; i < this.nb_turret; i++) {
+      this.tab_turret[i].display();
+    }
     fill(0);
     text(this.health_point, this.position_x, this.position_y+10);
     text(this.money, this.position_x, this.position_y+20);
