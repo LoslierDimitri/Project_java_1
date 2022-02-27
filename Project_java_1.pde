@@ -1,6 +1,6 @@
 void setup() {
   size (1000, 600, P2D);
-  frameRate(60);
+  frameRate(5);
 }
 
 ///////////////////////////////////////////////////////////////
@@ -188,7 +188,7 @@ void initialisation() {
   collider_player_1 = new Collider(100, 100);
   collider_player_2 = new Collider(100, 100);
 
-  player_1 = new Player(1, 1000, collider_player_1, 0, 200, 1000);
+  player_1 = new Player(1, 1000, collider_player_1, 0, 200, 10000);
   player_2 = new Player(2, 1000, collider_player_2, 900, 200, 1000);
 
   tab_player[0] = player_1;
