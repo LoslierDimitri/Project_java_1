@@ -7,7 +7,7 @@ class Projectile {
   int damage;
   int speed;
 
-  boolean used = false;
+  boolean used;
 
   Projectile (int x_position_x, int x_position_y, int x_size_x, int x_size_y, Collider x_collider, int x_damage, int x_speed) {
     this.position_x = x_position_x;
@@ -17,6 +17,7 @@ class Projectile {
     this.collider = x_collider;
     this.damage = x_damage;
     this.speed = x_speed;
+    this.used = false;
   }
 
   boolean collide_total(Collider x_collider, int x_number) {
@@ -30,9 +31,9 @@ class Projectile {
   void move() {
     this.position_y = this.position_y + this.speed;
   }
-  void damage(Unit x_unit) {
+  void damage(Unit x_unit, int x_damage) {
     if (this.used == false) {
-      x_unit.take_damage(this.damage);
+      x_unit.take_damage(x_damage);
     }
   }
 
@@ -41,6 +42,8 @@ class Projectile {
       this.collider.position_x = this.position_x;
       this.collider.position_y = this.position_y;
       this.move();
+    } else {
+      this.used = true;
     }
   }
   void display() {

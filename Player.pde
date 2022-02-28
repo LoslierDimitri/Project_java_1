@@ -62,9 +62,9 @@ class Player {
 
     println("Player_" + this.number + ": add_unit: done");
   }
-  void remove_unit() {
+  void remove_unit(int x_number) {
     println("Player_" + this.number + ": remove_unit: ...");
-    for (int i = 0; i < this.nb_unit; i++) {
+    for (int i = x_number; i < this.nb_unit; i++) {
       this.tab_unit[i] = this.tab_unit[i + 1];
     }
     this.nb_unit = this.nb_unit - 1;
@@ -177,7 +177,19 @@ class Player {
   }
   //Projectile (int x_position_x, int x_position_y, int x_size_x, int x_size_y, Collider x_collider, int x_damage, int x_speed) {
   void power_1() {
-    this.nb_projectile = 1;
+    /*
+    this.nb_projectile = 50;
+     this.tab_projectile = new Projectile[nb_projectile];
+     int distance = 400;
+     int step = distance / this.nb_projectile;
+     float random_float = random(100, 100 + distance);
+     int random_int = int(random_float);
+     for (int i = 0; i < nb_projectile; i++) {
+     
+     this.tab_projectile[i] = new Projectile(i * step, 0, 20, 20, new Collider(20, 20), 500, 1);
+     }
+     */
+    this.nb_projectile = 10;
     this.tab_projectile = new Projectile[nb_projectile];
     for (int i = 0; i < nb_projectile; i++) {
       float random_float = random(100, 900);
@@ -205,7 +217,7 @@ class Player {
           x_main.tab_player[0].money = x_main.tab_player[0].money + tab_unit[i].cost;
           x_main.tab_player[0].exp = x_main.tab_player[0].exp + tab_unit[i].cost;
         }
-        this.remove_unit();
+        this.remove_unit(i);
       }
     }
     for (int i = 0; i < this.nb_turret; i++) {
