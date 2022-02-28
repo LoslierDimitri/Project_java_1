@@ -173,6 +173,7 @@ class Player {
   }
   void add_turret_max() {
     if (this.money >= this.add_turret_max_cost) {
+      this.money = this.money - add_turret_max_cost;
       this.nb_turret_max = this.nb_turret_max + 1;
       this.add_turret_max_cost = this.add_turret_max_cost * 2;
       if (this.nb_turret_max >= this.nb_turret_limit) {
@@ -207,7 +208,7 @@ class Player {
     this.nb_projectile = 20;
     this.tab_projectile = new Projectile[nb_projectile];
     for (int i = 0; i < nb_projectile; i++) {
-      float random_float = random(100, 900);
+      float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
       int random_int = int(random_float);
       this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5);
     }
