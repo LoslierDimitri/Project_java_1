@@ -102,50 +102,33 @@ class Player {
   void remove_turret(int x_nb_turret) {
     println("Player_" + this.number + ": remove_turret: ...");
 
-    Turret tab_buffer[] = new Turret[4];
+    if (this.nb_turret > 0) {
 
-    for (int i = 0; i < this.nb_turret; i++) {
-      tab_buffer[i] = this.tab_turret[i];
+      for (int i = x_nb_turret - 1; i < this.nb_turret - 1; i++) {
+
+        this.tab_turret[i] = this.tab_turret[i + 1];
+      }
+      this.nb_turret = this.nb_turret - 1;
     }
 
-    for (int i = x_nb_turret - 1; i < this.nb_turret - 1; i++) {
-      //this.tab_turret[i] = this.tab_turret[i + 1];
-      //this.tab_turret[i] = tab_buffer[i+1];
-      this.tab_turret[i] = new Turret(tab_buffer[i+1].position_x, tab_buffer[i+1].position_y, tab_buffer[i+1].size_x, tab_buffer[i+1].size_y, tab_buffer[i+1].damage, tab_buffer[i+1].range, tab_buffer[i+1].cost);
-      //this.add_turret(this.tab_turret[i+1]);
-      //this.tab_turret[i] = new Turret(this.tab_turret[i+1].position_x, this.tab_turret[i+1].position_y, this.tab_turret[i+1].size_x, this.tab_turret[i+1].size_y, this.tab_turret[i+1].damage, this.tab_turret[i+1].range, this.tab_turret[i+1].cost);
-    }
-    this.nb_turret = this.nb_turret - 1;
-
     /*
-    if (x_nb_turret == 1) {
-     this.tab_turret[0] = new Turret(this.tab_turret[1].position_x, this.tab_turret[1].position_y, this.tab_turret[1].size_x, this.tab_turret[1].size_y, this.tab_turret[1].damage, this.tab_turret[1].range, this.tab_turret[1].cost);
-     this.tab_turret[1] = new Turret(this.tab_turret[2].position_x, this.tab_turret[2].position_y, this.tab_turret[2].size_x, this.tab_turret[2].size_y, this.tab_turret[2].damage, this.tab_turret[2].range, this.tab_turret[2].cost);
-     this.tab_turret[2] = new Turret(this.tab_turret[3].position_x, this.tab_turret[3].position_y, this.tab_turret[3].size_x, this.tab_turret[3].size_y, this.tab_turret[3].damage, this.tab_turret[3].range, this.tab_turret[3].cost);
-     this.nb_turret = this.nb_turret - 1;
-     } else if (x_nb_turret == 2) {
-     } else if (x_nb_turret == 3) {
-     } else if (x_nb_turret == 4) {
+     if (this.nb_turret > 0) {
+     
+     int remove = x_nb_turret - 1;
+     Turret tab_turret_to_add[] = new Turret[this.nb_turret - 1];
+     int nb_turret_to_add = 0;
+     
+     for (int i = 0; i < this.nb_turret; i++) {
+     if (i < remove) {
+     tab_turret_to_add[nb_turret_to_add] = this.tab_turret[i];
+     nb_turret_to_add = nb_turret_to_add + 1;
+     } else if (i > remove) {
+     tab_turret_to_add[nb_turret_to_add] = this.tab_turret[i];
+     nb_turret_to_add = nb_turret_to_add + 1;
      }
-     */
-    /*
-    if (x_nb_turret == 1) {
-     if (this.nb_turret == 0) {
-     } else if (this.nb_turret == 1) {
-     this.nb_turret = 0;
-     } else if (this.nb_turret == 2) {
-     this.tab_turret[0] = this.tab_turret[1];
-     this.nb_turret = this.nb_turret - 1;
-     } else if (this.nb_turret == 3) {
-     this.tab_turret[0] = this.tab_turret[1];
-     this.tab_turret[1] = this.tab_turret[2];
-     this.nb_turret = this.nb_turret - 1;
-     } else if (this.nb_turret == 4) {
-     this.tab_turret[0] = this.tab_turret[1];
-     this.tab_turret[1] = this.tab_turret[2];
-     this.tab_turret[2] = this.tab_turret[3];
-     this.nb_turret = this.nb_turret - 1;
      }
+     this.tab_turret = tab_turret_to_add;
+     this.nb_turret = this.nb_turret - 1;
      }
      */
 
@@ -167,6 +150,26 @@ class Player {
     if (this.number == 2) {
       this.money = 999999;
     }
+
+    if (this.nb_turret == 1) {
+      this.tab_turret[0].position_y = 200;
+    }
+    if (this.nb_turret == 2) {
+      this.tab_turret[0].position_y = 200;
+      this.tab_turret[1].position_y = 230;
+    }
+    if (this.nb_turret == 3) {
+      this.tab_turret[0].position_y = 200;
+      this.tab_turret[1].position_y = 230;
+      this.tab_turret[2].position_y = 260;
+    }
+    if (this.nb_turret == 4) {
+      this.tab_turret[0].position_y = 200;
+      this.tab_turret[1].position_y = 230;
+      this.tab_turret[2].position_y = 260;
+      this.tab_turret[3].position_y = 290;
+    }
+
     println("Player_" + this.number + ": update: done");
   }
   void display() {
@@ -187,7 +190,7 @@ class Player {
     text(this.nb_turret, this.position_x + 50, this.position_y+50);
 
     for (int i = 0; i < this.nb_turret; i++) {
-      text(this.tab_turret[i].cost, this.position_x + 200, this.position_y + 100 + (i*10));
+      text(this.tab_turret[i].cost + " " + this.tab_turret[i].position_x + " " + this.tab_turret[i].position_y, this.position_x + 200, this.position_y + 100 + (i*10));
     }
 
     println("Player_" + this.number + ": display: done");
