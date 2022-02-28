@@ -189,7 +189,7 @@ void draw() {
         remove_turret_mode = false;
       }
     }
-    
+
     ///////////////////////////////////////////////////////////////add period
     if (button_add_period.collide(mouse_x, mouse_y) == true) {
       button_add_period.add_period(main);
