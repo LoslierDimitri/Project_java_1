@@ -19,13 +19,11 @@ class Projectile {
     this.speed = x_speed;
   }
 
-  boolean collide(Collider x_collider, int x_number) {
+  boolean collide_total(Collider x_collider, int x_number) {
     boolean result = false;
-
-    if (this.collider.collide(x_collider, x_number) == true) {
+    if (this.collider.collide_total(x_collider, x_number) == true) {
       result = true;
     }
-
     return result;
   }
 
@@ -33,7 +31,9 @@ class Projectile {
     this.position_y = this.position_y + this.speed;
   }
   void damage(Unit x_unit) {
-    x_unit.take_damage(this.damage);
+    if (this.used == false) {
+      x_unit.take_damage(this.damage);
+    }
   }
 
   void update() {
@@ -46,5 +46,7 @@ class Projectile {
   void display() {
     fill(0, 100, 0);
     rect(this.collider.position_x, this.collider.position_y, this.collider.size_x, this.collider.size_y);
+    fill(0, 200, 0);
+    rect(this.position_x, this.position_y, this.size_x, this.size_y);
   }
 }

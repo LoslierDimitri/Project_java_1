@@ -14,9 +14,12 @@ class Player {
   int nb_turret;
   int nb_turret_max;
   int nb_turret_limit;
-
   Projectile tab_projectile[];
   int nb_projectile;
+
+  boolean can_use_power;
+  int power_charge_actual;
+  int power_charge;
 
   Player(int x_number, int x_health_point, Collider x_collider, int x_position_x, int x_position_y, int x_money) {
     this.health_point = x_health_point;
@@ -36,6 +39,10 @@ class Player {
     this.nb_turret_max = 1;
     this.nb_turret_limit = 4;
     this.tab_turret = new Turret[this.nb_turret_limit];
+
+    can_use_power = false;
+    power_charge_actual = 0;
+    power_charge = 200;
   }
 
   void add_unit(Unit x_unit) {
@@ -158,17 +165,20 @@ class Player {
   }
 
   void power() {
-    if (this.period == 1) {
-      this.power_1();
-    }
-    if (this.period == 2) {
-      this.power_2();
+    if (can_use_power == true) {
+      if (this.period == 1) {
+        this.power_1();
+      } else if (this.period == 2) {
+        this.power_2();
+      }
+      this.can_use_power = false;
+      this.power_charge_actual = 0;
     }
   }
-  //Projectile (int x_size_x, int x_size_y, Collider x_collider, int x_damage, int x_speed) {
+  //Projectile (int x_position_x, int x_position_y, int x_size_x, int x_size_y, Collider x_collider, int x_damage, int x_speed) {
   void power_1() {
-    this.nb_projectile = 10;
-    tab_projectile = new Projectile[nb_projectile];
+    this.nb_projectile = 1;
+    this.tab_projectile = new Projectile[nb_projectile];
     for (int i = 0; i < nb_projectile; i++) {
       float random_float = random(100, 900);
       int random_int = int(random_float);
@@ -178,7 +188,7 @@ class Player {
 
   void power_2() {
     this.nb_projectile = 20;
-    tab_projectile = new Projectile[nb_projectile];
+    this.tab_projectile = new Projectile[nb_projectile];
     for (int i = 0; i < nb_projectile; i++) {
       float random_float = random(100, 900);
       int random_int = int(random_float);
@@ -202,9 +212,7 @@ class Player {
       this.tab_turret[i].update(this.number);
     }
     for (int i = 0; i < this.nb_projectile; i++) {
-      if (this.tab_projectile[i].used == false) {
-        this.tab_projectile[i].update();
-      }
+      this.tab_projectile[i].update();
     }
     if (this.number == 2) {
       this.money = 999999;
@@ -227,6 +235,12 @@ class Player {
       this.tab_turret[1].position_y = 230;
       this.tab_turret[2].position_y = 260;
       this.tab_turret[3].position_y = 290;
+    }
+
+    this.power_charge_actual = this.power_charge_actual + 1;
+    if (this.power_charge_actual > power_charge) {
+      this.power_charge_actual = power_charge;
+      can_use_power = true;
     }
 
     println("Player_" + this.number + ": update: done");
@@ -252,6 +266,7 @@ class Player {
     text(this.exp, this.position_x + 50, this.position_y+30);
     text(this.period, this.position_x + 50, this.position_y+40);
     text(this.nb_turret, this.position_x + 50, this.position_y+50);
+    text(this.power_charge_actual, this.position_x + 50, this.position_y+60);
 
     for (int i = 0; i < this.nb_turret; i++) {
       text(this.tab_turret[i].cost + " " + this.tab_turret[i].position_x + " " + this.tab_turret[i].position_y, this.position_x + 200, this.position_y + 100 + (i*10));
