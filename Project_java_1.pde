@@ -1,13 +1,20 @@
 void setup() {
-  size (1000, 600, P2D);
+  fullScreen(P2D);
   frameRate(60);
 }
 
-///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////screen parameter
+
+int screen_size_x;
+int screen_size_y;
 int frame = 0;
+
+///////////////////////////////////////////////////////////////
 
 boolean initialisation_done = false;
 boolean remove_turret_mode = false;
+
+///////////////////////////////////////////////////////////////global variable
 
 Unit unit_1;
 Unit unit_2;
@@ -53,7 +60,7 @@ Button button_power;
 Collider collider_player_1;
 Collider collider_player_2;
 
-///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////draw
 
 void draw() {
   if (initialisation_done == false) {
@@ -150,6 +157,9 @@ void draw() {
   if (input_space == true) {
     initialisation_done = false;
   }
+  if (input_a == true) {
+    exit();
+  }
   text("" + remove_turret_mode, 500, 500);
 
   //add unit to ennemy each 50 frame
@@ -176,8 +186,10 @@ void draw() {
 }
 
 void initialisation() {
+  screen_size_x = width;
+  screen_size_y = height;
   //collider, hp, damage, speed, range, cost
-  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 50, 100);
+  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 500, 100);
   unit_2 = new Unit(new Collider(30, 40), 150, 2, 3, 10, 150);
   unit_3 = new Unit(new Collider(40, 40), 500, 5, 2, 10, 300);
 

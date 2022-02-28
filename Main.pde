@@ -85,6 +85,38 @@ class Main {
         }
       }
 
+      //ranged attack
+      //player 1 to player 2
+      for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
+        for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
+          if (distance(this.tab_player[0].tab_unit[i].position_x, this.tab_player[1].tab_unit[0].position_x) <= this.tab_player[0].tab_unit[i].range) {
+            this.tab_player[0].tab_unit[i].damage(this.tab_player[1].tab_unit[0], this.tab_player[0].tab_unit[i].damage);
+          }
+        }
+      }
+      //player 2 to player 1
+      for (int i = 0; i < this.tab_player[1].nb_unit; i++) {
+        for (int j = 0; j < this.tab_player[0].nb_unit; j++) {
+          if (distance(this.tab_player[1].tab_unit[i].position_x, this.tab_player[0].tab_unit[0].position_x) <= this.tab_player[1].tab_unit[i].range) {
+            this.tab_player[1].tab_unit[i].damage(this.tab_player[0].tab_unit[0], this.tab_player[1].tab_unit[i].damage);
+          }
+        }
+      }
+
+      //ranged attack on player base
+      //player 1 to player 2
+      for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
+        if (distance(this.tab_player[0].tab_unit[i].position_x, (this.tab_player[1].collider.position_x + (this.tab_player[1].collider.size_x / 2))) <= this.tab_player[0].tab_unit[i].range) {
+          this.tab_player[0].tab_unit[i].damage_player(this.tab_player[1], this.tab_player[0].tab_unit[i].damage);
+        }
+      }
+      //player 2 to player 1
+      for (int i = 0; i < this.tab_player[1].nb_unit; i++) {
+        if (distance(this.tab_player[1].tab_unit[i].position_x, (this.tab_player[0].collider.position_x + (this.tab_player[0].collider.size_x / 2))) <= this.tab_player[1].tab_unit[i].range) {
+          this.tab_player[1].tab_unit[i].damage_player(this.tab_player[0], this.tab_player[1].tab_unit[i].damage);
+        }
+      }
+
       for (int i = 0; i < this.tab_player[0].nb_turret; i++) {
         for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
           if (distance(this.tab_player[0].tab_turret[i].position_x, this.tab_player[1].tab_unit[j].position_x) <= this.tab_player[0].tab_turret[i].range) {
