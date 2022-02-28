@@ -100,6 +100,16 @@ class Main {
         }
       }
 
+      //power collide with player 2 unit
+      for (int i = 0; i < this.tab_player[0].nb_projectile; i++) {
+        for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
+          if (this.tab_player[0].tab_projectile[i].used == false && this.tab_player[0].tab_projectile[i].collider.collide_total(this.tab_player[1].tab_unit[j].collider, 1) == true) {
+            this.tab_player[0].tab_projectile[i].damage(this.tab_player[1].tab_unit[j]);
+            this.tab_player[0].tab_projectile[i].used = true;
+          }
+        }
+      }
+
       for (int i = 0; i < this.nb_player; i++) {
         tab_player[i].update(this);
       }

@@ -10,11 +10,13 @@ class Player {
   int money;
   int exp;
   int period;
-
   Turret tab_turret[];
   int nb_turret;
   int nb_turret_max;
   int nb_turret_limit;
+
+  Projectile tab_projectile[];
+  int nb_projectile;
 
   Player(int x_number, int x_health_point, Collider x_collider, int x_position_x, int x_position_y, int x_money) {
     this.health_point = x_health_point;
@@ -30,7 +32,6 @@ class Player {
     this.money = x_money;
     this.exp = 0;
     this.period = 1;
-
     this.nb_turret = 0;
     this.nb_turret_max = 1;
     this.nb_turret_limit = 4;
@@ -157,6 +158,32 @@ class Player {
   }
 
   void power() {
+    if (this.period == 1) {
+      this.power_1();
+    }
+    if (this.period == 2) {
+      this.power_2();
+    }
+  }
+  //Projectile (int x_size_x, int x_size_y, Collider x_collider, int x_damage, int x_speed) {
+  void power_1() {
+    this.nb_projectile = 10;
+    tab_projectile = new Projectile[nb_projectile];
+    for (int i = 0; i < nb_projectile; i++) {
+      float random_float = random(100, 900);
+      int random_int = int(random_float);
+      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 1);
+    }
+  }
+
+  void power_2() {
+    this.nb_projectile = 20;
+    tab_projectile = new Projectile[nb_projectile];
+    for (int i = 0; i < nb_projectile; i++) {
+      float random_float = random(100, 900);
+      int random_int = int(random_float);
+      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5);
+    }
   }
 
   void update(Main x_main) {
@@ -169,6 +196,14 @@ class Player {
           x_main.tab_player[0].exp = x_main.tab_player[0].exp + tab_unit[i].cost;
         }
         this.remove_unit();
+      }
+    }
+    for (int i = 0; i < this.nb_turret; i++) {
+      this.tab_turret[i].update(this.number);
+    }
+    for (int i = 0; i < this.nb_projectile; i++) {
+      if (this.tab_projectile[i].used == false) {
+        this.tab_projectile[i].update();
       }
     }
     if (this.number == 2) {
@@ -205,6 +240,11 @@ class Player {
     }
     for (int i = 0; i < this.nb_turret; i++) {
       this.tab_turret[i].display();
+    }
+    for (int i = 0; i < this.nb_projectile; i++) {
+      if (this.tab_projectile[i].used == false) {
+        this.tab_projectile[i].display();
+      }
     }
     fill(0);
     text(this.health_point, this.position_x + 50, this.position_y+10);

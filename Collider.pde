@@ -30,4 +30,16 @@ class Collider {
 
     return result;
   }
+
+  boolean collide_total(Collider x_collider, int x_number) {
+    boolean result = false;
+
+    if (x_number == 1) {
+      if (this.position_x >= x_collider.position_x && this.position_x <= x_collider.position_x + x_collider.size_x && this.position_y >= x_collider.position_y && this.position_y <= x_collider.position_y + x_collider.size_y) {
+        result = true;
+      }
+    }
+
+    return result;
+  }
 }
