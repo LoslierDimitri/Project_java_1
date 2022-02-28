@@ -73,27 +73,48 @@ class Player {
 
   void add_turret(Turret x_turret) {
     println("Player_" + this.number + ": add_turret: ...");
-    if (this.money >= x_turret.cost && this.nb_turret < this.nb_turret_limit) {
+    if (this.number == 1) {
+      if (this.money >= x_turret.cost && this.nb_turret < this.nb_turret_limit) {
+        if (this.nb_turret == 0) {
+          Turret turret_to_add = new Turret(0, 200, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+          this.tab_turret[this.nb_turret] = turret_to_add;
+          this.nb_turret = this.nb_turret + 1;
+          this.money = this.money - turret_to_add.cost;
+        } else if (this.nb_turret == 1) {
+          Turret turret_to_add = new Turret(0, 230, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+          this.tab_turret[this.nb_turret] = turret_to_add;
+          this.nb_turret = this.nb_turret + 1;
+          this.money = this.money - turret_to_add.cost;
+        } else if (this.nb_turret == 2) {
+          Turret turret_to_add = new Turret(0, 260, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+          this.tab_turret[this.nb_turret] = turret_to_add;
+          this.nb_turret = this.nb_turret + 1;
+          this.money = this.money - turret_to_add.cost;
+        } else if (this.nb_turret == 3) {
+          Turret turret_to_add = new Turret(0, 290, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+          this.tab_turret[this.nb_turret] = turret_to_add;
+          this.nb_turret = this.nb_turret + 1;
+          this.money = this.money - turret_to_add.cost;
+        }
+      }
+    }
+    if (this.number == 2) {
       if (this.nb_turret == 0) {
-        Turret turret_to_add = new Turret(0, 200, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+        Turret turret_to_add = new Turret(980, 200, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
         this.tab_turret[this.nb_turret] = turret_to_add;
         this.nb_turret = this.nb_turret + 1;
-        this.money = this.money - turret_to_add.cost;
       } else if (this.nb_turret == 1) {
-        Turret turret_to_add = new Turret(0, 230, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+        Turret turret_to_add = new Turret(980, 230, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
         this.tab_turret[this.nb_turret] = turret_to_add;
         this.nb_turret = this.nb_turret + 1;
-        this.money = this.money - turret_to_add.cost;
       } else if (this.nb_turret == 2) {
-        Turret turret_to_add = new Turret(0, 260, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+        Turret turret_to_add = new Turret(980, 260, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
         this.tab_turret[this.nb_turret] = turret_to_add;
         this.nb_turret = this.nb_turret + 1;
-        this.money = this.money - turret_to_add.cost;
       } else if (this.nb_turret == 3) {
-        Turret turret_to_add = new Turret(0, 290, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+        Turret turret_to_add = new Turret(980, 290, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
         this.tab_turret[this.nb_turret] = turret_to_add;
         this.nb_turret = this.nb_turret + 1;
-        this.money = this.money - turret_to_add.cost;
       }
     }
     println("Player_" + this.number + ": add_turret: done");
@@ -133,6 +154,9 @@ class Player {
      */
 
     println("Player_" + this.number + ": remove_turret: done");
+  }
+
+  void power() {
   }
 
   void update(Main x_main) {

@@ -48,6 +48,8 @@ Button button_remove_turret_4;
 
 Button button_add_period;
 
+Button button_power;
+
 Collider collider_player_1;
 Collider collider_player_2;
 
@@ -140,6 +142,10 @@ void draw() {
     if (button_add_period.collide(mouse_x, mouse_y) == true) {
       button_add_period.add_period(main);
     }
+
+    if (button_power.collide(mouse_x, mouse_y) == true) {
+      button_power.power(main);
+    }
   }
   if (input_space == true) {
     initialisation_done = false;
@@ -150,6 +156,7 @@ void draw() {
   if (frame % 50 == 0) {
     println("add unit to ennemy");
     main.tab_player[1].add_unit(unit_1);
+    main.tab_player[1].add_turret(turret_2);
   }
 
   main.update();
@@ -163,6 +170,7 @@ void draw() {
   button_turret_3.display();
   button_remove_turret.display();
   button_add_period.display();
+  button_power.display();
 
   reset();
 }
@@ -212,4 +220,6 @@ void initialisation() {
   button_remove_turret = new Button("remove_turret", 900, 100, 100, 100);
 
   button_add_period = new Button("add_period", 0, 500, 100, 100);
+
+  button_power = new Button("power", 100, 500, 100, 100);
 }

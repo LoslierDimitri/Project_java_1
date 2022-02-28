@@ -42,6 +42,9 @@ class Button {
   void add_period(Main x_main) {
     x_main.tab_player[0].add_period();
   }
+  void power(Main x_main) {
+    x_main.tab_player[0].power();
+  }
 
   void display() {
     fill(100, 0, 0);
