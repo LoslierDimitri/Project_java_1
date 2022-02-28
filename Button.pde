@@ -11,7 +11,6 @@ class Button {
     this.position_y = x_position_y;
     this.size_x = x_size_x;
     this.size_y = x_size_y;
-
     this.name = x_name;
   }
 
@@ -38,6 +37,9 @@ class Button {
     if (x_turret <= x_main.tab_player[0].nb_turret) {
       x_main.tab_player[0].remove_turret(x_turret);
     }
+  }
+  void add_turret_max(Main x_main) {
+    x_main.tab_player[0].add_turret_max();
   }
   void add_period(Main x_main) {
     x_main.tab_player[0].add_period();

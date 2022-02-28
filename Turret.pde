@@ -6,6 +6,7 @@ class Turret {
   int damage;
   int range;
   int cost;
+  String name;
 
   Turret(int x_position_x, int x_position_y, int x_size_x, int x_size_y, int x_damage, int x_range, int x_cost) {
     this.position_x = x_position_x;

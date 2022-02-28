@@ -38,7 +38,7 @@ class Projectile {
   }
 
   void update() {
-    if (this.position_y <= 400) {
+    if (this.position_y <= screen_size_y) {
       this.collider.position_x = this.position_x;
       this.collider.position_y = this.position_y;
       this.move();

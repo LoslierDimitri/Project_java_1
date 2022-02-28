@@ -1,21 +1,22 @@
+///////////////////////////////////////////////////////////////setup
 void setup() {
   fullScreen(P2D);
+  //size(1000, 600, P2D);
   frameRate(60);
 }
 
 ///////////////////////////////////////////////////////////////screen parameter
-
 int screen_size_x;
 int screen_size_y;
+int frame_rate;
 int frame = 0;
 
-///////////////////////////////////////////////////////////////
-
+///////////////////////////////////////////////////////////////initialisation
 boolean initialisation_done = false;
 boolean remove_turret_mode = false;
 
 ///////////////////////////////////////////////////////////////global variable
-
+///////////////////////////////////////////////////////////////unit
 Unit unit_1;
 Unit unit_2;
 Unit unit_3;
@@ -24,6 +25,23 @@ Unit unit_11;
 Unit unit_12;
 Unit unit_13;
 
+Unit unit_21;
+Unit unit_22;
+Unit unit_23;
+
+Unit unit_31;
+Unit unit_32;
+Unit unit_33;
+
+Unit unit_41;
+Unit unit_42;
+Unit unit_43;
+
+Unit unit_51;
+Unit unit_52;
+Unit unit_53;
+
+///////////////////////////////////////////////////////////////turret
 Turret turret_1;
 Turret turret_2;
 Turret turret_3;
@@ -32,13 +50,32 @@ Turret turret_11;
 Turret turret_12;
 Turret turret_13;
 
+Turret turret_21;
+Turret turret_22;
+Turret turret_23;
+
+Turret turret_31;
+Turret turret_32;
+Turret turret_33;
+
+Turret turret_41;
+Turret turret_42;
+Turret turret_43;
+
+Turret turret_51;
+Turret turret_52;
+Turret turret_53;
+
+///////////////////////////////////////////////////////////////player
 Player player_1;
 Player player_2;
 
 Player tab_player[] = new Player[2];
 
+///////////////////////////////////////////////////////////////main
 Main main;
 
+///////////////////////////////////////////////////////////////button
 Button button_unit_1;
 Button button_unit_2;
 Button button_unit_3;
@@ -48,6 +85,8 @@ Button button_turret_2;
 Button button_turret_3;
 
 Button button_remove_turret;
+Button button_turret_add_max;
+
 Button button_remove_turret_1;
 Button button_remove_turret_2;
 Button button_remove_turret_3;
@@ -61,8 +100,8 @@ Collider collider_player_1;
 Collider collider_player_2;
 
 ///////////////////////////////////////////////////////////////draw
-
 void draw() {
+  ///////////////////////////////////////////////////////////////initialisation
   if (initialisation_done == false) {
     initialisation();
     initialisation_done = true;
@@ -72,7 +111,9 @@ void draw() {
 
   background(150);
 
+  ///////////////////////////////////////////////////////////////input
   if (mouse_click == true) {
+    ///////////////////////////////////////////////////////////////unit
     if (button_unit_1.collide(mouse_x, mouse_y) == true) {
       if (main.tab_player[0].period == 1) {
         button_unit_1.add_unit(main, unit_1);
@@ -98,6 +139,7 @@ void draw() {
       }
     }
 
+    ///////////////////////////////////////////////////////////////turret
     if (button_turret_1.collide(mouse_x, mouse_y) == true) {
       if (main.tab_player[0].period == 1) {
         button_turret_1.add_turret(main, turret_1);
@@ -123,6 +165,7 @@ void draw() {
       }
     }
 
+    ///////////////////////////////////////////////////////////////remove turret
     if (remove_turret_mode == true ) {
       if (button_remove_turret_1.collide(mouse_x, mouse_y) == true) {
         button_remove_turret_1.remove_turret(main, 1);
@@ -138,6 +181,7 @@ void draw() {
       }
     }
 
+    ///////////////////////////////////////////////////////////////change mode remove turret
     if (button_remove_turret.collide(mouse_x, mouse_y) == true) {
       if (remove_turret_mode == false) {
         remove_turret_mode = true;
@@ -145,18 +189,29 @@ void draw() {
         remove_turret_mode = false;
       }
     }
-
+    
+    ///////////////////////////////////////////////////////////////add period
     if (button_add_period.collide(mouse_x, mouse_y) == true) {
       button_add_period.add_period(main);
     }
 
+    ///////////////////////////////////////////////////////////////add turret max
+    if (button_turret_add_max.collide(mouse_x, mouse_y) == true) {
+      button_add_period.add_turret_max(main);
+    }
+
+    ///////////////////////////////////////////////////////////////power
     if (button_power.collide(mouse_x, mouse_y) == true) {
       button_power.power(main);
     }
   }
+
+  ///////////////////////////////////////////////////////////////reset game
   if (input_space == true) {
     initialisation_done = false;
   }
+
+  ///////////////////////////////////////////////////////////////exit program
   if (input_a == true) {
     exit();
   }
@@ -169,9 +224,11 @@ void draw() {
     main.tab_player[1].add_turret(turret_2);
   }
 
+  ///////////////////////////////////////////////////////////////main update display
   main.update();
   main.display();
 
+  ///////////////////////////////////////////////////////////////button display
   button_unit_1.display();
   button_unit_2.display();
   button_unit_3.display();
@@ -179,59 +236,17 @@ void draw() {
   button_turret_2.display();
   button_turret_3.display();
   button_remove_turret.display();
+  button_turret_add_max.display();
   button_add_period.display();
   button_power.display();
 
+  ///////////////////////////////////////////////////////////////reset
   reset();
 }
 
-void initialisation() {
-  screen_size_x = width;
-  screen_size_y = height;
-  //collider, hp, damage, speed, range, cost
-  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 500, 100);
-  unit_2 = new Unit(new Collider(30, 40), 150, 2, 3, 10, 150);
-  unit_3 = new Unit(new Collider(40, 40), 500, 5, 2, 10, 300);
-
-  unit_11 = new Unit(new Collider(20, 40), 200, 3, 4, 60, 300);
-  unit_12 = new Unit(new Collider(20, 50), 250, 5, 5, 10, 200);
-  unit_13 = new Unit(new Collider(50, 40), 800, 10, 2, 10, 800);
-
-  turret_1 = new Turret(0, 0, 0, 0, 1, 200, 200);
-  turret_2 = new Turret(0, 0, 0, 0, 2, 250, 400);
-  turret_3 = new Turret(0, 0, 0, 0, 3, 300, 500);
-
-  turret_11 = new Turret(0, 0, 0, 0, 2, 200, 400);
-  turret_12 = new Turret(0, 0, 0, 0, 4, 300, 500);
-  turret_13 = new Turret(0, 0, 0, 0, 5, 250, 800);
-
-  collider_player_1 = new Collider(100, 100);
-  collider_player_2 = new Collider(100, 100);
-
-  player_1 = new Player(1, 100000, collider_player_1, 0, 200, 10000);
-  player_2 = new Player(2, 1000, collider_player_2, 900, 200, 1000);
-
-  tab_player[0] = player_1;
-  tab_player[1] = player_2;
-
-  main = new Main(tab_player, 2, 2);
-
-  button_unit_1 = new Button("unit_1", 0, 0, 100, 100);
-  button_unit_2 = new Button("unit_2", 100, 0, 100, 100);
-  button_unit_3 = new Button("unit_3", 200, 0, 100, 100);
-
-  button_turret_1 = new Button("turret_1", 700, 0, 100, 100);
-  button_turret_2 = new Button("turret_2", 800, 0, 100, 100);
-  button_turret_3 = new Button("turret_3", 900, 0, 100, 100);
-
-  button_remove_turret_1 = new Button("", 0, 200, 20, 20);
-  button_remove_turret_2 = new Button("", 0, 230, 20, 20);
-  button_remove_turret_3 = new Button("", 0, 260, 20, 20);
-  button_remove_turret_4 = new Button("", 0, 290, 20, 20);
-
-  button_remove_turret = new Button("remove_turret", 900, 100, 100, 100);
-
-  button_add_period = new Button("add_period", 0, 500, 100, 100);
-
-  button_power = new Button("power", 100, 500, 100, 100);
+///////////////////////////////////////////////////////////////reset
+void reset() {
+  mouse_click = false;
+  mouse_x = mouseX;
+  mouse_y = mouseY;
 }

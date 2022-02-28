@@ -17,9 +17,12 @@ class Player {
   Projectile tab_projectile[];
   int nb_projectile;
 
+  String power_name;
+  String period_name;
   boolean can_use_power;
   int power_charge_actual;
   int power_charge;
+  int add_turret_max_cost;
 
   Player(int x_number, int x_health_point, Collider x_collider, int x_position_x, int x_position_y, int x_money) {
     this.health_point = x_health_point;
@@ -43,6 +46,7 @@ class Player {
     can_use_power = false;
     power_charge_actual = 0;
     power_charge = 200;
+    add_turret_max_cost = 1000;
   }
 
   void add_unit(Unit x_unit) {
@@ -51,11 +55,12 @@ class Player {
       this.money = this.money - x_unit.cost;
       Unit unit_to_add = new Unit(new Collider(x_unit.collider.size_x, x_unit.collider.size_y), x_unit.health_point, x_unit.damage, x_unit.speed, x_unit.range, x_unit.cost);
       if (this.number == 1) {
-        unit_to_add.position_x = 1;
+        unit_to_add.position_x = this.position_x + this.collider.size_x;
       }
       if (this.number == 2) {
-        unit_to_add.position_x = 900;
+        unit_to_add.position_x = this.position_x - unit_to_add.collider.size_x;
       }
+      unit_to_add.position_y = this.position_y + this.collider.size_y - unit_to_add.collider.size_y;
       this.tab_unit[this.nb_unit] = unit_to_add;
       this.nb_unit = this.nb_unit + 1;
     }
@@ -81,25 +86,28 @@ class Player {
 
   void add_turret(Turret x_turret) {
     println("Player_" + this.number + ": add_turret: ...");
+    int turret_to_add_size_x = 20;
+    int turret_to_add_size_y = 20;
+    int turret_to_add_decal = 10;
     if (this.number == 1) {
-      if (this.money >= x_turret.cost && this.nb_turret < this.nb_turret_limit) {
+      if (this.money >= x_turret.cost && this.nb_turret < this.nb_turret_max) {
         if (this.nb_turret == 0) {
-          Turret turret_to_add = new Turret(0, 200, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+          Turret turret_to_add = new Turret(0, this.position_y + (turret_to_add_decal * 3) + (turret_to_add_size_y * 3), turret_to_add_size_x, turret_to_add_size_y, x_turret.damage, x_turret.range, x_turret.cost);
           this.tab_turret[this.nb_turret] = turret_to_add;
           this.nb_turret = this.nb_turret + 1;
           this.money = this.money - turret_to_add.cost;
         } else if (this.nb_turret == 1) {
-          Turret turret_to_add = new Turret(0, 230, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+          Turret turret_to_add = new Turret(0, this.position_y + (turret_to_add_decal * 2) + (turret_to_add_size_y * 2), turret_to_add_size_x, turret_to_add_size_y, x_turret.damage, x_turret.range, x_turret.cost);
           this.tab_turret[this.nb_turret] = turret_to_add;
           this.nb_turret = this.nb_turret + 1;
           this.money = this.money - turret_to_add.cost;
         } else if (this.nb_turret == 2) {
-          Turret turret_to_add = new Turret(0, 260, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+          Turret turret_to_add = new Turret(0, this.position_y + (turret_to_add_decal * 1) + (turret_to_add_size_y * 1), turret_to_add_size_x, turret_to_add_size_y, x_turret.damage, x_turret.range, x_turret.cost);
           this.tab_turret[this.nb_turret] = turret_to_add;
           this.nb_turret = this.nb_turret + 1;
           this.money = this.money - turret_to_add.cost;
         } else if (this.nb_turret == 3) {
-          Turret turret_to_add = new Turret(0, 290, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+          Turret turret_to_add = new Turret(0, this.position_y + (turret_to_add_decal * 0) + (turret_to_add_size_y * 0), turret_to_add_size_x, turret_to_add_size_y, x_turret.damage, x_turret.range, x_turret.cost);
           this.tab_turret[this.nb_turret] = turret_to_add;
           this.nb_turret = this.nb_turret + 1;
           this.money = this.money - turret_to_add.cost;
@@ -108,19 +116,19 @@ class Player {
     }
     if (this.number == 2) {
       if (this.nb_turret == 0) {
-        Turret turret_to_add = new Turret(980, 200, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+        Turret turret_to_add = new Turret(screen_size_x - turret_to_add_size_x, this.position_y + (turret_to_add_decal * 3) + (turret_to_add_size_y * 3), turret_to_add_size_x, turret_to_add_size_y, x_turret.damage, x_turret.range, x_turret.cost);
         this.tab_turret[this.nb_turret] = turret_to_add;
         this.nb_turret = this.nb_turret + 1;
       } else if (this.nb_turret == 1) {
-        Turret turret_to_add = new Turret(980, 230, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+        Turret turret_to_add = new Turret(screen_size_x - turret_to_add_size_x, this.position_y + (turret_to_add_decal * 2) + (turret_to_add_size_y * 2), turret_to_add_size_x, turret_to_add_size_y, x_turret.damage, x_turret.range, x_turret.cost);
         this.tab_turret[this.nb_turret] = turret_to_add;
         this.nb_turret = this.nb_turret + 1;
       } else if (this.nb_turret == 2) {
-        Turret turret_to_add = new Turret(980, 260, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+        Turret turret_to_add = new Turret(screen_size_x - turret_to_add_size_x, this.position_y + (turret_to_add_decal * 1) + (turret_to_add_size_y * 1), turret_to_add_size_x, turret_to_add_size_y, x_turret.damage, x_turret.range, x_turret.cost);
         this.tab_turret[this.nb_turret] = turret_to_add;
         this.nb_turret = this.nb_turret + 1;
       } else if (this.nb_turret == 3) {
-        Turret turret_to_add = new Turret(980, 290, 20, 20, x_turret.damage, x_turret.range, x_turret.cost);
+        Turret turret_to_add = new Turret(screen_size_x - turret_to_add_size_x, this.position_y + (turret_to_add_decal * 0) + (turret_to_add_size_y * 0), turret_to_add_size_x, turret_to_add_size_y, x_turret.damage, x_turret.range, x_turret.cost);
         this.tab_turret[this.nb_turret] = turret_to_add;
         this.nb_turret = this.nb_turret + 1;
       }
@@ -163,6 +171,15 @@ class Player {
 
     println("Player_" + this.number + ": remove_turret: done");
   }
+  void add_turret_max() {
+    if (this.money >= this.add_turret_max_cost) {
+      this.nb_turret_max = this.nb_turret_max + 1;
+      this.add_turret_max_cost = this.add_turret_max_cost * 2;
+      if (this.nb_turret_max >= this.nb_turret_limit) {
+        this.nb_turret_max = this.nb_turret_limit;
+      }
+    }
+  }
 
   void power() {
     if (can_use_power == true) {
@@ -175,26 +192,14 @@ class Player {
       this.power_charge_actual = 0;
     }
   }
-  //Projectile (int x_position_x, int x_position_y, int x_size_x, int x_size_y, Collider x_collider, int x_damage, int x_speed) {
+
   void power_1() {
-    /*
-    this.nb_projectile = 50;
-     this.tab_projectile = new Projectile[nb_projectile];
-     int distance = 400;
-     int step = distance / this.nb_projectile;
-     float random_float = random(100, 100 + distance);
-     int random_int = int(random_float);
-     for (int i = 0; i < nb_projectile; i++) {
-     
-     this.tab_projectile[i] = new Projectile(i * step, 0, 20, 20, new Collider(20, 20), 500, 1);
-     }
-     */
-    this.nb_projectile = 10;
+    this.nb_projectile = 20;
     this.tab_projectile = new Projectile[nb_projectile];
     for (int i = 0; i < nb_projectile; i++) {
-      float random_float = random(100, 900);
+      float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
       int random_int = int(random_float);
-      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 1);
+      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5);
     }
   }
 
@@ -230,23 +235,26 @@ class Player {
       this.money = 999999;
     }
 
+    int turret_to_add_size_x = 20;
+    int turret_to_add_size_y = 20;
+    int turret_to_add_decal = 10;
     if (this.nb_turret == 1) {
-      this.tab_turret[0].position_y = 200;
+      this.tab_turret[0].position_y = this.position_y + (turret_to_add_decal * 3) + (turret_to_add_size_y * 3);
     }
     if (this.nb_turret == 2) {
-      this.tab_turret[0].position_y = 200;
-      this.tab_turret[1].position_y = 230;
+      this.tab_turret[0].position_y = this.position_y + (turret_to_add_decal * 3) + (turret_to_add_size_y * 3);
+      this.tab_turret[1].position_y = this.position_y + (turret_to_add_decal * 2) + (turret_to_add_size_y * 2);
     }
     if (this.nb_turret == 3) {
-      this.tab_turret[0].position_y = 200;
-      this.tab_turret[1].position_y = 230;
-      this.tab_turret[2].position_y = 260;
+      this.tab_turret[0].position_y = this.position_y + (turret_to_add_decal * 3) + (turret_to_add_size_y * 3);
+      this.tab_turret[1].position_y = this.position_y + (turret_to_add_decal * 2) + (turret_to_add_size_y * 2);
+      this.tab_turret[2].position_y = this.position_y + (turret_to_add_decal * 1) + (turret_to_add_size_y * 1);
     }
     if (this.nb_turret == 4) {
-      this.tab_turret[0].position_y = 200;
-      this.tab_turret[1].position_y = 230;
-      this.tab_turret[2].position_y = 260;
-      this.tab_turret[3].position_y = 290;
+      this.tab_turret[0].position_y = this.position_y + (turret_to_add_decal * 3) + (turret_to_add_size_y * 3);
+      this.tab_turret[1].position_y = this.position_y + (turret_to_add_decal * 2) + (turret_to_add_size_y * 2);
+      this.tab_turret[2].position_y = this.position_y + (turret_to_add_decal * 1) + (turret_to_add_size_y * 1);
+      this.tab_turret[3].position_y = this.position_y + (turret_to_add_decal * 0) + (turret_to_add_size_y * 0);
     }
 
     this.power_charge_actual = this.power_charge_actual + 1;
@@ -279,10 +287,6 @@ class Player {
     text(this.period, this.position_x + 50, this.position_y+40);
     text(this.nb_turret, this.position_x + 50, this.position_y+50);
     text(this.power_charge_actual, this.position_x + 50, this.position_y+60);
-
-    for (int i = 0; i < this.nb_turret; i++) {
-      text(this.tab_turret[i].cost + " " + this.tab_turret[i].position_x + " " + this.tab_turret[i].position_y, this.position_x + 200, this.position_y + 100 + (i*10));
-    }
 
     println("Player_" + this.number + ": display: done");
   }

@@ -27,9 +27,3 @@ void keyReleased() {
     input_a = false;
   }
 }
-
-void reset() {
-  mouse_click = false;
-  mouse_x = mouseX;
-  mouse_y = mouseY;
-}
