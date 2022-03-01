@@ -1,11 +1,11 @@
 class Collider {
-  int position_x;
-  int position_y;
-  int position_x_collision = 0;
-  int position_y_collision = 0;
-  int size_x;
-  int size_y;
-  int position_x_center;
+  private int position_x;
+  private int position_y;
+  private int position_x_collision = 0;
+  private int position_y_collision = 0;
+  private int size_x;
+  private int size_y;
+  private int position_x_center;
 
   Collider(int x_size_x, int x_size_y) {
     this.size_x = x_size_x;

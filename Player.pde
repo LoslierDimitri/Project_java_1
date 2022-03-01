@@ -1,30 +1,30 @@
 class Player {
-  int health_point;
-  int number;
-  Unit tab_unit[];
-  int nb_unit;
-  int nb_unit_max;
-  Collider collider;
-  int position_x;
-  int position_y;
-  int money;
-  int exp;
-  int period;
-  Turret tab_turret[];
-  int nb_turret;
-  int nb_turret_max;
-  int nb_turret_limit;
-  Projectile tab_projectile[];
-  int nb_projectile;
+  private int health_point;
+  private int number;
+  private Unit tab_unit[];
+  private int nb_unit;
+  private int nb_unit_max;
+  private Collider collider;
+  private int position_x;
+  private int position_y;
+  private int money;
+  private int exp;
+  private int period;
+  private Turret tab_turret[];
+  private int nb_turret;
+  private int nb_turret_max;
+  private int nb_turret_limit;
+  private Projectile tab_projectile[];
+  private int nb_projectile;
 
-  String power_name;
-  String period_name;
-  boolean can_use_power;
-  int power_charge_actual;
-  int power_charge;
-  int add_turret_max_cost;
-  int add_period_cost;
-  int period_max;
+  private String power_name;
+  private String period_name;
+  private boolean can_use_power;
+  private int power_charge_actual;
+  private int power_charge;
+  private int add_turret_max_cost;
+  private int add_period_cost;
+  private int period_max;
 
   Player(int x_number, int x_health_point, Collider x_collider, int x_position_x, int x_position_y, int x_money) {
     this.health_point = x_health_point;

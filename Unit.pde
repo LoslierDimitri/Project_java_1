@@ -1,15 +1,15 @@
 class Unit {
-  int position_x;
-  int position_y;
-  int position_x_center;
-  Collider collider;
-  int health_point;
-  int damage;
-  int speed;
-  int range;
-  boolean can_move;
-  int cost;
-  String name;
+  private int position_x;
+  private int position_y;
+  private int position_x_center;
+  private Collider collider;
+  private int health_point;
+  private int damage;
+  private int speed;
+  private int range;
+  private boolean can_move;
+  private int cost;
+  private String name;
 
   Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range, int x_cost) {
     this.collider = x_collider;
