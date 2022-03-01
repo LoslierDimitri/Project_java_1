@@ -1,9 +1,9 @@
 class Main {
-  Player tab_player[];
-  int nb_player;
-  int nb_player_max;
+  private Player tab_player[];
+  private int nb_player;
+  private int nb_player_max;
 
-  boolean is_finished;
+  private boolean is_finished;
 
   Main(Player x_tab_player[], int x_nb_player, int x_nb_player_max) {
     this.tab_player = x_tab_player;

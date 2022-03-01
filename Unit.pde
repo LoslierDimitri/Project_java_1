@@ -1,15 +1,15 @@
 class Unit {
-  int position_x;
-  int position_y;
-  int position_x_center;
-  Collider collider;
-  int health_point;
-  int damage;
-  int speed;
-  int range;
-  boolean can_move;
-  int cost;
-  String name;
+  private int position_x;
+  private int position_y;
+  private int position_x_center;
+  private Collider collider;
+  private int health_point;
+  private int damage;
+  private int speed;
+  private int range;
+  private boolean can_move;
+  private int cost;
+  private String name;
 
   Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range, int x_cost) {
     this.collider = x_collider;
@@ -28,6 +28,15 @@ class Unit {
   int get_position_y() {
     return this.position_y;
   }
+  int get_health_point() {
+    return this.health_point;
+  }
+  int get_damage() {
+    return this.damage;
+  }
+  int get_speed() {
+    return this.speed;
+  }
   Collider get_collider() {
     return this.collider;
   }
@@ -45,6 +54,12 @@ class Unit {
   }
 
   ///////////////////////////////////////////////////////////////setter
+  void set_position_x(int x_position_x) {
+    this.position_x = x_position_x;
+  }
+  void set_position_y(int x_position_y) {
+    this.position_y = x_position_y;
+  }
   void set_can_move(boolean x_result) {
     this.can_move = x_result;
   }
@@ -90,8 +105,8 @@ class Unit {
 
   void update(int x_number) {
     println("Player_" + x_number + ": Unit: update: ...");
-    this.collider.position_x = this.position_x;
-    this.collider.position_y = this.position_y;
+    this.collider.set_position_x(this.position_x);
+    this.collider.set_position_y(this.position_y);
     this.move(x_number);
     this.can_move = true;
     println("Player_" + x_number + ": Unit: update: done");
@@ -99,7 +114,7 @@ class Unit {
   void display() {
     println("Unit: display: ...");
     fill(255);
-    rect(this.collider.position_x, this.collider.position_y, this.collider.size_x, this.collider.size_y);
+    rect(this.collider.get_position_x(), this.collider.get_position_y(), this.collider.get_size_x(), this.collider.get_size_y());
     fill(0);
     textSize(10);
     text(this.health_point, this.position_x, this.position_y+10);

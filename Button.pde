@@ -1,10 +1,10 @@
 class Button {
-  int position_x;
-  int position_y;
-  int size_x;
-  int size_y;
+  private int position_x;
+  private int position_y;
+  private int size_x;
+  private int size_y;
 
-  String name;
+  private String name;
 
   Button (String x_name, int x_position_x, int x_position_y, int x_size_x, int x_size_y) {
     this.position_x = x_position_x;

@@ -1,13 +1,13 @@
 class Turret {
-  int position_x;
-  int position_y;
-  int size_x;
-  int size_y;
-  int damage;
-  int range;
-  int cost;
+  private int position_x;
+  private int position_y;
+  private int size_x;
+  private int size_y;
+  private int damage;
+  private int range;
+  private int cost;
 
-  String name;
+  private String name;
 
   Turret(int x_position_x, int x_position_y, int x_size_x, int x_size_y, int x_damage, int x_range, int x_cost) {
     this.position_x = x_position_x;
@@ -25,6 +25,9 @@ class Turret {
   }
   int get_position_y() {
     return this.position_y;
+  }
+  int get_damage() {
+    return this.damage;
   }
   int get_range() {
     return this.range;
