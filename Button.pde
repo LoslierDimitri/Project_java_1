@@ -14,6 +14,9 @@ class Button {
     this.name = x_name;
   }
 
+  ///////////////////////////////////////////////////////////////getter
+  ///////////////////////////////////////////////////////////////setter
+  ///////////////////////////////////////////////////////////////function
   boolean collide(int x_mouse_x, int x_mouse_y) {
     boolean result = false;
 
@@ -28,24 +31,24 @@ class Button {
     return result;
   }
   void add_unit(Main x_main, Unit x_unit) {
-    x_main.tab_player[0].add_unit(x_unit);
+    x_main.get_player(0).add_unit(x_unit);
   }
   void add_turret(Main x_main, Turret x_turret) {
-    x_main.tab_player[0].add_turret(x_turret);
+    x_main.get_player(0).add_turret(x_turret);
   }
   void remove_turret(Main x_main, int x_turret) {
-    if (x_turret <= x_main.tab_player[0].nb_turret) {
-      x_main.tab_player[0].remove_turret(x_turret);
+    if (x_turret <= x_main.get_player(0).get_nb_turret()) {
+      x_main.get_player(0).remove_turret(x_turret);
     }
   }
   void add_turret_max(Main x_main) {
-    x_main.tab_player[0].add_turret_max();
+    x_main.get_player(0).add_turret_max();
   }
   void add_period(Main x_main) {
-    x_main.tab_player[0].add_period();
+    x_main.get_player(0).add_period();
   }
   void power(Main x_main) {
-    x_main.tab_player[0].power();
+    x_main.get_player(0).power();
   }
 
   void display() {

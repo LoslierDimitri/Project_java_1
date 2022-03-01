@@ -23,6 +23,8 @@ class Player {
   int power_charge_actual;
   int power_charge;
   int add_turret_max_cost;
+  int add_period_cost;
+  int period_max;
 
   Player(int x_number, int x_health_point, Collider x_collider, int x_position_x, int x_position_y, int x_money) {
     this.health_point = x_health_point;
@@ -47,8 +49,47 @@ class Player {
     power_charge_actual = 0;
     power_charge = 200;
     add_turret_max_cost = 1000;
+    add_period_cost = 4000;
+    period_max = 6;
   }
 
+  ///////////////////////////////////////////////////////////////getter
+  int get_health_point() {
+    return this.health_point;
+  }
+  int get_number() {
+    return this.number;
+  }
+  Unit get_unit(int x_unit) {
+    return this.tab_unit[x_unit];
+  }
+  int get_nb_unit() {
+    return this.nb_unit;
+  }
+  Collider get_collider() {
+    return this.collider;
+  }
+  int get_period() {
+    return this.period;
+  }
+  Turret get_turret(int x_turret) {
+    return this.tab_turret[x_turret];
+  }
+  int get_nb_turret() {
+    return this.nb_turret;
+  }
+  Projectile get_projectile(int x_projectile) {
+    return this.tab_projectile[x_projectile];
+  }
+  int get_nb_projectile() {
+    return this.nb_projectile;
+  }
+  int get_power_charge() {
+    return this.power_charge;
+  }
+
+  ///////////////////////////////////////////////////////////////setter
+  ///////////////////////////////////////////////////////////////function
   void add_unit(Unit x_unit) {
     println("Player_" + this.number + ": add_unit: ...");
     if (this.money >= x_unit.cost) {
@@ -79,8 +120,10 @@ class Player {
     this.health_point = this.health_point - x_damage;
   }
   void add_period() {
-    if (this.period == 1 && this.exp >= 4000) {
+    if (this.period < this.period_max && this.exp >= this.add_period_cost) {
       this.period = this.period + 1;
+      this.add_period_cost = this.add_period_cost * 2;
+      this.exp = 0;
     }
   }
 

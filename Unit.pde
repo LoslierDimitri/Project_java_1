@@ -21,12 +21,40 @@ class Unit {
     this.position_y = 200;
     this.cost = x_cost;
   }
-
-  void damage(Unit x_unit, int x_damage) {
-    x_unit.take_damage(x_damage);
+  ///////////////////////////////////////////////////////////////getter
+  int get_position_x() {
+    return this.position_x;
   }
-  void damage_player(Player x_player, int x_damage) {
-    x_player.take_damage(x_damage);
+  int get_position_y() {
+    return this.position_y;
+  }
+  Collider get_collider() {
+    return this.collider;
+  }
+  int get_range() {
+    return this.range;
+  }
+  boolean get_can_move() {
+    return this.can_move;
+  }
+  int get_cost() {
+    return this.cost;
+  }
+  String get_name() {
+    return this.name;
+  }
+
+  ///////////////////////////////////////////////////////////////setter
+  void set_can_move(boolean x_result) {
+    this.can_move = x_result;
+  }
+
+  ///////////////////////////////////////////////////////////////function
+  void damage(Unit x_unit) {
+    x_unit.take_damage(this.damage);
+  }
+  void damage_player(Player x_player) {
+    x_player.take_damage(this.damage);
   }
   void take_damage(int x_damage) {
     this.health_point = this.health_point - x_damage;

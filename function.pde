@@ -1,3 +1,11 @@
+///////////////////////////////////////////////////////////////reset
+void reset() {
+  mouse_click = false;
+  mouse_x = mouseX;
+  mouse_y = mouseY;
+}
+
+///////////////////////////////////////////////////////////////distance
 int distance(int x_position_1, int x_position_2) {
   int result = 0;
 

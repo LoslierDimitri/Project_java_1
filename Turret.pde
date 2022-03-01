@@ -6,6 +6,7 @@ class Turret {
   int damage;
   int range;
   int cost;
+
   String name;
 
   Turret(int x_position_x, int x_position_y, int x_size_x, int x_size_y, int x_damage, int x_range, int x_cost) {
@@ -18,9 +19,34 @@ class Turret {
     this.range = x_range;
     this.cost = x_cost;
   }
+  ///////////////////////////////////////////////////////////////getter
+  int get_position_x() {
+    return this.position_x;
+  }
+  int get_position_y() {
+    return this.position_y;
+  }
+  int get_range() {
+    return this.range;
+  }
+  int get_cost() {
+    return this.cost;
+  }
+  String get_name() {
+    return this.name;
+  }
 
-  void damage(Unit x_unit, int x_damage) {
-    x_unit.take_damage(x_damage);
+  ///////////////////////////////////////////////////////////////setter
+  void set_position_x(int x_position_x) {
+    this.position_x = x_position_x;
+  }
+  void set_position_y(int x_position_y) {
+    this.position_y = x_position_y;
+  }
+
+  ///////////////////////////////////////////////////////////////function
+  void damage(Unit x_unit) {
+    x_unit.take_damage(this.damage);
   }
 
   void update(int x_number) {

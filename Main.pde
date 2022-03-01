@@ -13,30 +13,41 @@ class Main {
     this.is_finished = false;
   }
 
+  ///////////////////////////////////////////////////////////////getter
+  Player get_player(int x_player) {
+    return this.tab_player[x_player];
+  }
+  int return_nb_player() {
+    return this.nb_player;
+  }
+  boolean get_is_finished() {
+    return is_finished;
+  }
+
+  ///////////////////////////////////////////////////////////////setter
+  ///////////////////////////////////////////////////////////////function
   void update() {
     println("Main: update: ...");
 
-    if (this.tab_player[0].health_point > 0 && this.tab_player[1].health_point > 0) {
+    if (this.tab_player[0].get_health_point() > 0 && this.tab_player[1].get_health_point() > 0) {
 
       //player 1 unit collide with player 1 unit
-      for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
-        for (int j = 0; j < this.tab_player[0].nb_unit; j++) {
+      for (int i = 0; i < this.tab_player[0].get_nb_unit(); i++) {
+        for (int j = 0; j < this.tab_player[0].get_nb_unit(); j++) {
           if (i != j) {
-            if (this.tab_player[0].tab_unit[i].collide(this.tab_player[0].tab_unit[j].collider, 1) == true) {
-              this.tab_player[0].tab_unit[i].can_move = false;
-              //this.tab_player[0].tab_unit[j].can_move = false;
+            if (this.tab_player[0].get_unit(i).collide(this.tab_player[0].get_unit(j).get_collider(), 1) == true) {
+              this.tab_player[0].get_unit(i).set_can_move(false);
             }
           }
         }
       }
 
       //player 2 unit collide with player 2 unit
-      for (int i = 0; i < this.tab_player[1].nb_unit; i++) {
-        for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
+      for (int i = 0; i < this.tab_player[1].get_nb_unit(); i++) {
+        for (int j = 0; j < this.tab_player[1].get_nb_unit(); j++) {
           if (i != j) {
-            if (this.tab_player[1].tab_unit[i].collide(this.tab_player[1].tab_unit[j].collider, 2) == true) {
-              this.tab_player[1].tab_unit[i].can_move = false;
-              //this.tab_player[1].tab_unit[j].can_move = false;
+            if (this.tab_player[1].get_unit(i).collide(this.tab_player[1].get_unit(j).get_collider(), 2) == true) {
+              this.tab_player[1].get_unit(i).set_can_move(false);
             }
           }
         }
@@ -44,100 +55,89 @@ class Main {
 
       //player 1 unit collide with player 2 unit
       //player unit damage player unit
-      for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
-        for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
-          if (this.tab_player[0].tab_unit[i].collide(this.tab_player[1].tab_unit[j].collider, 1) == true) {
-            this.tab_player[0].tab_unit[i].can_move = false;
-            this.tab_player[1].tab_unit[j].can_move = false;
+      for (int i = 0; i < this.tab_player[0].get_nb_unit(); i++) {
+        for (int j = 0; j < this.tab_player[1].get_nb_unit(); j++) {
+          if (this.tab_player[0].get_unit(i).collide(this.tab_player[1].get_unit(j).get_collider(), 1) == true) {
+            this.tab_player[0].get_unit(i).set_can_move(false);
+            this.tab_player[1].get_unit(j).set_can_move(false);
 
-            this.tab_player[0].tab_unit[i].damage(this.tab_player[1].tab_unit[j], this.tab_player[0].tab_unit[i].damage);
+            this.tab_player[0].get_unit(i).damage(this.tab_player[1].get_unit(j));
           }
-          if (this.tab_player[1].tab_unit[j].collide(this.tab_player[0].tab_unit[i].collider, 2) == true) {
-            this.tab_player[0].tab_unit[i].can_move = false;
-            this.tab_player[1].tab_unit[j].can_move = false;
+          if (this.tab_player[1].get_unit(j).collide(this.tab_player[0].get_unit(i).get_collider(), 2) == true) {
+            this.tab_player[0].get_unit(i).set_can_move(false);
+            this.tab_player[1].get_unit(j).set_can_move(false);
 
-            this.tab_player[1].tab_unit[j].damage(this.tab_player[0].tab_unit[i], this.tab_player[1].tab_unit[j].damage);
-          }
-        }
-      }
-
-      for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
-        for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
-          if (distance(this.tab_player[0].tab_unit[i].position_x, this.tab_player[1].tab_unit[j].position_x) <= this.tab_player[0].tab_unit[i].range) {
-            this.tab_player[0].tab_unit[i].damage(this.tab_player[1].tab_unit[0], this.tab_player[0].tab_unit[i].damage);
-          }
-          if (distance(this.tab_player[1].tab_unit[j].position_x, this.tab_player[0].tab_unit[i].position_x) <= this.tab_player[1].tab_unit[j].range) {
-            this.tab_player[1].tab_unit[j].damage(this.tab_player[0].tab_unit[0], this.tab_player[1].tab_unit[j].damage);
+            this.tab_player[1].get_unit(j).damage(this.tab_player[0].get_unit(i));
           }
         }
       }
 
-      for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
-        if (this.tab_player[0].tab_unit[i].collider.collide(this.tab_player[1].collider, 1) == true) {
-          this.tab_player[0].tab_unit[i].damage_player(this.tab_player[1], this.tab_player[0].tab_unit[i].damage);
-          this.tab_player[0].tab_unit[0].can_move = false;
-        }
-      }
-      for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
-        if (this.tab_player[1].tab_unit[j].collider.collide(this.tab_player[0].collider, 2) == true) {
-          this.tab_player[1].tab_unit[j].damage_player(this.tab_player[0], this.tab_player[1].tab_unit[j].damage);
-          this.tab_player[1].tab_unit[0].can_move = false;
+      //ranged attack on unit
+      for (int i = 0; i < this.tab_player[0].get_nb_unit(); i++) {
+        for (int j = 0; j < this.tab_player[1].get_nb_unit(); j++) {
+          if (distance(this.tab_player[0].get_unit(i).get_position_x(), this.tab_player[1].get_unit(j).get_position_x()) <= this.tab_player[0].get_unit(i).get_range()) {
+            this.tab_player[0].get_unit(i).damage(this.tab_player[1].get_unit(0));
+          }
+          if (distance(this.tab_player[1].get_unit(j).get_position_x(), this.tab_player[0].get_unit(i).get_position_x()) <= this.tab_player[1].get_unit(j).get_range()) {
+            this.tab_player[1].get_unit(j).damage(this.tab_player[0].get_unit(0));
+          }
         }
       }
 
-      //ranged attack
+      //unit attack base
       //player 1 to player 2
-      for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
-        for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
-          if (distance(this.tab_player[0].tab_unit[i].position_x, this.tab_player[1].tab_unit[0].position_x) <= this.tab_player[0].tab_unit[i].range) {
-            this.tab_player[0].tab_unit[i].damage(this.tab_player[1].tab_unit[0], this.tab_player[0].tab_unit[i].damage);
-          }
+      for (int i = 0; i < this.tab_player[0].get_nb_unit(); i++) {
+        if (this.tab_player[0].get_unit(i).get_collider().collide(this.tab_player[1].get_collider(), 1) == true) {
+          this.tab_player[0].get_unit(i).damage_player(this.tab_player[1]);
+          this.tab_player[0].get_unit(0).set_can_move(false);
         }
       }
       //player 2 to player 1
-      for (int i = 0; i < this.tab_player[1].nb_unit; i++) {
-        for (int j = 0; j < this.tab_player[0].nb_unit; j++) {
-          if (distance(this.tab_player[1].tab_unit[i].position_x, this.tab_player[0].tab_unit[0].position_x) <= this.tab_player[1].tab_unit[i].range) {
-            this.tab_player[1].tab_unit[i].damage(this.tab_player[0].tab_unit[0], this.tab_player[1].tab_unit[i].damage);
-          }
+      for (int j = 0; j < this.tab_player[1].get_nb_unit(); j++) {
+        if (this.tab_player[1].get_unit(j).get_collider().collide(this.tab_player[0].get_collider(), 2) == true) {
+          this.tab_player[1].get_unit(j).damage_player(this.tab_player[0]);
+          this.tab_player[1].get_unit(0).set_can_move(false);
         }
       }
 
       //ranged attack on player base
       //player 1 to player 2
-      for (int i = 0; i < this.tab_player[0].nb_unit; i++) {
-        if (distance(this.tab_player[0].tab_unit[i].position_x, (this.tab_player[1].collider.position_x + (this.tab_player[1].collider.size_x / 2))) <= this.tab_player[0].tab_unit[i].range) {
-          this.tab_player[0].tab_unit[i].damage_player(this.tab_player[1], this.tab_player[0].tab_unit[i].damage);
+      for (int i = 0; i < this.tab_player[0].get_nb_unit(); i++) {
+        if (distance(this.tab_player[0].get_unit(i).get_position_x(), (this.tab_player[1].get_collider().get_position_x() + (this.tab_player[1].get_collider().get_size_x() / 2))) <= this.tab_player[0].get_unit(i).get_range()) {
+          this.tab_player[0].get_unit(i).damage_player(this.tab_player[1]);
         }
       }
       //player 2 to player 1
-      for (int i = 0; i < this.tab_player[1].nb_unit; i++) {
-        if (distance(this.tab_player[1].tab_unit[i].position_x, (this.tab_player[0].collider.position_x + (this.tab_player[0].collider.size_x / 2))) <= this.tab_player[1].tab_unit[i].range) {
-          this.tab_player[1].tab_unit[i].damage_player(this.tab_player[0], this.tab_player[1].tab_unit[i].damage);
+      for (int i = 0; i < this.tab_player[1].get_nb_unit(); i++) {
+        if (distance(this.tab_player[1].get_unit(i).get_position_x(), (this.tab_player[0].get_collider().get_position_x() + (this.tab_player[0].get_collider().get_size_x() / 2))) <= this.tab_player[1].get_unit(i).get_range()) {
+          this.tab_player[1].get_unit(i).damage_player(this.tab_player[0]);
         }
       }
 
-      for (int i = 0; i < this.tab_player[0].nb_turret; i++) {
-        for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
-          if (distance(this.tab_player[0].tab_turret[i].position_x, this.tab_player[1].tab_unit[j].position_x) <= this.tab_player[0].tab_turret[i].range) {
-            this.tab_player[0].tab_turret[i].damage(this.tab_player[1].tab_unit[0], this.tab_player[0].tab_turret[i].damage);
+      //turret attack unit
+      //player 1 to player 2
+      for (int i = 0; i < this.tab_player[0].get_nb_turret(); i++) {
+        for (int j = 0; j < this.tab_player[1].get_nb_unit(); j++) {
+          if (distance(this.tab_player[0].get_turret(i).get_position_x(), this.tab_player[1].get_unit(j).get_position_x()) <= this.tab_player[0].get_turret(i).get_range()) {
+            this.tab_player[0].get_turret(i).damage(this.tab_player[1].get_unit(0));
           }
         }
       }
-      for (int i = 0; i < this.tab_player[1].nb_turret; i++) {
-        for (int j = 0; j < this.tab_player[0].nb_unit; j++) {
-          if (distance(this.tab_player[1].tab_turret[i].position_x, this.tab_player[0].tab_unit[j].position_x) <= this.tab_player[1].tab_turret[i].range) {
-            this.tab_player[1].tab_turret[i].damage(this.tab_player[0].tab_unit[0], this.tab_player[1].tab_turret[i].damage);
+      //player 2 to player 1
+      for (int i = 0; i < this.tab_player[1].get_nb_turret(); i++) {
+        for (int j = 0; j < this.tab_player[0].get_nb_unit(); j++) {
+          if (distance(this.tab_player[1].get_turret(i).get_position_x(), this.tab_player[0].get_unit(j).get_position_x()) <= this.tab_player[1].get_turret(i).get_range()) {
+            this.tab_player[1].get_turret(i).damage(this.tab_player[0].get_unit(0));
           }
         }
       }
 
       //power collide with player 2 unit
-      for (int i = 0; i < this.tab_player[0].nb_projectile; i++) {
-        for (int j = 0; j < this.tab_player[1].nb_unit; j++) {
-          if (this.tab_player[0].tab_projectile[i].used == false && this.tab_player[0].tab_projectile[i].collide_total(this.tab_player[1].tab_unit[j].collider, 1) == true) {
-            this.tab_player[0].tab_projectile[i].damage(this.tab_player[1].tab_unit[j], this.tab_player[0].tab_projectile[i].damage);
-            this.tab_player[0].tab_projectile[i].used = true;
+      for (int i = 0; i < this.tab_player[0].get_nb_projectile(); i++) {
+        for (int j = 0; j < this.tab_player[1].get_nb_unit(); j++) {
+          if (this.tab_player[0].get_projectile(i).get_used() == false && this.tab_player[0].get_projectile(i).collide_total(this.tab_player[1].get_unit(j).get_collider(), 1) == true) {
+            this.tab_player[0].get_projectile(i).damage(this.tab_player[1].get_unit(j));
+            this.tab_player[0].get_projectile(j).set_used(true);
           }
         }
       }
@@ -146,14 +146,14 @@ class Main {
         tab_player[i].update(this);
       }
     }
-    if (this.tab_player[0].health_point <= 0) {
+    if (this.tab_player[0].get_health_point() <= 0) {
       textSize(50);
-      text("player 2 win", 0, 600);
+      text("player 2 win", 500, 600);
       this.is_finished = true;
     }
-    if (this.tab_player[1].health_point <= 0) {
+    if (this.tab_player[1].get_health_point() <= 0) {
       textSize(50);
-      text("player 1 win", 0, 600);
+      text("player 1 win", 500, 600);
       this.is_finished = true;
     }
 

@@ -6,7 +6,7 @@ void initialisation() {
 
   ///////////////////////////////////////////////////////////////unit
   //name, collider(size_x, size_y), health_point, damage, speed, range, cost
-  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 100, 100);
+  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 500, 100);
   unit_2 = new Unit(new Collider(30, 40), 150, 2, 3, 10, 150);
   unit_3 = new Unit(new Collider(40, 40), 500, 5, 2, 10, 300);
 

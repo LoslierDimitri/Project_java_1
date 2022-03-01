@@ -20,6 +20,20 @@ class Projectile {
     this.used = false;
   }
 
+  ///////////////////////////////////////////////////////////////getter
+  Collider get_collider() {
+    return this.collider;
+  }
+  boolean get_used() {
+    return this.used;
+  }
+
+  ///////////////////////////////////////////////////////////////setter
+  void set_used(boolean x_result) {
+    this.used = x_result;
+  }
+
+  ///////////////////////////////////////////////////////////////function
   boolean collide_total(Collider x_collider, int x_number) {
     boolean result = false;
     if (this.collider.collide_total(x_collider, x_number) == true) {
@@ -31,9 +45,9 @@ class Projectile {
   void move() {
     this.position_y = this.position_y + this.speed;
   }
-  void damage(Unit x_unit, int x_damage) {
+  void damage(Unit x_unit) {
     if (this.used == false) {
-      x_unit.take_damage(x_damage);
+      x_unit.take_damage(this.damage);
     }
   }
 
