@@ -145,4 +145,6 @@ void initialisation() {
   button_add_period = new Button("add_period", button_add_period_position_x, button_add_period_position_y, button_add_period_size_x, button_add_period_size_y);
 
   button_power = new Button("power", button_power_position_x, button_power_position_y, button_power_size_x, button_power_size_y);
+
+  ///////////////////////////////////////////////////////////////animation
 }
