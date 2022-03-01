@@ -26,6 +26,13 @@ class Collider {
     return this.size_y;
   }
   ///////////////////////////////////////////////////////////////setter
+  void set_position_x(int x_position_x) {
+    this.position_x = x_position_x;
+  }
+  void set_position_y(int x_position_y) {
+    this.position_y = x_position_y;
+  }
+
   ///////////////////////////////////////////////////////////////function
   boolean collide(Collider x_collider, int x_number) {
     boolean result = false;

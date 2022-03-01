@@ -53,8 +53,8 @@ class Projectile {
 
   void update() {
     if (this.position_y <= screen_size_y) {
-      this.collider.position_x = this.position_x;
-      this.collider.position_y = this.position_y;
+      this.collider.set_position_x(this.position_x);
+      this.collider.set_position_y(this.position_y);
       this.move();
     } else {
       this.used = true;
@@ -62,7 +62,7 @@ class Projectile {
   }
   void display() {
     fill(0, 100, 0);
-    rect(this.collider.position_x, this.collider.position_y, this.collider.size_x, this.collider.size_y);
+    rect(this.collider.get_position_x(), this.collider.get_position_y(), this.collider.get_size_x(), this.collider.get_size_y());
     fill(0, 200, 0);
     rect(this.position_x, this.position_y, this.size_x, this.size_y);
   }

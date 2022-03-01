@@ -26,6 +26,9 @@ class Turret {
   int get_position_y() {
     return this.position_y;
   }
+  int get_damage() {
+    return this.damage;
+  }
   int get_range() {
     return this.range;
   }
