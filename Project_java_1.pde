@@ -2,7 +2,7 @@
 void setup() {
   //fullScreen(P2D);
   size(1000, 600, P2D);
-  frameRate(60);
+  frameRate(20);
 }
 
 ///////////////////////////////////////////////////////////////screen parameter
@@ -290,7 +290,7 @@ void draw() {
   text("" + remove_turret_mode, 500, 500);
 
   ///////////////////////////////////////////////////////////////AI
-  if (frame % 50 == 0) {
+  if (frame % 80 == 0) {
     println("add unit to ennemy");
     main.tab_player[1].add_unit(unit_1);
     main.tab_player[1].add_turret(turret_2);

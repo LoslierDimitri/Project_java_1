@@ -6,55 +6,55 @@ void initialisation() {
 
   ///////////////////////////////////////////////////////////////unit
   //name, collider(size_x, size_y), health_point, damage, speed, range, cost
-  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 500, 100);
-  unit_2 = new Unit(new Collider(30, 40), 150, 2, 3, 10, 150);
-  unit_3 = new Unit(new Collider(40, 40), 500, 5, 2, 10, 300);
+  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 10, 50);
+  unit_2 = new Unit(new Collider(30, 40), 110, 2, 4, 150, 150);
+  unit_3 = new Unit(new Collider(40, 40), 300, 5, 3, 30, 300);
 
-  unit_11 = new Unit(new Collider(20, 40), 200, 3, 4, 60, 300);
-  unit_12 = new Unit(new Collider(20, 50), 250, 5, 5, 10, 200);
-  unit_13 = new Unit(new Collider(50, 40), 800, 10, 2, 10, 800);
+  unit_11 = new Unit(new Collider(20, 40), 200, 3, 5, 10, 200);
+  unit_12 = new Unit(new Collider(20, 50), 250, 8, 4, 150, 400);
+  unit_13 = new Unit(new Collider(50, 40), 800, 13, 3, 30, 650);
 
-  unit_21 = new Unit(new Collider(20, 40), 200, 3, 4, 60, 300);
-  unit_22 = new Unit(new Collider(20, 50), 250, 5, 5, 10, 200);
-  unit_23 = new Unit(new Collider(50, 40), 800, 10, 2, 10, 800);
+  unit_21 = new Unit(new Collider(20, 40), 200, 10, 5, 10, 400);
+  unit_22 = new Unit(new Collider(20, 50), 250, 16, 4, 150, 600);
+  unit_23 = new Unit(new Collider(50, 40), 800, 20, 3, 30, 850);
 
-  unit_31 = new Unit(new Collider(20, 40), 200, 3, 4, 60, 300);
-  unit_32 = new Unit(new Collider(20, 50), 250, 5, 5, 10, 200);
-  unit_33 = new Unit(new Collider(50, 40), 800, 10, 2, 10, 800);
+  unit_31 = new Unit(new Collider(20, 40), 200, 18, 5, 10, 800);
+  unit_32 = new Unit(new Collider(20, 50), 250, 22, 4, 150, 1200);
+  unit_33 = new Unit(new Collider(50, 40), 800, 26, 3, 40, 1650);
 
-  unit_41 = new Unit(new Collider(20, 40), 200, 3, 4, 60, 300);
-  unit_42 = new Unit(new Collider(20, 50), 250, 5, 5, 10, 200);
-  unit_43 = new Unit(new Collider(50, 40), 800, 10, 2, 10, 800);
+  unit_41 = new Unit(new Collider(20, 40), 200, 24, 5, 60, 1600);
+  unit_42 = new Unit(new Collider(20, 50), 250, 29, 4, 150, 1900);
+  unit_43 = new Unit(new Collider(50, 40), 800, 33, 3, 50, 2400);
 
-  unit_51 = new Unit(new Collider(20, 40), 200, 3, 4, 60, 300);
-  unit_52 = new Unit(new Collider(20, 50), 250, 5, 5, 10, 200);
-  unit_53 = new Unit(new Collider(50, 40), 800, 10, 2, 10, 800);
+  unit_51 = new Unit(new Collider(20, 40), 200, 31, 5, 60, 2200);
+  unit_52 = new Unit(new Collider(20, 50), 250, 36, 4, 150, 2600);
+  unit_53 = new Unit(new Collider(50, 40), 800, 40, 3, 50, 3000);
 
   ///////////////////////////////////////////////////////////////turret
   //name, position_x, position_y, size_x, size_y, damage, range, cost
   turret_1 = new Turret(0, 0, 0, 0, 1, 200, 200);
   turret_2 = new Turret(0, 0, 0, 0, 2, 250, 400);
-  turret_3 = new Turret(0, 0, 0, 0, 3, 300, 500);
+  turret_3 = new Turret(0, 0, 0, 0, 5, 300, 500);
 
-  turret_11 = new Turret(0, 0, 0, 0, 2, 200, 400);
-  turret_12 = new Turret(0, 0, 0, 0, 4, 300, 500);
-  turret_13 = new Turret(0, 0, 0, 0, 5, 250, 800);
+  turret_11 = new Turret(0, 0, 0, 0, 3, 200, 400);
+  turret_12 = new Turret(0, 0, 0, 0, 8, 250, 500);
+  turret_13 = new Turret(0, 0, 0, 0, 13, 300, 800);
 
-  turret_21 = new Turret(0, 0, 0, 0, 2, 200, 400);
-  turret_22 = new Turret(0, 0, 0, 0, 4, 300, 500);
-  turret_23 = new Turret(0, 0, 0, 0, 5, 250, 800);
+  turret_21 = new Turret(0, 0, 0, 0, 10, 200, 400);
+  turret_22 = new Turret(0, 0, 0, 0, 16, 250, 500);
+  turret_23 = new Turret(0, 0, 0, 0, 20, 300, 800);
 
-  turret_31 = new Turret(0, 0, 0, 0, 2, 200, 400);
-  turret_32 = new Turret(0, 0, 0, 0, 4, 300, 500);
-  turret_33 = new Turret(0, 0, 0, 0, 5, 250, 800);
+  turret_31 = new Turret(0, 0, 0, 0, 18, 200, 400);
+  turret_32 = new Turret(0, 0, 0, 0, 22, 250, 500);
+  turret_33 = new Turret(0, 0, 0, 0, 26, 300, 800);
 
-  turret_41 = new Turret(0, 0, 0, 0, 2, 200, 400);
-  turret_42 = new Turret(0, 0, 0, 0, 4, 300, 500);
-  turret_43 = new Turret(0, 0, 0, 0, 5, 250, 800);
+  turret_41 = new Turret(0, 0, 0, 0, 24, 200, 400);
+  turret_42 = new Turret(0, 0, 0, 0, 29, 250, 500);
+  turret_43 = new Turret(0, 0, 0, 0, 33, 300, 800);
 
-  turret_51 = new Turret(0, 0, 0, 0, 2, 200, 400);
-  turret_52 = new Turret(0, 0, 0, 0, 4, 300, 500);
-  turret_53 = new Turret(0, 0, 0, 0, 5, 250, 800);
+  turret_51 = new Turret(0, 0, 0, 0, 31, 200, 400);
+  turret_52 = new Turret(0, 0, 0, 0, 36, 250, 500);
+  turret_53 = new Turret(0, 0, 0, 0, 40, 300, 800);
 
   ///////////////////////////////////////////////////////////////player
   //number, health_point, collider(size_x, size_y), position_x, position_y, money
