@@ -828,7 +828,7 @@ class Player {
   }
   void display() {
     println("Player_" + this.number + ": display: ...");
-    fill(0, 0, 200);
+    fill(100, 100, 200);
     rect(this.position_x, this.position_y, this.collider.get_size_x(), this.collider.get_size_y());
     for (int i = 0; i < this.nb_unit; i++) {
       this.tab_unit[i].display();

@@ -64,7 +64,7 @@ class Button {
   }
 
   void display() {
-    fill(100, 0, 0);
+    fill(200, 100, 100);
     rect(this.position_x, this.position_y, this.size_x, this.size_y);
     fill(0);
     text(this.name, this.position_x, this.position_y + 10);
