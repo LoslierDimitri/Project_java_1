@@ -19,6 +19,7 @@ class Turret {
     this.damage = x_damage;
     this.range = x_range;
     this.cost = x_cost;
+    this.name = x_name;
   }
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
