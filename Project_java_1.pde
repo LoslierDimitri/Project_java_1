@@ -96,6 +96,8 @@ Button button_add_period;
 
 Button button_power;
 
+Button button_display_unit;
+
 Collider collider_player_1;
 Collider collider_player_2;
 
@@ -160,6 +162,19 @@ void draw() {
   println("frame: " + frame);
 
   background(150);
+
+  ///////////////////////////////////////////////////////////////button display
+  button_unit_1.display();
+  button_unit_2.display();
+  button_unit_3.display();
+  button_turret_1.display();
+  button_turret_2.display();
+  button_turret_3.display();
+  button_remove_turret.display();
+  button_turret_add_max.display();
+  button_add_period.display();
+  button_power.display();
+  button_display_unit.display();
 
   ///////////////////////////////////////////////////////////////input
   if (mouse_click == true) {
@@ -328,6 +343,17 @@ void draw() {
     }
   }
 
+  ///////////////////////////////////////////////////////////////mouse hover button
+  if (button_unit_1.collide(mouse_x, mouse_y) == true) {
+    button_unit_1.display_unit(main, 1, button_display_unit);
+  }
+  if (button_unit_2.collide(mouse_x, mouse_y) == true) {
+    button_unit_2.display_unit(main, 2, button_display_unit);
+  }
+  if (button_unit_3.collide(mouse_x, mouse_y) == true) {
+    button_unit_3.display_unit(main, 3, button_display_unit);
+  }
+
   ///////////////////////////////////////////////////////////////reset game
   if (input_space == true) {
     initialisation_done = false;
@@ -349,18 +375,6 @@ void draw() {
   ///////////////////////////////////////////////////////////////main update display
   main.update();
   main.display();
-
-  ///////////////////////////////////////////////////////////////button display
-  button_unit_1.display();
-  button_unit_2.display();
-  button_unit_3.display();
-  button_turret_1.display();
-  button_turret_2.display();
-  button_turret_3.display();
-  button_remove_turret.display();
-  button_turret_add_max.display();
-  button_add_period.display();
-  button_power.display();
 
   ///////////////////////////////////////////////////////////////reset
   reset();

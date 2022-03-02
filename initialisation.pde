@@ -203,6 +203,11 @@ void initialisation() {
   int button_power_position_x = button_interval_x;
   int button_power_position_y = screen_size_y - button_interval_y - button_power_size_y;
 
+  int button_display_unit_size_x = (button_interval_x * 2) + (button_unit_size_x * 3);
+  int button_display_unit_size_y = button_unit_size_y * 1;
+  int button_display_unit_position_x = screen_size_x - (button_unit_size_x * 3) - (button_interval_x * 3);
+  int button_display_unit_position_y = (button_interval_y * 2) + (button_unit_size_y * 1);
+
   button_unit_1 = new Button("unit_1", button_unit_1_position_x, button_unit_1_position_y, button_unit_size_x, button_unit_size_y);
   button_unit_2 = new Button("unit_2", button_unit_2_position_x, button_unit_2_position_y, button_unit_size_x, button_unit_size_y);
   button_unit_3 = new Button("unit_3", button_unit_3_position_x, button_unit_3_position_y, button_unit_size_x, button_unit_size_y);
@@ -222,6 +227,8 @@ void initialisation() {
   button_add_period = new Button("add_period", button_add_period_position_x, button_add_period_position_y, button_add_period_size_x, button_add_period_size_y);
 
   button_power = new Button("power", button_power_position_x, button_power_position_y, button_power_size_x, button_power_size_y);
+  
+  button_display_unit = new Button("", button_display_unit_position_x, button_display_unit_position_y, button_display_unit_size_x, button_display_unit_size_y);
 
   ///////////////////////////////////////////////////////////////animation
 }

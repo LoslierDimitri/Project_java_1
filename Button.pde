@@ -15,6 +15,18 @@ class Button {
   }
 
   ///////////////////////////////////////////////////////////////getter
+  int get_position_x() {
+    return this.position_x;
+  }
+  int get_position_y() {
+    return this.position_y;
+  }
+  int get_size_x() {
+    return this.size_x;
+  }
+  int get_size_y() {
+    return this.size_y;
+  }
   ///////////////////////////////////////////////////////////////setter
   ///////////////////////////////////////////////////////////////function
   boolean collide(int x_mouse_x, int x_mouse_y) {
@@ -56,5 +68,32 @@ class Button {
     rect(this.position_x, this.position_y, this.size_x, this.size_y);
     fill(0);
     text(this.name, this.position_x, this.position_y + 10);
+  }
+
+  void display_unit(Main x_main, int x_unit, Button x_button) {
+    fill(0);
+    textSize(12);
+    int period_player = x_main.get_player(0).get_period();
+
+    if (period_player == 1) {
+      if (x_unit == 1) {
+        text("name: " + unit_1.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_1.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_1.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_1.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+      if (x_unit == 2) {
+        text("name: " + unit_2.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_2.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_2.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_2.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+      if (x_unit == 3) {
+        text("name: " + unit_3.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_3.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_3.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_3.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+    }
   }
 }
