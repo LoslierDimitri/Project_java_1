@@ -21,6 +21,7 @@ class Unit {
     this.can_move = true;
     this.position_y = 200;
     this.cost = x_cost;
+    this.name = x_name;
   }
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
