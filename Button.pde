@@ -71,6 +71,8 @@ class Button {
   }
 
   void display_unit(Main x_main, int x_unit, Button x_button) {
+    x_button.display();
+
     fill(0);
     textSize(12);
     int period_player = x_main.get_player(0).get_period();
@@ -93,6 +95,106 @@ class Button {
         text("health point: " + unit_3.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
         text("damage: " + unit_3.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
         text("cost: " + unit_3.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+    }
+    if (period_player == 2) {
+      if (x_unit == 1) {
+        text("name: " + unit_11.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_11.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_11.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_11.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+      if (x_unit == 2) {
+        text("name: " + unit_12.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_12.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_12.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_12.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+      if (x_unit == 3) {
+        text("name: " + unit_13.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_13.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_13.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_13.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+    }
+    if (period_player == 3) {
+      if (x_unit == 1) {
+        text("name: " + unit_21.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_21.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_21.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_21.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+      if (x_unit == 2) {
+        text("name: " + unit_22.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_22.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_22.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_22.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+      if (x_unit == 3) {
+        text("name: " + unit_23.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_23.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_23.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_23.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+    }
+    if (period_player == 4) {
+      if (x_unit == 1) {
+        text("name: " + unit_31.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_31.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_31.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_31.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+      if (x_unit == 2) {
+        text("name: " + unit_32.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_32.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_32.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_32.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+      if (x_unit == 3) {
+        text("name: " + unit_33.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_33.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_33.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_33.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+    }
+    if (period_player == 5) {
+      if (x_unit == 1) {
+        text("name: " + unit_41.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_41.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_41.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_41.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+      if (x_unit == 2) {
+        text("name: " + unit_42.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_42.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_42.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_42.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+      if (x_unit == 3) {
+        text("name: " + unit_43.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_43.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_43.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_43.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+    }
+    if (period_player == 6) {
+      if (x_unit == 1) {
+        text("name: " + unit_51.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_51.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_51.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_51.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+      if (x_unit == 2) {
+        text("name: " + unit_52.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_52.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_52.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_52.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+      }
+      if (x_unit == 3) {
+        text("name: " + unit_53.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 10);
+        text("health point: " + unit_53.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+        text("damage: " + unit_53.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+        text("cost: " + unit_53.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
       }
     }
   }

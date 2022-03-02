@@ -12,7 +12,7 @@ class Unit {
   private String name;
   private Animation animation;
 
-  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range, int x_cost, Animation x_animation) {
+  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range, int x_cost) {
     this.collider = x_collider;
     this.health_point = x_health_point;
     this.damage = x_damage;
@@ -21,7 +21,6 @@ class Unit {
     this.can_move = true;
     this.position_y = 200;
     this.cost = x_cost;
-    this.animation = x_animation;
   }
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
@@ -128,8 +127,7 @@ class Unit {
     fill(0);
     textSize(10);
     text(this.health_point, this.position_x, this.position_y+10);
-    println("Unit: display: done");
-
     this.animation.display();
+    println("Unit: display: done");
   }
 }

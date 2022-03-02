@@ -4,108 +4,31 @@ void initialisation() {
   screen_size_y = height;
   frame_rate = 60;
 
-  ///////////////////////////////////////////////////////////////animation unit
-  animation_unit_1 = new Animation();
-  animation_unit_2 = new Animation();
-  animation_unit_3 = new Animation();
-
-  animation_unit_11 = new Animation();
-  animation_unit_12 = new Animation();
-  animation_unit_13 = new Animation();
-
-  animation_unit_21 = new Animation();
-  animation_unit_22 = new Animation();
-  animation_unit_23 = new Animation();
-
-  animation_unit_31 = new Animation();
-  animation_unit_32 = new Animation();
-  animation_unit_33 = new Animation();
-
-  animation_unit_41 = new Animation();
-  animation_unit_42 = new Animation();
-  animation_unit_43 = new Animation();
-
-  animation_unit_51 = new Animation();
-  animation_unit_52 = new Animation();
-  animation_unit_53 = new Animation();
-
-  ///////////////////////////////////////////////////////////////animation turret
-  animation_turret_1 = new Animation();
-  animation_turret_2 = new Animation();
-  animation_turret_3 = new Animation();
-
-  animation_turret_11 = new Animation();
-  animation_turret_12 = new Animation();
-  animation_turret_13 = new Animation();
-
-  animation_turret_21 = new Animation();
-  animation_turret_22 = new Animation();
-  animation_turret_23 = new Animation();
-
-  animation_turret_31 = new Animation();
-  animation_turret_32 = new Animation();
-  animation_turret_33 = new Animation();
-
-  animation_turret_41 = new Animation();
-  animation_turret_42 = new Animation();
-  animation_turret_43 = new Animation();
-
-  animation_turret_51 = new Animation();
-  animation_turret_52 = new Animation();
-  animation_turret_53 = new Animation();
-
-  ///////////////////////////////////////////////////////////////load animation unit
-  load_animation("Unit/Unit_1/");
-  load_animation("Unit/Unit_2/");
-  load_animation("Unit/Unit_3/");
-
-  load_animation("Unit/Unit_11/");
-  load_animation("Unit/Unit_12/");
-  load_animation("Unit/Unit_13/");
-
-  load_animation("Unit/Unit_21/");
-  load_animation("Unit/Unit_21/");
-  load_animation("Unit/Unit_21/");
-
-  load_animation("Unit/Unit_31/");
-  load_animation("Unit/Unit_31/");
-  load_animation("Unit/Unit_31/");
-
-  load_animation("Unit/Unit_41/");
-  load_animation("Unit/Unit_41/");
-  load_animation("Unit/Unit_41/");
-
-  load_animation("Unit/Unit_51/");
-  load_animation("Unit/Unit_51/");
-  load_animation("Unit/Unit_51/");
-
-  ///////////////////////////////////////////////////////////////load animation turret
-
   ///////////////////////////////////////////////////////////////unit
   //name, collider(size_x, size_y), health_point, damage, speed, range, cost
-  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 10, 50, animation_unit_1);
-  unit_2 = new Unit(new Collider(30, 40), 110, 2, 4, 150, 150, animation_unit_2);
-  unit_3 = new Unit(new Collider(40, 40), 300, 5, 3, 30, 300, animation_unit_3);
+  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 10, 50);
+  unit_2 = new Unit(new Collider(30, 40), 110, 2, 4, 150, 150);
+  unit_3 = new Unit(new Collider(40, 40), 300, 5, 3, 30, 300);
 
-  unit_11 = new Unit(new Collider(20, 40), 200, 3, 5, 10, 200, animation_unit_11);
-  unit_12 = new Unit(new Collider(20, 50), 250, 8, 4, 150, 400, animation_unit_12);
-  unit_13 = new Unit(new Collider(50, 40), 800, 13, 3, 30, 650, animation_unit_12);
+  unit_11 = new Unit(new Collider(20, 40), 200, 3, 5, 10, 200);
+  unit_12 = new Unit(new Collider(20, 50), 250, 8, 4, 150, 400);
+  unit_13 = new Unit(new Collider(50, 40), 800, 13, 3, 30, 650);
 
-  unit_21 = new Unit(new Collider(20, 40), 200, 10, 5, 10, 400, animation_unit_21);
-  unit_22 = new Unit(new Collider(20, 50), 250, 16, 4, 150, 600, animation_unit_22);
-  unit_23 = new Unit(new Collider(50, 40), 800, 20, 3, 30, 850, animation_unit_23);
+  unit_21 = new Unit(new Collider(20, 40), 200, 10, 5, 10, 400);
+  unit_22 = new Unit(new Collider(20, 50), 250, 16, 4, 150, 600);
+  unit_23 = new Unit(new Collider(50, 40), 800, 20, 3, 30, 850);
 
-  unit_31 = new Unit(new Collider(20, 40), 200, 18, 5, 10, 800, animation_unit_31);
-  unit_32 = new Unit(new Collider(20, 50), 250, 22, 4, 150, 1200, animation_unit_32);
-  unit_33 = new Unit(new Collider(50, 40), 800, 26, 3, 40, 1650, animation_unit_33);
+  unit_31 = new Unit(new Collider(20, 40), 200, 18, 5, 10, 800);
+  unit_32 = new Unit(new Collider(20, 50), 250, 22, 4, 150, 1200);
+  unit_33 = new Unit(new Collider(50, 40), 800, 26, 3, 40, 1650);
 
-  unit_41 = new Unit(new Collider(20, 40), 200, 24, 5, 60, 1600, animation_unit_41);
-  unit_42 = new Unit(new Collider(20, 50), 250, 29, 4, 150, 1900, animation_unit_42);
-  unit_43 = new Unit(new Collider(50, 40), 800, 33, 3, 50, 2400, animation_unit_43);
+  unit_41 = new Unit(new Collider(20, 40), 200, 24, 5, 60, 1600);
+  unit_42 = new Unit(new Collider(20, 50), 250, 29, 4, 150, 1900);
+  unit_43 = new Unit(new Collider(50, 40), 800, 33, 3, 50, 2400);
 
-  unit_51 = new Unit(new Collider(20, 40), 200, 31, 5, 60, 2200, animation_unit_51);
-  unit_52 = new Unit(new Collider(20, 50), 250, 36, 4, 150, 2600, animation_unit_52);
-  unit_53 = new Unit(new Collider(50, 40), 800, 40, 3, 50, 3000, animation_unit_53);
+  unit_51 = new Unit(new Collider(20, 40), 200, 31, 5, 60, 2200);
+  unit_52 = new Unit(new Collider(20, 50), 250, 36, 4, 150, 2600);
+  unit_53 = new Unit(new Collider(50, 40), 800, 40, 3, 50, 3000);
 
   ///////////////////////////////////////////////////////////////turret
   //name, position_x, position_y, size_x, size_y, damage, range, cost
@@ -227,7 +150,7 @@ void initialisation() {
   button_add_period = new Button("add_period", button_add_period_position_x, button_add_period_position_y, button_add_period_size_x, button_add_period_size_y);
 
   button_power = new Button("power", button_power_position_x, button_power_position_y, button_power_size_x, button_power_size_y);
-  
+
   button_display_unit = new Button("", button_display_unit_position_x, button_display_unit_position_y, button_display_unit_size_x, button_display_unit_size_y);
 
   ///////////////////////////////////////////////////////////////animation

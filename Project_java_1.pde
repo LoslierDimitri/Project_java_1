@@ -2,7 +2,7 @@
 void setup() {
   //fullScreen(P2D);
   size(1000, 600, P2D);
-  frameRate(20);
+  frameRate(60);
 }
 
 ///////////////////////////////////////////////////////////////screen parameter
@@ -101,56 +101,6 @@ Button button_display_unit;
 Collider collider_player_1;
 Collider collider_player_2;
 
-///////////////////////////////////////////////////////////////animation unit
-Animation animation_unit_1;
-Animation animation_unit_2;
-Animation animation_unit_3;
-
-Animation animation_unit_11;
-Animation animation_unit_12;
-Animation animation_unit_13;
-
-Animation animation_unit_21;
-Animation animation_unit_22;
-Animation animation_unit_23;
-
-Animation animation_unit_31;
-Animation animation_unit_32;
-Animation animation_unit_33;
-
-Animation animation_unit_41;
-Animation animation_unit_42;
-Animation animation_unit_43;
-
-Animation animation_unit_51;
-Animation animation_unit_52;
-Animation animation_unit_53;
-
-///////////////////////////////////////////////////////////////animation turret
-Animation animation_turret_1;
-Animation animation_turret_2;
-Animation animation_turret_3;
-
-Animation animation_turret_11;
-Animation animation_turret_12;
-Animation animation_turret_13;
-
-Animation animation_turret_21;
-Animation animation_turret_22;
-Animation animation_turret_23;
-
-Animation animation_turret_31;
-Animation animation_turret_32;
-Animation animation_turret_33;
-
-Animation animation_turret_41;
-Animation animation_turret_42;
-Animation animation_turret_43;
-
-Animation animation_turret_51;
-Animation animation_turret_52;
-Animation animation_turret_53;
-
 ///////////////////////////////////////////////////////////////draw
 void draw() {
   ///////////////////////////////////////////////////////////////initialisation
@@ -162,19 +112,6 @@ void draw() {
   println("frame: " + frame);
 
   background(150);
-
-  ///////////////////////////////////////////////////////////////button display
-  button_unit_1.display();
-  button_unit_2.display();
-  button_unit_3.display();
-  button_turret_1.display();
-  button_turret_2.display();
-  button_turret_3.display();
-  button_remove_turret.display();
-  button_turret_add_max.display();
-  button_add_period.display();
-  button_power.display();
-  button_display_unit.display();
 
   ///////////////////////////////////////////////////////////////input
   if (mouse_click == true) {
@@ -366,7 +303,7 @@ void draw() {
   text("" + remove_turret_mode, 500, 500);
 
   ///////////////////////////////////////////////////////////////AI
-  if (frame % 80 == 0) {
+  if (frame % 30 == 0) {
     println("add unit to ennemy");
     main.tab_player[1].add_unit(unit_1);
     main.tab_player[1].add_turret(turret_2);
@@ -375,6 +312,18 @@ void draw() {
   ///////////////////////////////////////////////////////////////main update display
   main.update();
   main.display();
+
+  ///////////////////////////////////////////////////////////////button display
+  button_unit_1.display();
+  button_unit_2.display();
+  button_unit_3.display();
+  button_turret_1.display();
+  button_turret_2.display();
+  button_turret_3.display();
+  button_remove_turret.display();
+  button_turret_add_max.display();
+  button_add_period.display();
+  button_power.display();
 
   ///////////////////////////////////////////////////////////////reset
   reset();

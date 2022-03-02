@@ -8,6 +8,7 @@ class Turret {
   private int cost;
 
   private String name;
+  private Animation animation;
 
   Turret(int x_position_x, int x_position_y, int x_size_x, int x_size_y, int x_damage, int x_range, int x_cost) {
     this.position_x = x_position_x;
@@ -46,6 +47,9 @@ class Turret {
   void set_position_y(int x_position_y) {
     this.position_y = x_position_y;
   }
+  void set_animation(Animation x_animation) {
+    this.animation = x_animation;
+  }
 
   ///////////////////////////////////////////////////////////////function
   void damage(Unit x_unit) {
@@ -54,6 +58,7 @@ class Turret {
 
   void update(int x_number) {
     println("Player_" + x_number + ": turret: update: ...");
+    this.animation.update("idle", this.position_x, this.position_y);
     println("Player_" + x_number + ": turret: update: done");
   }
   void display() {
@@ -62,6 +67,7 @@ class Turret {
     rect(this.position_x, this.position_y, this.size_x, this.size_y);
     fill(0);
     text(this.range, this.position_x, this.position_y + 10);
+    this.animation.display();
     println("Turret: display: done");
   }
 }
