@@ -99,6 +99,56 @@ Button button_power;
 Collider collider_player_1;
 Collider collider_player_2;
 
+///////////////////////////////////////////////////////////////animation unit
+Animation animation_unit_1;
+Animation animation_unit_2;
+Animation animation_unit_3;
+
+Animation animation_unit_11;
+Animation animation_unit_12;
+Animation animation_unit_13;
+
+Animation animation_unit_21;
+Animation animation_unit_22;
+Animation animation_unit_23;
+
+Animation animation_unit_31;
+Animation animation_unit_32;
+Animation animation_unit_33;
+
+Animation animation_unit_41;
+Animation animation_unit_42;
+Animation animation_unit_43;
+
+Animation animation_unit_51;
+Animation animation_unit_52;
+Animation animation_unit_53;
+
+///////////////////////////////////////////////////////////////animation turret
+Animation animation_turret_1;
+Animation animation_turret_2;
+Animation animation_turret_3;
+
+Animation animation_turret_11;
+Animation animation_turret_12;
+Animation animation_turret_13;
+
+Animation animation_turret_21;
+Animation animation_turret_22;
+Animation animation_turret_23;
+
+Animation animation_turret_31;
+Animation animation_turret_32;
+Animation animation_turret_33;
+
+Animation animation_turret_41;
+Animation animation_turret_42;
+Animation animation_turret_43;
+
+Animation animation_turret_51;
+Animation animation_turret_52;
+Animation animation_turret_53;
+
 ///////////////////////////////////////////////////////////////draw
 void draw() {
   ///////////////////////////////////////////////////////////////initialisation

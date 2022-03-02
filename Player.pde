@@ -107,7 +107,64 @@ class Player {
     println("Player_" + this.number + ": add_unit: ...");
     if (this.money >= x_unit.get_cost()) {
       this.money = this.money - x_unit.get_cost();
-      Unit unit_to_add = new Unit(new Collider(x_unit.get_collider().get_size_x(), x_unit.get_collider().get_size_y()), x_unit.get_health_point(), x_unit.get_damage(), x_unit.get_speed(), x_unit.get_range(), x_unit.get_cost());
+      Unit unit_to_add = new Unit(new Collider(x_unit.get_collider().get_size_x(), x_unit.get_collider().get_size_y()), x_unit.get_health_point(), x_unit.get_damage(), x_unit.get_speed(), x_unit.get_range(), x_unit.get_cost(), x_unit.get_animation());
+
+      //load animation for each unit type
+      if (x_unit == unit_1) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_1/"));
+      }
+      if (x_unit == unit_2) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_2/"));
+      }
+      if (x_unit == unit_3) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_3/"));
+      }
+      if (x_unit == unit_11) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_11/"));
+      }
+      if (x_unit == unit_12) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_12/"));
+      }
+      if (x_unit == unit_13) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_13/"));
+      }
+      if (x_unit == unit_21) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_21/"));
+      }
+      if (x_unit == unit_22) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_22/"));
+      }
+      if (x_unit == unit_23) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_23/"));
+      }
+      if (x_unit == unit_31) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_31/"));
+      }
+      if (x_unit == unit_32) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_32/"));
+      }
+      if (x_unit == unit_33) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_33/"));
+      }
+      if (x_unit == unit_41) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_41/"));
+      }
+      if (x_unit == unit_42) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_42/"));
+      }
+      if (x_unit == unit_43) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_43/"));
+      }
+      if (x_unit == unit_51) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_51/"));
+      }
+      if (x_unit == unit_52) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_52/"));
+      }
+      if (x_unit == unit_53) {
+        unit_to_add.set_animation(load_animation("Unit/Unit_53/"));
+      }
+
       if (this.number == 1) {
         unit_to_add.set_position_x(this.position_x + this.collider.get_size_x());
       }

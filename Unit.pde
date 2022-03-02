@@ -10,8 +10,9 @@ class Unit {
   private boolean can_move;
   private int cost;
   private String name;
+  private Animation animation;
 
-  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range, int x_cost) {
+  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range, int x_cost, Animation x_animation) {
     this.collider = x_collider;
     this.health_point = x_health_point;
     this.damage = x_damage;
@@ -20,6 +21,7 @@ class Unit {
     this.can_move = true;
     this.position_y = 200;
     this.cost = x_cost;
+    this.animation = x_animation;
   }
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
@@ -52,6 +54,9 @@ class Unit {
   String get_name() {
     return this.name;
   }
+  Animation get_animation() {
+    return this.animation;
+  }
 
   ///////////////////////////////////////////////////////////////setter
   void set_position_x(int x_position_x) {
@@ -62,6 +67,9 @@ class Unit {
   }
   void set_can_move(boolean x_result) {
     this.can_move = x_result;
+  }
+  void set_animation(Animation x_animation) {
+    this.animation = x_animation;
   }
 
   ///////////////////////////////////////////////////////////////function
@@ -110,6 +118,8 @@ class Unit {
     this.move(x_number);
     this.can_move = true;
     println("Player_" + x_number + ": Unit: update: done");
+
+    this.animation.update("idle", this.position_x, this.position_y);
   }
   void display() {
     println("Unit: display: ...");
@@ -119,5 +129,7 @@ class Unit {
     textSize(10);
     text(this.health_point, this.position_x, this.position_y+10);
     println("Unit: display: done");
+
+    this.animation.display();
   }
 }
