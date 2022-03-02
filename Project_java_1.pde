@@ -2,7 +2,7 @@
 void setup() {
   //fullScreen(P2D);
   size(1000, 600, P2D);
-  frameRate(20);
+  frameRate(60);
 }
 
 ///////////////////////////////////////////////////////////////screen parameter
@@ -95,6 +95,8 @@ Button button_remove_turret_4;
 Button button_add_period;
 
 Button button_power;
+
+Button button_display_unit;
 
 Collider collider_player_1;
 Collider collider_player_2;
@@ -278,6 +280,17 @@ void draw() {
     }
   }
 
+  ///////////////////////////////////////////////////////////////mouse hover button
+  if (button_unit_1.collide(mouse_x, mouse_y) == true) {
+    button_unit_1.display_unit(main, 1, button_display_unit);
+  }
+  if (button_unit_2.collide(mouse_x, mouse_y) == true) {
+    button_unit_2.display_unit(main, 2, button_display_unit);
+  }
+  if (button_unit_3.collide(mouse_x, mouse_y) == true) {
+    button_unit_3.display_unit(main, 3, button_display_unit);
+  }
+
   ///////////////////////////////////////////////////////////////reset game
   if (input_space == true) {
     initialisation_done = false;
@@ -290,7 +303,7 @@ void draw() {
   text("" + remove_turret_mode, 500, 500);
 
   ///////////////////////////////////////////////////////////////AI
-  if (frame % 80 == 0) {
+  if (frame % 30 == 0) {
     println("add unit to ennemy");
     main.tab_player[1].add_unit(unit_1);
     main.tab_player[1].add_turret(turret_2);
