@@ -46,7 +46,7 @@ void initialisation() {
 
   turret_31 = new Turret(0, 0, 0, 0, 18, 200, 400, "Small Cannon");
   turret_32 = new Turret(0, 0, 0, 0, 22, 250, 500, "Medium Cannon");
-  turret_33 = new Turret(0, 0, 0, 0, 26, 300, 800,"Large Cannon");
+  turret_33 = new Turret(0, 0, 0, 0, 26, 300, 800, "Large Cannon");
 
   turret_41 = new Turret(0, 0, 0, 0, 24, 200, 400, "Machine gun");
   turret_42 = new Turret(0, 0, 0, 0, 29, 250, 500, "Small Rocket");

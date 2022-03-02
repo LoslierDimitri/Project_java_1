@@ -203,248 +203,70 @@ class Player {
     int turret_to_add_decal = 10;
     if (this.number == 1) {
       if (this.money >= x_turret.get_cost() && this.nb_turret < this.nb_turret_max) {
-        if (this.nb_turret == 0) {
-          Turret turret_to_add = new Turret(0, this.position_y + (turret_to_add_decal * 3) + (turret_to_add_size_y * 3), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name());
-          if (x_turret == turret_1) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_1/"));
-          }
-          if (x_turret == turret_2) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_2/"));
-          }
-          if (x_turret == turret_3) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_3/"));
-          }
-          if (x_turret == turret_11) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_11/"));
-          }
-          if (x_turret == turret_12) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_12/"));
-          }
-          if (x_turret == turret_13) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_13/"));
-          }
-          if (x_turret == turret_21) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_21/"));
-          }
-          if (x_turret == turret_22) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_22/"));
-          }
-          if (x_turret == turret_23) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_23/"));
-          }
-          if (x_turret == turret_31) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_31/"));
-          }
-          if (x_turret == turret_32) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_32/"));
-          }
-          if (x_turret == turret_33) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_33/"));
-          }
-          if (x_turret == turret_41) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_41/"));
-          }
-          if (x_turret == turret_42) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_42/"));
-          }
-          if (x_turret == turret_43) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_43/"));
-          }
-          if (x_turret == turret_51) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_51/"));
-          }
-          if (x_turret == turret_52) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_52/"));
-          }
-          if (x_turret == turret_53) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_53/"));
-          }
-          this.tab_turret[this.nb_turret] = turret_to_add;
-          this.nb_turret = this.nb_turret + 1;
-          this.money = this.money - turret_to_add.get_cost();
-        } else if (this.nb_turret == 1) {
-          Turret turret_to_add = new Turret(0, this.position_y + (turret_to_add_decal * 2) + (turret_to_add_size_y * 2), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name());
-          if (x_turret == turret_1) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_1/"));
-          }
-          if (x_turret == turret_2) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_2/"));
-          }
-          if (x_turret == turret_3) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_3/"));
-          }
-          if (x_turret == turret_11) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_11/"));
-          }
-          if (x_turret == turret_12) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_12/"));
-          }
-          if (x_turret == turret_13) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_13/"));
-          }
-          if (x_turret == turret_21) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_21/"));
-          }
-          if (x_turret == turret_22) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_22/"));
-          }
-          if (x_turret == turret_23) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_23/"));
-          }
-          if (x_turret == turret_31) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_31/"));
-          }
-          if (x_turret == turret_32) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_32/"));
-          }
-          if (x_turret == turret_33) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_33/"));
-          }
-          if (x_turret == turret_41) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_41/"));
-          }
-          if (x_turret == turret_42) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_42/"));
-          }
-          if (x_turret == turret_43) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_43/"));
-          }
-          if (x_turret == turret_51) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_51/"));
-          }
-          if (x_turret == turret_52) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_52/"));
-          }
-          if (x_turret == turret_53) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_53/"));
-          }
-          this.tab_turret[this.nb_turret] = turret_to_add;
-          this.nb_turret = this.nb_turret + 1;
-          this.money = this.money - turret_to_add.get_cost();
-        } else if (this.nb_turret == 2) {
-          Turret turret_to_add = new Turret(0, this.position_y + (turret_to_add_decal * 1) + (turret_to_add_size_y * 1), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name());
-          if (x_turret == turret_1) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_1/"));
-          }
-          if (x_turret == turret_2) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_2/"));
-          }
-          if (x_turret == turret_3) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_3/"));
-          }
-          if (x_turret == turret_11) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_11/"));
-          }
-          if (x_turret == turret_12) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_12/"));
-          }
-          if (x_turret == turret_13) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_13/"));
-          }
-          if (x_turret == turret_21) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_21/"));
-          }
-          if (x_turret == turret_22) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_22/"));
-          }
-          if (x_turret == turret_23) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_23/"));
-          }
-          if (x_turret == turret_31) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_31/"));
-          }
-          if (x_turret == turret_32) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_32/"));
-          }
-          if (x_turret == turret_33) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_33/"));
-          }
-          if (x_turret == turret_41) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_41/"));
-          }
-          if (x_turret == turret_42) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_42/"));
-          }
-          if (x_turret == turret_43) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_43/"));
-          }
-          if (x_turret == turret_51) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_51/"));
-          }
-          if (x_turret == turret_52) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_52/"));
-          }
-          if (x_turret == turret_53) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_53/"));
-          }
-          this.tab_turret[this.nb_turret] = turret_to_add;
-          this.nb_turret = this.nb_turret + 1;
-          this.money = this.money - turret_to_add.get_cost();
-        } else if (this.nb_turret == 3) {
-          Turret turret_to_add = new Turret(0, this.position_y + (turret_to_add_decal * 0) + (turret_to_add_size_y * 0), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name());
-          if (x_turret == turret_1) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_1/"));
-          }
-          if (x_turret == turret_2) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_2/"));
-          }
-          if (x_turret == turret_3) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_3/"));
-          }
-          if (x_turret == turret_11) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_11/"));
-          }
-          if (x_turret == turret_12) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_12/"));
-          }
-          if (x_turret == turret_13) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_13/"));
-          }
-          if (x_turret == turret_21) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_21/"));
-          }
-          if (x_turret == turret_22) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_22/"));
-          }
-          if (x_turret == turret_23) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_23/"));
-          }
-          if (x_turret == turret_31) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_31/"));
-          }
-          if (x_turret == turret_32) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_32/"));
-          }
-          if (x_turret == turret_33) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_33/"));
-          }
-          if (x_turret == turret_41) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_41/"));
-          }
-          if (x_turret == turret_42) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_42/"));
-          }
-          if (x_turret == turret_43) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_43/"));
-          }
-          if (x_turret == turret_51) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_51/"));
-          }
-          if (x_turret == turret_52) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_52/"));
-          }
-          if (x_turret == turret_53) {
-            turret_to_add.set_animation(load_animation("Turret/Turret_53/"));
-          }
-          this.tab_turret[this.nb_turret] = turret_to_add;
-          this.nb_turret = this.nb_turret + 1;
-          this.money = this.money - turret_to_add.get_cost();
+
+        Turret turret_to_add = new Turret(0, this.position_y + (turret_to_add_decal * (this.nb_turret_max - this.nb_turret)) + (turret_to_add_size_y * (this.nb_turret_max - this.nb_turret)), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name());
+        if (x_turret == turret_1) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_1/"));
         }
+        if (x_turret == turret_2) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_2/"));
+        }
+        if (x_turret == turret_3) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_3/"));
+        }
+        if (x_turret == turret_11) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_11/"));
+        }
+        if (x_turret == turret_12) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_12/"));
+        }
+        if (x_turret == turret_13) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_13/"));
+        }
+        if (x_turret == turret_21) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_21/"));
+        }
+        if (x_turret == turret_22) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_22/"));
+        }
+        if (x_turret == turret_23) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_23/"));
+        }
+        if (x_turret == turret_31) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_31/"));
+        }
+        if (x_turret == turret_32) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_32/"));
+        }
+        if (x_turret == turret_33) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_33/"));
+        }
+        if (x_turret == turret_41) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_41/"));
+        }
+        if (x_turret == turret_42) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_42/"));
+        }
+        if (x_turret == turret_43) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_43/"));
+        }
+        if (x_turret == turret_51) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_51/"));
+        }
+        if (x_turret == turret_52) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_52/"));
+        }
+        if (x_turret == turret_53) {
+          turret_to_add.set_animation(load_animation("Turret/Turret_53/"));
+        }
+        this.tab_turret[this.nb_turret] = turret_to_add;
+        this.nb_turret = this.nb_turret + 1;
+        this.money = this.money - turret_to_add.get_cost();
       }
     }
     if (this.number == 2) {
-      if (this.nb_turret == 0) {
-        Turret turret_to_add = new Turret(screen_size_x - turret_to_add_size_x, this.position_y + (turret_to_add_decal * 3) + (turret_to_add_size_y * 3), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name());
+      if (this.nb_turret < this.nb_turret_limit) {
+        Turret turret_to_add = new Turret(screen_size_x - turret_to_add_size_x, this.position_y + (turret_to_add_decal * (this.nb_turret_max - this.nb_turret)) + (turret_to_add_size_y * (this.nb_turret_max - this.nb_turret)), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name());
         if (x_turret == turret_1) {
           turret_to_add.set_animation(load_animation("Turret/Turret_1/"));
         }
@@ -501,184 +323,10 @@ class Player {
         }
         this.tab_turret[this.nb_turret] = turret_to_add;
         this.nb_turret = this.nb_turret + 1;
-      } else if (this.nb_turret == 1) {
-        Turret turret_to_add = new Turret(screen_size_x - turret_to_add_size_x, this.position_y + (turret_to_add_decal * 2) + (turret_to_add_size_y * 2), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name());
-        if (x_turret == turret_1) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_1/"));
-        }
-        if (x_turret == turret_2) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_2/"));
-        }
-        if (x_turret == turret_3) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_3/"));
-        }
-        if (x_turret == turret_11) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_11/"));
-        }
-        if (x_turret == turret_12) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_12/"));
-        }
-        if (x_turret == turret_13) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_13/"));
-        }
-        if (x_turret == turret_21) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_21/"));
-        }
-        if (x_turret == turret_22) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_22/"));
-        }
-        if (x_turret == turret_23) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_23/"));
-        }
-        if (x_turret == turret_31) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_31/"));
-        }
-        if (x_turret == turret_32) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_32/"));
-        }
-        if (x_turret == turret_33) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_33/"));
-        }
-        if (x_turret == turret_41) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_41/"));
-        }
-        if (x_turret == turret_42) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_42/"));
-        }
-        if (x_turret == turret_43) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_43/"));
-        }
-        if (x_turret == turret_51) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_51/"));
-        }
-        if (x_turret == turret_52) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_52/"));
-        }
-        if (x_turret == turret_53) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_53/"));
-        }
-        this.tab_turret[this.nb_turret] = turret_to_add;
-        this.nb_turret = this.nb_turret + 1;
-      } else if (this.nb_turret == 2) {
-        Turret turret_to_add = new Turret(screen_size_x - turret_to_add_size_x, this.position_y + (turret_to_add_decal * 1) + (turret_to_add_size_y * 1), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name());
-        if (x_turret == turret_1) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_1/"));
-        }
-        if (x_turret == turret_2) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_2/"));
-        }
-        if (x_turret == turret_3) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_3/"));
-        }
-        if (x_turret == turret_11) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_11/"));
-        }
-        if (x_turret == turret_12) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_12/"));
-        }
-        if (x_turret == turret_13) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_13/"));
-        }
-        if (x_turret == turret_21) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_21/"));
-        }
-        if (x_turret == turret_22) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_22/"));
-        }
-        if (x_turret == turret_23) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_23/"));
-        }
-        if (x_turret == turret_31) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_31/"));
-        }
-        if (x_turret == turret_32) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_32/"));
-        }
-        if (x_turret == turret_33) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_33/"));
-        }
-        if (x_turret == turret_41) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_41/"));
-        }
-        if (x_turret == turret_42) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_42/"));
-        }
-        if (x_turret == turret_43) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_43/"));
-        }
-        if (x_turret == turret_51) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_51/"));
-        }
-        if (x_turret == turret_52) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_52/"));
-        }
-        if (x_turret == turret_53) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_53/"));
-        }
-        this.tab_turret[this.nb_turret] = turret_to_add;
-        this.nb_turret = this.nb_turret + 1;
-      } else if (this.nb_turret == 3) {
-        Turret turret_to_add = new Turret(screen_size_x - turret_to_add_size_x, this.position_y + (turret_to_add_decal * 0) + (turret_to_add_size_y * 0), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name());
-        if (x_turret == turret_1) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_1/"));
-        }
-        if (x_turret == turret_2) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_2/"));
-        }
-        if (x_turret == turret_3) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_3/"));
-        }
-        if (x_turret == turret_11) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_11/"));
-        }
-        if (x_turret == turret_12) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_12/"));
-        }
-        if (x_turret == turret_13) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_13/"));
-        }
-        if (x_turret == turret_21) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_21/"));
-        }
-        if (x_turret == turret_22) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_22/"));
-        }
-        if (x_turret == turret_23) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_23/"));
-        }
-        if (x_turret == turret_31) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_31/"));
-        }
-        if (x_turret == turret_32) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_32/"));
-        }
-        if (x_turret == turret_33) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_33/"));
-        }
-        if (x_turret == turret_41) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_41/"));
-        }
-        if (x_turret == turret_42) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_42/"));
-        }
-        if (x_turret == turret_43) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_43/"));
-        }
-        if (x_turret == turret_51) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_51/"));
-        }
-        if (x_turret == turret_52) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_52/"));
-        }
-        if (x_turret == turret_53) {
-          turret_to_add.set_animation(load_animation("Turret/Turret_53/"));
-        }
-        this.tab_turret[this.nb_turret] = turret_to_add;
-        this.nb_turret = this.nb_turret + 1;
+
+        println("Player_" + this.number + ": add_turret: done");
       }
     }
-
-    println("Player_" + this.number + ": add_turret: done");
   }
 
   void remove_turret(int x_nb_turret) {
