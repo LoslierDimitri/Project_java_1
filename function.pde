@@ -29,7 +29,7 @@ Animation load_animation(String x_unit_turret_base) {
   PImage tab_to_add_idle[] = new PImage[nb_animation_idle];
   for (int i = 0; i < nb_animation_idle; i++) {
     tab_to_add_idle[i] = loadImage(x_unit_turret_base + "Idle/" + "idle_" + (i+1) + ".png");
-    tab_to_add_idle[i].resize(20, 50);
+    //tab_to_add_idle[i].resize(20, 50);
   }
 
   //walk

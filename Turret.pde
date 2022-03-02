@@ -39,6 +39,12 @@ class Turret {
   String get_name() {
     return this.name;
   }
+  int get_size_x() {
+    return this.size_x;
+  }
+  int get_size_y() {
+    return this.size_y;
+  }
 
   ///////////////////////////////////////////////////////////////setter
   void set_position_x(int x_position_x) {

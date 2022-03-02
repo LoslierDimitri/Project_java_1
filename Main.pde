@@ -137,7 +137,7 @@ class Main {
         for (int j = 0; j < this.tab_player[1].get_nb_unit(); j++) {
           if (this.tab_player[0].get_projectile(i).get_used() == false && this.tab_player[0].get_projectile(i).collide_total(this.tab_player[1].get_unit(j).get_collider(), 1) == true) {
             this.tab_player[0].get_projectile(i).damage(this.tab_player[1].get_unit(j));
-            this.tab_player[0].get_projectile(j).set_used(true);
+            this.tab_player[0].get_projectile(i).set_used(true);
           }
         }
       }
