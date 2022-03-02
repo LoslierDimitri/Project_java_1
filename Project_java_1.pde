@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////setup
 void setup() {
-  //fullScreen(P2D);
-  size(1000, 600, P2D);
+  fullScreen(P2D);
+  //size(1000, 600, P2D);
   frameRate(60);
 }
 

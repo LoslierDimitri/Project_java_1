@@ -6,29 +6,29 @@ void initialisation() {
 
   ///////////////////////////////////////////////////////////////unit
   //name, collider(size_x, size_y), health_point, damage, speed, range, cost
-  unit_1 = new Unit(new Collider(20, 50), 100, 1, 5, 10, 50, "Clubman");
-  unit_2 = new Unit(new Collider(30, 40), 110, 2, 4, 150, 150, "Slingshotman");
-  unit_3 = new Unit(new Collider(40, 40), 300, 5, 3, 30, 300, "Dino");
+  unit_1 = new Unit(new Collider(50, 90), 100, 1, 5, 10, 50, "Clubman");
+  unit_2 = new Unit(new Collider(50, 90), 110, 2, 4, 150, 150, "Slingshotman");
+  unit_3 = new Unit(new Collider(120, 100), 300, 5, 3, 30, 300, "Dino");
 
-  unit_11 = new Unit(new Collider(20, 40), 200, 3, 5, 10, 200, "Hoplite");
-  unit_12 = new Unit(new Collider(20, 50), 250, 8, 4, 150, 400, "Spearman");
-  unit_13 = new Unit(new Collider(50, 40), 800, 13, 3, 30, 650, "Elephant");
+  unit_11 = new Unit(new Collider(50, 90), 200, 3, 5, 10, 200, "Hoplite");
+  unit_12 = new Unit(new Collider(50, 90), 250, 8, 4, 150, 400, "Spearman");
+  unit_13 = new Unit(new Collider(120, 100), 800, 13, 3, 30, 650, "Elephant");
 
-  unit_21 = new Unit(new Collider(20, 40), 200, 10, 5, 10, 400, "Knight");
-  unit_22 = new Unit(new Collider(20, 50), 250, 16, 4, 150, 600, "Crossbowman");
-  unit_23 = new Unit(new Collider(50, 40), 800, 20, 3, 30, 850, "Horseman");
+  unit_21 = new Unit(new Collider(50, 90), 200, 10, 5, 10, 400, "Knight");
+  unit_22 = new Unit(new Collider(50, 90), 250, 16, 4, 150, 600, "Crossbowman");
+  unit_23 = new Unit(new Collider(120, 100), 800, 20, 3, 30, 850, "Horseman");
 
-  unit_31 = new Unit(new Collider(20, 40), 200, 18, 5, 10, 800, "Dueler");
-  unit_32 = new Unit(new Collider(20, 50), 250, 22, 4, 150, 1200, "Rifleman");
-  unit_33 = new Unit(new Collider(50, 40), 800, 26, 3, 40, 1650, "Gunner");
+  unit_31 = new Unit(new Collider(50, 90), 200, 18, 5, 10, 800, "Dueler");
+  unit_32 = new Unit(new Collider(50, 90), 250, 22, 4, 150, 1200, "Rifleman");
+  unit_33 = new Unit(new Collider(50, 90), 800, 26, 3, 40, 1650, "Gunner");
 
-  unit_41 = new Unit(new Collider(20, 40), 200, 24, 5, 60, 1600, "Melee Infantry");
-  unit_42 = new Unit(new Collider(20, 50), 250, 29, 4, 150, 1900, "Infantry");
-  unit_43 = new Unit(new Collider(50, 40), 800, 33, 3, 50, 2400, "Tank");
+  unit_41 = new Unit(new Collider(50, 90), 200, 24, 5, 60, 1600, "Melee Infantry");
+  unit_42 = new Unit(new Collider(50, 90), 250, 29, 4, 150, 1900, "Infantry");
+  unit_43 = new Unit(new Collider(120, 100), 800, 33, 3, 50, 2400, "Tank");
 
-  unit_51 = new Unit(new Collider(20, 40), 200, 31, 5, 60, 2200, "Laser Blade");
-  unit_52 = new Unit(new Collider(20, 50), 250, 36, 4, 150, 2600, "Blaster");
-  unit_53 = new Unit(new Collider(50, 40), 800, 40, 3, 50, 3000, "Super Soldier");
+  unit_51 = new Unit(new Collider(50, 90), 200, 31, 5, 60, 2200, "Laser Blade");
+  unit_52 = new Unit(new Collider(50, 90), 250, 36, 4, 150, 2600, "Blaster");
+  unit_53 = new Unit(new Collider(50, 90), 800, 40, 3, 50, 3000, "Super Soldier");
 
   ///////////////////////////////////////////////////////////////turret
   //name, position_x, position_y, size_x, size_y, damage, range, cost
@@ -58,16 +58,16 @@ void initialisation() {
 
   ///////////////////////////////////////////////////////////////player
   //number, health_point, collider(size_x, size_y), position_x, position_y, money
-  int player_1_size_x = 100;
-  int player_1_size_y = 200;
+  int player_1_size_x = 150;
+  int player_1_size_y = 250;
   int player_1_position_x = 0;
   int player_1_position_y = screen_size_y / 2;
   int player_1_health_point = 1000;
   int player_1_money = 1000;
   player_1 = new Player(1, player_1_health_point, new Collider(player_1_size_x, player_1_size_y), player_1_position_x, player_1_position_y, player_1_money);
 
-  int player_2_size_x = 100;
-  int player_2_size_y = 200;
+  int player_2_size_x = 150;
+  int player_2_size_y = 250;
   int player_2_position_x = screen_size_x - player_2_size_x;
   int player_2_position_y = screen_size_y / 2;
   int player_2_health_point = 1000;
