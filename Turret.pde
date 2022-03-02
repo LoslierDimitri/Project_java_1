@@ -9,7 +9,7 @@ class Turret {
 
   private String name;
 
-  Turret(int x_position_x, int x_position_y, int x_size_x, int x_size_y, int x_damage, int x_range, int x_cost) {
+  Turret(int x_position_x, int x_position_y, int x_size_x, int x_size_y, int x_damage, int x_range, int x_cost, String x_name) {
     this.position_x = x_position_x;
     this.position_y = x_position_y;
     this.size_x = x_size_x;

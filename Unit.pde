@@ -11,7 +11,7 @@ class Unit {
   private int cost;
   private String name;
 
-  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range, int x_cost) {
+  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range, int x_cost, String x_name) {
     this.collider = x_collider;
     this.health_point = x_health_point;
     this.damage = x_damage;
