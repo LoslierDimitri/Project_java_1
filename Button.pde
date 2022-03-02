@@ -79,123 +79,158 @@ class Button {
 
     if (period_player == 1) {
       if (x_unit == 1) {
-        text("name: " + unit_1.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_1.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_1.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_1.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_1, x_button);
       }
       if (x_unit == 2) {
-        text("name: " + unit_2.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_2.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_2.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_2.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_2, x_button);
       }
       if (x_unit == 3) {
-        text("name: " + unit_3.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_3.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_3.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_3.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_3, x_button);
       }
     }
     if (period_player == 2) {
       if (x_unit == 1) {
-        text("name: " + unit_11.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_11.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_11.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_11.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_11, x_button);
       }
       if (x_unit == 2) {
-        text("name: " + unit_12.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_12.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_12.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_12.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_12, x_button);
       }
       if (x_unit == 3) {
-        text("name: " + unit_13.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_13.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_13.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_13.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_13, x_button);
       }
     }
     if (period_player == 3) {
       if (x_unit == 1) {
-        text("name: " + unit_21.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_21.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_21.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_21.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_21, x_button);
       }
       if (x_unit == 2) {
-        text("name: " + unit_22.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_22.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_22.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_22.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_22, x_button);
       }
       if (x_unit == 3) {
-        text("name: " + unit_23.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_23.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_23.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_23.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_23, x_button);
       }
     }
     if (period_player == 4) {
       if (x_unit == 1) {
-        text("name: " + unit_31.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_31.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_31.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_31.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_31, x_button);
       }
       if (x_unit == 2) {
-        text("name: " + unit_32.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_32.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_32.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_32.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_32, x_button);
       }
       if (x_unit == 3) {
-        text("name: " + unit_33.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_33.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_33.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_33.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_33, x_button);
       }
     }
     if (period_player == 5) {
       if (x_unit == 1) {
-        text("name: " + unit_41.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_41.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_41.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_41.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_41, x_button);
       }
       if (x_unit == 2) {
-        text("name: " + unit_42.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_42.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_42.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_42.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_42, x_button);
       }
       if (x_unit == 3) {
-        text("name: " + unit_43.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_43.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_43.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_43.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_43, x_button);
       }
     }
     if (period_player == 6) {
       if (x_unit == 1) {
-        text("name: " + unit_51.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_51.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_51.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_51.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_51, x_button);
       }
       if (x_unit == 2) {
-        text("name: " + unit_52.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_52.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_52.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_52.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_52, x_button);
       }
       if (x_unit == 3) {
-        text("name: " + unit_53.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-        text("health point: " + unit_53.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-        text("damage: " + unit_53.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-        text("cost: " + unit_53.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+        this.display_x_unit(unit_53, x_button);
       }
     }
+  }
+
+  private void display_x_unit(Unit x_unit, Button x_button) {
+    text("name: " + x_unit.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
+    text("health point: " + x_unit.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
+    text("damage: " + x_unit.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+    text("cost: " + x_unit.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+  }
+
+  void display_turret(Main x_main, int x_turret, Button x_button) {
+    x_button.display();
+
+    fill(0);
+    textSize(12);
+    int period_player = x_main.get_player(0).get_period();
+
+    if (period_player == 1) {
+      if (x_turret == 1) {
+        this.display_x_turret(turret_1, x_button);
+      }
+      if (x_turret == 2) {
+        this.display_x_turret(turret_2, x_button);
+      }
+      if (x_turret == 3) {
+        this.display_x_turret(turret_3, x_button);
+      }
+    }
+    if (period_player == 2) {
+      if (x_turret == 1) {
+        this.display_x_turret(turret_11, x_button);
+      }
+      if (x_turret == 2) {
+        this.display_x_turret(turret_12, x_button);
+      }
+      if (x_turret == 3) {
+        this.display_x_turret(turret_13, x_button);
+      }
+    }
+    if (period_player == 3) {
+      if (x_turret == 1) {
+        this.display_x_turret(turret_21, x_button);
+      }
+      if (x_turret == 2) {
+        this.display_x_turret(turret_22, x_button);
+      }
+      if (x_turret == 3) {
+        this.display_x_turret(turret_23, x_button);
+      }
+    }
+    if (period_player == 4) {
+      if (x_turret == 1) {
+        this.display_x_turret(turret_31, x_button);
+      }
+      if (x_turret == 2) {
+        this.display_x_turret(turret_32, x_button);
+      }
+      if (x_turret == 3) {
+        this.display_x_turret(turret_33, x_button);
+      }
+    }
+    if (period_player == 5) {
+      if (x_turret == 1) {
+        this.display_x_turret(turret_41, x_button);
+      }
+      if (x_turret == 2) {
+        this.display_x_turret(turret_42, x_button);
+      }
+      if (x_turret == 3) {
+        this.display_x_turret(turret_43, x_button);
+      }
+    }
+    if (period_player == 6) {
+      if (x_turret == 1) {
+        this.display_x_turret(turret_51, x_button);
+      }
+      if (x_turret == 2) {
+        this.display_x_turret(turret_52, x_button);
+      }
+      if (x_turret == 3) {
+        this.display_x_turret(turret_53, x_button);
+      }
+    }
+  }
+
+  private void display_x_turret(Turret x_turret, Button x_button) {
+    text("name: " + x_turret.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
+    text("range: " + x_turret.get_range(), x_button.get_position_x(), x_button.get_position_y() + 20);
+    text("damage: " + x_turret.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
+    text("cost: " + x_turret.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
   }
 }
