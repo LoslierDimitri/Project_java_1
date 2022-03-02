@@ -60,26 +60,24 @@ class Main {
           if (this.tab_player[0].get_unit(i).collide(this.tab_player[1].get_unit(j).get_collider(), 1) == true) {
             this.tab_player[0].get_unit(i).set_can_move(false);
             this.tab_player[1].get_unit(j).set_can_move(false);
-
             this.tab_player[0].get_unit(i).damage(this.tab_player[1].get_unit(j));
+          }
+          if (distance(this.tab_player[0].get_unit(i).get_position_x(), this.tab_player[1].get_unit(j).get_position_x()) <= this.tab_player[0].get_unit(i).get_range()) {
+            this.tab_player[0].get_unit(i).damage(this.tab_player[1].get_unit(0));
+          }
+          if (distance(this.tab_player[0].get_unit(i).get_position_x(), (this.tab_player[1].get_collider().get_position_x() + (this.tab_player[1].get_collider().get_size_x() / 2))) <= this.tab_player[0].get_unit(i).get_range()) {
+            this.tab_player[0].get_unit(i).damage_player(this.tab_player[1]);
           }
           if (this.tab_player[1].get_unit(j).collide(this.tab_player[0].get_unit(i).get_collider(), 2) == true) {
             this.tab_player[0].get_unit(i).set_can_move(false);
             this.tab_player[1].get_unit(j).set_can_move(false);
-
             this.tab_player[1].get_unit(j).damage(this.tab_player[0].get_unit(i));
-          }
-        }
-      }
-
-      //ranged attack on unit
-      for (int i = 0; i < this.tab_player[0].get_nb_unit(); i++) {
-        for (int j = 0; j < this.tab_player[1].get_nb_unit(); j++) {
-          if (distance(this.tab_player[0].get_unit(i).get_position_x(), this.tab_player[1].get_unit(j).get_position_x()) <= this.tab_player[0].get_unit(i).get_range()) {
-            this.tab_player[0].get_unit(i).damage(this.tab_player[1].get_unit(0));
           }
           if (distance(this.tab_player[1].get_unit(j).get_position_x(), this.tab_player[0].get_unit(i).get_position_x()) <= this.tab_player[1].get_unit(j).get_range()) {
             this.tab_player[1].get_unit(j).damage(this.tab_player[0].get_unit(0));
+          }
+          if (distance(this.tab_player[1].get_unit(i).get_position_x(), (this.tab_player[0].get_collider().get_position_x() + (this.tab_player[0].get_collider().get_size_x() / 2))) <= this.tab_player[1].get_unit(i).get_range()) {
+            this.tab_player[1].get_unit(i).damage_player(this.tab_player[0]);
           }
         }
       }
@@ -97,20 +95,6 @@ class Main {
         if (this.tab_player[1].get_unit(j).get_collider().collide(this.tab_player[0].get_collider(), 2) == true) {
           this.tab_player[1].get_unit(j).damage_player(this.tab_player[0]);
           this.tab_player[1].get_unit(0).set_can_move(false);
-        }
-      }
-
-      //ranged attack on player base
-      //player 1 to player 2
-      for (int i = 0; i < this.tab_player[0].get_nb_unit(); i++) {
-        if (distance(this.tab_player[0].get_unit(i).get_position_x(), (this.tab_player[1].get_collider().get_position_x() + (this.tab_player[1].get_collider().get_size_x() / 2))) <= this.tab_player[0].get_unit(i).get_range()) {
-          this.tab_player[0].get_unit(i).damage_player(this.tab_player[1]);
-        }
-      }
-      //player 2 to player 1
-      for (int i = 0; i < this.tab_player[1].get_nb_unit(); i++) {
-        if (distance(this.tab_player[1].get_unit(i).get_position_x(), (this.tab_player[0].get_collider().get_position_x() + (this.tab_player[0].get_collider().get_size_x() / 2))) <= this.tab_player[1].get_unit(i).get_range()) {
-          this.tab_player[1].get_unit(i).damage_player(this.tab_player[0]);
         }
       }
 

@@ -195,8 +195,8 @@ class Player {
   void add_period() {
     if (this.period < this.period_max && this.exp >= this.add_period_cost) {
       this.period = this.period + 1;
+      this.exp = this.exp - this.add_period_cost;
       this.add_period_cost = this.add_period_cost * 2;
-      this.exp = 0;
     }
   }
 
