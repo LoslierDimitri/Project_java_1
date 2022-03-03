@@ -117,7 +117,7 @@ class Player {
     println("Player_" + this.number + ": add_unit: ...");
     if (this.money >= x_unit.get_cost() && this.nb_unit < this.nb_unit_max) {
       this.money = this.money - x_unit.get_cost();
-      Unit unit_to_add = new Unit(new Collider(x_unit.get_collider().get_size_x(), x_unit.get_collider().get_size_y()), x_unit.get_health_point(), x_unit.get_damage(), x_unit.get_speed(), x_unit.get_range(), x_unit.get_cost(), x_unit.get_name());
+      Unit unit_to_add = new Unit(new Collider(x_unit.get_collider().get_size_x(), x_unit.get_collider().get_size_y()), x_unit.get_health_point(), x_unit.get_damage(), x_unit.get_speed(), x_unit.get_range(), x_unit.get_cost(), x_unit.get_name(), x_unit.get_sound_attack());
 
       //load animation for each unit type
       if (x_unit == unit_1) {
@@ -216,7 +216,7 @@ class Player {
       int turret_to_add_size_y = 20;
       int turret_to_add_decal = 10;
 
-      Turret turret_to_add = new Turret(0, this.position_y + (turret_to_add_decal * (this.nb_turret_max - this.nb_turret)) + (turret_to_add_size_y * (this.nb_turret_max - this.nb_turret)), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name());
+      Turret turret_to_add = new Turret(0, this.position_y + (turret_to_add_decal * (this.nb_turret_max - this.nb_turret)) + (turret_to_add_size_y * (this.nb_turret_max - this.nb_turret)), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name(), x_turret.get_sound_attack());
 
       if (x_turret == turret_1) {
         turret_to_add.set_animation(load_animation("Turret/Turret_1/"));

@@ -101,6 +101,7 @@ class Main {
         if (this.tab_player[0].get_unit(i).get_collider().collide(this.tab_player[1].get_collider(), 1) == true) {
           this.tab_player[0].get_unit(i).damage_player(this.tab_player[1]);
           this.tab_player[0].get_unit(0).set_can_move(false);
+          this.tab_player[0].get_unit(i).set_is_attack(true);
         }
       }
       //player 2 to player 1
@@ -108,6 +109,7 @@ class Main {
         if (this.tab_player[1].get_unit(j).get_collider().collide(this.tab_player[0].get_collider(), 2) == true) {
           this.tab_player[1].get_unit(j).damage_player(this.tab_player[0]);
           this.tab_player[1].get_unit(0).set_can_move(false);
+          this.tab_player[1].get_unit(j).set_is_attack(true);
         }
       }
 
@@ -145,11 +147,18 @@ class Main {
         tab_player[i].update(this);
       }
     }
+
+    //end of game
     if (this.tab_player[0].get_health_point() <= 0) {
       this.is_finished = true;
     }
     if (this.tab_player[1].get_health_point() <= 0) {
       this.is_finished = true;
+    }
+
+    //loop sound
+    if (main_music.position()>=main_music.length()) {
+      main_music.rewind();
     }
 
     println("Main: update: done");

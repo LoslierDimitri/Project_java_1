@@ -13,7 +13,10 @@ class Unit {
   private String name;
   private Animation animation;
 
-  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range, int x_cost, String x_name) {
+  private String sound_attack_name;
+  private AudioPlayer sound_attack;
+
+  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range, int x_cost, String x_name, String x_sound_attack_name) {
     this.collider = x_collider;
     this.health_point = x_health_point;
     this.damage = x_damage;
@@ -24,6 +27,9 @@ class Unit {
     this.cost = x_cost;
     this.name = x_name;
     this.is_attack = false;
+
+    this.sound_attack_name = x_sound_attack_name;
+    this.sound_attack = minim.loadFile("Sound_effect/" + this.sound_attack_name + ".mp3");
   }
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
@@ -58,6 +64,9 @@ class Unit {
   }
   Animation get_animation() {
     return this.animation;
+  }
+  String get_sound_attack() {
+    return this.sound_attack_name;
   }
 
   ///////////////////////////////////////////////////////////////setter
@@ -127,6 +136,10 @@ class Unit {
       this.animation.update("idle", this.position_x, this.position_y);
     } else if (this.can_move == false && is_attack == true) {
       this.animation.update("attack", this.position_x, this.position_y);
+      if (sound_attack.position()>=sound_attack.length()) {
+        sound_attack.rewind();
+      }
+      this.sound_attack.play();
     } else if (can_move == true) {
       this.animation.update("walk", this.position_x, this.position_y);
     }

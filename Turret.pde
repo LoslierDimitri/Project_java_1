@@ -12,7 +12,10 @@ class Turret {
 
   private boolean is_attack;
 
-  Turret(int x_position_x, int x_position_y, int x_size_x, int x_size_y, int x_damage, int x_range, int x_cost, String x_name) {
+  private String sound_attack_name;
+  private AudioPlayer sound_attack;
+
+  Turret(int x_position_x, int x_position_y, int x_size_x, int x_size_y, int x_damage, int x_range, int x_cost, String x_name, String x_sound_attack_name) {
     this.position_x = x_position_x;
     this.position_y = x_position_y;
     this.size_x = x_size_x;
@@ -24,6 +27,9 @@ class Turret {
     this.name = x_name;
 
     this.is_attack = false;
+
+    this.sound_attack_name = x_sound_attack_name;
+    this.sound_attack = minim.loadFile("Sound_effect/" + this.sound_attack_name + ".mp3");
   }
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
@@ -53,6 +59,9 @@ class Turret {
   Animation get_animation() {
     return this.animation;
   }
+  String get_sound_attack() {
+    return this.sound_attack_name;
+  }
 
   ///////////////////////////////////////////////////////////////setter
   void set_position_x(int x_position_x) {
@@ -78,6 +87,10 @@ class Turret {
 
     if (this.is_attack == true) {
       this.animation.update("attack", this.position_x, this.position_y);
+      if (sound_attack.position()>=sound_attack.length()) {
+        sound_attack.rewind();
+      }
+      this.sound_attack.play();
     } else {
       this.animation.update("idle", this.position_x, this.position_y);
     }

@@ -1,8 +1,19 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+Minim minim;
+
 ///////////////////////////////////////////////////////////////setup
 void setup() {
   fullScreen(P2D);
   //size(1000, 600, P2D);
   frameRate(60);
+
+  minim = new Minim(this);
 }
 
 ///////////////////////////////////////////////////////////////screen parameter
@@ -17,6 +28,12 @@ boolean remove_turret_mode = false;
 
 ///////////////////////////////////////////////////////////////global variable
 int animation_speed = 20;
+
+///////////////////////////////////////////////////////////////music
+AudioPlayer main_music;
+
+///////////////////////////////////////////////////////////////sound
+
 
 ///////////////////////////////////////////////////////////////unit
 Unit unit_1;
@@ -322,6 +339,9 @@ void draw() {
 
   ///////////////////////////////////////////////////////////////exit program
   if (input_a == true) {
+    main_music.close();
+    minim.stop();
+    super.stop();
     exit();
   }
   text("" + remove_turret_mode, 500, 500);
