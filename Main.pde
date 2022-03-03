@@ -69,6 +69,8 @@ class Main {
           if (this.tab_player[0].get_unit(i).collide(this.tab_player[1].get_unit(j).get_collider(), 1) == true) {
             this.tab_player[0].get_unit(i).set_can_move(false);
             this.tab_player[1].get_unit(j).set_can_move(false);
+            this.tab_player[0].get_unit(i).set_is_attack(true);
+            this.tab_player[1].get_unit(j).set_is_attack(true);
             this.tab_player[0].get_unit(i).damage(this.tab_player[1].get_unit(j));
           }
           if (distance(this.tab_player[0].get_unit(i).get_position_x(), this.tab_player[1].get_unit(j).get_position_x()) <= this.tab_player[0].get_unit(i).get_range()) {
@@ -80,6 +82,8 @@ class Main {
           if (this.tab_player[1].get_unit(j).collide(this.tab_player[0].get_unit(i).get_collider(), 2) == true) {
             this.tab_player[0].get_unit(i).set_can_move(false);
             this.tab_player[1].get_unit(j).set_can_move(false);
+            this.tab_player[0].get_unit(i).set_is_attack(true);
+            this.tab_player[1].get_unit(j).set_is_attack(true);
             this.tab_player[1].get_unit(j).damage(this.tab_player[0].get_unit(i));
           }
           if (distance(this.tab_player[1].get_unit(j).get_position_x(), this.tab_player[0].get_unit(i).get_position_x()) <= this.tab_player[1].get_unit(j).get_range()) {

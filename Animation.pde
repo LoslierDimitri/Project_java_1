@@ -17,10 +17,14 @@ class Animation {
 
   String animation_actual;
 
+  int animation_speed_actual;
+
   Animation() {
     this.position_x = 0;
     this.position_y = 0;
     this.animation_actual = "idle";
+
+    this.animation_speed_actual = 0;
   }
 
   ///////////////////////////////////////////////////////////////getter
@@ -64,25 +68,49 @@ class Animation {
     this.position_y = x_position_y;
 
     if (this.animation_actual == "idle") {
-      this.nb_animation_idle_actual = this.nb_animation_idle_actual + 1;
+      if (this.animation_speed_actual < animation_speed) {
+        this.animation_speed_actual = this.animation_speed_actual + 1;
+      }
+      if (this.animation_speed_actual == animation_speed) {
+        this.animation_speed_actual = 0;
+        this.nb_animation_idle_actual = this.nb_animation_idle_actual + 1;
+      }
       if (this.nb_animation_idle_actual == this.nb_animation_idle) {
         this.nb_animation_idle_actual = 0;
       }
     }
     if (this.animation_actual == "walk") {
-      this.nb_animation_walk_actual = this.nb_animation_walk_actual + 1;
+      if (this.animation_speed_actual < animation_speed) {
+        this.animation_speed_actual = this.animation_speed_actual + 1;
+      }
+      if (this.animation_speed_actual == animation_speed) {
+        this.animation_speed_actual = 0;
+        this.nb_animation_walk_actual = this.nb_animation_walk_actual + 1;
+      }
       if (this.nb_animation_walk_actual == this.nb_animation_walk) {
         this.nb_animation_walk_actual = 0;
       }
     }
     if (this.animation_actual == "attack") {
-      this.nb_animation_attack_actual = this.nb_animation_attack_actual + 1;
+      if (this.animation_speed_actual < animation_speed) {
+        this.animation_speed_actual = this.animation_speed_actual + 1;
+      }
+      if (this.animation_speed_actual == animation_speed) {
+        this.animation_speed_actual = 0;
+        this.nb_animation_attack_actual = this.nb_animation_attack_actual + 1;
+      }
       if (this.nb_animation_attack_actual == this.nb_animation_attack) {
         this.nb_animation_attack_actual = 0;
       }
     }
     if (this.animation_actual == "die") {
-      this.nb_animation_die_actual = this.nb_animation_die_actual + 1;
+      if (this.animation_speed_actual < animation_speed) {
+        this.animation_speed_actual = this.animation_speed_actual + 1;
+      }
+      if (this.animation_speed_actual == animation_speed) {
+        this.animation_speed_actual = 0;
+        this.nb_animation_die_actual = this.nb_animation_die_actual + 1;
+      }
       if (this.nb_animation_die_actual == this.nb_animation_die) {
         this.nb_animation_die_actual = 0;
       }

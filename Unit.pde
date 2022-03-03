@@ -8,6 +8,7 @@ class Unit {
   private int speed;
   private int range;
   private boolean can_move;
+  private boolean is_attack;
   private int cost;
   private String name;
   private Animation animation;
@@ -22,6 +23,7 @@ class Unit {
     this.position_y = 200;
     this.cost = x_cost;
     this.name = x_name;
+    this.is_attack = false;
   }
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
@@ -67,6 +69,9 @@ class Unit {
   }
   void set_can_move(boolean x_result) {
     this.can_move = x_result;
+  }
+  void set_is_attack(boolean x_result) {
+    this.is_attack = x_result;
   }
   void set_animation(Animation x_animation) {
     this.animation = x_animation;
@@ -116,10 +121,17 @@ class Unit {
     this.collider.set_position_x(this.position_x);
     this.collider.set_position_y(this.position_y);
     this.move(x_number);
-    this.can_move = true;
     println("Player_" + x_number + ": Unit: update: done");
 
-    this.animation.update("idle", this.position_x, this.position_y);
+    if (this.can_move == false && is_attack == false) {
+      this.animation.update("idle", this.position_x, this.position_y);
+    } else if (this.can_move == false && is_attack == true) {
+      this.animation.update("attack", this.position_x, this.position_y);
+    } else if (can_move == true) {
+      this.animation.update("walk", this.position_x, this.position_y);
+    }
+
+    this.can_move = true;
   }
   void display() {
     println("Unit: display: ...");
