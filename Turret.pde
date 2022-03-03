@@ -10,6 +10,8 @@ class Turret {
   private String name;
   private Animation animation;
 
+  private boolean is_attack;
+
   Turret(int x_position_x, int x_position_y, int x_size_x, int x_size_y, int x_damage, int x_range, int x_cost, String x_name) {
     this.position_x = x_position_x;
     this.position_y = x_position_y;
@@ -20,6 +22,8 @@ class Turret {
     this.range = x_range;
     this.cost = x_cost;
     this.name = x_name;
+
+    this.is_attack = false;
   }
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
@@ -60,6 +64,9 @@ class Turret {
   void set_animation(Animation x_animation) {
     this.animation = x_animation;
   }
+  void set_is_attack(boolean x_result) {
+    this.is_attack = x_result;
+  }
 
   ///////////////////////////////////////////////////////////////function
   void damage(Unit x_unit) {
@@ -68,7 +75,15 @@ class Turret {
 
   void update(int x_number) {
     println("Player_" + x_number + ": turret: update: ...");
-    this.animation.update("idle", this.position_x, this.position_y);
+
+    if (this.is_attack == true) {
+      this.animation.update("attack", this.position_x, this.position_y);
+    } else {
+      this.animation.update("idle", this.position_x, this.position_y);
+    }
+
+    this.is_attack = false;
+
     println("Player_" + x_number + ": turret: update: done");
   }
   void display() {

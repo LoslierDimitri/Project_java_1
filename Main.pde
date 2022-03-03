@@ -117,6 +117,7 @@ class Main {
         for (int j = 0; j < this.tab_player[1].get_nb_unit(); j++) {
           if (distance(this.tab_player[0].get_turret(i).get_position_x(), this.tab_player[1].get_unit(j).get_position_x()) <= this.tab_player[0].get_turret(i).get_range()) {
             this.tab_player[0].get_turret(i).damage(this.tab_player[1].get_unit(0));
+            this.tab_player[0].get_turret(i).set_is_attack(true);
           }
         }
       }
@@ -125,6 +126,7 @@ class Main {
         for (int j = 0; j < this.tab_player[0].get_nb_unit(); j++) {
           if (distance(this.tab_player[1].get_turret(i).get_position_x(), this.tab_player[0].get_unit(j).get_position_x()) <= this.tab_player[1].get_turret(i).get_range()) {
             this.tab_player[1].get_turret(i).damage(this.tab_player[0].get_unit(0));
+            this.tab_player[1].get_turret(i).set_is_attack(true);
           }
         }
       }
