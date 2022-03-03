@@ -26,6 +26,15 @@ class Main {
 
   ///////////////////////////////////////////////////////////////setter
   ///////////////////////////////////////////////////////////////function
+  void remove_all_unit() {
+    for (int i = 0; i < this.tab_player[0].get_nb_unit(); i++) {
+      this.tab_player[0].remove_unit(0);
+    }
+    for (int i = 0; i < this.tab_player[1].get_nb_unit(); i++) {
+      this.tab_player[1].remove_unit(0);
+    }
+  }
+
   void update() {
     println("Main: update: ...");
 
