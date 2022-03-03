@@ -85,8 +85,8 @@ class Main {
           if (distance(this.tab_player[1].get_unit(j).get_position_x(), this.tab_player[0].get_unit(i).get_position_x()) <= this.tab_player[1].get_unit(j).get_range()) {
             this.tab_player[1].get_unit(j).damage(this.tab_player[0].get_unit(0));
           }
-          if (distance(this.tab_player[1].get_unit(i).get_position_x(), (this.tab_player[0].get_collider().get_position_x() + (this.tab_player[0].get_collider().get_size_x() / 2))) <= this.tab_player[1].get_unit(i).get_range()) {
-            this.tab_player[1].get_unit(i).damage_player(this.tab_player[0]);
+          if (distance(this.tab_player[1].get_unit(j).get_position_x(), (this.tab_player[0].get_collider().get_position_x() + (this.tab_player[0].get_collider().get_size_x() / 2))) <= this.tab_player[1].get_unit(j).get_range()) {
+            this.tab_player[1].get_unit(j).damage_player(this.tab_player[0]);
           }
         }
       }
