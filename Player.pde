@@ -76,6 +76,9 @@ class Player {
   int get_period() {
     return this.period;
   }
+  int get_period_cost() {
+    return this.add_period_cost;
+  }
   Turret get_turret(int x_turret) {
     return this.tab_turret[x_turret];
   }
@@ -96,6 +99,9 @@ class Player {
   }
   int get_exp() {
     return this.exp;
+  }
+  int get_nb_turret_limit() {
+    return this.nb_turret_limit;
   }
 
   ///////////////////////////////////////////////////////////////setter
@@ -380,6 +386,7 @@ class Player {
     }
     if (this.number == 2) {
       this.money = 999999;
+      this.exp = 999999;
     }
 
     int turret_to_add_size_x = 20;
