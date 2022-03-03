@@ -2,14 +2,18 @@ class Main {
   private Player tab_player[];
   private int nb_player;
   private int nb_player_max;
-
   private boolean is_finished;
+  private PImage background_1;
+  private PImage background_2;
 
-  Main(Player x_tab_player[], int x_nb_player, int x_nb_player_max) {
+  Main(Player x_tab_player[], int x_nb_player, int x_nb_player_max, PImage x_background_1, PImage x_background_2) {
     this.tab_player = x_tab_player;
     this.nb_player = x_nb_player;
     this.nb_player_max = x_nb_player_max;
-
+    this.background_1 = x_background_1;
+    this.background_1.resize(screen_size_x, screen_size_y);
+    this.background_2 = x_background_2;
+    this.background_2.resize(screen_size_x, screen_size_y);
     this.is_finished = false;
   }
 
@@ -165,9 +169,11 @@ class Main {
   }
   void display() {
     println("Main: display: ...");
+    image(this.background_1, 0, 0);
     for (int i = 0; i < this.nb_player; i++) {
       tab_player[i].display();
     }
+    image(this.background_2, 0, 0);
     println("Main: display: done");
   }
 }

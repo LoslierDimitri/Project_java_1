@@ -1,7 +1,6 @@
 class Animation {
   int position_x;
   int position_y;
-
   PImage tab_animation_idle[];
   int nb_animation_idle_actual;
   int nb_animation_idle;
@@ -14,16 +13,13 @@ class Animation {
   PImage tab_animation_die[];
   int nb_animation_die_actual;
   int nb_animation_die;
-
   String animation_actual;
-
   int animation_speed_actual;
 
   Animation() {
     this.position_x = 0;
     this.position_y = 0;
     this.animation_actual = "idle";
-
     this.animation_speed_actual = 0;
   }
 

@@ -16,7 +16,6 @@ class Player {
   private int nb_turret_limit;
   private Projectile tab_projectile[];
   private int nb_projectile;
-
   private String power_name;
   private String period_name;
   private boolean can_use_power;
@@ -25,8 +24,11 @@ class Player {
   private int add_turret_max_cost;
   private int add_period_cost;
   private int period_max;
+  private PImage tab_base_player[];
+  
+  private PImage tab_image_power[];
 
-  Player(int x_number, int x_health_point, Collider x_collider, int x_position_x, int x_position_y, int x_money) {
+  Player(int x_number, int x_health_point, Collider x_collider, int x_position_x, int x_position_y, int x_money, PImage x_tab_base_player[], PImage x_tab_image_power[]) {
     this.health_point = x_health_point;
     this.collider = x_collider;
     this.position_x = x_position_x;
@@ -44,17 +46,23 @@ class Player {
     this.nb_turret_max = 1;
     this.nb_turret_limit = 4;
     this.tab_turret = new Turret[this.nb_turret_limit];
-
     can_use_power = false;
     power_charge_actual = 0;
     power_charge = 200;
     add_turret_max_cost = 1000;
     add_period_cost = 4000;
     period_max = 6;
+    this.tab_base_player = x_tab_base_player;
 
     if (this.number == 2) {
       this.nb_turret_max = this.nb_turret_limit;
     }
+
+    for (int i = 0; i < this.period_max; i++) {
+      this.tab_base_player[i].resize(this.collider.get_size_x(), this.collider.get_size_y());
+    }
+    
+    this.tab_image_power = x_tab_image_power;
   }
 
   ///////////////////////////////////////////////////////////////getter
@@ -345,7 +353,7 @@ class Player {
     for (int i = 0; i < nb_projectile; i++) {
       float random_float = random(this.position_x + this.collider.get_size_x(), screen_size_x - this.collider.get_size_x());
       int random_int = int(random_float);
-      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5);
+      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5, this.tab_image_power[0]);
     }
   }
   void power_2() {
@@ -354,7 +362,7 @@ class Player {
     for (int i = 0; i < nb_projectile; i++) {
       float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
       int random_int = int(random_float);
-      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5);
+      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5, this.tab_image_power[1]);
     }
   }
   void power_3() {
@@ -363,7 +371,7 @@ class Player {
     for (int i = 0; i < nb_projectile; i++) {
       float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
       int random_int = int(random_float);
-      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5);
+      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5, this.tab_image_power[2]);
     }
   }
   void power_4() {
@@ -372,7 +380,7 @@ class Player {
     for (int i = 0; i < nb_projectile; i++) {
       float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
       int random_int = int(random_float);
-      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5);
+      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5, this.tab_image_power[3]);
     }
   }
   void power_5() {
@@ -381,7 +389,7 @@ class Player {
     for (int i = 0; i < nb_projectile; i++) {
       float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
       int random_int = int(random_float);
-      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5);
+      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5, this.tab_image_power[4]);
     }
   }
   void power_6() {
@@ -390,7 +398,7 @@ class Player {
     for (int i = 0; i < nb_projectile; i++) {
       float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
       int random_int = int(random_float);
-      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5);
+      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5, this.tab_image_power[5]);
     }
   }
 
@@ -437,6 +445,9 @@ class Player {
     println("Player_" + this.number + ": display: ...");
     fill(100, 100, 200);
     rect(this.position_x, this.position_y, this.collider.get_size_x(), this.collider.get_size_y());
+
+    image(this.tab_base_player[this.period + 1], this.position_x, this.position_y);
+
     for (int i = 0; i < this.nb_unit; i++) {
       this.tab_unit[i].display();
     }
@@ -448,6 +459,7 @@ class Player {
         this.tab_projectile[i].display();
       }
     }
+
     fill(0);
     text(this.health_point, this.position_x + 50, this.position_y+10);
     text(this.money, this.position_x + 50, this.position_y+20);

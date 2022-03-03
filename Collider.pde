@@ -6,7 +6,7 @@ class Collider {
   private int size_x;
   private int size_y;
   private int position_x_center;
-
+  
   Collider(int x_size_x, int x_size_y) {
     this.size_x = x_size_x;
     this.size_y = x_size_y;

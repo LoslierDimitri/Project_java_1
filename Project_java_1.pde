@@ -32,9 +32,6 @@ int animation_speed = 20;
 ///////////////////////////////////////////////////////////////music
 AudioPlayer main_music;
 
-///////////////////////////////////////////////////////////////sound
-
-
 ///////////////////////////////////////////////////////////////unit
 Unit unit_1;
 Unit unit_2;
@@ -299,26 +296,6 @@ void draw() {
       }
     }
 
-    ///////////////////////////////////////////////////////////////mouse hover button
-    if (button_unit_1.collide(mouse_x, mouse_y) == true) {
-      button_unit_1.display_unit(main, 1, button_display_unit);
-    }
-    if (button_unit_2.collide(mouse_x, mouse_y) == true) {
-      button_unit_2.display_unit(main, 2, button_display_unit);
-    }
-    if (button_unit_3.collide(mouse_x, mouse_y) == true) {
-      button_unit_3.display_unit(main, 3, button_display_unit);
-    }
-    if (button_turret_1.collide(mouse_x, mouse_y) == true) {
-      button_turret_1.display_turret(main, 1, button_display_unit);
-    }
-    if (button_turret_2.collide(mouse_x, mouse_y) == true) {
-      button_turret_2.display_turret(main, 2, button_display_unit);
-    }
-    if (button_turret_3.collide(mouse_x, mouse_y) == true) {
-      button_turret_3.display_turret(main, 3, button_display_unit);
-    }
-
     ///////////////////////////////////////////////////////////////AI
     ai(main);
 
@@ -362,6 +339,27 @@ void draw() {
   button_turret_add_max.display();
   button_add_period.display();
   button_power.display();
+  button_display_unit.display();
+
+  ///////////////////////////////////////////////////////////////mouse hover button
+  if (button_unit_1.collide(mouse_x, mouse_y) == true) {
+    button_unit_1.display_unit(main, 1, button_display_unit);
+  }
+  if (button_unit_2.collide(mouse_x, mouse_y) == true) {
+    button_unit_2.display_unit(main, 2, button_display_unit);
+  }
+  if (button_unit_3.collide(mouse_x, mouse_y) == true) {
+    button_unit_3.display_unit(main, 3, button_display_unit);
+  }
+  if (button_turret_1.collide(mouse_x, mouse_y) == true) {
+    button_turret_1.display_turret(main, 1, button_display_unit);
+  }
+  if (button_turret_2.collide(mouse_x, mouse_y) == true) {
+    button_turret_2.display_turret(main, 2, button_display_unit);
+  }
+  if (button_turret_3.collide(mouse_x, mouse_y) == true) {
+    button_turret_3.display_turret(main, 3, button_display_unit);
+  }
 
   ///////////////////////////////////////////////////////////////reset
   reset();

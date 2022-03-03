@@ -12,7 +12,6 @@ class Unit {
   private int cost;
   private String name;
   private Animation animation;
-
   private String sound_attack_name;
   private AudioPlayer sound_attack;
 
@@ -27,10 +26,10 @@ class Unit {
     this.cost = x_cost;
     this.name = x_name;
     this.is_attack = false;
-
     this.sound_attack_name = x_sound_attack_name;
     this.sound_attack = minim.loadFile("Sound_effect/" + this.sound_attack_name + ".mp3");
   }
+
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
     return this.position_x;

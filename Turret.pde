@@ -6,12 +6,9 @@ class Turret {
   private int damage;
   private int range;
   private int cost;
-
   private String name;
   private Animation animation;
-
   private boolean is_attack;
-
   private String sound_attack_name;
   private AudioPlayer sound_attack;
 
@@ -20,17 +17,15 @@ class Turret {
     this.position_y = x_position_y;
     this.size_x = x_size_x;
     this.size_y = x_size_y;
-
     this.damage = x_damage;
     this.range = x_range;
     this.cost = x_cost;
     this.name = x_name;
-
     this.is_attack = false;
-
     this.sound_attack_name = x_sound_attack_name;
     this.sound_attack = minim.loadFile("Sound_effect/" + this.sound_attack_name + ".mp3");
   }
+  
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
     return this.position_x;

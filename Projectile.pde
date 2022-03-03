@@ -6,10 +6,11 @@ class Projectile {
   private Collider collider;
   private int damage;
   private int speed;
-
   private boolean used;
 
-  Projectile (int x_position_x, int x_position_y, int x_size_x, int x_size_y, Collider x_collider, int x_damage, int x_speed) {
+  private PImage image;
+
+  Projectile (int x_position_x, int x_position_y, int x_size_x, int x_size_y, Collider x_collider, int x_damage, int x_speed, PImage x_image) {
     this.position_x = x_position_x;
     this.position_y = x_position_y;
     this.size_x = x_size_x;
@@ -18,6 +19,9 @@ class Projectile {
     this.damage = x_damage;
     this.speed = x_speed;
     this.used = false;
+
+    this.image = x_image;
+    this.image.resize(this.size_x, this.size_y);
   }
 
   ///////////////////////////////////////////////////////////////getter
@@ -65,5 +69,7 @@ class Projectile {
     rect(this.collider.get_position_x(), this.collider.get_position_y(), this.collider.get_size_x(), this.collider.get_size_y());
     fill(0, 200, 0);
     rect(this.position_x, this.position_y, this.size_x, this.size_y);
+
+    image(this.image, this.position_x, this.position_y);
   }
 }

@@ -64,7 +64,24 @@ void initialisation() {
   int player_1_position_y = screen_size_y / 2;
   int player_1_health_point = 1000;
   int player_1_money = 1000;
-  player_1 = new Player(1, player_1_health_point, new Collider(player_1_size_x, player_1_size_y), player_1_position_x, player_1_position_y, player_1_money);
+
+  PImage tab_base_player_1[] = new PImage[6];
+  tab_base_player_1[0] = loadImage("Base/base_1.png");
+  tab_base_player_1[1] = loadImage("Base/base_1.png");
+  tab_base_player_1[2] = loadImage("Base/base_1.png");
+  tab_base_player_1[3] = loadImage("Base/base_1.png");
+  tab_base_player_1[4] = loadImage("Base/base_1.png");
+  tab_base_player_1[5] = loadImage("Base/base_1.png");
+
+  PImage tab_image_power[] = new PImage[6];
+  tab_image_power[0] = loadImage("Power/power_1.png");
+  tab_image_power[1] = loadImage("Power/power_1.png");
+  tab_image_power[2] = loadImage("Power/power_1.png");
+  tab_image_power[3] = loadImage("Power/power_1.png");
+  tab_image_power[4] = loadImage("Power/power_1.png");
+  tab_image_power[5] = loadImage("Power/power_1.png");
+
+  player_1 = new Player(1, player_1_health_point, new Collider(player_1_size_x, player_1_size_y), player_1_position_x, player_1_position_y, player_1_money, tab_base_player_1, tab_image_power);
 
   int player_2_size_x = 150;
   int player_2_size_y = 250;
@@ -72,13 +89,25 @@ void initialisation() {
   int player_2_position_y = screen_size_y / 2;
   int player_2_health_point = 1000;
   int player_2_money = 1000;
-  player_2 = new Player(2, player_2_health_point, new Collider(player_2_size_x, player_2_size_y), player_2_position_x, player_2_position_y, player_2_money);
+
+  PImage tab_base_player_2[] = new PImage[6];
+  tab_base_player_2[0] = loadImage("Base/base_1.png");
+  tab_base_player_2[1] = loadImage("Base/base_1.png");
+  tab_base_player_2[2] = loadImage("Base/base_1.png");
+  tab_base_player_2[3] = loadImage("Base/base_1.png");
+  tab_base_player_2[4] = loadImage("Base/base_1.png");
+  tab_base_player_2[5] = loadImage("Base/base_1.png");
+
+  player_2 = new Player(2, player_2_health_point, new Collider(player_2_size_x, player_2_size_y), player_2_position_x, player_2_position_y, player_2_money, tab_base_player_2, tab_image_power);
 
   tab_player[0] = player_1;
   tab_player[1] = player_2;
 
   ///////////////////////////////////////////////////////////////main
-  main = new Main(tab_player, 2, 2);
+  PImage main_background_1 = loadImage("Background/background_1.png");
+  PImage main_bachground_2 = loadImage("Background/background_2.png");
+
+  main = new Main(tab_player, 2, 2, main_background_1, main_bachground_2);
 
   ///////////////////////////////////////////////////////////////button
   int button_interval_x = 10;
@@ -131,27 +160,27 @@ void initialisation() {
   int button_display_unit_position_x = screen_size_x - (button_unit_size_x * 3) - (button_interval_x * 3);
   int button_display_unit_position_y = (button_interval_y * 2) + (button_unit_size_y * 1);
 
-  button_unit_1 = new Button("unit_1", button_unit_1_position_x, button_unit_1_position_y, button_unit_size_x, button_unit_size_y);
-  button_unit_2 = new Button("unit_2", button_unit_2_position_x, button_unit_2_position_y, button_unit_size_x, button_unit_size_y);
-  button_unit_3 = new Button("unit_3", button_unit_3_position_x, button_unit_3_position_y, button_unit_size_x, button_unit_size_y);
+  button_unit_1 = new Button("unit_1", button_unit_1_position_x, button_unit_1_position_y, button_unit_size_x, button_unit_size_y, loadImage("Interface/button_1.png"));
+  button_unit_2 = new Button("unit_2", button_unit_2_position_x, button_unit_2_position_y, button_unit_size_x, button_unit_size_y, loadImage("Interface/button_1.png"));
+  button_unit_3 = new Button("unit_3", button_unit_3_position_x, button_unit_3_position_y, button_unit_size_x, button_unit_size_y, loadImage("Interface/button_1.png"));
 
-  button_turret_1 = new Button("turret_1", button_turret_1_position_x, button_turret_1_position_y, button_turret_size_x, button_turret_size_y);
-  button_turret_2 = new Button("turret_2", button_turret_2_position_x, button_turret_2_position_y, button_turret_size_x, button_turret_size_y);
-  button_turret_3 = new Button("turret_3", button_turret_3_position_x, button_turret_3_position_y, button_turret_size_x, button_turret_size_y);
+  button_turret_1 = new Button("turret_1", button_turret_1_position_x, button_turret_1_position_y, button_turret_size_x, button_turret_size_y, loadImage("Interface/button_1.png"));
+  button_turret_2 = new Button("turret_2", button_turret_2_position_x, button_turret_2_position_y, button_turret_size_x, button_turret_size_y, loadImage("Interface/button_1.png"));
+  button_turret_3 = new Button("turret_3", button_turret_3_position_x, button_turret_3_position_y, button_turret_size_x, button_turret_size_y, loadImage("Interface/button_1.png"));
 
-  button_remove_turret = new Button("remove_turret", button_turret_remove_mode_position_x, button_turret_remove_mode_position_y, button_turret_remove_mode_size_x, button_turret_remove_mode_size_y);
-  button_remove_turret_1 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 3) + (button_turret_to_add_size_y * 3), button_turret_to_add_size_x, button_turret_to_add_size_y);
-  button_remove_turret_2 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 2) + (button_turret_to_add_size_y * 2), button_turret_to_add_size_x, button_turret_to_add_size_y);
-  button_remove_turret_3 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 1) + (button_turret_to_add_size_y * 1), button_turret_to_add_size_x, button_turret_to_add_size_y);
-  button_remove_turret_4 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 0) + (button_turret_to_add_size_y * 0), button_turret_to_add_size_x, button_turret_to_add_size_y);
+  button_remove_turret = new Button("remove_turret", button_turret_remove_mode_position_x, button_turret_remove_mode_position_y, button_turret_remove_mode_size_x, button_turret_remove_mode_size_y, loadImage("Interface/button_1.png"));
+  button_remove_turret_1 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 3) + (button_turret_to_add_size_y * 3), button_turret_to_add_size_x, button_turret_to_add_size_y, loadImage("Interface/button_1.png"));
+  button_remove_turret_2 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 2) + (button_turret_to_add_size_y * 2), button_turret_to_add_size_x, button_turret_to_add_size_y, loadImage("Interface/button_1.png"));
+  button_remove_turret_3 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 1) + (button_turret_to_add_size_y * 1), button_turret_to_add_size_x, button_turret_to_add_size_y, loadImage("Interface/button_1.png"));
+  button_remove_turret_4 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 0) + (button_turret_to_add_size_y * 0), button_turret_to_add_size_x, button_turret_to_add_size_y, loadImage("Interface/button_1.png"));
 
-  button_turret_add_max = new Button("add turret max", button_turret_add_max_position_x, button_turret_add_max_position_y, button_turret_add_max_size_x, button_turret_add_max_size_y);
+  button_turret_add_max = new Button("add turret max", button_turret_add_max_position_x, button_turret_add_max_position_y, button_turret_add_max_size_x, button_turret_add_max_size_y, loadImage("Interface/button_1.png"));
 
-  button_add_period = new Button("add_period", button_add_period_position_x, button_add_period_position_y, button_add_period_size_x, button_add_period_size_y);
+  button_add_period = new Button("add_period", button_add_period_position_x, button_add_period_position_y, button_add_period_size_x, button_add_period_size_y, loadImage("Interface/button_1.png"));
 
-  button_power = new Button("power", button_power_position_x, button_power_position_y, button_power_size_x, button_power_size_y);
+  button_power = new Button("power", button_power_position_x, button_power_position_y, button_power_size_x, button_power_size_y, loadImage("Interface/button_1.png"));
 
-  button_display_unit = new Button("", button_display_unit_position_x, button_display_unit_position_y, button_display_unit_size_x, button_display_unit_size_y);
+  button_display_unit = new Button("", button_display_unit_position_x, button_display_unit_position_y, button_display_unit_size_x, button_display_unit_size_y, loadImage("Interface/button_1.png"));
 
   ///////////////////////////////////////////////////////////////music
   main_music = minim.loadFile("Music/Game_music.mp3");
