@@ -43,6 +43,21 @@ class Animation {
   }
 
   ///////////////////////////////////////////////////////////////function
+  void resize_animation(int x_size_x, int x_size_y) {
+    for (int i = 0; i < this.nb_animation_idle; i++) {
+      tab_animation_idle[i].resize(x_size_x, x_size_y);
+    }
+    for (int i = 0; i < this.nb_animation_walk; i++) {
+      tab_animation_walk[i].resize(x_size_x, x_size_y);
+    }
+    for (int i = 0; i < this.nb_animation_attack; i++) {
+      tab_animation_attack[i].resize(x_size_x, x_size_y);
+    }
+    for (int i = 0; i < this.nb_animation_die; i++) {
+      tab_animation_die[i].resize(x_size_x, x_size_y);
+    }
+  }
+
   void update(String x_animation, int x_position_x, int x_position_y) {
     this.animation_actual = x_animation;
     this.position_x = x_position_x;

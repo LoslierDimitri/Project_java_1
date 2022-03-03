@@ -46,6 +46,9 @@ class Turret {
   int get_size_y() {
     return this.size_y;
   }
+  Animation get_animation() {
+    return this.animation;
+  }
 
   ///////////////////////////////////////////////////////////////setter
   void set_position_x(int x_position_x) {

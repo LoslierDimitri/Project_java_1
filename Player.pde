@@ -176,6 +176,7 @@ class Player {
         unit_to_add.set_position_x(this.position_x - unit_to_add.collider.get_size_x());
       }
       unit_to_add.set_position_y(this.position_y + this.collider.get_size_y() - unit_to_add.get_collider().get_size_y());
+      unit_to_add.get_animation().resize_animation(unit_to_add.get_collider().get_size_x(), unit_to_add.get_collider().get_size_y());
       this.tab_unit[this.nb_unit] = unit_to_add;
       this.nb_unit = this.nb_unit + 1;
     }
@@ -197,6 +198,7 @@ class Player {
       this.period = this.period + 1;
       this.exp = this.exp - this.add_period_cost;
       this.add_period_cost = this.add_period_cost * 2;
+      this.health_point = this.health_point * 2;
     }
   }
 
@@ -276,6 +278,7 @@ class Player {
           turret_to_add.set_position_x(screen_size_x - turret_to_add.get_size_x());
         }
       }
+      turret_to_add.get_animation().resize_animation(turret_to_add.get_size_x(), turret_to_add.get_size_y());
       this.tab_turret[this.nb_turret] = turret_to_add;
       this.nb_turret = this.nb_turret + 1;
     }
