@@ -349,7 +349,7 @@ class Player {
     }
   }
   void power_2() {
-    this.nb_projectile = 20;
+    this.nb_projectile = 30;
     this.tab_projectile = new Projectile[nb_projectile];
     for (int i = 0; i < nb_projectile; i++) {
       float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
@@ -358,12 +358,40 @@ class Player {
     }
   }
   void power_3() {
+    this.nb_projectile = 40;
+    this.tab_projectile = new Projectile[nb_projectile];
+    for (int i = 0; i < nb_projectile; i++) {
+      float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
+      int random_int = int(random_float);
+      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5);
+    }
   }
   void power_4() {
+    this.nb_projectile = 50;
+    this.tab_projectile = new Projectile[nb_projectile];
+    for (int i = 0; i < nb_projectile; i++) {
+      float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
+      int random_int = int(random_float);
+      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5);
+    }
   }
   void power_5() {
+    this.nb_projectile = 60;
+    this.tab_projectile = new Projectile[nb_projectile];
+    for (int i = 0; i < nb_projectile; i++) {
+      float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
+      int random_int = int(random_float);
+      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5);
+    }
   }
   void power_6() {
+    this.nb_projectile = 70;
+    this.tab_projectile = new Projectile[nb_projectile];
+    for (int i = 0; i < nb_projectile; i++) {
+      float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
+      int random_int = int(random_float);
+      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5);
+    }
   }
 
   void update(Main x_main) {
