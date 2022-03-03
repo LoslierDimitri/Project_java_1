@@ -98,9 +98,6 @@ Button button_power;
 
 Button button_display_unit;
 
-Collider collider_player_1;
-Collider collider_player_2;
-
 ///////////////////////////////////////////////////////////////draw
 void draw() {
   ///////////////////////////////////////////////////////////////initialisation
@@ -113,191 +110,196 @@ void draw() {
 
   background(150);
 
-  ///////////////////////////////////////////////////////////////input
-  if (mouse_click == true) {
-    ///////////////////////////////////////////////////////////////unit
+  ///////////////////////////////////////////////////////////////game loop
+  if (main.get_is_finished() == false) {
+
+    ///////////////////////////////////////////////////////////////input
+    if (mouse_click == true) {
+      ///////////////////////////////////////////////////////////////unit
+      if (button_unit_1.collide(mouse_x, mouse_y) == true) {
+        if (main.get_player(0).get_period() == 1) {
+          button_unit_1.add_unit(main, unit_1);
+        }
+        if (main.get_player(0).get_period() == 2) {
+          button_unit_1.add_unit(main, unit_11);
+        }
+        if (main.get_player(0).get_period() == 3) {
+          button_unit_1.add_unit(main, unit_21);
+        }
+        if (main.get_player(0).get_period() == 4) {
+          button_unit_1.add_unit(main, unit_31);
+        }
+        if (main.get_player(0).get_period() == 5) {
+          button_unit_1.add_unit(main, unit_41);
+        }
+        if (main.get_player(0).get_period() == 6) {
+          button_unit_1.add_unit(main, unit_51);
+        }
+      }
+      if (button_unit_2.collide(mouse_x, mouse_y) == true) {
+        if (main.get_player(0).get_period() == 1) {
+          button_unit_2.add_unit(main, unit_2);
+        }
+        if (main.get_player(0).get_period() == 2) {
+          button_unit_2.add_unit(main, unit_12);
+        }
+        if (main.get_player(0).get_period() == 3) {
+          button_unit_2.add_unit(main, unit_22);
+        }
+        if (main.get_player(0).get_period() == 4) {
+          button_unit_2.add_unit(main, unit_32);
+        }
+        if (main.get_player(0).get_period() == 5) {
+          button_unit_2.add_unit(main, unit_42);
+        }
+        if (main.get_player(0).get_period() == 6) {
+          button_unit_2.add_unit(main, unit_52);
+        }
+      }
+      if (button_unit_3.collide(mouse_x, mouse_y) == true) {
+        if (main.get_player(0).get_period() == 1) {
+          button_unit_3.add_unit(main, unit_3);
+        }
+        if (main.get_player(0).get_period() == 2) {
+          button_unit_3.add_unit(main, unit_13);
+        }
+        if (main.get_player(0).get_period() == 3) {
+          button_unit_3.add_unit(main, unit_23);
+        }
+        if (main.get_player(0).get_period() == 4) {
+          button_unit_3.add_unit(main, unit_33);
+        }
+        if (main.get_player(0).get_period() == 5) {
+          button_unit_3.add_unit(main, unit_43);
+        }
+        if (main.get_player(0).get_period() == 6) {
+          button_unit_3.add_unit(main, unit_53);
+        }
+      }
+
+      ///////////////////////////////////////////////////////////////turret
+      if (button_turret_1.collide(mouse_x, mouse_y) == true) {
+        if (main.get_player(0).get_period() == 1) {
+          button_turret_1.add_turret(main, turret_1);
+        }
+        if (main.get_player(0).get_period() == 2) {
+          button_turret_1.add_turret(main, turret_11);
+        }
+        if (main.get_player(0).get_period() == 3) {
+          button_turret_1.add_turret(main, turret_21);
+        }
+        if (main.get_player(0).get_period() == 4) {
+          button_turret_1.add_turret(main, turret_31);
+        }
+        if (main.get_player(0).get_period() == 5) {
+          button_turret_1.add_turret(main, turret_41);
+        }
+        if (main.get_player(0).get_period() == 6) {
+          button_turret_1.add_turret(main, turret_51);
+        }
+      }
+      if (button_turret_2.collide(mouse_x, mouse_y) == true) {
+        if (main.get_player(0).get_period() == 1) {
+          button_turret_2.add_turret(main, turret_2);
+        }
+        if (main.get_player(0).get_period() == 2) {
+          button_turret_2.add_turret(main, turret_12);
+        }
+        if (main.get_player(0).get_period() == 3) {
+          button_turret_2.add_turret(main, turret_22);
+        }
+        if (main.get_player(0).get_period() == 4) {
+          button_turret_2.add_turret(main, turret_32);
+        }
+        if (main.get_player(0).get_period() == 5) {
+          button_turret_2.add_turret(main, turret_42);
+        }
+        if (main.get_player(0).get_period() == 6) {
+          button_turret_2.add_turret(main, turret_52);
+        }
+      }
+      if (button_turret_3.collide(mouse_x, mouse_y) == true) {
+        if (main.get_player(0).get_period() == 1) {
+          button_turret_3.add_turret(main, turret_3);
+        }
+        if (main.get_player(0).get_period() == 2) {
+          button_turret_3.add_turret(main, turret_13);
+        }
+        if (main.get_player(0).get_period() == 3) {
+          button_turret_3.add_turret(main, turret_23);
+        }
+        if (main.get_player(0).get_period() == 4) {
+          button_turret_3.add_turret(main, turret_33);
+        }
+        if (main.get_player(0).get_period() == 5) {
+          button_turret_3.add_turret(main, turret_43);
+        }
+        if (main.get_player(0).get_period() == 6) {
+          button_turret_3.add_turret(main, turret_53);
+        }
+      }
+
+      ///////////////////////////////////////////////////////////////remove turret
+      if (remove_turret_mode == true ) {
+        if (button_remove_turret_1.collide(mouse_x, mouse_y) == true) {
+          button_remove_turret_1.remove_turret(main, 1);
+        }
+        if (button_remove_turret_2.collide(mouse_x, mouse_y) == true) {
+          button_remove_turret_2.remove_turret(main, 2);
+        }
+        if (button_remove_turret_3.collide(mouse_x, mouse_y) == true) {
+          button_remove_turret_3.remove_turret(main, 3);
+        }
+        if (button_remove_turret_4.collide(mouse_x, mouse_y) == true) {
+          button_remove_turret_4.remove_turret(main, 4);
+        }
+      }
+
+      ///////////////////////////////////////////////////////////////change mode remove turret
+      if (button_remove_turret.collide(mouse_x, mouse_y) == true) {
+        if (remove_turret_mode == false) {
+          remove_turret_mode = true;
+        } else {
+          remove_turret_mode = false;
+        }
+      }
+
+      ///////////////////////////////////////////////////////////////add period
+      if (button_add_period.collide(mouse_x, mouse_y) == true) {
+        button_add_period.add_period(main);
+      }
+
+      ///////////////////////////////////////////////////////////////add turret max
+      if (button_turret_add_max.collide(mouse_x, mouse_y) == true) {
+        button_add_period.add_turret_max(main);
+      }
+
+      ///////////////////////////////////////////////////////////////power
+      if (button_power.collide(mouse_x, mouse_y) == true) {
+        button_power.power(main);
+      }
+    }
+
+    ///////////////////////////////////////////////////////////////mouse hover button
     if (button_unit_1.collide(mouse_x, mouse_y) == true) {
-      if (main.get_player(0).get_period() == 1) {
-        button_unit_1.add_unit(main, unit_1);
-      }
-      if (main.get_player(0).get_period() == 2) {
-        button_unit_1.add_unit(main, unit_11);
-      }
-      if (main.get_player(0).get_period() == 3) {
-        button_unit_1.add_unit(main, unit_21);
-      }
-      if (main.get_player(0).get_period() == 4) {
-        button_unit_1.add_unit(main, unit_31);
-      }
-      if (main.get_player(0).get_period() == 5) {
-        button_unit_1.add_unit(main, unit_41);
-      }
-      if (main.get_player(0).get_period() == 6) {
-        button_unit_1.add_unit(main, unit_51);
-      }
+      button_unit_1.display_unit(main, 1, button_display_unit);
     }
     if (button_unit_2.collide(mouse_x, mouse_y) == true) {
-      if (main.get_player(0).get_period() == 1) {
-        button_unit_2.add_unit(main, unit_2);
-      }
-      if (main.get_player(0).get_period() == 2) {
-        button_unit_2.add_unit(main, unit_12);
-      }
-      if (main.get_player(0).get_period() == 3) {
-        button_unit_2.add_unit(main, unit_22);
-      }
-      if (main.get_player(0).get_period() == 4) {
-        button_unit_2.add_unit(main, unit_32);
-      }
-      if (main.get_player(0).get_period() == 5) {
-        button_unit_2.add_unit(main, unit_42);
-      }
-      if (main.get_player(0).get_period() == 6) {
-        button_unit_2.add_unit(main, unit_52);
-      }
+      button_unit_2.display_unit(main, 2, button_display_unit);
     }
     if (button_unit_3.collide(mouse_x, mouse_y) == true) {
-      if (main.get_player(0).get_period() == 1) {
-        button_unit_3.add_unit(main, unit_3);
-      }
-      if (main.get_player(0).get_period() == 2) {
-        button_unit_3.add_unit(main, unit_13);
-      }
-      if (main.get_player(0).get_period() == 3) {
-        button_unit_3.add_unit(main, unit_23);
-      }
-      if (main.get_player(0).get_period() == 4) {
-        button_unit_3.add_unit(main, unit_33);
-      }
-      if (main.get_player(0).get_period() == 5) {
-        button_unit_3.add_unit(main, unit_43);
-      }
-      if (main.get_player(0).get_period() == 6) {
-        button_unit_3.add_unit(main, unit_53);
-      }
+      button_unit_3.display_unit(main, 3, button_display_unit);
     }
-
-    ///////////////////////////////////////////////////////////////turret
     if (button_turret_1.collide(mouse_x, mouse_y) == true) {
-      if (main.get_player(0).get_period() == 1) {
-        button_turret_1.add_turret(main, turret_1);
-      }
-      if (main.get_player(0).get_period() == 2) {
-        button_turret_1.add_turret(main, turret_11);
-      }
-      if (main.get_player(0).get_period() == 3) {
-        button_turret_1.add_turret(main, turret_21);
-      }
-      if (main.get_player(0).get_period() == 4) {
-        button_turret_1.add_turret(main, turret_31);
-      }
-      if (main.get_player(0).get_period() == 5) {
-        button_turret_1.add_turret(main, turret_41);
-      }
-      if (main.get_player(0).get_period() == 6) {
-        button_turret_1.add_turret(main, turret_51);
-      }
+      button_turret_1.display_turret(main, 1, button_display_unit);
     }
     if (button_turret_2.collide(mouse_x, mouse_y) == true) {
-      if (main.get_player(0).get_period() == 1) {
-        button_turret_2.add_turret(main, turret_2);
-      }
-      if (main.get_player(0).get_period() == 2) {
-        button_turret_2.add_turret(main, turret_12);
-      }
-      if (main.get_player(0).get_period() == 3) {
-        button_turret_2.add_turret(main, turret_22);
-      }
-      if (main.get_player(0).get_period() == 4) {
-        button_turret_2.add_turret(main, turret_32);
-      }
-      if (main.get_player(0).get_period() == 5) {
-        button_turret_2.add_turret(main, turret_42);
-      }
-      if (main.get_player(0).get_period() == 6) {
-        button_turret_2.add_turret(main, turret_52);
-      }
+      button_turret_2.display_turret(main, 2, button_display_unit);
     }
     if (button_turret_3.collide(mouse_x, mouse_y) == true) {
-      if (main.get_player(0).get_period() == 1) {
-        button_turret_3.add_turret(main, turret_3);
-      }
-      if (main.get_player(0).get_period() == 2) {
-        button_turret_3.add_turret(main, turret_13);
-      }
-      if (main.get_player(0).get_period() == 3) {
-        button_turret_3.add_turret(main, turret_23);
-      }
-      if (main.get_player(0).get_period() == 4) {
-        button_turret_3.add_turret(main, turret_33);
-      }
-      if (main.get_player(0).get_period() == 5) {
-        button_turret_3.add_turret(main, turret_43);
-      }
-      if (main.get_player(0).get_period() == 6) {
-        button_turret_3.add_turret(main, turret_53);
-      }
+      button_turret_3.display_turret(main, 3, button_display_unit);
     }
-
-    ///////////////////////////////////////////////////////////////remove turret
-    if (remove_turret_mode == true ) {
-      if (button_remove_turret_1.collide(mouse_x, mouse_y) == true) {
-        button_remove_turret_1.remove_turret(main, 1);
-      }
-      if (button_remove_turret_2.collide(mouse_x, mouse_y) == true) {
-        button_remove_turret_2.remove_turret(main, 2);
-      }
-      if (button_remove_turret_3.collide(mouse_x, mouse_y) == true) {
-        button_remove_turret_3.remove_turret(main, 3);
-      }
-      if (button_remove_turret_4.collide(mouse_x, mouse_y) == true) {
-        button_remove_turret_4.remove_turret(main, 4);
-      }
-    }
-
-    ///////////////////////////////////////////////////////////////change mode remove turret
-    if (button_remove_turret.collide(mouse_x, mouse_y) == true) {
-      if (remove_turret_mode == false) {
-        remove_turret_mode = true;
-      } else {
-        remove_turret_mode = false;
-      }
-    }
-
-    ///////////////////////////////////////////////////////////////add period
-    if (button_add_period.collide(mouse_x, mouse_y) == true) {
-      button_add_period.add_period(main);
-    }
-
-    ///////////////////////////////////////////////////////////////add turret max
-    if (button_turret_add_max.collide(mouse_x, mouse_y) == true) {
-      button_add_period.add_turret_max(main);
-    }
-
-    ///////////////////////////////////////////////////////////////power
-    if (button_power.collide(mouse_x, mouse_y) == true) {
-      button_power.power(main);
-    }
-  }
-
-  ///////////////////////////////////////////////////////////////mouse hover button
-  if (button_unit_1.collide(mouse_x, mouse_y) == true) {
-    button_unit_1.display_unit(main, 1, button_display_unit);
-  }
-  if (button_unit_2.collide(mouse_x, mouse_y) == true) {
-    button_unit_2.display_unit(main, 2, button_display_unit);
-  }
-  if (button_unit_3.collide(mouse_x, mouse_y) == true) {
-    button_unit_3.display_unit(main, 3, button_display_unit);
-  }
-  if (button_turret_1.collide(mouse_x, mouse_y) == true) {
-    button_turret_1.display_turret(main, 1, button_display_unit);
-  }
-  if (button_turret_2.collide(mouse_x, mouse_y) == true) {
-    button_turret_2.display_turret(main, 2, button_display_unit);
-  }
-  if (button_turret_3.collide(mouse_x, mouse_y) == true) {
-    button_turret_3.display_turret(main, 3, button_display_unit);
+  } else {
   }
 
   ///////////////////////////////////////////////////////////////reset game

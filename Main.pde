@@ -131,13 +131,9 @@ class Main {
       }
     }
     if (this.tab_player[0].get_health_point() <= 0) {
-      textSize(50);
-      text("player 2 win", 500, 600);
       this.is_finished = true;
     }
     if (this.tab_player[1].get_health_point() <= 0) {
-      textSize(50);
-      text("player 1 win", 500, 600);
       this.is_finished = true;
     }
 
