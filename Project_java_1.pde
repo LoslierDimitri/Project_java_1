@@ -327,8 +327,10 @@ void draw() {
   } else {
     main.remove_all_unit();
     if (main.get_player(0).get_health_point() <= 0) {
+      text("player 2 win", 700, 500);
     }
     if (main.get_player(1).get_health_point() <= 0) {
+      text("player 2 win", 700, 500);
     }
   }
 
