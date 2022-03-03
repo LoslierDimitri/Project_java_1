@@ -25,7 +25,7 @@ class Player {
   private int add_period_cost;
   private int period_max;
   private PImage tab_base_player[];
-  
+
   private PImage tab_image_power[];
 
   Player(int x_number, int x_health_point, Collider x_collider, int x_position_x, int x_position_y, int x_money, PImage x_tab_base_player[], PImage x_tab_image_power[]) {
@@ -61,7 +61,7 @@ class Player {
     for (int i = 0; i < this.period_max; i++) {
       this.tab_base_player[i].resize(this.collider.get_size_x(), this.collider.get_size_y());
     }
-    
+
     this.tab_image_power = x_tab_image_power;
   }
 

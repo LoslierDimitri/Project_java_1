@@ -67,7 +67,7 @@ void initialisation() {
 
   ///////////////////////////////////////////////////////////////player
   //number, health_point, collider(size_x, size_y), position_x, position_y, money
-  int player_1_size_x = screen_size_x / 100 * 9;
+  int player_1_size_x = screen_size_x / 100 * 10;
   int player_1_size_y = screen_size_y / 100 * 25;
   int player_1_position_x = 0;
   int player_1_position_y = screen_size_y / 2;
@@ -92,7 +92,7 @@ void initialisation() {
 
   player_1 = new Player(1, player_1_health_point, new Collider(player_1_size_x, player_1_size_y), player_1_position_x, player_1_position_y, player_1_money, tab_base_player_1, tab_image_power);
 
-  int player_2_size_x = screen_size_x / 100 * 9;
+  int player_2_size_x = screen_size_x / 100 * 10;
   int player_2_size_y = screen_size_y / 100 * 25;
   int player_2_position_x = screen_size_x - player_2_size_x;
   int player_2_position_y = screen_size_y / 2;

@@ -10,7 +10,7 @@ Minim minim;
 ///////////////////////////////////////////////////////////////setup
 void setup() {
   //fullScreen(P2D);
-  size(1000, 600, P2D);
+  size(600, 600, P2D);
   frameRate(60);
 
   minim = new Minim(this);
