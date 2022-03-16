@@ -168,6 +168,12 @@ void initialisation() {
   int button_display_unit_size_y = button_unit_size_y * 1;
   int button_display_unit_position_x = screen_size_x - (button_unit_size_x * 3) - (button_interval_x * 3);
   int button_display_unit_position_y = (button_interval_y * 2) + (button_unit_size_y * 1);
+  
+  int button_play_size_x = (button_interval_x * 2) + (button_unit_size_x * 3);
+  int button_play_size_y = button_unit_size_y * 1;
+  int button_play_position_x = screen_size_x - (screen_size_x / 2) - (button_play_size_x / 2);
+  int button_play_position_y = screen_size_y /2;
+  
 
   button_unit_1 = new Button("unit_1", button_unit_1_position_x, button_unit_1_position_y, button_unit_size_x, button_unit_size_y, loadImage("Interface/button_1.png"));
   button_unit_2 = new Button("unit_2", button_unit_2_position_x, button_unit_2_position_y, button_unit_size_x, button_unit_size_y, loadImage("Interface/button_1.png"));
@@ -190,6 +196,8 @@ void initialisation() {
   button_power = new Button("power", button_power_position_x, button_power_position_y, button_power_size_x, button_power_size_y, loadImage("Interface/button_1.png"));
 
   button_display_unit = new Button("", button_display_unit_position_x, button_display_unit_position_y, button_display_unit_size_x, button_display_unit_size_y, loadImage("Interface/button_1.png"));
+  
+  button_play = new Button ("Play", button_play_position_x, button_play_position_y, button_play_size_x, button_play_size_y, loadImage("Interface/button_1.png"));
 
   ///////////////////////////////////////////////////////////////music
   main_music = minim.loadFile("Music/Game_music.mp3");
