@@ -9,8 +9,8 @@ Minim minim;
 
 ///////////////////////////////////////////////////////////////setup
 void setup() {
-  //fullScreen(P2D);
-  size(600, 600, P2D);
+  fullScreen(P2D);
+  //size(600, 600, P2D);
   frameRate(60);
 
   minim = new Minim(this);
@@ -28,7 +28,7 @@ boolean remove_turret_mode = false;
 
 ///////////////////////////////////////////////////////////////global variable
 int animation_speed = 20;
-int status = 0; //0 = menu, 1 = game,
+int status = 0; //0 = menu, 1 = game, 2 = endgame
 ///////////////////////////////////////////////////////////////music
 AudioPlayer main_music;
 
@@ -116,17 +116,24 @@ Button button_display_unit;
 
 Button button_play;
 
+Button button_restart;
+
 ///////////////////////////////////////////////////////////////draw
 void draw() {
   ///////////////////////////////////////////////////////////////initialisation
-  if (initialisation_done == false) {
-    initialisation();
-    initialisation_done = true;
-  }
-  if(status ==0){
+
+  if (status ==0) {
+    if (initialisation_done == false) {
+      initialisation();
+      initialisation_done = true;
+    }
     menu_loop();
   }
- if (status == 1){
-   game_loop();
- }
+  if (status == 1) {
+    game_loop();
+  }
+  if (status == 2) {
+    endgame_loop();
+    initialisation_done = false;
+  }
 }

@@ -5,6 +5,7 @@ class Main {
   private boolean is_finished;
   private PImage background_1;
   private PImage background_2;
+  private int player_win;
 
   Main(Player x_tab_player[], int x_nb_player, int x_nb_player_max, PImage x_background_1, PImage x_background_2) {
     this.tab_player = x_tab_player;
@@ -26,6 +27,9 @@ class Main {
   }
   boolean get_is_finished() {
     return is_finished;
+  }
+  int get_player_win(){
+    return player_win;
   }
 
   ///////////////////////////////////////////////////////////////setter
@@ -155,9 +159,11 @@ class Main {
     //end of game
     if (this.tab_player[0].get_health_point() <= 0) {
       this.is_finished = true;
+      this.player_win = 2;
     }
     if (this.tab_player[1].get_health_point() <= 0) {
       this.is_finished = true;
+      this.player_win = 1;
     }
 
     //loop sound

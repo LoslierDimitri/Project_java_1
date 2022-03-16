@@ -71,7 +71,7 @@ Animation load_animation(String x_unit_turret_base) {
   return x_animation;
 }
 
-void game_loop(){
+void game_loop() {
   frame = frame + 1;
   println("frame: " + frame);
 
@@ -255,10 +255,12 @@ void game_loop(){
   } else {
     main.remove_all_unit();
     if (main.get_player(0).get_health_point() <= 0) {
-      text("player 2 win", 700, 500);
+      //text("player 2 win", 700, 500);
+      status = 2;
     }
     if (main.get_player(1).get_health_point() <= 0) {
-      text("player 2 win", 700, 500);
+      //text("player 1 win", 700, 500);
+      status = 2;
     }
   }
 
@@ -316,12 +318,34 @@ void game_loop(){
   reset();
 }
 
-void menu_loop(){
+void menu_loop() {
+  background(255);
   button_play.display();
-   if (mouse_click == true) {
-  if (button_play.collide(mouse_x, mouse_y) == true) {
-       status=1;
+  if (mouse_click == true) {
+    if (button_play.collide(mouse_x, mouse_y) == true) {
+      status=1;
+    }
   }
+  reset();
 }
+void endgame_loop() {
+  
+  button_restart.display();
+  if (main.get_player_win() == 1) {
+    text("Player 1 win", 100, 100);
+    if (mouse_click == true) {
+      if (button_restart.collide(mouse_x, mouse_y) == true) {
+        status=0;
+      }
+    }
+  }
+  if (main.get_player_win() == 2) {
+    text("Player 2 win", 100, 100);
+    if (mouse_click == true) {
+      if (button_restart.collide(mouse_x, mouse_y) == true) {
+        status=0;
+      }
+    }
+  }
   reset();
 }
