@@ -1,0 +1,18 @@
+titre
+personne du projet
+description
+	but du jeu
+	fonctionnalite principale
+interface
+	controle du jeu
+graphisme
+	titre
+	logo
+	couleur
+	unite
+	tourelles
+	base
+	decors
+son
+	musique
+	son

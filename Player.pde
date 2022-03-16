@@ -325,80 +325,35 @@ class Player {
   void power() {
     if (can_use_power == true) {
       if (this.period == 1) {
-        this.power_1();
+        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[0]);
       }
       if (this.period == 2) {
-        this.power_2();
+        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[0]);
       }
       if (this.period == 3) {
-        this.power_3();
+        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[0]);
       }
       if (this.period == 4) {
-        this.power_4();
+        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[0]);
       }
       if (this.period == 5) {
-        this.power_5();
+        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[0]);
       }
       if (this.period == 6) {
-        this.power_6();
+        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[0]);
       }
       this.can_use_power = false;
       this.power_charge_actual = 0;
     }
   }
-
-  void power_1() {
-    this.nb_projectile = 20;
+  
+  void power_period(int x_nb_projectile, int x_size_x, int x_size_y, int x_damage, int x_speed, PImage x_image) {
+    this.nb_projectile = x_nb_projectile;
     this.tab_projectile = new Projectile[nb_projectile];
     for (int i = 0; i < nb_projectile; i++) {
       float random_float = random(this.position_x + this.collider.get_size_x(), screen_size_x - this.collider.get_size_x());
       int random_int = int(random_float);
-      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5, this.tab_image_power[0]);
-    }
-  }
-  void power_2() {
-    this.nb_projectile = 30;
-    this.tab_projectile = new Projectile[nb_projectile];
-    for (int i = 0; i < nb_projectile; i++) {
-      float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
-      int random_int = int(random_float);
-      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5, this.tab_image_power[1]);
-    }
-  }
-  void power_3() {
-    this.nb_projectile = 40;
-    this.tab_projectile = new Projectile[nb_projectile];
-    for (int i = 0; i < nb_projectile; i++) {
-      float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
-      int random_int = int(random_float);
-      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5, this.tab_image_power[2]);
-    }
-  }
-  void power_4() {
-    this.nb_projectile = 50;
-    this.tab_projectile = new Projectile[nb_projectile];
-    for (int i = 0; i < nb_projectile; i++) {
-      float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
-      int random_int = int(random_float);
-      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5, this.tab_image_power[3]);
-    }
-  }
-  void power_5() {
-    this.nb_projectile = 60;
-    this.tab_projectile = new Projectile[nb_projectile];
-    for (int i = 0; i < nb_projectile; i++) {
-      float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
-      int random_int = int(random_float);
-      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5, this.tab_image_power[4]);
-    }
-  }
-  void power_6() {
-    this.nb_projectile = 70;
-    this.tab_projectile = new Projectile[nb_projectile];
-    for (int i = 0; i < nb_projectile; i++) {
-      float random_float = random(this.position_x + this.collider.size_x, screen_size_x - this.collider.size_x);
-      int random_int = int(random_float);
-      this.tab_projectile[i] = new Projectile(random_int, 0, 20, 20, new Collider(20, 20), 500, 5, this.tab_image_power[5]);
+      this.tab_projectile[i] = new Projectile(random_int, 0, x_size_x, x_size_y, new Collider(x_size_x, x_size_y), x_damage, x_speed, x_image);
     }
   }
 
