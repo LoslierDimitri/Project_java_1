@@ -57,6 +57,16 @@ class Animation {
       tab_animation_die[i].resize(x_size_x, x_size_y);
     }
   }
+  
+  void reverse_animation() {
+    
+    
+    
+    
+    
+    
+    
+  }
 
   void update(String x_animation, int x_position_x, int x_position_y) {
     this.animation_actual = x_animation;
