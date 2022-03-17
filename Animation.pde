@@ -57,16 +57,6 @@ class Animation {
       tab_animation_die[i].resize(x_size_x, x_size_y);
     }
   }
-  
-  void reverse_animation() {
-    
-    
-    
-    
-    
-    
-    
-  }
 
   void update(String x_animation, int x_position_x, int x_position_y) {
     this.animation_actual = x_animation;
@@ -122,18 +112,50 @@ class Animation {
       }
     }
   }
-  void display() {
+  void display(int x_number) {
     if (this.animation_actual == "idle") {
-      image(this.tab_animation_idle[this.nb_animation_idle_actual], this.position_x, this.position_y);
+      if (x_number == 2) {
+        pushMatrix();
+        translate(this.position_x + tab_animation_idle[this.nb_animation_idle_actual].width, this.position_y );
+        scale( -1, 1 );
+        image(this.tab_animation_idle[this.nb_animation_idle_actual], 0, 0);
+        popMatrix();
+      } else {
+        image(this.tab_animation_idle[this.nb_animation_idle_actual], this.position_x, this.position_y);
+      }
     }
     if (this.animation_actual == "walk") {
-      image(this.tab_animation_walk[this.nb_animation_walk_actual], this.position_x, this.position_y);
+      if (x_number == 2) {
+        pushMatrix();
+        translate(this.position_x + tab_animation_walk[this.nb_animation_walk_actual].width, this.position_y );
+        scale( -1, 1 );
+        image(this.tab_animation_walk[this.nb_animation_walk_actual], 0, 0);
+        popMatrix();
+      } else {
+        image(this.tab_animation_walk[this.nb_animation_walk_actual], this.position_x, this.position_y);
+      }
     }
     if (this.animation_actual == "attack") {
-      image(this.tab_animation_attack[this.nb_animation_attack_actual], this.position_x, this.position_y);
+      if (x_number == 2) {
+        pushMatrix();
+        translate(this.position_x + tab_animation_attack[this.nb_animation_attack_actual].width, this.position_y );
+        scale( -1, 1 );
+        image(this.tab_animation_attack[this.nb_animation_attack_actual], 0, 0);
+        popMatrix();
+      } else {
+        image(this.tab_animation_attack[this.nb_animation_attack_actual], this.position_x, this.position_y);
+      }
     }
     if (this.animation_actual == "die") {
-      image(this.tab_animation_die[this.nb_animation_die_actual], this.position_x, this.position_y);
+      if (x_number == 2) {
+        pushMatrix();
+        translate(this.position_x + tab_animation_die[this.nb_animation_die_actual].width, this.position_y );
+        scale( -1, 1 );
+        image(this.tab_animation_die[this.nb_animation_die_actual], 0, 0);
+        popMatrix();
+      } else {
+        image(this.tab_animation_die[this.nb_animation_die_actual], this.position_x, this.position_y);
+      }
     }
   }
 }

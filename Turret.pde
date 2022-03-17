@@ -100,13 +100,13 @@ class Turret {
 
     println("Player_" + x_number + ": turret: update: done");
   }
-  void display() {
+  void display(int x_number) {
     println("Turret: display: ...");
     fill(0, 100, 0);
     rect(this.position_x, this.position_y, this.size_x, this.size_y);
     fill(0);
     text(this.range, this.position_x, this.position_y + 10);
-    this.animation.display();
+    this.animation.display(x_number);
     println("Turret: display: done");
   }
 }

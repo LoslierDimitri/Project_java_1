@@ -293,10 +293,10 @@ class Player {
     image(this.tab_base_player[this.period + 1], this.position_x, this.position_y);
 
     for (int i = 0; i < this.nb_unit; i++) {
-      this.tab_unit[i].display();
+      this.tab_unit[i].display(this.number);
     }
     for (int i = 0; i < this.nb_turret; i++) {
-      this.tab_turret[i].display();
+      this.tab_turret[i].display(this.number);
     }
     for (int i = 0; i < this.nb_projectile; i++) {
       if (this.tab_projectile[i].get_used() == false) {
