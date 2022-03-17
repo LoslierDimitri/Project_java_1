@@ -11,8 +11,9 @@ class Turret {
   private boolean is_attack;
   private String sound_attack_name;
   private AudioPlayer sound_attack;
+  private String animation_name;
 
-  Turret(int x_position_x, int x_position_y, int x_size_x, int x_size_y, int x_damage, int x_range, int x_cost, String x_name, String x_sound_attack_name) {
+  Turret(int x_position_x, int x_position_y, int x_size_x, int x_size_y, int x_damage, int x_range, int x_cost, String x_name, String x_sound_attack_name, String x_animation_name) {
     this.position_x = x_position_x;
     this.position_y = x_position_y;
     this.size_x = x_size_x;
@@ -24,6 +25,8 @@ class Turret {
     this.is_attack = false;
     this.sound_attack_name = x_sound_attack_name;
     this.sound_attack = minim.loadFile("Sound_effect/" + this.sound_attack_name + ".mp3");
+    this.animation_name = x_animation_name;
+    this.animation = load_animation("Turret/" + this.animation_name + "/");
   }
   
   ///////////////////////////////////////////////////////////////getter
@@ -56,6 +59,9 @@ class Turret {
   }
   String get_sound_attack() {
     return this.sound_attack_name;
+  }
+  String get_animation_name() {
+    return this.animation_name;
   }
 
   ///////////////////////////////////////////////////////////////setter

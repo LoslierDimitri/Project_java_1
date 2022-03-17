@@ -41,29 +41,29 @@ void initialisation() {
 
   ///////////////////////////////////////////////////////////////turret
   //name, position_x, position_y, size_x, size_y, damage, range, cost
-  turret_1 = new Turret(0, 0, 0, 0, 1, 200, 200, "Slingshot", "turret_1_attack_sound");
-  turret_2 = new Turret(0, 0, 0, 0, 2, 250, 400, "Eggs catapult", "turret_1_attack_sound");
-  turret_3 = new Turret(0, 0, 0, 0, 5, 300, 500, "Bones catapult", "turret_1_attack_sound");
+  turret_1 = new Turret(0, 0, 0, 0, 1, 200, 200, "Slingshot", "turret_1_attack_sound", "Turret_1");
+  turret_2 = new Turret(0, 0, 0, 0, 2, 250, 400, "Eggs catapult", "turret_1_attack_sound", "Turret_2");
+  turret_3 = new Turret(0, 0, 0, 0, 5, 300, 500, "Bones catapult", "turret_1_attack_sound", "Turret_3");
 
-  turret_11 = new Turret(0, 0, 0, 0, 3, 200, 400, "Onager", "turret_1_attack_sound");
-  turret_12 = new Turret(0, 0, 0, 0, 8, 250, 500, "Catapult", "turret_1_attack_sound");
-  turret_13 = new Turret(0, 0, 0, 0, 13, 300, 800, "Mangonel", "turret_1_attack_sound");
+  turret_11 = new Turret(0, 0, 0, 0, 3, 200, 400, "Onager", "turret_1_attack_sound", "Turret_11");
+  turret_12 = new Turret(0, 0, 0, 0, 8, 250, 500, "Catapult", "turret_1_attack_sound", "Turret_12");
+  turret_13 = new Turret(0, 0, 0, 0, 13, 300, 800, "Mangonel", "turret_1_attack_sound", "Turret_13");
 
-  turret_21 = new Turret(0, 0, 0, 0, 10, 200, 400, "Boiled oil", "turret_1_attack_sound");
-  turret_22 = new Turret(0, 0, 0, 0, 16, 250, 500, "Trebuchet", "turret_1_attack_sound");
-  turret_23 = new Turret(0, 0, 0, 0, 20, 300, 800, "Scorpio", "turret_1_attack_sound");
+  turret_21 = new Turret(0, 0, 0, 0, 10, 200, 400, "Boiled oil", "turret_1_attack_sound", "Turret_21");
+  turret_22 = new Turret(0, 0, 0, 0, 16, 250, 500, "Trebuchet", "turret_1_attack_sound", "Turret_22");
+  turret_23 = new Turret(0, 0, 0, 0, 20, 300, 800, "Scorpio", "turret_1_attack_sound", "Turret_23");
 
-  turret_31 = new Turret(0, 0, 0, 0, 18, 200, 400, "Small Cannon", "turret_1_attack_sound");
-  turret_32 = new Turret(0, 0, 0, 0, 22, 250, 500, "Medium Cannon", "turret_1_attack_sound");
-  turret_33 = new Turret(0, 0, 0, 0, 26, 300, 800, "Large Cannon", "turret_1_attack_sound");
+  turret_31 = new Turret(0, 0, 0, 0, 18, 200, 400, "Small Cannon", "turret_1_attack_sound", "Turret_31");
+  turret_32 = new Turret(0, 0, 0, 0, 22, 250, 500, "Medium Cannon", "turret_1_attack_sound", "Turret_32");
+  turret_33 = new Turret(0, 0, 0, 0, 26, 300, 800, "Large Cannon", "turret_1_attack_sound", "Turret_33");
 
-  turret_41 = new Turret(0, 0, 0, 0, 24, 200, 400, "Machine gun", "turret_1_attack_sound");
-  turret_42 = new Turret(0, 0, 0, 0, 29, 250, 500, "Small Rocket", "turret_1_attack_sound");
-  turret_43 = new Turret(0, 0, 0, 0, 33, 300, 800, "Big Rocket", "turret_1_attack_sound");
+  turret_41 = new Turret(0, 0, 0, 0, 24, 200, 400, "Machine gun", "turret_1_attack_sound", "Turret_41");
+  turret_42 = new Turret(0, 0, 0, 0, 29, 250, 500, "Small Rocket", "turret_1_attack_sound", "Turret_42");
+  turret_43 = new Turret(0, 0, 0, 0, 33, 300, 800, "Big Rocket", "turret_1_attack_sound", "Turret_43");
 
-  turret_51 = new Turret(0, 0, 0, 0, 31, 200, 400, "Titanium Shooter", "turret_1_attack_sound");
-  turret_52 = new Turret(0, 0, 0, 0, 36, 250, 500, "Lazer Cannon", "turret_1_attack_sound");
-  turret_53 = new Turret(0, 0, 0, 0, 40, 300, 800, "Iron Ray", "turret_1_attack_sound");
+  turret_51 = new Turret(0, 0, 0, 0, 31, 200, 400, "Titanium Shooter", "turret_1_attack_sound", "Turret_51");
+  turret_52 = new Turret(0, 0, 0, 0, 36, 250, 500, "Lazer Cannon", "turret_1_attack_sound", "Turret_52");
+  turret_53 = new Turret(0, 0, 0, 0, 40, 300, 800, "Iron Ray", "turret_1_attack_sound", "Turret_53");
 
   ///////////////////////////////////////////////////////////////player
   //number, health_point, collider(size_x, size_y), position_x, position_y, money
