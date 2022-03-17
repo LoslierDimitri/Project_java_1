@@ -15,7 +15,7 @@ void initialisation() {
   int size_120 = screen_size_x / 100 * 10;
 
   //name, collider(size_x, size_y), health_point, damage, speed, range, cost
-  unit_1 = new Unit(new Collider(size_50, size_70), 100, 1, 5, 10, 50, "Clubman", "unit_1_attack_sound", "Unit_1");
+  unit_1 = new Unit(new Collider(size_50, size_70), 1000, 1, 5, 10, 50, "Clubman", "unit_1_attack_sound", "Unit_1");
   unit_2 = new Unit(new Collider(size_50, size_70), 110, 2, 4, 150, 150, "Slingshotman", "unit_1_attack_sound", "Unit_2");
   unit_3 = new Unit(new Collider(size_100, size_90), 300, 5, 3, 30, 300, "Dino", "unit_1_attack_sound", "Unit_3");
 
