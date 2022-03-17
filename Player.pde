@@ -217,19 +217,19 @@ class Player {
         this.power_period(40, 20, 20, 500, 5, this.tab_image_power[0]);
       }
       if (this.period == 2) {
-        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[0]);
+        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[1]);
       }
       if (this.period == 3) {
-        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[0]);
+        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[2]);
       }
       if (this.period == 4) {
-        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[0]);
+        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[3]);
       }
       if (this.period == 5) {
-        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[0]);
+        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[4]);
       }
       if (this.period == 6) {
-        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[0]);
+        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[5]);
       }
       this.can_use_power = false;
       this.power_charge_actual = 0;
