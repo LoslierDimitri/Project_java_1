@@ -27,7 +27,7 @@ boolean initialisation_done = false;
 boolean remove_turret_mode = false;
 
 ///////////////////////////////////////////////////////////////global variable
-int animation_speed = 20;
+int animation_speed = 10;
 int status = 0; //0 = menu, 1 = game, 2 = endgame
 ///////////////////////////////////////////////////////////////music
 AudioPlayer main_music;
