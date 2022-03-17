@@ -9,6 +9,13 @@ graphisme
 	titre
 	logo
 	couleur
+		par epoque
+			marron
+			rouge
+			gris
+			blanc, bleu
+			vert
+			noir
 	unite
 	tourelles
 	base
