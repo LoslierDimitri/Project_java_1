@@ -15,29 +15,29 @@ void initialisation() {
   int size_120 = screen_size_x / 100 * 10;
 
   //name, collider(size_x, size_y), health_point, damage, speed, range, cost
-  unit_1 = new Unit(new Collider(size_50, size_70), 100, 1, 5, 10, 50, "Clubman", "unit_1_attack_sound");
-  unit_2 = new Unit(new Collider(size_50, size_70), 110, 2, 4, 150, 150, "Slingshotman", "unit_1_attack_sound");
-  unit_3 = new Unit(new Collider(size_100, size_90), 300, 5, 3, 30, 300, "Dino", "unit_1_attack_sound");
+  unit_1 = new Unit(new Collider(size_50, size_70), 100, 1, 5, 10, 50, "Clubman", "unit_1_attack_sound", "Unit_1");
+  unit_2 = new Unit(new Collider(size_50, size_70), 110, 2, 4, 150, 150, "Slingshotman", "unit_1_attack_sound", "Unit_2");
+  unit_3 = new Unit(new Collider(size_100, size_90), 300, 5, 3, 30, 300, "Dino", "unit_1_attack_sound", "Unit_3");
 
-  unit_11 = new Unit(new Collider(size_50, size_70), 200, 3, 5, 10, 200, "Hoplite", "unit_1_attack_sound");
-  unit_12 = new Unit(new Collider(size_50, size_70), 250, 8, 4, 150, 400, "Spearman", "unit_1_attack_sound");
-  unit_13 = new Unit(new Collider(size_100, size_90), 800, 13, 3, 30, 650, "Elephant", "unit_1_attack_sound");
+  unit_11 = new Unit(new Collider(size_50, size_70), 200, 3, 5, 10, 200, "Hoplite", "unit_1_attack_sound", "Unit_11");
+  unit_12 = new Unit(new Collider(size_50, size_70), 250, 8, 4, 150, 400, "Spearman", "unit_1_attack_sound", "Unit_12");
+  unit_13 = new Unit(new Collider(size_100, size_90), 800, 13, 3, 30, 650, "Elephant", "unit_1_attack_sound", "Unit_13");
 
-  unit_21 = new Unit(new Collider(size_50, size_70), 200, 10, 5, 10, 400, "Knight", "unit_1_attack_sound");
-  unit_22 = new Unit(new Collider(size_50, size_70), 250, 16, 4, 150, 600, "Crossbowman", "unit_1_attack_sound");
-  unit_23 = new Unit(new Collider(size_100, size_90), 800, 20, 3, 30, 850, "Horseman", "unit_1_attack_sound");
+  unit_21 = new Unit(new Collider(size_50, size_70), 200, 10, 5, 10, 400, "Knight", "unit_1_attack_sound", "Unit_21");
+  unit_22 = new Unit(new Collider(size_50, size_70), 250, 16, 4, 150, 600, "Crossbowman", "unit_1_attack_sound", "Unit_22");
+  unit_23 = new Unit(new Collider(size_100, size_90), 800, 20, 3, 30, 850, "Horseman", "unit_1_attack_sound", "Unit_23");
 
-  unit_31 = new Unit(new Collider(size_50, size_70), 200, 18, 5, 10, 800, "Dueler", "unit_1_attack_sound");
-  unit_32 = new Unit(new Collider(size_50, size_70), 250, 22, 4, 150, 1200, "Rifleman", "unit_1_attack_sound");
-  unit_33 = new Unit(new Collider(size_50, size_70), 800, 26, 3, 40, 1650, "Gunner", "unit_1_attack_sound");
+  unit_31 = new Unit(new Collider(size_50, size_70), 200, 18, 5, 10, 800, "Dueler", "unit_1_attack_sound", "Unit_31");
+  unit_32 = new Unit(new Collider(size_50, size_70), 250, 22, 4, 150, 1200, "Rifleman", "unit_1_attack_sound", "Unit_32");
+  unit_33 = new Unit(new Collider(size_50, size_70), 800, 26, 3, 40, 1650, "Gunner", "unit_1_attack_sound", "Unit_33");
 
-  unit_41 = new Unit(new Collider(size_50, size_70), 200, 24, 5, 60, 1600, "Melee Infantry", "unit_1_attack_sound");
-  unit_42 = new Unit(new Collider(size_50, size_70), 250, 29, 4, 150, 1900, "Infantry", "unit_1_attack_sound");
-  unit_43 = new Unit(new Collider(size_100, size_90), 800, 33, 3, 50, 2400, "Tank", "unit_1_attack_sound");
+  unit_41 = new Unit(new Collider(size_50, size_70), 200, 24, 5, 60, 1600, "Melee Infantry", "unit_1_attack_sound", "Unit_41");
+  unit_42 = new Unit(new Collider(size_50, size_70), 250, 29, 4, 150, 1900, "Infantry", "unit_1_attack_sound", "Unit_42");
+  unit_43 = new Unit(new Collider(size_100, size_90), 800, 33, 3, 50, 2400, "Tank", "unit_1_attack_sound", "Unit_43");
 
-  unit_51 = new Unit(new Collider(size_50, size_70), 200, 31, 5, 60, 2200, "Laser Blade", "unit_1_attack_sound");
-  unit_52 = new Unit(new Collider(size_50, size_70), 250, 36, 4, 150, 2600, "Blaster", "unit_1_attack_sound");
-  unit_53 = new Unit(new Collider(size_50, size_70), 800, 40, 3, 50, 3000, "Super Soldier", "unit_1_attack_sound");
+  unit_51 = new Unit(new Collider(size_50, size_70), 200, 31, 5, 60, 2200, "Laser Blade", "unit_1_attack_sound", "Unit_51");
+  unit_52 = new Unit(new Collider(size_50, size_70), 250, 36, 4, 150, 2600, "Blaster", "unit_1_attack_sound", "Unit_52");
+  unit_53 = new Unit(new Collider(size_50, size_70), 800, 40, 3, 50, 3000, "Super Soldier", "unit_1_attack_sound", "Unit_53");
 
   ///////////////////////////////////////////////////////////////turret
   //name, position_x, position_y, size_x, size_y, damage, range, cost

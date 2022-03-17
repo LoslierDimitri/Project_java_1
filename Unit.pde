@@ -14,8 +14,9 @@ class Unit {
   private Animation animation;
   private String sound_attack_name;
   private AudioPlayer sound_attack;
+  private String animation_name;
 
-  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range, int x_cost, String x_name, String x_sound_attack_name) {
+  Unit(Collider x_collider, int x_health_point, int x_damage, int x_speed, int x_range, int x_cost, String x_name, String x_sound_attack_name, String x_animation_name) {
     this.collider = x_collider;
     this.health_point = x_health_point;
     this.damage = x_damage;
@@ -28,6 +29,8 @@ class Unit {
     this.is_attack = false;
     this.sound_attack_name = x_sound_attack_name;
     this.sound_attack = minim.loadFile("Sound_effect/" + this.sound_attack_name + ".mp3");
+    this.animation_name = x_animation_name;
+    this.animation = load_animation("Unit/" + this.animation_name + "/");
   }
 
   ///////////////////////////////////////////////////////////////getter
@@ -66,6 +69,9 @@ class Unit {
   }
   String get_sound_attack() {
     return this.sound_attack_name;
+  }
+  String get_animation_name() {
+    return this.animation_name;
   }
 
   ///////////////////////////////////////////////////////////////setter
