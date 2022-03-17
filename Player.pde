@@ -128,10 +128,10 @@ class Player {
       Unit unit_to_add = new Unit(new Collider(x_unit.get_collider().get_size_x(), x_unit.get_collider().get_size_y()), x_unit.get_health_point(), x_unit.get_damage(), x_unit.get_speed(), x_unit.get_range(), x_unit.get_cost(), x_unit.get_name(), x_unit.get_sound_attack(), x_unit.get_animation_name());
 
       if (this.number == 1) {
-        unit_to_add.set_position_x(this.position_x + this.collider.get_size_x());
+        unit_to_add.set_position_x(this.position_x + this.get_collider().get_size_x() - this.collider.get_size_x());
       }
       if (this.number == 2) {
-        unit_to_add.set_position_x(this.position_x - unit_to_add.collider.get_size_x());
+        unit_to_add.set_position_x(this.position_x + this.get_collider().get_size_x() - unit_to_add.collider.get_size_x());
       }
       unit_to_add.set_position_y(this.position_y + this.collider.get_size_y() - unit_to_add.get_collider().get_size_y());
       unit_to_add.get_animation().resize_animation(unit_to_add.get_collider().get_size_x(), unit_to_add.get_collider().get_size_y());
