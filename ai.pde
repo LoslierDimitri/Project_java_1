@@ -59,13 +59,6 @@ void ai(Main x_main) {
       x_main.get_player(1).add_period();
     }
   }
-
-
-  /* test
-   if (frame % 10 == 0) {
-   x_main.tab_player[1].add_unit(unit_1);
-   x_main.tab_player[1].add_turret(turret_2);
-   }*/
 }
 
 void create_unit(Main x_main, int x_unit) {

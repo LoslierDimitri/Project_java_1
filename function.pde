@@ -262,6 +262,7 @@ void game_loop() {
       //text("player 1 win", 700, 500);
       status = 2;
     }
+    main_music.close();
   }
 
   ///////////////////////////////////////////////////////////////reset game
@@ -314,8 +315,10 @@ void game_loop() {
     button_turret_3.display_turret(main, 3, button_display_unit);
   }
 
-  ///////////////////////////////////////////////////////////////reset
-  reset();
+  ///////////////////////////////////////////////////////////////music
+  main_music.play();
+
+  
 }
 
 void menu_loop() {
@@ -324,18 +327,22 @@ void menu_loop() {
   if (mouse_click == true) {
     if (button_play.collide(mouse_x, mouse_y) == true) {
       status=1;
+      menu_music.close();
     }
   }
-  reset();
-}
-void endgame_loop() {
   
+  ///////////////////////////////////////////////////////////////music
+  menu_music.play();
+}
+
+void endgame_loop() {
   button_restart.display();
   if (main.get_player_win() == 1) {
     text("Player 1 win", 100, 100);
     if (mouse_click == true) {
       if (button_restart.collide(mouse_x, mouse_y) == true) {
         status=0;
+        endgame_music.close();
       }
     }
   }
@@ -344,8 +351,11 @@ void endgame_loop() {
     if (mouse_click == true) {
       if (button_restart.collide(mouse_x, mouse_y) == true) {
         status=0;
+        endgame_music.close();
       }
     }
   }
-  reset();
+  
+  ///////////////////////////////////////////////////////////////music
+  endgame_music.play();
 }

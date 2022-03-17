@@ -31,6 +31,8 @@ int animation_speed = 20;
 int status = 0; //0 = menu, 1 = game, 2 = endgame
 ///////////////////////////////////////////////////////////////music
 AudioPlayer main_music;
+AudioPlayer menu_music;
+AudioPlayer endgame_music;
 
 ///////////////////////////////////////////////////////////////unit
 Unit unit_1;
@@ -120,8 +122,6 @@ Button button_restart;
 
 ///////////////////////////////////////////////////////////////draw
 void draw() {
-  ///////////////////////////////////////////////////////////////initialisation
-
   if (status ==0) {
     if (initialisation_done == false) {
       initialisation();
@@ -136,4 +136,7 @@ void draw() {
     endgame_loop();
     initialisation_done = false;
   }
+
+  ///////////////////////////////////////////////////////////////reset
+  reset();
 }
