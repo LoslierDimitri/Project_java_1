@@ -50,7 +50,7 @@ class Player {
     power_charge_actual = 0;
     power_charge = 200;
     add_turret_max_cost = 1000;
-    add_period_cost = 4000;
+    add_period_cost = 1000;
     period_max = 6;
     this.tab_base_player = x_tab_base_player;
 
@@ -290,7 +290,7 @@ class Player {
     fill(100, 100, 200);
     rect(this.position_x, this.position_y, this.collider.get_size_x(), this.collider.get_size_y());
 
-    image(this.tab_base_player[this.period + 1], this.position_x, this.position_y);
+    image(this.tab_base_player[this.period-1], this.position_x, this.position_y);
 
     for (int i = 0; i < this.nb_unit; i++) {
       this.tab_unit[i].display(this.number);

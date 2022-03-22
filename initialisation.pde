@@ -113,11 +113,17 @@ void initialisation() {
   tab_player[1] = player_2;
 
   ///////////////////////////////////////////////////////////////main
-  PImage main_background_1 = loadImage("Background/test_background.png");
+  PImage main_background[] = new PImage[6];
+  main_background[0] = loadImage("Background/test_background_1.png");
+  main_background[1] = loadImage("Background/test_background_2.png");
+  main_background[2] = loadImage("Background/test_background_3.png");
+  main_background[3] = loadImage("Background/test_background_4.png");
+  main_background[4] = loadImage("Background/test_background_5.png");
+  main_background[5] = loadImage("Background/test_background_6.png");
   //PImage main_background_2 = loadImage("Background/background_2.png");
   PImage menu_background = loadImage("Interface/Logo.png");
 
-  main = new Main(tab_player, 2, 2, main_background_1, menu_background);
+  main = new Main(tab_player, 2, 2, main_background, menu_background);
 
   ///////////////////////////////////////////////////////////////button
   int button_interval_x = 10;
