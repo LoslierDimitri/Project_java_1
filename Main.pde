@@ -20,7 +20,7 @@ class Main {
     }
     this.background_2 = x_background_2;
     for (int i = 0; i<background_2.length; i++) {
-      this.background_2[i].resize(screen_size_x, screen_size_y);
+      this.background_2[i].resize(screen_size_x, screen_size_y - this.tab_player[0].get_position_y() - this.tab_player[0].get_collider().get_size_y());
     }
     this.is_finished = false;
     this.logo_menu = x_logo_menu;
@@ -210,22 +210,22 @@ class Main {
     }
 
     if (this.tab_player[0].get_period() == 1) {
-      image(this.background_2[0], 0, 0);
+      image(this.background_2[0], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y());
     }
     if (this.tab_player[0].get_period() == 2) {
-      image(this.background_2[1], 0, 0);
+      image(this.background_2[1], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y());
     }
     if (this.tab_player[0].get_period() == 3) {
-      image(this.background_2[2], 0, 0);
+      image(this.background_2[2], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y());
     }
     if (this.tab_player[0].get_period() == 4) {
-      image(this.background_2[3], 0, 0);
+      image(this.background_2[3], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y());
     }
     if (this.tab_player[0].get_period() == 5) {
-      image(this.background_2[4], 0, 0);
+      image(this.background_2[4], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y());
     }
     if (this.tab_player[0].get_period() == 6) {
-      image(this.background_2[5], 0, 0);
+      image(this.background_2[5], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y());
     }
 
 

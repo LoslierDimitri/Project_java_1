@@ -111,6 +111,9 @@ class Player {
   int get_nb_turret_limit() {
     return this.nb_turret_limit;
   }
+  int get_position_y(){
+   return this.position_y; 
+  }
 
   ///////////////////////////////////////////////////////////////setter
   void set_money(int x_money) {
