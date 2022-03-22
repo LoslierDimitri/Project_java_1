@@ -323,6 +323,7 @@ void game_loop() {
 
 void menu_loop() {
   background(255);
+  main.display_menu();
   button_play.display();
   if (mouse_click == true) {
     if (button_play.collide(mouse_x, mouse_y) == true) {

@@ -114,9 +114,10 @@ void initialisation() {
 
   ///////////////////////////////////////////////////////////////main
   PImage main_background_1 = loadImage("Background/background_1.png");
-  PImage main_bachground_2 = loadImage("Background/background_2.png");
+  PImage main_background_2 = loadImage("Background/background_2.png");
+  PImage menu_background = loadImage("Interface/Logo.png");
 
-  main = new Main(tab_player, 2, 2, main_background_1, main_bachground_2);
+  main = new Main(tab_player, 2, 2, main_background_1, main_background_2, menu_background);
 
   ///////////////////////////////////////////////////////////////button
   int button_interval_x = 10;
