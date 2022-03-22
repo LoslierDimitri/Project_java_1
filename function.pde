@@ -314,24 +314,27 @@ void game_loop() {
   if (button_turret_3.collide(mouse_x, mouse_y) == true) {
     button_turret_3.display_turret(main, 3, button_display_unit);
   }
+  cursor(ARROW);
 
   ///////////////////////////////////////////////////////////////music
   main_music.play();
-
-  
 }
 
 void menu_loop() {
   background(255);
   main.display_menu();
   button_play.display();
-  if (mouse_click == true) {
-    if (button_play.collide(mouse_x, mouse_y) == true) {
+
+  if (button_play.collide(mouse_x, mouse_y) == true) {
+    cursor(HAND);
+    if (mouse_click == true) {
       status=1;
       menu_music.close();
     }
+  } else {
+    cursor(ARROW);
   }
-  
+
   ///////////////////////////////////////////////////////////////music
   menu_music.play();
 }
@@ -340,23 +343,30 @@ void endgame_loop() {
   button_restart.display();
   if (main.get_player_win() == 1) {
     text("Player 1 win", 100, 100);
-    if (mouse_click == true) {
-      if (button_restart.collide(mouse_x, mouse_y) == true) {
+    if (button_restart.collide(mouse_x, mouse_y) == true) {
+      cursor(HAND);
+      if (mouse_click == true) {
         status=0;
         endgame_music.close();
       }
     }
+  } else {
+    cursor(ARROW);
   }
+
   if (main.get_player_win() == 2) {
     text("Player 2 win", 100, 100);
-    if (mouse_click == true) {
-      if (button_restart.collide(mouse_x, mouse_y) == true) {
+    if (button_restart.collide(mouse_x, mouse_y) == true) {
+      cursor(HAND);
+      if (mouse_click == true) {
         status=0;
         endgame_music.close();
       }
     }
+  } else {
+    cursor(ARROW);
   }
-  
+
   ///////////////////////////////////////////////////////////////music
   endgame_music.play();
 }

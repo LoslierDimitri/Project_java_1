@@ -121,9 +121,10 @@ void initialisation() {
   main_background[4] = loadImage("Background/test_background_5.png");
   main_background[5] = loadImage("Background/test_background_6.png");
   //PImage main_background_2 = loadImage("Background/background_2.png");
-  PImage menu_background = loadImage("Interface/Logo.png");
+  PImage logo_menu = loadImage("Interface/Logo.png");
+  PImage background_menu = loadImage("Background/test_background_menu.png");
 
-  main = new Main(tab_player, 2, 2, main_background, menu_background);
+  main = new Main(tab_player, 2, 2, main_background, logo_menu, background_menu);
 
   ///////////////////////////////////////////////////////////////button
   int button_interval_x = 10;
@@ -137,6 +138,10 @@ void initialisation() {
   int button_unit_2_position_y = button_interval_y;
   int button_unit_3_position_x = screen_size_x - (button_unit_size_x * 1) - (button_interval_x * 1);
   int button_unit_3_position_y = button_interval_y;
+  int button_play_size_x = screen_size_x / 100 * 5;
+  int button_play_size_y = screen_size_x / 100 * 5;
+  int button_restart_size_x = screen_size_x / 100 * 5;
+  int button_restart_size_y = screen_size_x / 100 * 5;
 
   int button_turret_size_x = screen_size_x / 100 * 5;
   int button_turret_size_y = screen_size_x / 100 * 5;
@@ -176,15 +181,15 @@ void initialisation() {
   int button_display_unit_position_x = screen_size_x - (button_unit_size_x * 3) - (button_interval_x * 3);
   int button_display_unit_position_y = (button_interval_y * 2) + (button_unit_size_y * 1);
 
-  int button_play_size_x = (button_interval_x * 2) + (button_unit_size_x * 4);
-  int button_play_size_y = button_unit_size_y * 2;
-  int button_play_position_x = screen_size_x - (screen_size_x / 2) - (button_play_size_x / 2);
-  int button_play_position_y = screen_size_y /2;
+  int button_display_play_size_x = (button_interval_x * 2) + (button_play_size_x * 4);
+  int button_display_play_size_y = button_play_size_y * 2;
+  int button_display_play_position_x = screen_size_x - (screen_size_x / 2) - (button_display_play_size_x / 2);
+  int button_display_play_position_y = screen_size_y /2;
 
-  int button_restart_size_x = (button_interval_x * 2) + (button_unit_size_x * 3);
-  int button_restart_size_y = button_unit_size_y * 1;
-  int button_restart_position_x = screen_size_x - (screen_size_x / 2) - (button_restart_size_x / 2);
-  int button_restart_position_y = screen_size_y /2;
+  int button_display_restart_size_x = (button_interval_x * 2) + (button_restart_size_x * 4);
+  int button_display_restart_size_y = button_restart_size_y * 2;
+  int button_display_restart_position_x = screen_size_x - (screen_size_x / 2) - (button_display_restart_size_x / 2);
+  int button_display_restart_position_y = screen_size_y /2;
 
 
   button_unit_1 = new Button("unit_1", button_unit_1_position_x, button_unit_1_position_y, button_unit_size_x, button_unit_size_y, loadImage("Interface/button_1.png"));
@@ -209,9 +214,9 @@ void initialisation() {
 
   button_display_unit = new Button("", button_display_unit_position_x, button_display_unit_position_y, button_display_unit_size_x, button_display_unit_size_y, loadImage("Interface/button_1.png"));
 
-  button_play = new Button ("Play", button_play_position_x, button_play_position_y, button_play_size_x, button_play_size_y, loadImage("Interface/button_play.png"));
+  button_play = new Button ("Play", button_display_play_position_x, button_display_play_position_y, button_display_play_size_x, button_display_play_size_y, loadImage("Interface/button_play.png"));
 
-  button_restart = new Button("Restart", button_restart_position_x, button_restart_position_y, button_restart_size_x, button_restart_size_y, loadImage("Interface/button_1.png"));
+  button_restart = new Button("Restart", button_display_restart_position_x, button_display_restart_position_y, button_display_restart_size_x, button_display_restart_size_y, loadImage("Interface/button_1.png"));
 
   ///////////////////////////////////////////////////////////////music
   main_music = minim.loadFile("Music/Game_music2.mp3");
