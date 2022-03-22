@@ -4,21 +4,24 @@ class Main {
   private int nb_player_max;
   private boolean is_finished;
   private PImage[] background_1;
+  private PImage[] background_2;
   private PImage background_menu;
   private int player_win;
   private PImage logo_menu;
   private PImage background_restart;
 
-  Main(Player x_tab_player[], int x_nb_player, int x_nb_player_max, PImage[] x_background_1, PImage x_logo_menu, PImage x_background_menu) {
+  Main(Player x_tab_player[], int x_nb_player, int x_nb_player_max, PImage[] x_background_1, PImage[] x_background_2, PImage x_logo_menu, PImage x_background_menu) {
     this.tab_player = x_tab_player;
     this.nb_player = x_nb_player;
     this.nb_player_max = x_nb_player_max;
     this.background_1 = x_background_1;
-    for(int i = 0; i<background_1.length; i++){
+    for (int i = 0; i<background_1.length; i++) {
       this.background_1[i].resize(screen_size_x, screen_size_y);
     }
-    //this.background_2 = x_background_2;
-    //this.background_2.resize(screen_size_x, screen_size_y);
+    this.background_2 = x_background_2;
+    for (int i = 0; i<background_2.length; i++) {
+      this.background_2[i].resize(screen_size_x, screen_size_y);
+    }
     this.is_finished = false;
     this.logo_menu = x_logo_menu;
     this.logo_menu.resize(screen_size_x / 100 * 60, screen_size_y/3);
@@ -186,27 +189,47 @@ class Main {
     if (this.tab_player[0].get_period() == 1) {
       image(this.background_1[0], 0, 0);
     }
-    if (this.tab_player[0].get_period() == 2){
+    if (this.tab_player[0].get_period() == 2) {
       image(this.background_1[1], 0, 0);
     }
-    if (this.tab_player[0].get_period() == 3){
+    if (this.tab_player[0].get_period() == 3) {
       image(this.background_1[2], 0, 0);
     }
-    if (this.tab_player[0].get_period() == 4){
+    if (this.tab_player[0].get_period() == 4) {
       image(this.background_1[3], 0, 0);
     }
-    if (this.tab_player[0].get_period() == 5){
+    if (this.tab_player[0].get_period() == 5) {
       image(this.background_1[4], 0, 0);
     }
-    if (this.tab_player[0].get_period() == 6){
+    if (this.tab_player[0].get_period() == 6) {
       image(this.background_1[5], 0, 0);
     }
+
     for (int i = 0; i < this.nb_player; i++) {
       tab_player[i].display();
     }
-    /*image(this.background_2, 0, 0);
-     println("Main: display: done");
-     */
+
+    if (this.tab_player[0].get_period() == 1) {
+      image(this.background_2[0], 0, 0);
+    }
+    if (this.tab_player[0].get_period() == 2) {
+      image(this.background_2[1], 0, 0);
+    }
+    if (this.tab_player[0].get_period() == 3) {
+      image(this.background_2[2], 0, 0);
+    }
+    if (this.tab_player[0].get_period() == 4) {
+      image(this.background_2[3], 0, 0);
+    }
+    if (this.tab_player[0].get_period() == 5) {
+      image(this.background_2[4], 0, 0);
+    }
+    if (this.tab_player[0].get_period() == 6) {
+      image(this.background_2[5], 0, 0);
+    }
+
+
+    println("Main: display: done");
   }
 
   void display_menu() {
@@ -216,11 +239,10 @@ class Main {
     int logo_position_y = screen_size_y /100 * 10;
     image(this.background_menu, 0, 0);
     image(this.logo_menu, logo_position_x, logo_position_y);
-
   }
-  
-    
-  
+
+
+
   void display_restart() {
   }
 }
