@@ -191,7 +191,7 @@ class Main {
   void display_menu(){
     int logo_size_x = screen_size_x/2;
     int logo_size_y = screen_size_y/3;
-    int logo_position_x = screen_size_x - (screen_size_x /100 * 54) - (logo_size_x / 2);;
+    int logo_position_x = screen_size_x - (screen_size_x /100 * 55) - (logo_size_x / 2);;
     int logo_position_y = screen_size_y /100 * 10;
     image(this.background_menu, logo_position_x, logo_position_y);
   }
