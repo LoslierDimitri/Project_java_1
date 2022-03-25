@@ -50,7 +50,7 @@ class Player {
     power_charge_actual = 0;
     power_charge = 200;
     add_turret_max_cost = 1000;
-    add_period_cost = 4000;
+    add_period_cost = 500;
     period_max = 6;
     this.tab_base_player = x_tab_base_player;
 
