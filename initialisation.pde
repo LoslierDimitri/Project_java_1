@@ -197,32 +197,99 @@ void initialisation() {
   int button_display_restart_position_x = screen_size_x - (screen_size_x / 2) - (button_display_restart_size_x / 2);
   int button_display_restart_position_y = screen_size_y /2;
 
+  PImage unit_button_1[] = new PImage[6];
+  unit_button_1[0] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
+  unit_button_1[1] = loadImage("Unit/Buttons/Age2/button_unit_11.png");
+  unit_button_1[2] = loadImage("Unit/Buttons/Age3/button_unit_21.png");
+  unit_button_1[3] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
+  unit_button_1[4] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
+  unit_button_1[5] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
 
-  button_unit_1 = new Button("unit_1", button_unit_1_position_x, button_unit_1_position_y, button_unit_size_x, button_unit_size_y, loadImage("Interface/button_1.png"));
-  button_unit_2 = new Button("unit_2", button_unit_2_position_x, button_unit_2_position_y, button_unit_size_x, button_unit_size_y, loadImage("Interface/button_1.png"));
-  button_unit_3 = new Button("unit_3", button_unit_3_position_x, button_unit_3_position_y, button_unit_size_x, button_unit_size_y, loadImage("Interface/button_1.png"));
+  PImage unit_button_2[] = new PImage[6];
+  unit_button_2[0] = loadImage("Unit/Buttons/Age1/button_unit_2.png");
+  unit_button_2[1] = loadImage("Unit/Buttons/Age2/button_unit_12.png");
+  unit_button_2[2] = loadImage("Unit/Buttons/Age3/button_unit_22.png");
+  unit_button_2[3] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
+  unit_button_2[4] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
+  unit_button_2[5] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
 
-  button_turret_1 = new Button("turret_1", button_turret_1_position_x, button_turret_1_position_y, button_turret_size_x, button_turret_size_y, loadImage("Interface/button_1.png"));
-  button_turret_2 = new Button("turret_2", button_turret_2_position_x, button_turret_2_position_y, button_turret_size_x, button_turret_size_y, loadImage("Interface/button_1.png"));
-  button_turret_3 = new Button("turret_3", button_turret_3_position_x, button_turret_3_position_y, button_turret_size_x, button_turret_size_y, loadImage("Interface/button_1.png"));
+  PImage unit_button_3[] = new PImage[6];
+  unit_button_3[0] = loadImage("Unit/Buttons/Age1/button_unit_3.png");
+  unit_button_3[1] = loadImage("Unit/Buttons/Age2/button_unit_13.png");
+  unit_button_3[2] = loadImage("Unit/Buttons/Age3/button_unit_23.png");
+  unit_button_3[3] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
+  unit_button_3[4] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
+  unit_button_3[5] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
 
-  button_remove_turret = new Button("remove_turret", button_turret_remove_mode_position_x, button_turret_remove_mode_position_y, button_turret_remove_mode_size_x, button_turret_remove_mode_size_y, loadImage("Interface/button_1.png"));
-  button_remove_turret_1 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 3) + (button_turret_to_add_size_y * 3), button_turret_to_add_size_x, button_turret_to_add_size_y, loadImage("Interface/button_1.png"));
-  button_remove_turret_2 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 2) + (button_turret_to_add_size_y * 2), button_turret_to_add_size_x, button_turret_to_add_size_y, loadImage("Interface/button_1.png"));
-  button_remove_turret_3 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 1) + (button_turret_to_add_size_y * 1), button_turret_to_add_size_x, button_turret_to_add_size_y, loadImage("Interface/button_1.png"));
-  button_remove_turret_4 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 0) + (button_turret_to_add_size_y * 0), button_turret_to_add_size_x, button_turret_to_add_size_y, loadImage("Interface/button_1.png"));
+  PImage turret_button_1[] = new PImage[1];
+  turret_button_1[0] = loadImage("Interface/button_1.png");
 
-  button_turret_add_max = new Button("add turret max", button_turret_add_max_position_x, button_turret_add_max_position_y, button_turret_add_max_size_x, button_turret_add_max_size_y, loadImage("Interface/button_1.png"));
+  PImage turret_button_2[] = new PImage[1];
+  turret_button_2[0] = loadImage("Interface/button_1.png");
 
-  button_add_period = new Button("add_period", button_add_period_position_x, button_add_period_position_y, button_add_period_size_x, button_add_period_size_y, loadImage("Interface/button_1.png"));
+  PImage turret_button_3[] = new PImage[1];
+  turret_button_3[0] = loadImage("Interface/button_1.png");
 
-  button_power = new Button("power", button_power_position_x, button_power_position_y, button_power_size_x, button_power_size_y, loadImage("Interface/button_1.png"));
+  PImage remove_turret_button[] = new PImage[1];
+  remove_turret_button[0] = loadImage("Interface/button_1.png");
 
-  button_display_unit = new Button("", button_display_unit_position_x, button_display_unit_position_y, button_display_unit_size_x, button_display_unit_size_y, loadImage("Interface/button_1.png"));
+  PImage remove_turret_button_1[] = new PImage[1];
+  remove_turret_button_1[0] = loadImage("Interface/button_1.png");
 
-  button_play = new Button ("Play", button_display_play_position_x, button_display_play_position_y, button_display_play_size_x, button_display_play_size_y, loadImage("Interface/button_play.png"));
+  PImage remove_turret_button_2[] = new PImage[1];
+  remove_turret_button_2[0] = loadImage("Interface/button_1.png");
 
-  button_restart = new Button("Restart", button_display_restart_position_x, button_display_restart_position_y, button_display_restart_size_x, button_display_restart_size_y, loadImage("Interface/button_1.png"));
+  PImage remove_turret_button_3[] = new PImage[1];
+  remove_turret_button_3[0] = loadImage("Interface/button_1.png");
+
+  PImage remove_turret_button_4[] = new PImage[1];
+  remove_turret_button_4[0] = loadImage("Interface/button_1.png");
+  
+  PImage turret_add_max_button[] = new PImage[1];
+  turret_add_max_button[0] = loadImage("Interface/button_1.png");
+  
+  PImage add_period_button[] = new PImage[1];
+  add_period_button[0] = loadImage("Interface/button_1.png");
+  
+  PImage power_button[] = new PImage[1];
+  power_button[0] = loadImage("Interface/button_1.png");
+  
+  PImage display_unit_button[] = new PImage[1];
+  display_unit_button[0] = loadImage("Interface/button_1.png");
+  
+  PImage play_button[] = new PImage[1];
+  play_button[0] = loadImage("Interface/button_play.png");
+  
+  PImage restart_button[] = new PImage[1];
+  restart_button[0] = loadImage("Interface/button_1.png");
+
+
+
+  button_unit_1 = new Button("unit_1", button_unit_1_position_x, button_unit_1_position_y, button_unit_size_x, button_unit_size_y, unit_button_1);
+  button_unit_2 = new Button("unit_2", button_unit_2_position_x, button_unit_2_position_y, button_unit_size_x, button_unit_size_y, unit_button_2);
+  button_unit_3 = new Button("unit_3", button_unit_3_position_x, button_unit_3_position_y, button_unit_size_x, button_unit_size_y, unit_button_3);
+
+  button_turret_1 = new Button("turret_1", button_turret_1_position_x, button_turret_1_position_y, button_turret_size_x, button_turret_size_y, turret_button_1);
+  button_turret_2 = new Button("turret_2", button_turret_2_position_x, button_turret_2_position_y, button_turret_size_x, button_turret_size_y, turret_button_2);
+  button_turret_3 = new Button("turret_3", button_turret_3_position_x, button_turret_3_position_y, button_turret_size_x, button_turret_size_y, turret_button_3);
+
+  button_remove_turret = new Button("remove_turret", button_turret_remove_mode_position_x, button_turret_remove_mode_position_y, button_turret_remove_mode_size_x, button_turret_remove_mode_size_y, remove_turret_button);
+  button_remove_turret_1 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 3) + (button_turret_to_add_size_y * 3), button_turret_to_add_size_x, button_turret_to_add_size_y, remove_turret_button_1);
+  button_remove_turret_2 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 2) + (button_turret_to_add_size_y * 2), button_turret_to_add_size_x, button_turret_to_add_size_y, remove_turret_button_2);
+  button_remove_turret_3 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 1) + (button_turret_to_add_size_y * 1), button_turret_to_add_size_x, button_turret_to_add_size_y, remove_turret_button_3);
+  button_remove_turret_4 = new Button("", 0, player_1_position_y + (button_turret_to_add_decal * 0) + (button_turret_to_add_size_y * 0), button_turret_to_add_size_x, button_turret_to_add_size_y, remove_turret_button_4);
+
+  button_turret_add_max = new Button("add turret max", button_turret_add_max_position_x, button_turret_add_max_position_y, button_turret_add_max_size_x, button_turret_add_max_size_y, turret_add_max_button);
+
+  button_add_period = new Button("add_period", button_add_period_position_x, button_add_period_position_y, button_add_period_size_x, button_add_period_size_y, add_period_button);
+
+  button_power = new Button("power", button_power_position_x, button_power_position_y, button_power_size_x, button_power_size_y, power_button);
+
+  button_display_unit = new Button("", button_display_unit_position_x, button_display_unit_position_y, button_display_unit_size_x, button_display_unit_size_y, display_unit_button);
+
+  button_play = new Button ("Play", button_display_play_position_x, button_display_play_position_y, button_display_play_size_x, button_display_play_size_y, play_button);
+
+  button_restart = new Button("Restart", button_display_restart_position_x, button_display_restart_position_y, button_display_restart_size_x, button_display_restart_size_y, restart_button);
 
   ///////////////////////////////////////////////////////////////music
   main_music = minim.loadFile("Music/Game_music2.mp3");
