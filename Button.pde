@@ -4,16 +4,20 @@ class Button {
   private int size_x;
   private int size_y;
   private String name;
-  private PImage image;
+  private PImage button[];
 
-  Button (String x_name, int x_position_x, int x_position_y, int x_size_x, int x_size_y, PImage x_image) {
+
+  Button (String x_name, int x_position_x, int x_position_y, int x_size_x, int x_size_y, PImage x_button[]) {
     this.position_x = x_position_x;
     this.position_y = x_position_y;
     this.size_x = x_size_x;
     this.size_y = x_size_y;
     this.name = x_name;
-    this.image = x_image;
-    this.image.resize(this.size_x, this.size_y);
+    this.button = x_button;
+    for (int i = 0; i<button.length; i++) {
+      this.button[i].resize(this.size_x, this.size_y);
+    }
+
   }
 
   ///////////////////////////////////////////////////////////////getter
@@ -68,7 +72,7 @@ class Button {
   void display() {
     fill(200, 100, 100);
     rect(this.position_x, this.position_y, this.size_x, this.size_y);
-    image(this.image, this.position_x, this.position_y);
+    //image(this.button, this.position_x, this.position_y);
     fill(0);
     text(this.name, this.position_x, this.position_y + 10);
   }
