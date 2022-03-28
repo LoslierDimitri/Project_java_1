@@ -320,7 +320,7 @@ class Player {
 
     println("Player_" + this.number + ": display: done");
 
-    int health_bar_size_y = 10;
+    int health_bar_size_y = 8;
     int health_bar_position_y = 10;
     int health_bar_actual = 0;
     int health_bar_position_x = 0;
