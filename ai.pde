@@ -25,12 +25,12 @@ void ai(Main x_main) {
   if (create_unit == false) {
     create_unit = true;
     unit_delay_actual = 0;
-    unit_delay = int(random(60, 180));
+    unit_delay = int(random(3360, 3180));
   }
   if (create_turret == false) {
     create_turret = true;
     turret_delay_actual = 0;
-    turret_delay = int(random(600, 800));
+    turret_delay = int(random(2600, 2800));
   }
 
   //add turret

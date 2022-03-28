@@ -59,7 +59,7 @@ void initialisation() {
 
   turret_41 = new Turret(0, 0, 0, 0, 24, 200, 400, "Machine gun", "turret_1_attack_sound", "Turret_41");
   turret_42 = new Turret(0, 0, 0, 0, 29, 250, 500, "Small Rocket", "turret_1_attack_sound", "Turret_42");
-  turret_43 = new Turret(0, 0, 0, 0, 33, 300, 800, "Big Rocket", "turret_1_attack_sound", "Turret_43");
+  turret_43 = new Turret(0, 0, 0, 0, 33, 300, 800, "Large Rocket", "turret_1_attack_sound", "Turret_43");
 
   turret_51 = new Turret(0, 0, 0, 0, 31, 200, 400, "Titanium Shooter", "turret_1_attack_sound", "Turret_51");
   turret_52 = new Turret(0, 0, 0, 0, 36, 250, 500, "Lazer Cannon", "turret_1_attack_sound", "Turret_52");

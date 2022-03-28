@@ -1,5 +1,6 @@
 class Player {
   private int health_point;
+  private int health_point_max;
   private int number;
   private Unit tab_unit[];
   private int nb_unit;
@@ -53,6 +54,7 @@ class Player {
     add_period_cost = 500;
     period_max = 6;
     this.tab_base_player = x_tab_base_player;
+    this.health_point_max = this.health_point;
 
     if (this.number == 2) {
       this.nb_turret_max = this.nb_turret_limit;
@@ -111,8 +113,8 @@ class Player {
   int get_nb_turret_limit() {
     return this.nb_turret_limit;
   }
-  int get_position_y(){
-   return this.position_y; 
+  int get_position_y() {
+    return this.position_y;
   }
 
   ///////////////////////////////////////////////////////////////setter
@@ -160,6 +162,7 @@ class Player {
       this.exp = this.exp - this.add_period_cost;
       this.add_period_cost = this.add_period_cost * 2;
       this.health_point = this.health_point * 2;
+      this.health_point_max = this.health_point_max * 2;
     }
   }
 
@@ -238,7 +241,7 @@ class Player {
       this.power_charge_actual = 0;
     }
   }
-  
+
   void power_period(int x_nb_projectile, int x_size_x, int x_size_y, int x_damage, int x_speed, PImage x_image) {
     this.nb_projectile = x_nb_projectile;
     this.tab_projectile = new Projectile[nb_projectile];
@@ -316,5 +319,20 @@ class Player {
     text(this.power_charge_actual, this.position_x + 50, this.position_y+60);
 
     println("Player_" + this.number + ": display: done");
+
+    int health_bar_size_y = 10;
+    int health_bar_position_y = 10;
+    int health_bar_actual = 0;
+    int health_bar_position_x = 0;
+
+    fill(255, 0, 0);
+    if (this.number == 1) {
+      health_bar_actual = (this.health_point * this.collider.get_size_x() / this.health_point_max);
+      rect(this.position_x, this.position_y - health_bar_position_y, health_bar_actual, health_bar_size_y);
+    } else {
+      health_bar_actual = (this.health_point * this.collider.get_size_x() / this.health_point_max);
+      health_bar_position_x = (this.position_x + this.collider.get_size_x() - health_bar_actual);
+      rect(health_bar_position_x, this.position_y - health_bar_position_y, health_bar_actual, health_bar_size_y);
+    }
   }
 }
