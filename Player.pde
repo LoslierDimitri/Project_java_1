@@ -170,8 +170,8 @@ class Player {
     println("Player_" + this.number + ": add_turret: ...");
 
     if (this.nb_turret < this.nb_turret_max) {
-      int turret_to_add_size_x = 20;
-      int turret_to_add_size_y = 20;
+      int turret_to_add_size_x = 50;
+      int turret_to_add_size_y = 50;
       int turret_to_add_decal = 10;
 
       Turret turret_to_add = new Turret(0, this.position_y + (turret_to_add_decal * (this.nb_turret_max - this.nb_turret)) + (turret_to_add_size_y * (this.nb_turret_max - this.nb_turret)), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name(), x_turret.get_sound_attack(), x_turret.get_animation_name());
@@ -275,9 +275,9 @@ class Player {
       this.exp = 999999;
     }
 
-    int turret_to_add_size_x = 20;
-    int turret_to_add_size_y = 20;
-    int turret_to_add_decal = 10;
+    int turret_to_add_size_x = 50;
+    int turret_to_add_size_y = 50;
+    int turret_to_add_decal = 5;
 
     for (int i = 0; i < this.nb_turret; i++) {
       this.tab_turret[i].set_position_y(this.position_y + (turret_to_add_decal * (this.nb_turret_limit - (i+1))) + (turret_to_add_size_y * (this.nb_turret_limit - (i+1))));
