@@ -157,7 +157,7 @@ class Unit {
   void display(int x_number) {
     println("Unit: display: ...");
     fill(255);
-    rect(this.collider.get_position_x(), this.collider.get_position_y(), this.collider.get_size_x(), this.collider.get_size_y());
+    //rect(this.collider.get_position_x(), this.collider.get_position_y(), this.collider.get_size_x(), this.collider.get_size_y());
     fill(0);
     textSize(10);
     text(this.health_point, this.position_x, this.position_y+10);

@@ -75,9 +75,9 @@ void initialisation() {
   int player_1_money = 1000;
 
   PImage tab_base_player_1[] = new PImage[6];
-  tab_base_player_1[0] = loadImage("Base/base_1.png");
-  tab_base_player_1[1] = loadImage("Base/base_1.png");
-  tab_base_player_1[2] = loadImage("Base/base_1.png");
+  tab_base_player_1[0] = loadImage("Base/base_1_1.png");
+  tab_base_player_1[1] = loadImage("Base/base_2_1.png");
+  tab_base_player_1[2] = loadImage("Base/base_3_1.png");
   tab_base_player_1[3] = loadImage("Base/base_1.png");
   tab_base_player_1[4] = loadImage("Base/base_1.png");
   tab_base_player_1[5] = loadImage("Base/base_1.png");
@@ -100,9 +100,9 @@ void initialisation() {
   int player_2_money = 1000;
 
   PImage tab_base_player_2[] = new PImage[6];
-  tab_base_player_2[0] = loadImage("Base/base_1.png");
-  tab_base_player_2[1] = loadImage("Base/base_1.png");
-  tab_base_player_2[2] = loadImage("Base/base_1.png");
+  tab_base_player_2[0] = loadImage("Base/base_1_2.png");
+  tab_base_player_2[1] = loadImage("Base/base_2_2.png");
+  tab_base_player_2[2] = loadImage("Base/base_3_2.png");
   tab_base_player_2[3] = loadImage("Base/base_1.png");
   tab_base_player_2[4] = loadImage("Base/base_1.png");
   tab_base_player_2[5] = loadImage("Base/base_1.png");
