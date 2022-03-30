@@ -163,8 +163,8 @@ void initialisation() {
   int button_turret_remove_mode_position_x = button_interval_x;
   int button_turret_remove_mode_position_y = button_interval_y * 2 + button_turret_remove_mode_size_x * 1;
 
-  int button_turret_to_add_size_x = 20;
-  int button_turret_to_add_size_y = 20;
+  int button_turret_to_add_size_x = 50;
+  int button_turret_to_add_size_y = 50;
   int button_turret_to_add_decal = 10;
 
   int button_turret_add_max_size_x = screen_size_x / 100 * 5;
@@ -177,7 +177,7 @@ void initialisation() {
   int button_add_period_position_x = button_interval_x * 3 + button_add_period_size_x * 2;
   int button_add_period_position_y = button_interval_y * 2 + button_add_period_size_x * 1;
 
-  int button_power_size_x = (screen_size_x / 100 * 10) + button_interval_x;
+  int button_power_size_x = (screen_size_x / 100 * 10);
   int button_power_size_y = screen_size_x / 100 * 5;
   int button_power_position_x = button_interval_x;
   int button_power_position_y = screen_size_y - button_interval_y - button_power_size_y;
