@@ -30,7 +30,7 @@ void ai(Main x_main) {
   if (create_turret == false) {
     create_turret = true;
     turret_delay_actual = 0;
-    turret_delay = int(random(2600, 2800));
+    turret_delay = int(random(1500, 2000));
   }
 
   //add turret
