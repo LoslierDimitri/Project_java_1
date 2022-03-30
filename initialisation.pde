@@ -78,9 +78,9 @@ void initialisation() {
   tab_base_player_1[0] = loadImage("Base/base_1_1.png");
   tab_base_player_1[1] = loadImage("Base/base_2_1.png");
   tab_base_player_1[2] = loadImage("Base/base_3_1.png");
-  tab_base_player_1[3] = loadImage("Base/base_1.png");
-  tab_base_player_1[4] = loadImage("Base/base_1.png");
-  tab_base_player_1[5] = loadImage("Base/base_1.png");
+  tab_base_player_1[3] = loadImage("Base/base_4_1.png");
+  tab_base_player_1[4] = loadImage("Base/base_5_1.png");
+  tab_base_player_1[5] = loadImage("Base/base_6_1.png");
 
   PImage tab_image_power[] = new PImage[6];
   tab_image_power[0] = loadImage("Power/power_1.png");
@@ -103,9 +103,9 @@ void initialisation() {
   tab_base_player_2[0] = loadImage("Base/base_1_2.png");
   tab_base_player_2[1] = loadImage("Base/base_2_2.png");
   tab_base_player_2[2] = loadImage("Base/base_3_2.png");
-  tab_base_player_2[3] = loadImage("Base/base_1.png");
-  tab_base_player_2[4] = loadImage("Base/base_1.png");
-  tab_base_player_2[5] = loadImage("Base/base_1.png");
+  tab_base_player_2[3] = loadImage("Base/base_4_2.png");
+  tab_base_player_2[4] = loadImage("Base/base_5_2.png");
+  tab_base_player_2[5] = loadImage("Base/base_6_2.png");
 
   player_2 = new Player(2, player_2_health_point, new Collider(player_2_size_x, player_2_size_y), player_2_position_x, player_2_position_y, player_2_money, tab_base_player_2, tab_image_power);
 

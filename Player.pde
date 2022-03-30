@@ -294,7 +294,7 @@ class Player {
   void display() {
     println("Player_" + this.number + ": display: ...");
     fill(100, 100, 200);
-    rect(this.position_x, this.position_y, this.collider.get_size_x(), this.collider.get_size_y());
+    //rect(this.position_x, this.position_y, this.collider.get_size_x(), this.collider.get_size_y());
 
     image(this.tab_base_player[this.period-1], this.position_x, this.position_y);
 
