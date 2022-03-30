@@ -22,6 +22,7 @@ class Player {
   private boolean can_use_power;
   private int power_charge_actual;
   private int power_charge;
+  private int power_move;
   private int add_turret_max_cost;
   private int add_period_cost;
   private int period_max;
@@ -217,7 +218,7 @@ class Player {
     }
   }
 
-   void power() {
+  void power() {
     if (can_use_power == true) {
       if (this.period == 1) {
         this.power_period(10, 50, 50, 1000, 5, this.tab_image_power[0]);
@@ -235,7 +236,7 @@ class Player {
         this.power_period(25, 20, 30, 3000, 5, this.tab_image_power[4]);
       }
       if (this.period == 6) {
-        this.power_period(40, 20, 100, 5000, 50, this.tab_image_power[5]);
+        this.power_period(30, 20, 20, 5000, 20, this.tab_image_power[5]);
       }
       this.can_use_power = false;
       this.power_charge_actual = 0;
@@ -251,6 +252,7 @@ class Player {
       this.tab_projectile[i] = new Projectile(random_int, 0, x_size_x, x_size_y, new Collider(x_size_x, x_size_y), x_damage, x_speed, x_image);
     }
   }
+
 
   void update(Main x_main) {
     println("Player_" + this.number + ": update: ...");
@@ -334,10 +336,8 @@ class Player {
       health_bar_position_x = (this.position_x + this.collider.get_size_x() - health_bar_actual);
       rect(health_bar_position_x, this.position_y - health_bar_position_y, health_bar_actual, health_bar_size_y);
     }
-
-    
   }
-  
+
   void display_interface() {
     int button_interval_x = 10;
     int button_interval_y = 10;
@@ -349,7 +349,7 @@ class Player {
     int button_power_position_y = screen_size_y - button_interval_y - button_power_size_y;
 
     if (this.number == 1) {
-      fill(255,0,0);
+      fill(255, 0, 0);
       power_bar_actual = (this.power_charge_actual * this.collider.get_size_x() / this.power_charge);
       rect(button_power_position_x, button_power_position_y, power_bar_actual, button_power_size_y);
     }
