@@ -278,7 +278,7 @@ void game_loop() {
     exit();
   }
   text("" + remove_turret_mode, 500, 500);
-
+  
   ///////////////////////////////////////////////////////////////main display
   main.display();
 

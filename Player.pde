@@ -49,7 +49,7 @@ class Player {
     this.tab_turret = new Turret[this.nb_turret_limit];
     can_use_power = false;
     power_charge_actual = 0;
-    power_charge = 200;
+    power_charge = 1000;
     add_turret_max_cost = 1000;
     add_period_cost = 500;
     period_max = 6;
@@ -333,6 +333,25 @@ class Player {
       health_bar_actual = (this.health_point * this.collider.get_size_x() / this.health_point_max);
       health_bar_position_x = (this.position_x + this.collider.get_size_x() - health_bar_actual);
       rect(health_bar_position_x, this.position_y - health_bar_position_y, health_bar_actual, health_bar_size_y);
+    }
+
+    
+  }
+  
+  void display_interface() {
+    int button_interval_x = 10;
+    int button_interval_y = 10;
+    int power_bar_actual = 0;
+
+    int button_power_size_x = (screen_size_x / 100 * 10) + button_interval_x;
+    int button_power_size_y = screen_size_x / 100 * 5;
+    int button_power_position_x = button_interval_x;
+    int button_power_position_y = screen_size_y - button_interval_y - button_power_size_y;
+
+    if (this.number == 1) {
+      fill(255,0,0);
+      power_bar_actual = (this.power_charge_actual * this.collider.get_size_x() / this.power_charge);
+      rect(button_power_position_x, button_power_position_y, power_bar_actual, button_power_size_y);
     }
   }
 }

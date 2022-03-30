@@ -252,7 +252,7 @@ void initialisation() {
   add_period_button[0] = loadImage("Interface/button_1.png");
   
   PImage power_button[] = new PImage[1];
-  power_button[0] = loadImage("Interface/button_1.png");
+  power_button[0] = loadImage("Interface/button_2.png");
   
   PImage display_unit_button[] = new PImage[1];
   display_unit_button[0] = loadImage("Interface/button_1.png");

@@ -70,7 +70,7 @@ class Button {
 
   void display() {
     fill(200, 100, 100);
-    rect(this.position_x, this.position_y, this.size_x, this.size_y);
+    //rect(this.position_x, this.position_y, this.size_x, this.size_y);
     //image(this.button, this.position_x, this.position_y);
     if (this.button.length == 1) {
       image(this.button[0], this.position_x, this.position_y);

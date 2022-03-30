@@ -227,6 +227,10 @@ class Main {
     if (this.tab_player[0].get_period() == 6) {
       image(this.background_2[5], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y());
     }
+    
+    for (int i = 0; i < this.nb_player; i++) {
+      tab_player[i].display_interface();
+    }
 
 
     println("Main: display: done");
