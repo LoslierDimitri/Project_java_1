@@ -84,7 +84,7 @@ void initialisation() {
 
   PImage tab_image_power[] = new PImage[6];
   tab_image_power[0] = loadImage("Power/power_1.png");
-  tab_image_power[1] = loadImage("Power/power_1.png");
+  tab_image_power[1] = loadImage("Power/power_2.png");
   tab_image_power[2] = loadImage("Power/power_1.png");
   tab_image_power[3] = loadImage("Power/power_1.png");
   tab_image_power[4] = loadImage("Power/power_1.png");
