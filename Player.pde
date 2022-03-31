@@ -1,5 +1,6 @@
 class Player {
   private int health_point;
+  private int health_point_max;
   private int number;
   private Unit tab_unit[];
   private int nb_unit;
@@ -48,11 +49,12 @@ class Player {
     this.tab_turret = new Turret[this.nb_turret_limit];
     can_use_power = false;
     power_charge_actual = 0;
-    power_charge = 200;
+    power_charge = 100;
     add_turret_max_cost = 1000;
     add_period_cost = 500;
     period_max = 6;
     this.tab_base_player = x_tab_base_player;
+    this.health_point_max = this.health_point;
 
     if (this.number == 2) {
       this.nb_turret_max = this.nb_turret_limit;
@@ -111,8 +113,8 @@ class Player {
   int get_nb_turret_limit() {
     return this.nb_turret_limit;
   }
-  int get_position_y(){
-   return this.position_y; 
+  int get_position_y() {
+    return this.position_y;
   }
 
   ///////////////////////////////////////////////////////////////setter
@@ -160,6 +162,7 @@ class Player {
       this.exp = this.exp - this.add_period_cost;
       this.add_period_cost = this.add_period_cost * 2;
       this.health_point = this.health_point * 2;
+      this.health_point_max = this.health_point_max * 2;
     }
   }
 
@@ -167,8 +170,8 @@ class Player {
     println("Player_" + this.number + ": add_turret: ...");
 
     if (this.nb_turret < this.nb_turret_max) {
-      int turret_to_add_size_x = 20;
-      int turret_to_add_size_y = 20;
+      int turret_to_add_size_x = 50;
+      int turret_to_add_size_y = 50;
       int turret_to_add_decal = 10;
 
       Turret turret_to_add = new Turret(0, this.position_y + (turret_to_add_decal * (this.nb_turret_max - this.nb_turret)) + (turret_to_add_size_y * (this.nb_turret_max - this.nb_turret)), turret_to_add_size_x, turret_to_add_size_y, x_turret.get_damage(), x_turret.get_range(), x_turret.get_cost(), x_turret.get_name(), x_turret.get_sound_attack(), x_turret.get_animation_name());
@@ -214,31 +217,31 @@ class Player {
     }
   }
 
-  void power() {
+   void power() {
     if (can_use_power == true) {
       if (this.period == 1) {
-        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[0]);
+        this.power_period(10, 50, 50, 1000, 5, this.tab_image_power[0]);
       }
       if (this.period == 2) {
-        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[1]);
+        this.power_period(25, 25, 25, 1300, 5, this.tab_image_power[1]);
       }
       if (this.period == 3) {
-        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[2]);
+        this.power_period(20, 40, 40, 1600, 5, this.tab_image_power[2]);
       }
       if (this.period == 4) {
-        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[3]);
+        this.power_period(30, 10, 30, 2400, 5, this.tab_image_power[3]);
       }
       if (this.period == 5) {
-        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[4]);
+        this.power_period(25, 20, 30, 3000, 5, this.tab_image_power[4]);
       }
       if (this.period == 6) {
-        this.power_period(40, 20, 20, 500, 5, this.tab_image_power[5]);
+        this.power_period(40, 20, 100, 5000, 50, this.tab_image_power[5]);
       }
       this.can_use_power = false;
       this.power_charge_actual = 0;
     }
   }
-  
+
   void power_period(int x_nb_projectile, int x_size_x, int x_size_y, int x_damage, int x_speed, PImage x_image) {
     this.nb_projectile = x_nb_projectile;
     this.tab_projectile = new Projectile[nb_projectile];
@@ -272,9 +275,9 @@ class Player {
       this.exp = 999999;
     }
 
-    int turret_to_add_size_x = 20;
-    int turret_to_add_size_y = 20;
-    int turret_to_add_decal = 10;
+    int turret_to_add_size_x = 50;
+    int turret_to_add_size_y = 50;
+    int turret_to_add_decal = 5;
 
     for (int i = 0; i < this.nb_turret; i++) {
       this.tab_turret[i].set_position_y(this.position_y + (turret_to_add_decal * (this.nb_turret_limit - (i+1))) + (turret_to_add_size_y * (this.nb_turret_limit - (i+1))));
@@ -291,7 +294,7 @@ class Player {
   void display() {
     println("Player_" + this.number + ": display: ...");
     fill(100, 100, 200);
-    rect(this.position_x, this.position_y, this.collider.get_size_x(), this.collider.get_size_y());
+    //rect(this.position_x, this.position_y, this.collider.get_size_x(), this.collider.get_size_y());
 
     image(this.tab_base_player[this.period-1], this.position_x, this.position_y);
 
@@ -316,5 +319,39 @@ class Player {
     text(this.power_charge_actual, this.position_x + 50, this.position_y+60);
 
     println("Player_" + this.number + ": display: done");
+
+    int health_bar_size_y = 8;
+    int health_bar_position_y = 10;
+    int health_bar_actual = 0;
+    int health_bar_position_x = 0;
+
+    fill(255, 0, 0);
+    if (this.number == 1) {
+      health_bar_actual = (this.health_point * this.collider.get_size_x() / this.health_point_max);
+      rect(this.position_x, this.position_y - health_bar_position_y, health_bar_actual, health_bar_size_y);
+    } else {
+      health_bar_actual = (this.health_point * this.collider.get_size_x() / this.health_point_max);
+      health_bar_position_x = (this.position_x + this.collider.get_size_x() - health_bar_actual);
+      rect(health_bar_position_x, this.position_y - health_bar_position_y, health_bar_actual, health_bar_size_y);
+    }
+
+    
+  }
+  
+  void display_interface() {
+    int button_interval_x = 10;
+    int button_interval_y = 10;
+    int power_bar_actual = 0;
+
+    int button_power_size_x = (screen_size_x / 100 * 10) + button_interval_x;
+    int button_power_size_y = screen_size_x / 100 * 5;
+    int button_power_position_x = button_interval_x;
+    int button_power_position_y = screen_size_y - button_interval_y - button_power_size_y;
+
+    if (this.number == 1) {
+      fill(255,0,0);
+      power_bar_actual = (this.power_charge_actual * this.collider.get_size_x() / this.power_charge);
+      rect(button_power_position_x, button_power_position_y, power_bar_actual, button_power_size_y);
+    }
   }
 }

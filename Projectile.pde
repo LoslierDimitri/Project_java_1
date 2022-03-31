@@ -66,9 +66,9 @@ class Projectile {
   }
   void display() {
     fill(0, 100, 0);
-    rect(this.collider.get_position_x(), this.collider.get_position_y(), this.collider.get_size_x(), this.collider.get_size_y());
+    //rect(this.collider.get_position_x(), this.collider.get_position_y(), this.collider.get_size_x(), this.collider.get_size_y());
     fill(0, 200, 0);
-    rect(this.position_x, this.position_y, this.size_x, this.size_y);
+    //rect(this.position_x, this.position_y, this.size_x, this.size_y);
 
     image(this.image, this.position_x, this.position_y);
   }

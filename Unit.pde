@@ -4,6 +4,7 @@ class Unit {
   private int position_x_center;
   private Collider collider;
   private int health_point;
+  private int health_point_max;
   private int damage;
   private int speed;
   private int range;
@@ -32,6 +33,7 @@ class Unit {
     this.sound_attack.setVolume(60);
     this.animation_name = x_animation_name;
     this.animation = load_animation("Unit/" + this.animation_name + "/");
+    this.health_point_max = x_health_point;
   }
 
   ///////////////////////////////////////////////////////////////getter
@@ -155,11 +157,26 @@ class Unit {
   void display(int x_number) {
     println("Unit: display: ...");
     fill(255);
-    rect(this.collider.get_position_x(), this.collider.get_position_y(), this.collider.get_size_x(), this.collider.get_size_y());
+    //rect(this.collider.get_position_x(), this.collider.get_position_y(), this.collider.get_size_x(), this.collider.get_size_y());
     fill(0);
     textSize(10);
     text(this.health_point, this.position_x, this.position_y+10);
     this.animation.display(x_number);
     println("Unit: display: done");
+
+    int health_bar_size_y = 8;
+    int health_bar_position_y = 10;
+    int health_bar_actual = 0;
+    int health_bar_position_x = 0;
+
+    fill(255, 0, 0);
+    if (x_number == 1) {
+      health_bar_actual = (this.health_point * this.collider.get_size_x() / this.health_point_max);
+      rect(this.position_x, this.position_y - health_bar_position_y, health_bar_actual, health_bar_size_y);
+    } else {
+      health_bar_actual = (this.health_point * this.collider.get_size_x() / this.health_point_max);
+      health_bar_position_x = (this.position_x + this.collider.get_size_x() - health_bar_actual);
+      rect(health_bar_position_x, this.position_y - health_bar_position_y, health_bar_actual, health_bar_size_y);
+    }
   }
 }

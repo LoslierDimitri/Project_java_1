@@ -17,7 +17,6 @@ class Button {
     for (int i = 0; i<button.length; i++) {
       this.button[i].resize(this.size_x, this.size_y);
     }
-
   }
 
   ///////////////////////////////////////////////////////////////getter
@@ -71,8 +70,20 @@ class Button {
 
   void display() {
     fill(200, 100, 100);
-    rect(this.position_x, this.position_y, this.size_x, this.size_y);
+    //rect(this.position_x, this.position_y, this.size_x, this.size_y);
     //image(this.button, this.position_x, this.position_y);
+    if (this.button.length == 1) {
+      image(this.button[0], this.position_x, this.position_y);
+    }
+    if (main.get_player(0).get_period() == 1 && this.button.length > 1) {
+      image(this.button[0], this.position_x, this.position_y);
+    }
+    if (main.get_player(0).get_period() == 2 && this.button.length > 1) {
+      image(this.button[1], this.position_x, this.position_y);
+    }
+    if (main.get_player(0).get_period() == 3 && this.button.length > 1) {
+      image(this.button[2], this.position_x, this.position_y);
+    }
     fill(0);
     text(this.name, this.position_x, this.position_y + 10);
   }
