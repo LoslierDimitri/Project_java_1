@@ -3,7 +3,7 @@ class Turret {
   private int position_y;
   private int size_x;
   private int size_y;
-  private int damage;
+  private int damage; 
   private int range;
   private int cost;
   private String name;

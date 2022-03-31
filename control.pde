@@ -1,7 +1,7 @@
 boolean mouse_click = false;
 
 int mouse_x;
-int mouse_y;
+int mouse_y; 
 
 boolean input_space = false;
 boolean input_a = false;

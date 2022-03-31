@@ -12,7 +12,7 @@ class Player {
   private int exp;
   private int period;
   private Turret tab_turret[];
-  private int nb_turret;
+  private int nb_turret; 
   private int nb_turret_max;
   private int nb_turret_limit;
   private Projectile tab_projectile[];

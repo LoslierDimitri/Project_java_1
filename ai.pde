@@ -3,7 +3,7 @@ int unit_delay_actual;
 
 int turret_delay;
 int turret_delay_actual;
-
+ 
 int unit_to_create;
 int turret_to_create;
 int turret_to_remove;

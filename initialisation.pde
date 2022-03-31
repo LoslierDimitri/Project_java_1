@@ -103,7 +103,7 @@ void initialisation() {
   tab_base_player_2[0] = loadImage("Base/base_1_2.png");
   tab_base_player_2[1] = loadImage("Base/base_2_2.png");
   tab_base_player_2[2] = loadImage("Base/base_3_2.png");
-  tab_base_player_2[3] = loadImage("Base/base_4_2.png");
+  tab_base_player_2[3] = loadImage("Base/base_4_2.png"); 
   tab_base_player_2[4] = loadImage("Base/base_5_2.png");
   tab_base_player_2[5] = loadImage("Base/base_6_2.png");
 

@@ -11,7 +11,7 @@ class Collider {
     this.size_x = x_size_x;
     this.size_y = x_size_y;
   }
-
+ 
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
     return this.position_x;

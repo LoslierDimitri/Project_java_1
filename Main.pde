@@ -238,7 +238,7 @@ class Main {
         tab_player[i].display_interface();
       }
 
-
+ 
       println("Main: display: done");
     }
 

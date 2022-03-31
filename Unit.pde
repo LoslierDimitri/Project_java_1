@@ -4,7 +4,7 @@ class Unit {
   private int position_x_center;
   private Collider collider;
   private int health_point;
-  private int health_point_max;
+  private int health_point_max; 
   private int damage;
   private int speed;
   private int range;

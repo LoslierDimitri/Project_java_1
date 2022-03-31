@@ -22,7 +22,7 @@ class Animation {
     this.animation_actual = "idle";
     this.animation_speed_actual = 0;
   }
-
+ 
   ///////////////////////////////////////////////////////////////getter
   ///////////////////////////////////////////////////////////////setter
   void set_animation_idle(PImage x_tab_animation[], int x_nb_animation) {

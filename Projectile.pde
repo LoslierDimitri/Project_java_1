@@ -7,7 +7,7 @@ class Projectile {
   private int damage;
   private int speed;
   private boolean used;
-
+ 
   private PImage image;
 
   Projectile (int x_position_x, int x_position_y, int x_size_x, int x_size_y, Collider x_collider, int x_damage, int x_speed, PImage x_image) {

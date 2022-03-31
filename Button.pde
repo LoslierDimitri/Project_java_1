@@ -18,7 +18,7 @@ class Button {
       this.button[i].resize(this.size_x, this.size_y);
     }
   }
-
+ 
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
     return this.position_x;
