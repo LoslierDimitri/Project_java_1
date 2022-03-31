@@ -62,8 +62,8 @@ void initialisation() {
   turret_43 = new Turret(0, 0, 0, 0, 7, 300, 800, "Large Rocket", "turret_1_attack_sound", "Turret_43");
 
   turret_51 = new Turret(0, 0, 0, 0, 6, 200, 400, "Titanium Shooter", "turret_1_attack_sound", "Turret_51");
-  turret_52 = new Turret(0, 0, 0, 0, 7, 250, 500, "Lazer Cannon", "turret_1_attack_sound", "Turret_52");
-  turret_53 = new Turret(0, 0, 0, 0, 8, 300, 800, "Iron Ray", "turret_1_attack_sound", "Turret_53");
+  turret_52 = new Turret(0, 0, 0, 0, 7, 250, 500, "Laser Cannon", "turret_1_attack_sound", "Turret_52");
+  turret_53 = new Turret(0, 0, 0, 0, 8, 300, 800, "Ion Ray", "turret_1_attack_sound", "Turret_53");
 
   ///////////////////////////////////////////////////////////////player
   //number, health_point, collider(size_x, size_y), position_x, position_y, money
