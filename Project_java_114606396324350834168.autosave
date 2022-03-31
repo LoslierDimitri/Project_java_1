@@ -122,7 +122,7 @@ Button button_restart;
 
 ///////////////////////////////////////////////////////////////draw
 void draw() {
-  background(255);
+  //background(255);
   
   if (status ==0) {
     if (initialisation_done == false) {

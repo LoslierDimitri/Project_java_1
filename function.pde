@@ -341,6 +341,7 @@ void menu_loop() {
 
 void endgame_loop() {
   button_restart.display();
+  main.display_restart();
   if (main.get_player_win() == 1) {
     text("Player 1 win", 100, 100);
     if (button_restart.collide(mouse_x, mouse_y) == true) {
