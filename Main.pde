@@ -246,7 +246,7 @@ class Main {
       int logo_size_x = screen_size_x/2;
       int logo_size_y = screen_size_y/100 * 40;
       int logo_position_x = screen_size_x - (screen_size_x /2) - (logo_size_x / 2);
-      int logo_position_y = screen_size_y /100 * 10;
+      int logo_position_y = screen_size_y /100 * 15;
       image(this.background_menu, 0, 0);
       this.logo_menu.resize(logo_size_x, logo_size_y);
       image(this.logo_menu, logo_position_x, logo_position_y);
@@ -257,8 +257,8 @@ class Main {
     void display_restart() {
       int logo_end_size_x = screen_size_x/2;
       int logo_end_size_y = screen_size_y/100*40;
-      int logo_end_position_x = screen_size_x - (screen_size_x /100 * 50) - (logo_end_size_x /2);
-      int logo_end_position_y = screen_size_y /100 *10;
+      int logo_end_position_x = screen_size_x - (screen_size_x /100 * 45) - (logo_end_size_x /2);
+      int logo_end_position_y = screen_size_y /100 *15;
       if (this.player_win == 1) {
         this.logo_end[0].resize(logo_end_size_x, logo_end_size_y);
         image(this.logo_end[0], logo_end_position_x, logo_end_position_y);
