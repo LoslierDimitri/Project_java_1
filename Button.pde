@@ -7,12 +7,12 @@ class Button {
   private PImage button[];
 
 
-  Button (String x_name, int x_position_x, int x_position_y, int x_size_x, int x_size_y, PImage x_button[]) {
+  Button (/*String x_name,*/ int x_position_x, int x_position_y, int x_size_x, int x_size_y, PImage x_button[]) {
     this.position_x = x_position_x;
     this.position_y = x_position_y;
     this.size_x = x_size_x;
     this.size_y = x_size_y;
-    this.name = x_name;
+    //this.name = x_name;
     this.button = x_button;
     for (int i = 0; i<button.length; i++) {
       this.button[i].resize(this.size_x, this.size_y);
@@ -93,8 +93,8 @@ class Button {
     if (main.get_player(0).get_period() == 6 && this.button.length > 1) {
       image(this.button[5], this.position_x, this.position_y);
     }
-    fill(0);
-    text(this.name, this.position_x, this.position_y + 10);
+    /*fill(0);
+    text(this.name, this.position_x, this.position_y + 10);*/
   }
 
   void display_unit(Main x_main, int x_unit, Button x_button) {
