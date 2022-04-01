@@ -84,6 +84,15 @@ class Button {
     if (main.get_player(0).get_period() == 3 && this.button.length > 1) {
       image(this.button[2], this.position_x, this.position_y);
     }
+    if (main.get_player(0).get_period() == 4 && this.button.length > 1) {
+      image(this.button[3], this.position_x, this.position_y);
+    }
+    if (main.get_player(0).get_period() == 5 && this.button.length > 1) {
+      image(this.button[4], this.position_x, this.position_y);
+    }
+    if (main.get_player(0).get_period() == 6 && this.button.length > 1) {
+      image(this.button[5], this.position_x, this.position_y);
+    }
     fill(0);
     text(this.name, this.position_x, this.position_y + 10);
   }
