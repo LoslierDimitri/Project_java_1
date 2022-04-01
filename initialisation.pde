@@ -103,7 +103,7 @@ void initialisation() {
   tab_base_player_2[0] = loadImage("Base/base_1_2.png");
   tab_base_player_2[1] = loadImage("Base/base_2_2.png");
   tab_base_player_2[2] = loadImage("Base/base_3_2.png");
-  tab_base_player_2[3] = loadImage("Base/base_4_2.png"); 
+  tab_base_player_2[3] = loadImage("Base/base_4_2.png");
   tab_base_player_2[4] = loadImage("Base/base_5_2.png");
   tab_base_player_2[5] = loadImage("Base/base_6_2.png");
 
@@ -204,25 +204,25 @@ void initialisation() {
   unit_button_1[0] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
   unit_button_1[1] = loadImage("Unit/Buttons/Age2/button_unit_11.png");
   unit_button_1[2] = loadImage("Unit/Buttons/Age3/button_unit_21.png");
-  unit_button_1[3] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
-  unit_button_1[4] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
-  unit_button_1[5] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
+  unit_button_1[3] = loadImage("Unit/Buttons/Age4/button_unit_31.png");
+  unit_button_1[4] = loadImage("Unit/Buttons/Age5/button_unit_41.png");
+  unit_button_1[5] = loadImage("Unit/Buttons/Age6/button_unit_51.png");
 
   PImage unit_button_2[] = new PImage[6];
   unit_button_2[0] = loadImage("Unit/Buttons/Age1/button_unit_2.png");
   unit_button_2[1] = loadImage("Unit/Buttons/Age2/button_unit_12.png");
   unit_button_2[2] = loadImage("Unit/Buttons/Age3/button_unit_22.png");
-  unit_button_2[3] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
-  unit_button_2[4] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
-  unit_button_2[5] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
+  unit_button_2[3] = loadImage("Unit/Buttons/Age4/button_unit_32.png");
+  unit_button_2[4] = loadImage("Unit/Buttons/Age5/button_unit_42.png");
+  unit_button_2[5] = loadImage("Unit/Buttons/Age6/button_unit_52.png");
 
   PImage unit_button_3[] = new PImage[6];
   unit_button_3[0] = loadImage("Unit/Buttons/Age1/button_unit_3.png");
   unit_button_3[1] = loadImage("Unit/Buttons/Age2/button_unit_13.png");
   unit_button_3[2] = loadImage("Unit/Buttons/Age3/button_unit_23.png");
-  unit_button_3[3] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
-  unit_button_3[4] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
-  unit_button_3[5] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
+  unit_button_3[3] = loadImage("Unit/Buttons/Age4/button_unit_33.png");
+  unit_button_3[4] = loadImage("Unit/Buttons/Age5/button_unit_43.png");
+  unit_button_3[5] = loadImage("Unit/Buttons/Age6/button_unit_53.png");
 
   PImage turret_button_1[] = new PImage[1];
   turret_button_1[0] = loadImage("Interface/button_1.png");
@@ -247,22 +247,22 @@ void initialisation() {
 
   PImage remove_turret_button_4[] = new PImage[1];
   remove_turret_button_4[0] = loadImage("Interface/button_1.png");
-  
+
   PImage turret_add_max_button[] = new PImage[1];
   turret_add_max_button[0] = loadImage("Interface/button_1.png");
-  
+
   PImage add_period_button[] = new PImage[1];
   add_period_button[0] = loadImage("Interface/button_1.png");
-  
+
   PImage power_button[] = new PImage[1];
   power_button[0] = loadImage("Interface/button_2.png");
-  
+
   PImage display_unit_button[] = new PImage[1];
   display_unit_button[0] = loadImage("Interface/button_1.png");
-  
+
   PImage play_button[] = new PImage[1];
   play_button[0] = loadImage("Interface/button_play.png");
-  
+
   PImage restart_button[] = new PImage[1];
   restart_button[0] = loadImage("Interface/button_replay.png");
 
