@@ -32,7 +32,8 @@ int status = 0; //0 = menu, 1 = game, 2 = endgame
 ///////////////////////////////////////////////////////////////music
 AudioPlayer main_music;
 AudioPlayer menu_music;
-AudioPlayer endgame_music;
+AudioPlayer endgame_music1;
+AudioPlayer endgame_music2;
 
 ///////////////////////////////////////////////////////////////unit
 Unit unit_1;

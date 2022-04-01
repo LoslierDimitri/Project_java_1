@@ -295,7 +295,8 @@ void initialisation() {
   button_restart = new Button("Restart", button_display_restart_position_x, button_display_restart_position_y, button_display_restart_size_x, button_display_restart_size_y, restart_button);
 
   ///////////////////////////////////////////////////////////////music
-  main_music = minim.loadFile("Music/Game_music2.mp3");
+  main_music = minim.loadFile("Music/Game_music3.mp3");
   menu_music = minim.loadFile("Music/Menu_music.mp3");
-  endgame_music = minim.loadFile("Music/Endgame_music.mp3");
+  endgame_music1 = minim.loadFile("Music/Endgame_music1.mp3");
+  endgame_music2 = minim.loadFile("Music/Endgame_music2.mp3");
 }

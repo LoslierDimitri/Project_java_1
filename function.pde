@@ -4,7 +4,7 @@ void reset() {
   mouse_x = mouseX;
   mouse_y = mouseY;
 }
- 
+
 ///////////////////////////////////////////////////////////////distance
 int distance(int x_position_1, int x_position_2) {
   int result = 0;
@@ -278,7 +278,7 @@ void game_loop() {
     exit();
   }
   text("" + remove_turret_mode, 500, 500);
-  
+
   ///////////////////////////////////////////////////////////////main display
   main.display();
 
@@ -344,11 +344,12 @@ void endgame_loop() {
   main.display_restart();
   if (main.get_player_win() == 1) {
     text("Player 1 win", 100, 100);
+    endgame_music1.play();
     if (button_restart.collide(mouse_x, mouse_y) == true) {
       cursor(HAND);
       if (mouse_click == true) {
         status=0;
-        endgame_music.close();
+        endgame_music1.close();
       }
     }
   } else {
@@ -357,11 +358,12 @@ void endgame_loop() {
 
   if (main.get_player_win() == 2) {
     text("Player 2 win", 100, 100);
+    endgame_music2.play();
     if (button_restart.collide(mouse_x, mouse_y) == true) {
       cursor(HAND);
       if (mouse_click == true) {
         status=0;
-        endgame_music.close();
+        endgame_music2.close();
       }
     }
   } else {
@@ -369,5 +371,4 @@ void endgame_loop() {
   }
 
   ///////////////////////////////////////////////////////////////music
-  endgame_music.play();
 }
