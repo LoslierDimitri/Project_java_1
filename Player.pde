@@ -220,7 +220,7 @@ class Player {
    void power() {
     if (can_use_power == true) {
       if (this.period == 1) {
-        this.power_period(10, 50, 50, 1000, 5, this.tab_image_power[0]);
+        this.power_period(15, 50, 70, 1000, 5, this.tab_image_power[0]);
       }
       if (this.period == 2) {
         this.power_period(25, 25, 25, 1300, 5, this.tab_image_power[1]);
@@ -235,7 +235,7 @@ class Player {
         this.power_period(25, 20, 30, 3000, 5, this.tab_image_power[4]);
       }
       if (this.period == 6) {
-        this.power_period(40, 20, 100, 5000, 50, this.tab_image_power[5]);
+        this.power_period(40, 20, 100, 5000, 40, this.tab_image_power[5]);
       }
       this.can_use_power = false;
       this.power_charge_actual = 0;

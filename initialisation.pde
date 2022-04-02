@@ -85,10 +85,10 @@ void initialisation() {
   PImage tab_image_power[] = new PImage[6];
   tab_image_power[0] = loadImage("Power/power_1.png");
   tab_image_power[1] = loadImage("Power/power_2.png");
-  tab_image_power[2] = loadImage("Power/power_1.png");
-  tab_image_power[3] = loadImage("Power/power_1.png");
-  tab_image_power[4] = loadImage("Power/power_1.png");
-  tab_image_power[5] = loadImage("Power/power_1.png");
+  tab_image_power[2] = loadImage("Power/power_3.png");
+  tab_image_power[3] = loadImage("Power/power_4.png");
+  tab_image_power[4] = loadImage("Power/power_5.png");
+  tab_image_power[5] = loadImage("Power/power_6.png");
 
   player_1 = new Player(1, player_1_health_point, new Collider(player_1_size_x, player_1_size_y), player_1_position_x, player_1_position_y, player_1_money, tab_base_player_1, tab_image_power);
 
