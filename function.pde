@@ -71,11 +71,28 @@ Animation load_animation(String x_unit_turret_base) {
   return x_animation;
 }
 
+///////////////////////////////////////////////////////////////speed evolve
+boolean push = false;
+
 void game_loop() {
   frame = frame + 1;
   println("frame: " + frame);
 
   background(150);
+
+  ///////////////////////////////////////////////////////////////speed evolve
+  if (input_p == true && push == false) {
+    if (main.get_player(0).period < 6) {
+      main.get_player(0).period += 1;
+    }
+    if (main.get_player(1).period < 6) {
+      main.get_player(1).period += 1;
+    }
+    push = true;
+  }
+  if (input_p == false) {
+    push = false;
+  }
 
   ///////////////////////////////////////////////////////////////game loop
   if (main.get_is_finished() == false) {
