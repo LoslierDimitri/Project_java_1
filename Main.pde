@@ -10,8 +10,10 @@ class Main {
   private PImage logo_menu;
   private PImage background_end;
   private PImage logo_end[];
+  private int background_offset;
 
   Main(Player x_tab_player[], int x_nb_player, int x_nb_player_max, PImage[] x_background_1, PImage[] x_background_2, PImage x_logo_menu, PImage x_background_menu, PImage[] x_logo_end) {
+    this.background_offset = 1;
     this.tab_player = x_tab_player;
     this.nb_player = x_nb_player;
     this.nb_player_max = x_nb_player_max;
@@ -21,7 +23,7 @@ class Main {
     }
     this.background_2 = x_background_2;
     for (int i = 0; i<background_2.length; i++) {
-      this.background_2[i].resize(screen_size_x, screen_size_y - this.tab_player[0].get_position_y() - this.tab_player[0].get_collider().get_size_y());
+      this.background_2[i].resize(screen_size_x, screen_size_y - this.tab_player[0].get_position_y() - this.tab_player[0].get_collider().get_size_y() + (screen_size_y / 100 * background_offset));
     }
     this.is_finished = false;
     this.logo_menu = x_logo_menu;
@@ -32,6 +34,7 @@ class Main {
     for (int i = 0; i < logo_end.length; i++) {
       this.logo_end[i].resize(screen_size_x / 100 * 60, screen_size_y/3);
     }
+    
     
   }
 
@@ -216,22 +219,22 @@ class Main {
       }
 
       if (this.tab_player[0].get_period() == 1) {
-        image(this.background_2[0], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y());
+        image(this.background_2[0], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y() - (screen_size_y / 100 * background_offset));
       }
       if (this.tab_player[0].get_period() == 2) {
-        image(this.background_2[1], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y());
+        image(this.background_2[1], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y() - (screen_size_y / 100 * background_offset));
       }
       if (this.tab_player[0].get_period() == 3) {
-        image(this.background_2[2], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y());
+        image(this.background_2[2], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y() - (screen_size_y / 100 * background_offset));
       }
       if (this.tab_player[0].get_period() == 4) {
-        image(this.background_2[3], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y());
+        image(this.background_2[3], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y() - (screen_size_y / 100 * background_offset));
       }
       if (this.tab_player[0].get_period() == 5) {
-        image(this.background_2[4], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y());
+        image(this.background_2[4], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y() - (screen_size_y / 100 * background_offset));
       }
       if (this.tab_player[0].get_period() == 6) {
-        image(this.background_2[5], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y());
+        image(this.background_2[5], 0, this.tab_player[0].get_position_y() + this.tab_player[0].get_collider().get_size_y() - (screen_size_y / 100 * background_offset));
       }
 
       for (int i = 0; i < this.nb_player; i++) {

@@ -123,7 +123,7 @@ void initialisation() {
   PImage main_background_2[] = new PImage[6];
   main_background_2[0] = loadImage("Background/background_1_2.png");
   main_background_2[1] = loadImage("Background/background_1_2.png");
-  main_background_2[2] = loadImage("Background/background_1_2.png");
+  main_background_2[2] = loadImage("Background/background_3_2.png");
   main_background_2[3] = loadImage("Background/background_1_2.png");
   main_background_2[4] = loadImage("Background/background_1_2.png");
   main_background_2[5] = loadImage("Background/background_1_2.png");
