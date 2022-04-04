@@ -328,10 +328,12 @@ class Player {
     fill(255, 0, 0);
     if (this.number == 1) {
       health_bar_actual = (this.health_point * this.collider.get_size_x() / this.health_point_max);
+      noStroke();
       rect(this.position_x, this.position_y - health_bar_position_y, health_bar_actual, health_bar_size_y);
     } else {
       health_bar_actual = (this.health_point * this.collider.get_size_x() / this.health_point_max);
       health_bar_position_x = (this.position_x + this.collider.get_size_x() - health_bar_actual);
+      noStroke();
       rect(health_bar_position_x, this.position_y - health_bar_position_y, health_bar_actual, health_bar_size_y);
     }
 
@@ -351,6 +353,7 @@ class Player {
     if (this.number == 1) {
       fill(255,0,0);
       power_bar_actual = (this.power_charge_actual * this.collider.get_size_x() / this.power_charge);
+      noStroke();
       rect(button_power_position_x, button_power_position_y, power_bar_actual, button_power_size_y);
     }
   }

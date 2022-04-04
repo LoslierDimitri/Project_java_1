@@ -172,10 +172,12 @@ class Unit {
     fill(255, 0, 0);
     if (x_number == 1) {
       health_bar_actual = (this.health_point * this.collider.get_size_x() / this.health_point_max);
+      noStroke();
       rect(this.position_x, this.position_y - health_bar_position_y, health_bar_actual, health_bar_size_y);
     } else {
       health_bar_actual = (this.health_point * this.collider.get_size_x() / this.health_point_max);
       health_bar_position_x = (this.position_x + this.collider.get_size_x() - health_bar_actual);
+      noStroke();
       rect(health_bar_position_x, this.position_y - health_bar_position_y, health_bar_actual, health_bar_size_y);
     }
   }
