@@ -71,7 +71,7 @@ void initialisation() {
   int player_1_size_y = screen_size_y / 100 * 25;
   int player_1_position_x = 0;
   int player_1_position_y = screen_size_y / 2;
-  int player_1_health_point = 1000;
+  int player_1_health_point = 99999;
   int player_1_money = 1000;
 
   PImage tab_base_player_1[] = new PImage[6];
@@ -115,14 +115,14 @@ void initialisation() {
   ///////////////////////////////////////////////////////////////main
   PImage main_background[] = new PImage[6];
   main_background[0] = loadImage("Background/background_1_1.png");
-  main_background[1] = loadImage("Background/test_background_2.png");
+  main_background[1] = loadImage("Background/background_2_1.png");
   main_background[2] = loadImage("Background/background_3_1.png");
   main_background[3] = loadImage("Background/background_4_1.png");
   main_background[4] = loadImage("Background/test_background_5.png");
   main_background[5] = loadImage("Background/background_6_1.png");
   PImage main_background_2[] = new PImage[6];
   main_background_2[0] = loadImage("Background/background_1_2.png");
-  main_background_2[1] = loadImage("Background/background_1_2.png");
+  main_background_2[1] = loadImage("Background/background_2_2.png");
   main_background_2[2] = loadImage("Background/background_3_2.png");
   main_background_2[3] = loadImage("Background/background_4_2.png");
   main_background_2[4] = loadImage("Background/background_1_2.png");
