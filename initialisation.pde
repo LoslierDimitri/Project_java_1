@@ -269,8 +269,13 @@ void initialisation() {
   PImage add_period_button[] = new PImage[1];
   add_period_button[0] = loadImage("Interface/button_evolve.png");
 
-  PImage power_button[] = new PImage[1];
-  power_button[0] = loadImage("Interface/button_2.png");
+  PImage power_button[] = new PImage[6];
+  power_button[0] = loadImage("Power/button_power_1.png");
+  power_button[1] = loadImage("Power/button_power_2.png");
+  power_button[2] = loadImage("Power/button_power_3.png");
+  power_button[3] = loadImage("Power/button_power_4.png");
+  power_button[4] = loadImage("Power/button_power_5.png");
+  power_button[5] = loadImage("Power/button_power_6.png");
 
   PImage display_unit_button[] = new PImage[1];
   display_unit_button[0] = loadImage("Interface/button_1.png");
