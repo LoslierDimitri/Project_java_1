@@ -309,7 +309,7 @@ void game_loop() {
   button_remove_turret.display();
   button_turret_add_max.display();
   button_add_period.display();
-  button_power.display();
+  //button_power.display();
   button_display_unit.display();
 
   ///////////////////////////////////////////////////////////////mouse hover button

@@ -28,8 +28,12 @@ class Player {
   private PImage tab_base_player[];
 
   private PImage tab_image_power[];
+  
+  private PImage tab_button_image_power[];
+  private int tab_button_image_power_position_x;
+  private int tab_button_image_power_position_y;
 
-  Player(int x_number, int x_health_point, Collider x_collider, int x_position_x, int x_position_y, int x_money, PImage x_tab_base_player[], PImage x_tab_image_power[]) {
+  Player(int x_number, int x_health_point, Collider x_collider, int x_position_x, int x_position_y, int x_money, PImage x_tab_base_player[], PImage x_tab_image_power[], PImage x_tab_button_image_power[], int x_tab_button_image_power_position_x, int x_tab_button_image_power_position_y) {
     this.health_point = x_health_point;
     this.collider = x_collider;
     this.position_x = x_position_x;
@@ -63,8 +67,11 @@ class Player {
     for (int i = 0; i < this.period_max; i++) {
       this.tab_base_player[i].resize(this.collider.get_size_x(), this.collider.get_size_y());
     }
-
     this.tab_image_power = x_tab_image_power;
+
+    this.tab_button_image_power = x_tab_button_image_power;
+    this.tab_button_image_power_position_x = x_tab_button_image_power_position_x;
+    this.tab_button_image_power_position_y = x_tab_button_image_power_position_y;
   }
 
   ///////////////////////////////////////////////////////////////getter
@@ -349,8 +356,9 @@ class Player {
     int button_power_position_y = screen_size_y - button_interval_y - button_power_size_y;
 
     if (this.number == 1) {
-      fill(255, 0, 0);
-      power_bar_actual = (this.power_charge_actual * this.collider.get_size_x() / this.power_charge);
+      image(this.tab_button_image_power[this.period - 1], this.tab_button_image_power_position_x, this.tab_button_image_power_position_y);
+      fill(255, 0, 0, 100);
+      power_bar_actual = (this.collider.get_size_x() - (this.power_charge_actual * this.collider.get_size_x() / this.power_charge));
       noStroke();
       rect(button_power_position_x, button_power_position_y, power_bar_actual, button_power_size_y);
     }

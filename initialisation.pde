@@ -90,7 +90,23 @@ void initialisation() {
   tab_image_power[4] = loadImage("Power/power_5.png");
   tab_image_power[5] = loadImage("Power/power_6.png");
 
-  player_1 = new Player(1, player_1_health_point, new Collider(player_1_size_x, player_1_size_y), player_1_position_x, player_1_position_y, player_1_money, tab_base_player_1, tab_image_power);
+  PImage power_button[] = new PImage[6];
+  power_button[0] = loadImage("Power/button_power_1.png");
+  power_button[1] = loadImage("Power/button_power_2.png");
+  power_button[2] = loadImage("Power/button_power_3.png");
+  power_button[3] = loadImage("Power/button_power_4.png");
+  power_button[4] = loadImage("Power/button_power_5.png");
+  power_button[5] = loadImage("Power/button_power_6.png");
+
+  int button_interval_x = 10;
+  int button_interval_y = 10;
+
+  int button_power_size_x = (screen_size_x / 100 * 10);
+  int button_power_size_y = screen_size_x / 100 * 5;
+  int button_power_position_x = button_interval_x;
+  int button_power_position_y = screen_size_y - button_interval_y - button_power_size_y;
+
+  player_1 = new Player(1, player_1_health_point, new Collider(player_1_size_x, player_1_size_y), player_1_position_x, player_1_position_y, player_1_money, tab_base_player_1, tab_image_power, power_button, button_power_position_x, button_power_position_y);
 
   int player_2_size_x = screen_size_x / 100 * 10;
   int player_2_size_y = screen_size_y / 100 * 25;
@@ -107,7 +123,7 @@ void initialisation() {
   tab_base_player_2[4] = loadImage("Base/base_5_2.png");
   tab_base_player_2[5] = loadImage("Base/base_6_2.png");
 
-  player_2 = new Player(2, player_2_health_point, new Collider(player_2_size_x, player_2_size_y), player_2_position_x, player_2_position_y, player_2_money, tab_base_player_2, tab_image_power);
+  player_2 = new Player(2, player_2_health_point, new Collider(player_2_size_x, player_2_size_y), player_2_position_x, player_2_position_y, player_2_money, tab_base_player_2, tab_image_power, power_button, button_power_position_x, button_power_position_y);
 
   tab_player[0] = player_1;
   tab_player[1] = player_2;
@@ -136,9 +152,6 @@ void initialisation() {
   main = new Main(tab_player, 2, 2, main_background, main_background_2, logo_menu, background_menu, logo_end);
 
   ///////////////////////////////////////////////////////////////button
-  int button_interval_x = 10;
-  int button_interval_y = 10;
-
   int button_unit_size_x = screen_size_x / 100 * 5;
   int button_unit_size_y = screen_size_x / 100 * 5;
   int button_unit_1_position_x = screen_size_x - (button_unit_size_x * 3) - (button_interval_x * 3);
@@ -179,11 +192,6 @@ void initialisation() {
   int button_add_period_size_y = screen_size_x / 100 * 5;
   int button_add_period_position_x = button_interval_x * 3 + button_add_period_size_x * 2;
   int button_add_period_position_y = button_interval_y * 2 + button_add_period_size_x * 1;
-
-  int button_power_size_x = (screen_size_x / 100 * 10);
-  int button_power_size_y = screen_size_x / 100 * 5;
-  int button_power_position_x = button_interval_x;
-  int button_power_position_y = screen_size_y - button_interval_y - button_power_size_y;
 
   int button_display_unit_size_x = (button_interval_x * 2) + (button_unit_size_x * 3);
   int button_display_unit_size_y = button_unit_size_y * 1;
@@ -239,7 +247,7 @@ void initialisation() {
   turret_button_2[3] = loadImage("Turret/Buttons/Age4/button_turret_32.png");
   turret_button_2[4] = loadImage("Turret/Buttons/Age5/button_turret_42.png");
   turret_button_2[5] = loadImage("Turret/Buttons/Age6/button_turret_52.png");
-  
+
   PImage turret_button_3[] = new PImage[6];
   turret_button_3[0] = loadImage("Turret/Buttons/Age1/button_turret_3.png");
   turret_button_3[1] = loadImage("Turret/Buttons/Age2/button_turret_13.png");
@@ -268,14 +276,6 @@ void initialisation() {
 
   PImage add_period_button[] = new PImage[1];
   add_period_button[0] = loadImage("Interface/button_evolve.png");
-
-  PImage power_button[] = new PImage[6];
-  power_button[0] = loadImage("Power/button_power_1.png");
-  power_button[1] = loadImage("Power/button_power_2.png");
-  power_button[2] = loadImage("Power/button_power_3.png");
-  power_button[3] = loadImage("Power/button_power_4.png");
-  power_button[4] = loadImage("Power/button_power_5.png");
-  power_button[5] = loadImage("Power/button_power_6.png");
 
   PImage display_unit_button[] = new PImage[1];
   display_unit_button[0] = loadImage("Interface/button_1.png");
