@@ -12,7 +12,7 @@ class Player {
   private int exp;
   private int period;
   private Turret tab_turret[];
-  private int nb_turret; 
+  private int nb_turret;
   private int nb_turret_max;
   private int nb_turret_limit;
   private Projectile tab_projectile[];
@@ -217,7 +217,7 @@ class Player {
     }
   }
 
-   void power() {
+  void power() {
     if (can_use_power == true) {
       if (this.period == 1) {
         this.power_period(15, 50, 70, 1000, 5, this.tab_image_power[0]);
@@ -309,15 +309,15 @@ class Player {
         this.tab_projectile[i].display();
       }
     }
-
+    /*
     fill(0);
-    text(this.health_point, this.position_x + 50, this.position_y+10);
-    text(this.money, this.position_x + 50, this.position_y+20);
-    text(this.exp, this.position_x + 50, this.position_y+30);
-    text(this.period, this.position_x + 50, this.position_y+40);
-    text(this.nb_turret, this.position_x + 50, this.position_y+50);
-    text(this.power_charge_actual, this.position_x + 50, this.position_y+60);
-
+     text(this.health_point, this.position_x + 50, this.position_y+10);
+     text(this.money, this.position_x + 50, this.position_y+20);
+     text(this.exp, this.position_x + 50, this.position_y+30);
+     text(this.period, this.position_x + 50, this.position_y+40);
+     text(this.nb_turret, this.position_x + 50, this.position_y+50);
+     text(this.power_charge_actual, this.position_x + 50, this.position_y+60);
+     */
     println("Player_" + this.number + ": display: done");
 
     int health_bar_size_y = 8;
@@ -336,10 +336,8 @@ class Player {
       noStroke();
       rect(health_bar_position_x, this.position_y - health_bar_position_y, health_bar_actual, health_bar_size_y);
     }
-
-    
   }
-  
+
   void display_interface() {
     int button_interval_x = 10;
     int button_interval_y = 10;
@@ -351,7 +349,7 @@ class Player {
     int button_power_position_y = screen_size_y - button_interval_y - button_power_size_y;
 
     if (this.number == 1) {
-      fill(255,0,0);
+      fill(255, 0, 0);
       power_bar_actual = (this.power_charge_actual * this.collider.get_size_x() / this.power_charge);
       noStroke();
       rect(button_power_position_x, button_power_position_y, power_bar_actual, button_power_size_y);

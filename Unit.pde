@@ -4,7 +4,7 @@ class Unit {
   private int position_x_center;
   private Collider collider;
   private int health_point;
-  private int health_point_max; 
+  private int health_point_max;
   private int damage;
   private int speed;
   private int range;
@@ -158,9 +158,11 @@ class Unit {
     println("Unit: display: ...");
     fill(255);
     //rect(this.collider.get_position_x(), this.collider.get_position_y(), this.collider.get_size_x(), this.collider.get_size_y());
+    /*
     fill(0);
-    textSize(10);
-    text(this.health_point, this.position_x, this.position_y+10);
+     textSize(10);
+     text(this.health_point, this.position_x, this.position_y+10);
+     */
     this.animation.display(x_number);
     println("Unit: display: done");
 

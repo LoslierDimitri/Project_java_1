@@ -294,7 +294,7 @@ void game_loop() {
     super.stop();
     exit();
   }
-  text("" + remove_turret_mode, 500, 500);
+  //text("" + remove_turret_mode, 500, 500);
 
   ///////////////////////////////////////////////////////////////main display
   main.display();
@@ -360,7 +360,7 @@ void endgame_loop() {
   button_restart.display();
   main.display_restart();
   if (main.get_player_win() == 1) {
-    text("Player 1 win", 100, 100);
+    //text("Player 1 win", 100, 100);
     endgame_music1.play();
     if (button_restart.collide(mouse_x, mouse_y) == true) {
       cursor(HAND);
@@ -374,7 +374,7 @@ void endgame_loop() {
   }
 
   if (main.get_player_win() == 2) {
-    text("Player 2 win", 100, 100);
+    //text("Player 2 win", 100, 100);
     endgame_music2.play();
     if (button_restart.collide(mouse_x, mouse_y) == true) {
       cursor(HAND);

@@ -4,7 +4,7 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
- 
+
 Minim minim;
 
 ///////////////////////////////////////////////////////////////setup
@@ -124,7 +124,7 @@ Button button_restart;
 ///////////////////////////////////////////////////////////////draw
 void draw() {
   background(255);
-  
+
   if (status ==0) {
     if (initialisation_done == false) {
       initialisation();
@@ -139,18 +139,18 @@ void draw() {
     endgame_loop();
     initialisation_done = false;
   }
-
+  /*
   long maxMemory = Runtime.getRuntime().maxMemory();
-  long allocatedMemory = Runtime.getRuntime().totalMemory();
-  long freeMemory = Runtime.getRuntime().freeMemory();
-  
-  fill(0, 255, 0);
-  stroke(0, 255, 0);
-  textSize(20);
-  text("max memory: " + maxMemory, 300, 100);
-  text("allocated memory: " + allocatedMemory, 300, 150);
-  text("free memory: " + freeMemory, 300, 200);
-
+   long allocatedMemory = Runtime.getRuntime().totalMemory();
+   long freeMemory = Runtime.getRuntime().freeMemory();
+   
+   fill(0, 255, 0);
+   stroke(0, 255, 0);
+   textSize(20);
+   text("max memory: " + maxMemory, 300, 100);
+   text("allocated memory: " + allocatedMemory, 300, 150);
+   text("free memory: " + freeMemory, 300, 200);
+   */
   ///////////////////////////////////////////////////////////////reset
   reset();
 }

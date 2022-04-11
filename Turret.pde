@@ -3,7 +3,7 @@ class Turret {
   private int position_y;
   private int size_x;
   private int size_y;
-  private int damage; 
+  private int damage;
   private int range;
   private int cost;
   private String name;
@@ -28,7 +28,7 @@ class Turret {
     this.animation_name = x_animation_name;
     this.animation = load_animation("Turret/" + this.animation_name + "/");
   }
-  
+
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
     return this.position_x;
@@ -102,10 +102,12 @@ class Turret {
   }
   void display(int x_number) {
     println("Turret: display: ...");
+    /*
     fill(0, 100, 0);
-    //rect(this.position_x, this.position_y, this.size_x, this.size_y);
-    fill(0);
-    text(this.range, this.position_x, this.position_y + 10);
+     //rect(this.position_x, this.position_y, this.size_x, this.size_y);
+     fill(0);
+     text(this.range, this.position_x, this.position_y + 10);
+     */
     this.animation.display(x_number);
     println("Turret: display: done");
   }
