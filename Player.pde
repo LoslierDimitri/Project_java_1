@@ -28,7 +28,7 @@ class Player {
   private PImage tab_base_player[];
 
   private PImage tab_image_power[];
-  
+
   private PImage tab_button_image_power[];
   private int tab_button_image_power_position_x;
   private int tab_button_image_power_position_y;
@@ -361,6 +361,19 @@ class Player {
       power_bar_actual = (this.collider.get_size_x() - (this.power_charge_actual * this.collider.get_size_x() / this.power_charge));
       noStroke();
       rect(button_power_position_x, button_power_position_y, power_bar_actual, button_power_size_y);
+
+      stroke(116, 77, 77);
+      strokeWeight(5);
+      fill(255, 200, 200, 150);
+      rect(this.position_x, this.position_y - 125, 300, 105);
+
+      fill(0);
+      textFont(font);
+      textSize(30);
+      text("money: " + this.money, this.position_x, this.position_y - 100);
+      text("exp: " + this.exp, this.position_x, this.position_y + 25 - 100);
+      text("exp needed: " + this.add_period_cost, this.position_x, this.position_y + 50 - 100);
+      text("health point: " + this.health_point, this.position_x, this.position_y + 75 - 100);
     }
   }
 }

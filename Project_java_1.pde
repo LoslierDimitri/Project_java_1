@@ -6,6 +6,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 Minim minim;
+PFont font;
 
 ///////////////////////////////////////////////////////////////setup
 void setup() {

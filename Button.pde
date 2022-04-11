@@ -173,7 +173,6 @@ class Button {
   }
 
   private void display_x_unit(Unit x_unit, Button x_button) {
-    PFont font = createFont("Arial", 20);
     textFont(font);
     textSize(30);
     text("name: " + x_unit.get_name(), x_button.get_position_x() + 10, x_button.get_position_y() + 25);
@@ -258,7 +257,6 @@ class Button {
   }
 
   private void display_x_turret(Turret x_turret, Button x_button) {
-    PFont font = createFont("Arial", 20);
     textFont(font);
     textSize(30);
     text("name: " + x_turret.get_name(), x_button.get_position_x() + 10, x_button.get_position_y() + 25);

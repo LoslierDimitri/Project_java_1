@@ -6,6 +6,8 @@ void initialisation() {
   
   ///////////////////////////////////////////////////////////////cursor
   cursor(loadImage("Interface/cursor.png"));
+  
+  font = createFont("Arial", 20);
 
   ///////////////////////////////////////////////////////////////unit
   int size_50 = screen_size_x / 100 * 3;
