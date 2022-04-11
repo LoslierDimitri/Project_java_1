@@ -3,6 +3,9 @@ void initialisation() {
   screen_size_x = width;
   screen_size_y = height;
   frame_rate = 60;
+  
+  ///////////////////////////////////////////////////////////////cursor
+  cursor(loadImage("Interface/cursor.png"));
 
   ///////////////////////////////////////////////////////////////unit
   int size_50 = screen_size_x / 100 * 3;
@@ -194,7 +197,7 @@ void initialisation() {
   int button_add_period_position_y = button_interval_y * 2 + button_add_period_size_x * 1;
 
   int button_display_unit_size_x = (button_interval_x * 2) + (button_unit_size_x * 3);
-  int button_display_unit_size_y = button_unit_size_y * 1;
+  int button_display_unit_size_y = (button_unit_size_y * 1) + 10;
   int button_display_unit_position_x = screen_size_x - (button_unit_size_x * 3) - (button_interval_x * 3);
   int button_display_unit_position_y = (button_interval_y * 2) + (button_unit_size_y * 1);
 

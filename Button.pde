@@ -18,7 +18,7 @@ class Button {
       this.button[i].resize(this.size_x, this.size_y);
     }
   }
- 
+
   ///////////////////////////////////////////////////////////////getter
   int get_position_x() {
     return this.position_x;
@@ -94,7 +94,7 @@ class Button {
       image(this.button[5], this.position_x, this.position_y);
     }
     /*fill(0);
-    text(this.name, this.position_x, this.position_y + 10);*/
+     text(this.name, this.position_x, this.position_y + 10);*/
   }
 
   void display_unit(Main x_main, int x_unit, Button x_button) {
@@ -173,10 +173,13 @@ class Button {
   }
 
   private void display_x_unit(Unit x_unit, Button x_button) {
-    text("name: " + x_unit.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-    text("health point: " + x_unit.get_health_point(), x_button.get_position_x(), x_button.get_position_y() + 20);
-    text("damage: " + x_unit.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-    text("cost: " + x_unit.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+    PFont font = createFont("Arial", 20);
+    textFont(font);
+    textSize(30);
+    text("name: " + x_unit.get_name(), x_button.get_position_x() + 10, x_button.get_position_y() + 25);
+    text("health point: " + x_unit.get_health_point(), x_button.get_position_x() + 10, x_button.get_position_y() + 50);
+    text("damage: " + x_unit.get_damage(), x_button.get_position_x() + 10, x_button.get_position_y() + 75);
+    text("cost: " + x_unit.get_cost(), x_button.get_position_x() + 10, x_button.get_position_y() + 100);
   }
 
   void display_turret(Main x_main, int x_turret, Button x_button) {
@@ -255,9 +258,12 @@ class Button {
   }
 
   private void display_x_turret(Turret x_turret, Button x_button) {
-    text("name: " + x_turret.get_name(), x_button.get_position_x(), x_button.get_position_y() + 10);
-    text("range: " + x_turret.get_range(), x_button.get_position_x(), x_button.get_position_y() + 20);
-    text("damage: " + x_turret.get_damage(), x_button.get_position_x(), x_button.get_position_y() + 30);
-    text("cost: " + x_turret.get_cost(), x_button.get_position_x(), x_button.get_position_y() + 40);
+    PFont font = createFont("Arial", 20);
+    textFont(font);
+    textSize(30);
+    text("name: " + x_turret.get_name(), x_button.get_position_x() + 10, x_button.get_position_y() + 25);
+    text("range: " + x_turret.get_range(), x_button.get_position_x() + 10, x_button.get_position_y() + 50);
+    text("damage: " + x_turret.get_damage(), x_button.get_position_x() + 10, x_button.get_position_y() + 75);
+    text("cost: " + x_turret.get_cost(), x_button.get_position_x() + 10, x_button.get_position_y() + 100);
   }
 }

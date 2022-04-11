@@ -331,7 +331,7 @@ void game_loop() {
   if (button_turret_3.collide(mouse_x, mouse_y) == true) {
     button_turret_3.display_turret(main, 3, button_display_unit);
   }
-  cursor(ARROW);
+  cursor(loadImage("Interface/cursor.png"));
 
   ///////////////////////////////////////////////////////////////music
   main_music.play();
@@ -349,7 +349,7 @@ void menu_loop() {
       menu_music.close();
     }
   } else {
-    cursor(ARROW);
+    cursor(loadImage("Interface/cursor.png"));
   }
 
   ///////////////////////////////////////////////////////////////music
@@ -370,7 +370,7 @@ void endgame_loop() {
       }
     }
   } else {
-    cursor(ARROW);
+    cursor(loadImage("Interface/cursor.png"));
   }
 
   if (main.get_player_win() == 2) {
@@ -384,7 +384,7 @@ void endgame_loop() {
       }
     }
   } else {
-    cursor(ARROW);
+    cursor(loadImage("Interface/cursor.png"));
   }
 
   ///////////////////////////////////////////////////////////////music
