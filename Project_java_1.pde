@@ -125,6 +125,7 @@ Button button_restart;
 ///////////////////////////////////////////////////////////////draw
 void draw() {
   background(255);
+  cursor(loadImage("Interface/cursor.png"));
   
   if (status ==0) {
     if (initialisation_done == false) {
