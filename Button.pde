@@ -173,8 +173,8 @@ class Button {
   }
 
   private void display_x_unit(Unit x_unit, Button x_button) {
-    textFont(font);
-    textSize(30);
+    textFont(myFont);
+    textSize(20);
     text("name: " + x_unit.get_name(), x_button.get_position_x() + 10, x_button.get_position_y() + 25);
     text("health point: " + x_unit.get_health_point(), x_button.get_position_x() + 10, x_button.get_position_y() + 50);
     text("damage: " + x_unit.get_damage(), x_button.get_position_x() + 10, x_button.get_position_y() + 75);
@@ -257,8 +257,8 @@ class Button {
   }
 
   private void display_x_turret(Turret x_turret, Button x_button) {
-    textFont(font);
-    textSize(30);
+    textFont(myFont);
+    textSize(20);
     text("name: " + x_turret.get_name(), x_button.get_position_x() + 10, x_button.get_position_y() + 25);
     text("range: " + x_turret.get_range(), x_button.get_position_x() + 10, x_button.get_position_y() + 50);
     text("damage: " + x_turret.get_damage(), x_button.get_position_x() + 10, x_button.get_position_y() + 75);

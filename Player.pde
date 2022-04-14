@@ -239,7 +239,7 @@ class Player {
         this.power_period(30, 10, 30, 2400, 5, this.tab_image_power[3]);
       }
       if (this.period == 5) {
-        this.power_period(25, 20, 30, 3000, 5, this.tab_image_power[4]);
+        this.power_period(25, 20, 40, 3000, 5, this.tab_image_power[4]);
       }
       if (this.period == 6) {
         this.power_period(40, 20, 100, 5000, 40, this.tab_image_power[5]);
@@ -368,8 +368,8 @@ class Player {
       rect(this.position_x, this.position_y - 125, 300, 105);
 
       fill(0);
-      textFont(font);
-      textSize(30);
+      textFont(myFont);
+      textSize(20);
       text("money: " + this.money, this.position_x, this.position_y - 100);
       text("exp: " + this.exp, this.position_x, this.position_y + 25 - 100);
       text("exp needed: " + this.add_period_cost, this.position_x, this.position_y + 50 - 100);
