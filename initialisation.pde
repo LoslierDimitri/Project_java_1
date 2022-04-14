@@ -199,7 +199,7 @@ void initialisation() {
   int button_add_period_position_y = button_interval_y * 2 + button_add_period_size_x * 1;
 
   int button_display_unit_size_x = (button_interval_x * 2) + (button_unit_size_x * 3);
-  int button_display_unit_size_y = (button_unit_size_y * 1) + 30;
+  int button_display_unit_size_y = (button_unit_size_y * 1) + 35;
   int button_display_unit_position_x = screen_size_x - (button_unit_size_x * 3) - (button_interval_x * 3);
   int button_display_unit_position_y = (button_interval_y * 2) + (button_unit_size_y * 1);
 
@@ -283,7 +283,7 @@ void initialisation() {
   add_period_button[0] = loadImage("Interface/button_evolve.png");
 
   PImage display_unit_button[] = new PImage[1];
-  display_unit_button[0] = loadImage("Interface/button_1.png");
+  display_unit_button[0] = loadImage("Interface/button_info.png");
 
   PImage play_button[] = new PImage[1];
   play_button[0] = loadImage("Interface/button_play.png");
