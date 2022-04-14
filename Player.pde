@@ -230,7 +230,7 @@ class Player {
         this.power_period(15, 50, 70, 1000, 5, this.tab_image_power[0]);
       }
       if (this.period == 2) {
-        this.power_period(25, 25, 25, 1300, 5, this.tab_image_power[1]);
+        this.power_period(25, 25, 50, 1300, 5, this.tab_image_power[1]);
       }
       if (this.period == 3) {
         this.power_period(20, 40, 40, 1600, 5, this.tab_image_power[2]);
