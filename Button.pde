@@ -180,7 +180,7 @@ class Button {
     text("damage: " + x_unit.get_damage(), x_button.get_position_x() + 10, x_button.get_position_y() + 75);
     text("cost: " + x_unit.get_cost(), x_button.get_position_x() + 10, x_button.get_position_y() + 100);
     
-    rect(this.position_x, this.position_y + 30, 300, 105);
+    //rect(this.position_x, this.position_y + 30, 300, 105);
   }
 
   void display_turret(Main x_main, int x_turret, Button x_button) {
