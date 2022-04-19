@@ -341,6 +341,7 @@ void menu_loop() {
   background(255);
   main.display_menu();
   button_play.display();
+  button_how2play.display();
 
   if (button_play.collide(mouse_x, mouse_y) == true) {
     cursor(HAND);
@@ -350,6 +351,15 @@ void menu_loop() {
     }
   } else {
     cursor(loadImage("Interface/cursor.png"));
+  }
+   
+  if(button_how2play.collide(mouse_x, mouse_y) == true){
+   cursor(HAND);
+     if (mouse_click == true) {
+      status = 3;
+     }
+  } else {
+   cursor(loadImage("Interface/cursor.png")); 
   }
 
   ///////////////////////////////////////////////////////////////music
@@ -387,5 +397,18 @@ void endgame_loop() {
     cursor(loadImage("Interface/cursor.png"));
   }
 
+
   ///////////////////////////////////////////////////////////////music
+}
+
+void how2play_loop(){
+  button_close.display();
+  if (button_close.collide(mouse_x, mouse_y) == true){
+   cursor(HAND);
+   status = 0;
+  }
+  else{
+   cursor(loadImage("Interface/cursor.png")); 
+  }
+  
 }

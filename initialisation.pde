@@ -169,8 +169,10 @@ void initialisation() {
   int button_play_size_y = screen_size_y / 100 * 8;
   int button_restart_size_x = screen_size_x / 100 * 5;
   int button_restart_size_y = screen_size_y / 100 * 8;
-  //int button_how2play_size_x = screen_size_x / 100 * 3;
-  //int button_how2play_size_y = screen
+  int button_how2play_size_x = screen_size_x / 100 * 2;
+  int button_how2play_size_y = screen_size_y / 100 * 3;
+  int button_close_size_x = 50;
+  int button_close_size_y = 50;
 
   int button_turret_size_x = screen_size_x / 100 * 5;
   int button_turret_size_y = screen_size_x / 100 * 5;
@@ -215,7 +217,15 @@ void initialisation() {
   int button_display_restart_position_x = screen_size_x - (screen_size_x / 2) - (button_display_restart_size_x / 2);
   int button_display_restart_position_y = screen_size_y /2;
   
-  //int button_how2play_size_x = (button_interval_x) + (button_
+  int button_display_how2play_size_x = (button_interval_x * 2) + (button_how2play_size_x * 4);
+  int button_display_how2play_size_y = button_how2play_size_y * 2;
+  int button_display_how2play_position_x = screen_size_x - (screen_size_x / 2) - (button_display_how2play_size_x / 2);
+  int button_display_how2play_position_y = screen_size_y / 100 * 65;
+  
+  int button_display_close_size_x = button_close_size_x;
+  int button_display_close_size_y = button_close_size_y;
+  int button_display_close_position_x = screen_size_x / 100 * 90;
+  int button_display_close_position_y = screen_size_y / 100 * 5;
 
   PImage unit_button_1[] = new PImage[6];
   unit_button_1[0] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
@@ -298,6 +308,8 @@ void initialisation() {
   PImage how2play_button[] = new PImage[1];
   how2play_button[0] = loadImage("Interface/button_1.png");
 
+  PImage close_button[] = new PImage[1];
+  close_button[0] = loadImage("Interface/button_1.png");
 
 
   button_unit_1 = new Button(/*"unit_1",*/ button_unit_1_position_x, button_unit_1_position_y, button_unit_size_x, button_unit_size_y, unit_button_1);
@@ -326,7 +338,9 @@ void initialisation() {
 
   button_restart = new Button(/*"Restart",*/ button_display_restart_position_x, button_display_restart_position_y, button_display_restart_size_x, button_display_restart_size_y, restart_button);
   
-  //button_how2play = new Button(/*"Comment jouer?",*/ button_how2play_position_x, button_how2play_position_y, button_how2play_size_x, button_how2play_size_y, display_how2play_button);
+  button_how2play = new Button(/*"Comment jouer?",*/ button_display_how2play_position_x, button_display_how2play_position_y, button_display_how2play_size_x, button_display_how2play_size_y, how2play_button);
+  
+  button_close = new Button(/*"Close",*/ button_display_close_position_x, button_display_close_position_y, button_display_close_size_x, button_display_close_size_y, close_button);
 
   ///////////////////////////////////////////////////////////////music
   main_music = minim.loadFile("Music/Game_music3.mp3");

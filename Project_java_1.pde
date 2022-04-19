@@ -122,6 +122,10 @@ Button button_play;
 
 Button button_restart;
 
+Button button_how2play;
+
+Button button_close;
+
 ///////////////////////////////////////////////////////////////draw
 void draw() {
   background(255);
@@ -140,6 +144,10 @@ void draw() {
   if (status == 2) {
     endgame_loop();
     initialisation_done = false;
+  }
+  if (status == 3){
+   how2play_loop(); 
+   initialisation_done = false;
   }
   /*
   long maxMemory = Runtime.getRuntime().maxMemory();
