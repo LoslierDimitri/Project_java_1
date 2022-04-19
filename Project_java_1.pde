@@ -126,6 +126,10 @@ Button button_how2play;
 
 Button button_close;
 
+Button button_previous_how2play;
+
+Button button_next_how2play;
+
 ///////////////////////////////////////////////////////////////draw
 void draw() {
   background(255);
@@ -146,7 +150,7 @@ void draw() {
     initialisation_done = false;
   }
   if (status == 3){
-   how2play_loop(); 
+   how2play_loop();
    initialisation_done = false;
   }
   /*

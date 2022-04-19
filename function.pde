@@ -402,6 +402,7 @@ void endgame_loop() {
 }
 
 void how2play_loop(){
+  main.display_how2play();
   button_close.display();
   if (button_close.collide(mouse_x, mouse_y) == true){
    cursor(HAND);
@@ -410,5 +411,8 @@ void how2play_loop(){
   else{
    cursor(loadImage("Interface/cursor.png")); 
   }
+
+
+  
   
 }
