@@ -271,4 +271,8 @@ class Main {
         image(this.logo_end[1], logo_end_position_x, logo_end_position_y);
       }
     }
+    
+    void diplay_how2play(){
+      
+    }
 }

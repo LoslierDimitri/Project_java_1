@@ -166,9 +166,11 @@ void initialisation() {
   int button_unit_3_position_x = screen_size_x - (button_unit_size_x * 1) - (button_interval_x * 1);
   int button_unit_3_position_y = button_interval_y;
   int button_play_size_x = screen_size_x / 100 * 5;
-  int button_play_size_y = screen_size_x / 100 * 5;
+  int button_play_size_y = screen_size_y / 100 * 8;
   int button_restart_size_x = screen_size_x / 100 * 5;
-  int button_restart_size_y = screen_size_x / 100 * 5;
+  int button_restart_size_y = screen_size_y / 100 * 8;
+  //int button_how2play_size_x = screen_size_x / 100 * 3;
+  //int button_how2play_size_y = screen
 
   int button_turret_size_x = screen_size_x / 100 * 5;
   int button_turret_size_y = screen_size_x / 100 * 5;
@@ -212,6 +214,8 @@ void initialisation() {
   int button_display_restart_size_y = button_restart_size_y * 2;
   int button_display_restart_position_x = screen_size_x - (screen_size_x / 2) - (button_display_restart_size_x / 2);
   int button_display_restart_position_y = screen_size_y /2;
+  
+  //int button_how2play_size_x = (button_interval_x) + (button_
 
   PImage unit_button_1[] = new PImage[6];
   unit_button_1[0] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
@@ -290,6 +294,9 @@ void initialisation() {
 
   PImage restart_button[] = new PImage[1];
   restart_button[0] = loadImage("Interface/button_replay.png");
+  
+  PImage how2play_button[] = new PImage[1];
+  how2play_button[0] = loadImage("Interface/button_1.png");
 
 
 
@@ -318,6 +325,8 @@ void initialisation() {
   button_play = new Button (/*"Play",*/ button_display_play_position_x, button_display_play_position_y, button_display_play_size_x, button_display_play_size_y, play_button);
 
   button_restart = new Button(/*"Restart",*/ button_display_restart_position_x, button_display_restart_position_y, button_display_restart_size_x, button_display_restart_size_y, restart_button);
+  
+  //button_how2play = new Button(/*"Comment jouer?",*/ button_how2play_position_x, button_how2play_position_y, button_how2play_size_x, button_how2play_size_y, display_how2play_button);
 
   ///////////////////////////////////////////////////////////////music
   main_music = minim.loadFile("Music/Game_music3.mp3");
