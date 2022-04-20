@@ -383,6 +383,7 @@ void endgame_loop() {
       if (mouse_click == true) {
         status=0;
         endgame_music1.close();
+        reset_game();
       }
     }
   } else {
@@ -397,6 +398,7 @@ void endgame_loop() {
       if (mouse_click == true) {
         status=0;
         endgame_music2.close();
+        reset_game();
       }
     }
   } else {
@@ -423,4 +425,10 @@ void how2play_loop() {
     }
   } else {
   }
+}
+
+void reset_game() {
+  main.get_player(0).reset(1000, 1000);
+  main.get_player(1).reset(1000, 99999999);
+  main.reset();
 }

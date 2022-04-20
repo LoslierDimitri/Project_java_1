@@ -309,4 +309,9 @@ class Main {
       }
     }
   }
+  
+  void reset() {
+    this.is_finished = false;
+    this.player_win = 0;
+  }
 }

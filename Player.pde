@@ -376,4 +376,18 @@ class Player {
       text("health point: " + this.health_point, this.position_x, this.position_y + 75 - 100);
     }
   }
+  
+  void reset(int x_health_point_base, int x_money_base) {
+    this.health_point = x_health_point_base;
+    this.money = x_money_base;
+    this.nb_unit = 0;
+    this.exp = 0;
+    this.period = 1;
+    this.nb_turret = 0;
+    this.nb_turret_max = 1;
+    this.can_use_power = false;
+    this.add_turret_max_cost = 1000;
+    this.add_period_cost = 500;
+    this.health_point_max = this.health_point;
+  }
 }
