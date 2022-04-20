@@ -321,11 +321,11 @@ void initialisation() {
 
   int button_previous_how2play_position_x = screen_size_x / 100 * 5;
   int button_previous_how2play_position_y = screen_size_y / 2;
-  int button_previous_how2play_size_x = 50;
-  int button_previous_how2play_size_y = 50;
+  int button_previous_how2play_size_x = screen_size_x / 100 * 3;
+  int button_previous_how2play_size_y = button_previous_how2play_size_x;
 
-  int button_next_how2play_size_x = 50;
-  int button_next_how2play_size_y = 50;
+  int button_next_how2play_size_x = screen_size_x / 100 * 3;
+  int button_next_how2play_size_y = button_next_how2play_size_x;
   int button_next_how2play_position_x = screen_size_x / 100 * 95 - button_next_how2play_size_x;
   int button_next_how2play_position_y = screen_size_y / 2;
 
