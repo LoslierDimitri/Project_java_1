@@ -343,23 +343,29 @@ void menu_loop() {
   button_play.display();
   button_how2play.display();
 
-  if (button_play.collide(mouse_x, mouse_y) == true) {
+  if (button_play.collide(mouse_x, mouse_y) == true || button_how2play.collide(mouse_x, mouse_y) == true) {
     cursor(HAND);
+  } else {
+    cursor(cursor_image);
+  }
+
+  if (button_play.collide(mouse_x, mouse_y) == true) {
+    //cursor(HAND);
     if (mouse_click == true) {
       status=1;
       menu_music.close();
     }
   } else {
-    cursor(cursor_image);
+    //cursor(cursor_image);
   }
 
   if (button_how2play.collide(mouse_x, mouse_y) == true) {
-    cursor(HAND);
+    //cursor(HAND);
     if (mouse_click == true) {
       status = 3;
     }
   } else {
-    cursor(cursor_image);
+    //cursor(cursor_image);
   }
 
   ///////////////////////////////////////////////////////////////music
@@ -404,12 +410,17 @@ void endgame_loop() {
 void how2play_loop() {
   main.display_how2play();
   button_close.display();
+
   if (button_close.collide(mouse_x, mouse_y) == true) {
     cursor(HAND);
+  } else {
+    cursor(cursor_image);
+  }
+
+  if (button_close.collide(mouse_x, mouse_y) == true) {
     if (mouse_click == true) {
       status = 0;
     }
   } else {
-    cursor(cursor_image);
   }
 }
