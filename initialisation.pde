@@ -366,7 +366,6 @@ void initialisation() {
   button_close = new Button(/*"Close",*/ button_display_close_position_x, button_display_close_position_y, button_display_close_size_x, button_display_close_size_y, close_button);
 
   button_previous_how2play = new Button(/*previous_how2play,*/button_previous_how2play_position_x, button_previous_how2play_position_y, button_previous_how2play_size_x, button_previous_how2play_size_y, previous_how2play);
-
   button_next_how2play = new Button(/*next_how2play,*/button_next_how2play_position_x, button_next_how2play_position_y, button_next_how2play_size_x, button_next_how2play_size_y, next_how2play);
 
   ///////////////////////////////////////////////////////////////music
