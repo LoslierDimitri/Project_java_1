@@ -178,8 +178,8 @@ void initialisation() {
   int button_restart_size_y = screen_size_y / 100 * 8;
   int button_how2play_size_x = screen_size_x / 100 * 3;
   int button_how2play_size_y = screen_size_y / 100 * 5;
-  int button_close_size_x = 50;
-  int button_close_size_y = 50;
+  int button_close_size_x = screen_size_x / 100 * 10;
+  int button_close_size_y = screen_size_y / 100 * 6;
 
 
   int button_turret_size_x = screen_size_x / 100 * 5;
@@ -232,8 +232,8 @@ void initialisation() {
 
   int button_display_close_size_x = button_close_size_x;
   int button_display_close_size_y = button_close_size_y;
-  int button_display_close_position_x = screen_size_x / 100 * 90;
-  int button_display_close_position_y = screen_size_y / 100 * 5;
+  int button_display_close_position_x = screen_size_x / 100 * 85;
+  int button_display_close_position_y = screen_size_y / 100 * 90;
 
   PImage unit_button_1[] = new PImage[6];
   unit_button_1[0] = loadImage("Unit/Buttons/Age1/button_unit_1.png");
@@ -317,7 +317,7 @@ void initialisation() {
   how2play_button[0] = loadImage("Interface/how2play.png");
 
   PImage close_button[] = new PImage[1];
-  close_button[0] = loadImage("Interface/button_1.png");
+  close_button[0] = loadImage("Interface/back_menu.png");
 
   int button_previous_how2play_position_x = screen_size_x / 100 * 5;
   int button_previous_how2play_position_y = screen_size_y / 2;

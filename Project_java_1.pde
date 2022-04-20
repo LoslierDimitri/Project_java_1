@@ -149,11 +149,11 @@ void draw() {
   }
   if (status == 2) {
     endgame_loop();
-    initialisation_done = false;
+    //initialisation_done = false;
   }
   if (status == 3){
    how2play_loop();
-   initialisation_done = false;
+   //initialisation_done = false;
   }
   /*
   long maxMemory = Runtime.getRuntime().maxMemory();
