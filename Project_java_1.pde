@@ -26,6 +26,7 @@ int frame = 0;
 ///////////////////////////////////////////////////////////////initialisation
 boolean initialisation_done = false;
 boolean remove_turret_mode = false;
+boolean set_cursor_hand = false;
 
 ///////////////////////////////////////////////////////////////global variable
 int animation_speed = 20;
@@ -134,6 +135,8 @@ PImage cursor_image;
 
 ///////////////////////////////////////////////////////////////draw
 void draw() {
+  
+  
   background(255);
   
   
@@ -167,6 +170,11 @@ void draw() {
    text("allocated memory: " + allocatedMemory, 300, 150);
    text("free memory: " + freeMemory, 300, 200);
    */
+  
+  
+  set_cursor();
+  
   ///////////////////////////////////////////////////////////////reset
   reset();
+  
 }

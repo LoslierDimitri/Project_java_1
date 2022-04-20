@@ -1,5 +1,6 @@
 ///////////////////////////////////////////////////////////////reset
 void reset() {
+  set_cursor_hand = false;
   mouse_click = false;
   mouse_x = mouseX;
   mouse_y = mouseY;
@@ -331,22 +332,23 @@ void game_loop() {
   if (button_turret_3.collide(mouse_x, mouse_y) == true) {
     button_turret_3.display_turret(main, 3, button_display_unit);
   }
-  cursor(cursor_image);
+  //cursor(cursor_image);
 
   ///////////////////////////////////////////////////////////////music
   main_music.play();
 }
 
 void menu_loop() {
-  background(255);
+  //background(255);
   main.display_menu();
   button_play.display();
   button_how2play.display();
 
   if (button_play.collide(mouse_x, mouse_y) == true || button_how2play.collide(mouse_x, mouse_y) == true) {
-    cursor(HAND);
+    //cursor(HAND);
+    set_cursor_hand = true;
   } else {
-    cursor(cursor_image);
+    //cursor(cursor_image);
   }
 
   if (button_play.collide(mouse_x, mouse_y) == true) {
@@ -379,7 +381,8 @@ void endgame_loop() {
     //text("Player 1 win", 100, 100);
     endgame_music1.play();
     if (button_restart.collide(mouse_x, mouse_y) == true) {
-      cursor(HAND);
+      //cursor(HAND);
+      set_cursor_hand = true;
       if (mouse_click == true) {
         status=0;
         endgame_music1.close();
@@ -387,14 +390,15 @@ void endgame_loop() {
       }
     }
   } else {
-    cursor(cursor_image);
+    //cursor(cursor_image);
   }
 
   if (main.get_player_win() == 2) {
     //text("Player 2 win", 100, 100);
     endgame_music2.play();
     if (button_restart.collide(mouse_x, mouse_y) == true) {
-      cursor(HAND);
+      //cursor(HAND);
+      set_cursor_hand = true;
       if (mouse_click == true) {
         status=0;
         endgame_music2.close();
@@ -402,7 +406,7 @@ void endgame_loop() {
       }
     }
   } else {
-    cursor(cursor_image);
+   // cursor(cursor_image);
   }
 
 
@@ -414,9 +418,10 @@ void how2play_loop() {
   button_close.display();
 
   if (button_close.collide(mouse_x, mouse_y) == true) {
-    cursor(HAND);
+    //cursor(HAND);
+    set_cursor_hand = true;
   } else {
-    cursor(cursor_image);
+    //cursor(cursor_image);
   }
 
   if (button_close.collide(mouse_x, mouse_y) == true) {
@@ -424,6 +429,14 @@ void how2play_loop() {
       status = 0;
     }
   } else {
+  }
+}
+
+void set_cursor() {
+  if (set_cursor_hand == true) {
+    cursor(HAND);
+  } else {
+    cursor(cursor_image);
   }
 }
 

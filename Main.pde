@@ -280,10 +280,11 @@ class Main {
   void display_how2play() {
     image(this.background_how2play[level_how2play], 0, 0);
 
-    if (button_previous_how2play.collide(mouse_x, mouse_y) == true || button_next_how2play.collide(mouse_x, mouse_y) == true) {
-      cursor(HAND);
+    if (button_previous_how2play.collide(mouse_x, mouse_y) == true && this.level_how2play > 0 || button_next_how2play.collide(mouse_x, mouse_y) == true && this.level_how2play < background_how2play.length - 1) {
+      //cursor(HAND);
+      set_cursor_hand = true;
     } else {
-      cursor(cursor_image);
+      //cursor(cursor_image);
     }
 
     if (this.level_how2play > 0) {
