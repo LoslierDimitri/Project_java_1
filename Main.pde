@@ -281,15 +281,24 @@ class Main {
     image(this.background_how2play[level_how2play], 0, 0);
     if (this.level_how2play > 0) {
       button_previous_how2play.display();
-      if (button_previous_how2play.collide(mouse_x, mouse_y) == true && mouse_click == true) {
-        this.level_how2play -= 1;
+      if (button_previous_how2play.collide(mouse_x, mouse_y) == true) {
+        //cursor(HAND);
+        if ( mouse_click == true) {
+          this.level_how2play -= 1;
+        }
+      } else {
+        //cursor(cursor_image);
       }
-      
     }
     if (this.level_how2play < background_how2play.length - 1) {
       button_next_how2play.display();
-      if (button_next_how2play.collide(mouse_x, mouse_y) == true && mouse_click == true) {
-        this.level_how2play += 1;
+      if (button_next_how2play.collide(mouse_x, mouse_y) == true) {
+       // cursor(HAND);
+        if (mouse_click == true) {
+          this.level_how2play += 1;
+        }
+      } else {
+        //cursor(cursor_image);
       }
     }
   }

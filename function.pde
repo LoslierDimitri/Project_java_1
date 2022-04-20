@@ -331,7 +331,7 @@ void game_loop() {
   if (button_turret_3.collide(mouse_x, mouse_y) == true) {
     button_turret_3.display_turret(main, 3, button_display_unit);
   }
-  cursor(loadImage("Interface/cursor.png"));
+  cursor(cursor_image);
 
   ///////////////////////////////////////////////////////////////music
   main_music.play();
@@ -350,16 +350,16 @@ void menu_loop() {
       menu_music.close();
     }
   } else {
-    cursor(loadImage("Interface/cursor.png"));
+    cursor(cursor_image);
   }
-   
-  if(button_how2play.collide(mouse_x, mouse_y) == true){
-   cursor(HAND);
-     if (mouse_click == true) {
+
+  if (button_how2play.collide(mouse_x, mouse_y) == true) {
+    cursor(HAND);
+    if (mouse_click == true) {
       status = 3;
-     }
+    }
   } else {
-   cursor(loadImage("Interface/cursor.png")); 
+    cursor(cursor_image);
   }
 
   ///////////////////////////////////////////////////////////////music
@@ -380,7 +380,7 @@ void endgame_loop() {
       }
     }
   } else {
-    cursor(loadImage("Interface/cursor.png"));
+    cursor(cursor_image);
   }
 
   if (main.get_player_win() == 2) {
@@ -394,25 +394,22 @@ void endgame_loop() {
       }
     }
   } else {
-    cursor(loadImage("Interface/cursor.png"));
+    cursor(cursor_image);
   }
 
 
   ///////////////////////////////////////////////////////////////music
 }
 
-void how2play_loop(){
+void how2play_loop() {
   main.display_how2play();
   button_close.display();
-  if (button_close.collide(mouse_x, mouse_y) == true){
-   cursor(HAND);
-   status = 0;
+  if (button_close.collide(mouse_x, mouse_y) == true) {
+    cursor(HAND);
+    if (mouse_click == true) {
+      status = 0;
+    }
+  } else {
+    cursor(cursor_image);
   }
-  else{
-   cursor(loadImage("Interface/cursor.png")); 
-  }
-
-
-  
-  
 }

@@ -5,7 +5,7 @@ void initialisation() {
   frame_rate = 60;
 
   ///////////////////////////////////////////////////////////////cursor
-  cursor(loadImage("Interface/cursor.png"));
+  cursor_image = loadImage("Interface/cursor.png");
 
   myFont = createFont("Modenine.TTF", 20);
 

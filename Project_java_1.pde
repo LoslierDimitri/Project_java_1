@@ -130,12 +130,14 @@ Button button_previous_how2play;
 
 Button button_next_how2play;
 
+PImage cursor_image;
+
 ///////////////////////////////////////////////////////////////draw
 void draw() {
   background(255);
-  cursor(loadImage("Interface/cursor.png"));
   
-  if (status ==0) {
+  
+  if (status == 0) {
     if (initialisation_done == false) {
       initialisation();
       initialisation_done = true;
