@@ -331,9 +331,9 @@ void initialisation() {
 
 
   PImage previous_how2play[] = new PImage[1];
-  previous_how2play[0] = loadImage("Interface/button_1.png");
+  previous_how2play[0] = loadImage("Interface/previous.png");
   PImage next_how2play[] = new PImage[1];
-  next_how2play[0] = loadImage("Interface/button_1.png");
+  next_how2play[0] = loadImage("Interface/next.png");
 
   button_unit_1 = new Button(/*"unit_1",*/ button_unit_1_position_x, button_unit_1_position_y, button_unit_size_x, button_unit_size_y, unit_button_1);
   button_unit_2 = new Button(/*"unit_2",*/ button_unit_2_position_x, button_unit_2_position_y, button_unit_size_x, button_unit_size_y, unit_button_2);
