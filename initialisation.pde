@@ -369,8 +369,15 @@ void initialisation() {
   button_next_how2play = new Button(/*next_how2play,*/button_next_how2play_position_x, button_next_how2play_position_y, button_next_how2play_size_x, button_next_how2play_size_y, next_how2play);
 
   ///////////////////////////////////////////////////////////////music
-  main_music = minim.loadFile("Music/Game_music3.mp3");
-  menu_music = minim.loadFile("Music/Menu_music.mp3");
-  endgame_music1 = minim.loadFile("Music/Endgame_music1.mp3");
-  endgame_music2 = minim.loadFile("Music/Endgame_music2.mp3");
+  //main_music = minim.loadFile("Music/Game_music3.mp3");
+  
+  load_main_music = minim.loadFile("Music/Troll_test.mp3");
+  load_menu_music = minim.loadFile("Music/Menu_music.mp3");
+  load_endgame_music1 = minim.loadFile("Music/Endgame_music1.mp3");
+  load_endgame_music2 = minim.loadFile("Music/Endgame_music2.mp3");
+  
+  main_music = load_main_music;
+  menu_music = load_menu_music;
+  endgame_music1 = load_endgame_music1;
+  endgame_music2 = load_endgame_music2;
 }

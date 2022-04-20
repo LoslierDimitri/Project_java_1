@@ -37,6 +37,11 @@ AudioPlayer menu_music;
 AudioPlayer endgame_music1;
 AudioPlayer endgame_music2;
 
+AudioPlayer load_main_music;
+AudioPlayer load_menu_music;
+AudioPlayer load_endgame_music1;
+AudioPlayer load_endgame_music2;
+
 ///////////////////////////////////////////////////////////////unit
 Unit unit_1;
 Unit unit_2;
