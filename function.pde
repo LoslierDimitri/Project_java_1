@@ -360,7 +360,7 @@ void menu_loop() {
     if (mouse_click == true) {
       status=1;
       menu_music.close();
-      main_music = minim.loadFile("Music/Troll_test.mp3");
+      main_music = minim.loadFile("Music/Game_music3.mp3");
       //main_music = load_main_music;
     }
   } else {
