@@ -275,10 +275,14 @@ void game_loop() {
     if (main.get_player(0).get_health_point() <= 0) {
       //text("player 2 win", 700, 500);
       status = 2;
+      endgame_music1 = minim.loadFile("Music/Endgame_music1.mp3");
+      endgame_music2 = minim.loadFile("Music/Endgame_music2.mp3");
     }
     if (main.get_player(1).get_health_point() <= 0) {
       //text("player 1 win", 700, 500);
       status = 2;
+      endgame_music1 = minim.loadFile("Music/Endgame_music1.mp3");
+      endgame_music2 = minim.loadFile("Music/Endgame_music2.mp3");
     }
     main_music.close();
   }
@@ -356,8 +360,8 @@ void menu_loop() {
     if (mouse_click == true) {
       status=1;
       menu_music.close();
-      //main_music = minim.loadFile("Music/Troll_test.mp3");
-      main_music = load_main_music;
+      main_music = minim.loadFile("Music/Troll_test.mp3");
+      //main_music = load_main_music;
     }
   } else {
     //cursor(cursor_image);
@@ -387,6 +391,7 @@ void endgame_loop() {
       set_cursor_hand = true;
       if (mouse_click == true) {
         status=0;
+         menu_music = minim.loadFile("Music/Menu_music.mp3");
         endgame_music1.close();
         reset_game();
       }
@@ -403,12 +408,13 @@ void endgame_loop() {
       set_cursor_hand = true;
       if (mouse_click == true) {
         status=0;
+        menu_music = minim.loadFile("Music/Menu_music.mp3");
         endgame_music2.close();
         reset_game();
       }
     }
   } else {
-   // cursor(cursor_image);
+    // cursor(cursor_image);
   }
 
 
