@@ -53,9 +53,9 @@ class Player {
     this.tab_turret = new Turret[this.nb_turret_limit];
     can_use_power = false;
     power_charge_actual = 0;
-    power_charge = 100;
+    power_charge = 2000;
     add_turret_max_cost = 1000;
-    add_period_cost = 500;
+    add_period_cost = 2000;
     period_max = 6;
     this.tab_base_player = x_tab_base_player;
     this.health_point_max = this.health_point;
