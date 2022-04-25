@@ -171,12 +171,14 @@ void draw() {
   if (menu_music.position()>=menu_music.length()) {
     menu_music.rewind();
   }
+  /*
   if (endgame_music1.position()>=endgame_music1.length()) {
     endgame_music1.rewind();
   }
   if (endgame_music2.position()>=endgame_music2.length()) {
     endgame_music2.rewind();
   }
+  */
   /*
   long maxMemory = Runtime.getRuntime().maxMemory();
    long allocatedMemory = Runtime.getRuntime().totalMemory();
