@@ -275,14 +275,12 @@ void game_loop() {
     if (main.get_player(0).get_health_point() <= 0) {
       //text("player 2 win", 700, 500);
       status = 2;
-      endgame_music1 = minim.loadFile("Music/Endgame_music1.mp3");
-      endgame_music2 = minim.loadFile("Music/Endgame_music2.mp3");
+      load_lose_music();
     }
     if (main.get_player(1).get_health_point() <= 0) {
       //text("player 1 win", 700, 500);
       status = 2;
-      endgame_music1 = minim.loadFile("Music/Endgame_music1.mp3");
-      endgame_music2 = minim.loadFile("Music/Endgame_music2.mp3");
+      load_win_music();
     }
     main_music.close();
   }
@@ -360,7 +358,7 @@ void menu_loop() {
     if (mouse_click == true) {
       status=1;
       menu_music.close();
-      main_music = minim.loadFile("Music/Game_music3.mp3");
+      load_game_music();
       //main_music = load_main_music;
     }
   } else {
@@ -391,7 +389,7 @@ void endgame_loop() {
       set_cursor_hand = true;
       if (mouse_click == true) {
         status=0;
-         menu_music = minim.loadFile("Music/Menu_music.mp3");
+        load_menu_music();
         endgame_music1.close();
         reset_game();
       }
@@ -408,7 +406,7 @@ void endgame_loop() {
       set_cursor_hand = true;
       if (mouse_click == true) {
         status=0;
-        menu_music = minim.loadFile("Music/Menu_music.mp3");
+        load_menu_music();
         endgame_music2.close();
         reset_game();
       }
@@ -452,4 +450,21 @@ void reset_game() {
   main.get_player(0).reset(1000, 1000);
   main.get_player(1).reset(1000, 99999999);
   main.reset();
+}
+
+void load_game_music() {
+  main_music = minim.loadFile("Music/Game_music3.mp3");
+  //main_music = minim.loadFile("Music/Troll_test.mp3");
+}
+void load_menu_music() {
+  menu_music = minim.loadFile("Music/Menu_music.mp3");
+  //menu_music = minim.loadFile("Music/Troll_test.mp3");
+}
+void load_win_music() {
+  endgame_music1 = minim.loadFile("Music/Endgame_music1.mp3");
+  //endgame_music1 = minim.loadFile("Music/Troll_test.mp3");
+}
+void load_lose_music() {
+  endgame_music1 = minim.loadFile("Music/Endgame_music2.mp3");
+  //endgame_music1 = minim.loadFile("Music/Troll_test.mp3");
 }

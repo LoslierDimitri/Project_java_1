@@ -191,10 +191,7 @@ class Main {
       this.player_win = 1;
     }
 
-    //loop sound
-    if (main_music.position()>=main_music.length()) {
-      main_music.rewind();
-    }
+    
 
     println("Main: update: done");
   }

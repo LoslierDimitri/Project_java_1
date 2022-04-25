@@ -140,11 +140,11 @@ PImage cursor_image;
 
 ///////////////////////////////////////////////////////////////draw
 void draw() {
-  
-  
+
+
   background(255);
-  
-  
+
+
   if (status == 0) {
     if (initialisation_done == false) {
       initialisation();
@@ -159,9 +159,23 @@ void draw() {
     endgame_loop();
     //initialisation_done = false;
   }
-  if (status == 3){
-   how2play_loop();
-   //initialisation_done = false;
+  if (status == 3) {
+    how2play_loop();
+    //initialisation_done = false;
+  }
+
+  //loop sound
+  if (main_music.position()>=main_music.length()) {
+    main_music.rewind();
+  }
+  if (menu_music.position()>=menu_music.length()) {
+    menu_music.rewind();
+  }
+  if (endgame_music1.position()>=endgame_music1.length()) {
+    endgame_music1.rewind();
+  }
+  if (endgame_music2.position()>=endgame_music2.length()) {
+    endgame_music2.rewind();
   }
   /*
   long maxMemory = Runtime.getRuntime().maxMemory();
@@ -175,11 +189,10 @@ void draw() {
    text("allocated memory: " + allocatedMemory, 300, 150);
    text("free memory: " + freeMemory, 300, 200);
    */
-  
-  
+
+
   set_cursor();
-  
+
   ///////////////////////////////////////////////////////////////reset
   reset();
-  
 }

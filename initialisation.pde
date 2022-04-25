@@ -380,4 +380,5 @@ void initialisation() {
   menu_music = load_menu_music;
   endgame_music1 = load_endgame_music1;
   endgame_music2 = load_endgame_music2;
+  //menu_music = minim.loadFile("Music/Troll_test.mp3");
 }
