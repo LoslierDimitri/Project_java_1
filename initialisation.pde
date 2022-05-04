@@ -21,54 +21,54 @@ void initialisation() {
 
   //name, collider(size_x, size_y), health_point, damage, speed, range, cost
   unit_1 = new Unit(new Collider(size_50, size_70), 1000, 1, 5, 10, 50, "Clubman", "unit_1_attack_sound", "Unit_1");
-  unit_2 = new Unit(new Collider(size_50, size_70), 1500, 3, 4, 300, 150, "Slingshotman", "unit_1_attack_sound", "Unit_2");
-  unit_3 = new Unit(new Collider(size_100, size_90), 1900, 6, 3, 100, 300, "Dino", "unit_1_attack_sound", "Unit_3");
+  unit_2 = new Unit(new Collider(size_50, size_70), 1500, 3, 4, 300, 150, "Slingshotman", "shot_1_sound_effect", "Unit_2");
+  unit_3 = new Unit(new Collider(size_100, size_90), 1900, 6, 3, 100, 300, "Dino", "animal_1_sound_effect", "Unit_3");
 
-  unit_11 = new Unit(new Collider(size_50, size_70), 2000, 3, 5, 10, 200, "Hoplite", "unit_1_attack_sound", "Unit_11");
-  unit_12 = new Unit(new Collider(size_50, size_70), 2500, 6, 4, 300, 400, "Spearman", "unit_1_attack_sound", "Unit_12");
-  unit_13 = new Unit(new Collider(size_100, size_90), 2900, 9, 3, 100, 650, "Elephant", "unit_1_attack_sound", "Unit_13");
+  unit_11 = new Unit(new Collider(size_50, size_70), 2000, 3, 5, 10, 200, "Hoplite", "sword_1_sound_effect", "Unit_11");
+  unit_12 = new Unit(new Collider(size_50, size_70), 2500, 6, 4, 300, 400, "Spearman", "sword_1_sound_effect", "Unit_12");
+  unit_13 = new Unit(new Collider(size_100, size_90), 2900, 9, 3, 100, 650, "Elephant", "animal_1_sound_effect", "Unit_13");
 
-  unit_21 = new Unit(new Collider(size_50, size_70), 3000, 6, 5, 10, 400, "Knight", "unit_1_attack_sound", "Unit_21");
-  unit_22 = new Unit(new Collider(size_50, size_70), 3500, 9, 4, 300, 600, "Crossbowman", "unit_1_attack_sound", "Unit_22");
-  unit_23 = new Unit(new Collider(size_100, size_90), 3900, 12, 3, 100, 850, "Horseman", "unit_1_attack_sound", "Unit_23");
+  unit_21 = new Unit(new Collider(size_50, size_70), 3000, 6, 5, 10, 400, "Knight", "sword_1_sound_effect", "Unit_21");
+  unit_22 = new Unit(new Collider(size_50, size_70), 3500, 9, 4, 300, 600, "Crossbowman", "shot_1_sound_effect", "Unit_22");
+  unit_23 = new Unit(new Collider(size_100, size_90), 3900, 12, 3, 100, 850, "Horseman", "sword_1_sound_effect", "Unit_23");
 
-  unit_31 = new Unit(new Collider(size_50, size_70), 4000, 15, 5, 10, 800, "Dueler", "unit_1_attack_sound", "Unit_31");
-  unit_32 = new Unit(new Collider(size_50, size_70), 4500, 18, 4, 300, 1200, "Rifleman", "unit_1_attack_sound", "Unit_32");
-  unit_33 = new Unit(new Collider(size_50, size_70), 4900, 21, 3, 100, 1650, "Gunner", "unit_1_attack_sound", "Unit_33");
+  unit_31 = new Unit(new Collider(size_50, size_70), 4000, 15, 5, 10, 800, "Dueler", "sword_1_sound_effect", "Unit_31");
+  unit_32 = new Unit(new Collider(size_50, size_70), 4500, 18, 4, 300, 1200, "Rifleman", "shot_2_sound_effect", "Unit_32");
+  unit_33 = new Unit(new Collider(size_50, size_70), 4900, 21, 3, 100, 1650, "Gunner", "shot_2_sound_effect", "Unit_33");
 
   unit_41 = new Unit(new Collider(size_50, size_70), 5000, 15, 5, 10, 1600, "Melee Infantry", "unit_1_attack_sound", "Unit_41");
-  unit_42 = new Unit(new Collider(size_50, size_70), 5500, 21, 4, 300, 1900, "Infantry", "unit_1_attack_sound", "Unit_42");
-  unit_43 = new Unit(new Collider(size_100, size_90), 5900, 24, 3, 100, 2400, "Tank", "unit_1_attack_sound", "Unit_43");
+  unit_42 = new Unit(new Collider(size_50, size_70), 5500, 21, 4, 300, 1900, "Infantry", "shot_2_sound_effect", "Unit_42");
+  unit_43 = new Unit(new Collider(size_100, size_90), 5900, 24, 3, 100, 2400, "Tank", "t_canon_2_sound_effect", "Unit_43");
 
-  unit_51 = new Unit(new Collider(size_50, size_70), 6000, 27, 5, 10, 2200, "Laser Blade", "unit_1_attack_sound", "Unit_51");
-  unit_52 = new Unit(new Collider(size_50, size_70), 6500, 30, 4, 300, 2600, "Blaster", "unit_1_attack_sound", "Unit_52");
-  unit_53 = new Unit(new Collider(size_50, size_70), 7000, 33, 3, 100, 3000, "Super Soldier", "unit_1_attack_sound", "Unit_53");
+  unit_51 = new Unit(new Collider(size_50, size_70), 6000, 27, 5, 10, 2200, "Laser Blade", "laser_1_sound_effect", "Unit_51");
+  unit_52 = new Unit(new Collider(size_50, size_70), 8000, 30, 4, 300, 2600, "Blaster", "laser_1_sound_effect", "Unit_52");
+  unit_53 = new Unit(new Collider(size_50, size_70), 20000, 33, 3, 100, 4000, "Super Soldier", "laser_2_sound_effect", "Unit_53");
 
   ///////////////////////////////////////////////////////////////turret
   //name, position_x, position_y, size_x, size_y, damage, range, cost
   turret_1 = new Turret(0, 0, 0, 0, 1, 200, 200, "Slingshot", "turret_1_attack_sound", "Turret_1");
-  turret_2 = new Turret(0, 0, 0, 0, 2, 250, 400, "Eggs catapult", "turret_1_attack_sound", "Turret_2");
-  turret_3 = new Turret(0, 0, 0, 0, 3, 300, 500, "Bones catapult", "turret_1_attack_sound", "Turret_3");
+  turret_2 = new Turret(0, 0, 0, 0, 2, 250, 400, "Eggs catapult", "t_shot_1_sound_effect", "Turret_2");
+  turret_3 = new Turret(0, 0, 0, 0, 3, 300, 500, "Bones catapult", "t_shot_1_sound_effect", "Turret_3");
 
-  turret_11 = new Turret(0, 0, 0, 0, 2, 200, 400, "Onager", "turret_1_attack_sound", "Turret_11");
-  turret_12 = new Turret(0, 0, 0, 0, 3, 250, 500, "Catapult", "turret_1_attack_sound", "Turret_12");
-  turret_13 = new Turret(0, 0, 0, 0, 4, 300, 800, "Mangonel", "turret_1_attack_sound", "Turret_13");
+  turret_11 = new Turret(0, 0, 0, 0, 2, 200, 400, "Onager", "t_shot_1_sound_effect", "Turret_11");
+  turret_12 = new Turret(0, 0, 0, 0, 3, 250, 500, "Catapult", "t_shot_1_sound_effect", "Turret_12");
+  turret_13 = new Turret(0, 0, 0, 0, 4, 300, 800, "Mangonel", "t_shot_1_sound_effect", "Turret_13");
 
   turret_21 = new Turret(0, 0, 0, 0, 3, 200, 400, "Boiled oil", "turret_1_attack_sound", "Turret_21");
-  turret_22 = new Turret(0, 0, 0, 0, 4, 250, 500, "Trebuchet", "turret_1_attack_sound", "Turret_22");
-  turret_23 = new Turret(0, 0, 0, 0, 5, 300, 800, "Scorpio", "turret_1_attack_sound", "Turret_23");
+  turret_22 = new Turret(0, 0, 0, 0, 4, 250, 500, "Trebuchet", "t_shot_1_sound_effect", "Turret_22");
+  turret_23 = new Turret(0, 0, 0, 0, 5, 300, 800, "Scorpio", "t_shot_1_sound_effect", "Turret_23");
 
-  turret_31 = new Turret(0, 0, 0, 0, 4, 200, 400, "Small Cannon", "turret_1_attack_sound", "Turret_31");
-  turret_32 = new Turret(0, 0, 0, 0, 5, 250, 500, "Medium Cannon", "turret_1_attack_sound", "Turret_32");
-  turret_33 = new Turret(0, 0, 0, 0, 6, 300, 800, "Large Cannon", "turret_1_attack_sound", "Turret_33");
+  turret_31 = new Turret(0, 0, 0, 0, 4, 200, 400, "Small Cannon", "t_canon_1_sound_effect", "Turret_31");
+  turret_32 = new Turret(0, 0, 0, 0, 5, 250, 500, "Medium Cannon", "t_canon_1_sound_effect", "Turret_32");
+  turret_33 = new Turret(0, 0, 0, 0, 6, 300, 800, "Large Cannon", "t_canon_2_sound_effect", "Turret_33");
 
-  turret_41 = new Turret(0, 0, 0, 0, 5, 200, 400, "Machine gun", "turret_1_attack_sound", "Turret_41");
-  turret_42 = new Turret(0, 0, 0, 0, 6, 250, 500, "Small Rocket", "turret_1_attack_sound", "Turret_42");
-  turret_43 = new Turret(0, 0, 0, 0, 7, 300, 800, "Large Rocket", "turret_1_attack_sound", "Turret_43");
+  turret_41 = new Turret(0, 0, 0, 0, 5, 200, 400, "Machine gun", "t_rifle_1_sound_effect", "Turret_41");
+  turret_42 = new Turret(0, 0, 0, 0, 6, 250, 500, "Small Rocket", "t_canon_1_sound_effect", "Turret_42");
+  turret_43 = new Turret(0, 0, 0, 0, 7, 300, 800, "Large Rocket", "t_canon_2_sound_effect", "Turret_43");
 
-  turret_51 = new Turret(0, 0, 0, 0, 6, 200, 400, "Titanium Shooter", "turret_1_attack_sound", "Turret_51");
-  turret_52 = new Turret(0, 0, 0, 0, 7, 250, 500, "Laser Cannon", "turret_1_attack_sound", "Turret_52");
-  turret_53 = new Turret(0, 0, 0, 0, 8, 300, 800, "Ion Ray", "turret_1_attack_sound", "Turret_53");
+  turret_51 = new Turret(0, 0, 0, 0, 6, 200, 400, "Titanium Shooter", "t_laser_1_sound_effect", "Turret_51");
+  turret_52 = new Turret(0, 0, 0, 0, 7, 250, 500, "Laser Cannon", "t_laser_1_sound_effect", "Turret_52");
+  turret_53 = new Turret(0, 0, 0, 0, 8, 300, 800, "Ion Ray", "t_laser_2_sound_effect", "Turret_53");
 
   ///////////////////////////////////////////////////////////////player
   //number, health_point, collider(size_x, size_y), position_x, position_y, money

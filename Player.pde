@@ -53,7 +53,7 @@ class Player {
     this.tab_turret = new Turret[this.nb_turret_limit];
     can_use_power = false;
     power_charge_actual = 0;
-    power_charge = 2000;
+    power_charge = 700;
     add_turret_max_cost = 1000;
     add_period_cost = 2000;
     period_max = 6;
@@ -265,7 +265,7 @@ class Player {
       tab_unit[i].update(this.number);
       if (tab_unit[i].is_dead() == true) {
         if (this.number == 2) {
-          x_main.get_player(0).set_money(x_main.get_player(0).get_money() + this.tab_unit[i].get_cost());
+          x_main.get_player(0).set_money(x_main.get_player(0).get_money() + (this.tab_unit[i].get_cost() * 2));
           x_main.get_player(0).set_exp(x_main.get_player(0).get_exp() + this.tab_unit[i].get_cost());
         }
         this.remove_unit(i);

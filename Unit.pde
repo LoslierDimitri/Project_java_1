@@ -30,7 +30,7 @@ class Unit {
     this.is_attack = false;
     this.sound_attack_name = x_sound_attack_name;
     this.sound_attack = minim.loadFile("Sound_effect/" + this.sound_attack_name + ".mp3");
-    this.sound_attack.setVolume(60);
+    this.sound_attack.setGain(-10);
     this.animation_name = x_animation_name;
     this.animation = load_animation("Unit/" + this.animation_name + "/");
     this.health_point_max = x_health_point;

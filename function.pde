@@ -87,7 +87,8 @@ void game_loop() {
       main.get_player(0).period += 1;
     }
     if (main.get_player(1).period < 6) {
-      main.get_player(1).period += 1;
+      //main.get_player(1).period += 1;
+      main.get_player(1).add_period();
     }
     push = true;
   }
@@ -454,17 +455,21 @@ void reset_game() {
 
 void load_game_music() {
   main_music = minim.loadFile("Music/Game_music3.mp3");
+  main_music.setGain(-10);
   //main_music = minim.loadFile("Music/Troll_test.mp3");
 }
 void load_menu_music() {
   menu_music = minim.loadFile("Music/Menu_music.mp3");
+  menu_music.setGain(-10);
   //menu_music = minim.loadFile("Music/Troll_test.mp3");
 }
 void load_win_music() {
   endgame_music1 = minim.loadFile("Music/Endgame_music1.mp3");
+  endgame_music1.setGain(-10);
   //endgame_music1 = minim.loadFile("Music/Troll_test.mp3");
 }
 void load_lose_music() {
   endgame_music1 = minim.loadFile("Music/Endgame_music2.mp3");
+  endgame_music1.setGain(-10);
   //endgame_music1 = minim.loadFile("Music/Troll_test.mp3");
 }
