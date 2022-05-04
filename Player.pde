@@ -120,6 +120,9 @@ class Player {
   int get_nb_turret_limit() {
     return this.nb_turret_limit;
   }
+  int get_position_x() {
+    return this.position_x;
+  }
   int get_position_y() {
     return this.position_y;
   }

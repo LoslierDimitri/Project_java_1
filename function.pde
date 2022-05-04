@@ -339,6 +339,12 @@ void game_loop() {
 
   ///////////////////////////////////////////////////////////////music
   main_music.play();
+  
+  if (remove_turret_mode == true) {
+    fill(255, 0, 0, 50);
+    noStroke();
+    rect(main.get_player(0).get_position_x(), main.get_player(0).get_position_y(), main.get_player(0).get_collider().get_size_x(), main.get_player(0).get_collider().get_size_y());
+  }
 }
 
 void menu_loop() {
