@@ -20,29 +20,29 @@ void initialisation() {
   int size_120 = screen_size_x / 100 * 10;
 
   //name, collider(size_x, size_y), health_point, damage, speed, range, cost
-  unit_1 = new Unit(new Collider(size_50, size_70), 1000, 1, 5, 10, 50, "Clubman", "unit_1_attack_sound", "Unit_1");
-  unit_2 = new Unit(new Collider(size_50, size_70), 1500, 3, 4, 300, 150, "Slingshotman", "shot_1_sound_effect", "Unit_2");
+  unit_1 = new Unit(new Collider(size_50, size_70), 1000, 3, 5, 10, 50, "Clubman", "unit_1_attack_sound", "Unit_1");
+  unit_2 = new Unit(new Collider(size_50, size_70), 1500, 2, 4, 300, 150, "Slingshotman", "shot_1_sound_effect", "Unit_2");
   unit_3 = new Unit(new Collider(size_100, size_90), 1900, 6, 3, 100, 300, "Dino", "animal_1_sound_effect", "Unit_3");
 
-  unit_11 = new Unit(new Collider(size_50, size_70), 2000, 3, 5, 10, 200, "Hoplite", "sword_1_sound_effect", "Unit_11");
-  unit_12 = new Unit(new Collider(size_50, size_70), 2500, 6, 4, 300, 400, "Spearman", "sword_1_sound_effect", "Unit_12");
+  unit_11 = new Unit(new Collider(size_50, size_70), 2000, 6, 5, 10, 200, "Hoplite", "sword_1_sound_effect", "Unit_11");
+  unit_12 = new Unit(new Collider(size_50, size_70), 2500, 4, 4, 300, 400, "Spearman", "sword_1_sound_effect", "Unit_12");
   unit_13 = new Unit(new Collider(size_100, size_90), 2900, 9, 3, 100, 650, "Elephant", "animal_1_sound_effect", "Unit_13");
 
-  unit_21 = new Unit(new Collider(size_50, size_70), 3000, 6, 5, 10, 400, "Knight", "sword_1_sound_effect", "Unit_21");
-  unit_22 = new Unit(new Collider(size_50, size_70), 3500, 9, 4, 300, 600, "Crossbowman", "shot_1_sound_effect", "Unit_22");
+  unit_21 = new Unit(new Collider(size_50, size_70), 3000, 9, 5, 10, 400, "Knight", "sword_1_sound_effect", "Unit_21");
+  unit_22 = new Unit(new Collider(size_50, size_70), 3500, 6, 4, 300, 600, "Crossbowman", "shot_1_sound_effect", "Unit_22");
   unit_23 = new Unit(new Collider(size_100, size_90), 3900, 12, 3, 100, 850, "Horseman", "sword_1_sound_effect", "Unit_23");
 
-  unit_31 = new Unit(new Collider(size_50, size_70), 4000, 15, 5, 10, 800, "Dueler", "sword_1_sound_effect", "Unit_31");
-  unit_32 = new Unit(new Collider(size_50, size_70), 4500, 18, 4, 300, 1200, "Rifleman", "shot_2_sound_effect", "Unit_32");
+  unit_31 = new Unit(new Collider(size_50, size_70), 4000, 18, 5, 10, 800, "Dueler", "sword_1_sound_effect", "Unit_31");
+  unit_32 = new Unit(new Collider(size_50, size_70), 4500, 15, 4, 300, 1200, "Rifleman", "shot_2_sound_effect", "Unit_32");
   unit_33 = new Unit(new Collider(size_50, size_70), 4900, 21, 3, 100, 1650, "Gunner", "shot_2_sound_effect", "Unit_33");
 
-  unit_41 = new Unit(new Collider(size_50, size_70), 5000, 15, 5, 10, 1600, "Melee Infantry", "unit_1_attack_sound", "Unit_41");
-  unit_42 = new Unit(new Collider(size_50, size_70), 5500, 21, 4, 300, 1900, "Infantry", "shot_2_sound_effect", "Unit_42");
+  unit_41 = new Unit(new Collider(size_50, size_70), 5000, 21, 5, 10, 1600, "Melee Infantry", "unit_1_attack_sound", "Unit_41");
+  unit_42 = new Unit(new Collider(size_50, size_70), 5500, 15, 4, 300, 1900, "Infantry", "shot_2_sound_effect", "Unit_42");
   unit_43 = new Unit(new Collider(size_100, size_90), 5900, 24, 3, 100, 2400, "Tank", "t_canon_2_sound_effect", "Unit_43");
 
-  unit_51 = new Unit(new Collider(size_50, size_70), 6000, 27, 5, 10, 2200, "Laser Blade", "laser_1_sound_effect", "Unit_51");
-  unit_52 = new Unit(new Collider(size_50, size_70), 8000, 30, 4, 300, 2600, "Blaster", "laser_1_sound_effect", "Unit_52");
-  unit_53 = new Unit(new Collider(size_50, size_70), 20000, 33, 3, 100, 4000, "Super Soldier", "laser_2_sound_effect", "Unit_53");
+  unit_51 = new Unit(new Collider(size_50, size_70), 6000, 35, 5, 10, 2200, "Laser Blade", "laser_1_sound_effect", "Unit_51");
+  unit_52 = new Unit(new Collider(size_50, size_70), 8000, 28, 4, 300, 2600, "Blaster", "laser_1_sound_effect", "Unit_52");
+  unit_53 = new Unit(new Collider(size_50, size_70), 20000, 40, 3, 100, 4000, "Super Soldier", "laser_2_sound_effect", "Unit_53");
 
   ///////////////////////////////////////////////////////////////turret
   //name, position_x, position_y, size_x, size_y, damage, range, cost
