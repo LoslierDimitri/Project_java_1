@@ -53,7 +53,11 @@ class Player {
     this.tab_turret = new Turret[this.nb_turret_limit];
     can_use_power = false;
     power_charge_actual = 0;
+<<<<<<< Updated upstream
     power_charge = 700;
+=======
+    power_charge = 2000;
+>>>>>>> Stashed changes
     add_turret_max_cost = 1000;
     add_period_cost = 2000;
     period_max = 6;
