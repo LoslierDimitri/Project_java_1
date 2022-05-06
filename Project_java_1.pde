@@ -10,8 +10,8 @@ PFont myFont;
 
 ///////////////////////////////////////////////////////////////setup
 void setup() {
-  //fullScreen(P2D);
-  size(1280, 720, P2D);
+  fullScreen(P2D);
+  //size(1280, 720, P2D);
   frameRate(60);
 
   minim = new Minim(this);

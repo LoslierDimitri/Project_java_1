@@ -76,7 +76,7 @@ void initialisation() {
   int player_1_size_y = screen_size_y / 100 * 25;
   int player_1_position_x = 0;
   int player_1_position_y = screen_size_y / 2;
-  int player_1_health_point = 1000;
+  int player_1_health_point = 2000;
   int player_1_money = 1000;
 
   PImage tab_base_player_1[] = new PImage[6];
@@ -117,7 +117,7 @@ void initialisation() {
   int player_2_size_y = screen_size_y / 100 * 25;
   int player_2_position_x = screen_size_x - player_2_size_x;
   int player_2_position_y = screen_size_y / 2;
-  int player_2_health_point = 1000;
+  int player_2_health_point = 2000;
   int player_2_money = 1000;
 
   PImage tab_base_player_2[] = new PImage[6];
